@@ -9,30 +9,28 @@
 
 {{ if .elements }}
   {{ $elements = .elements }}
-{{ end }}
+  {{ if .elements.icon }}
+    {{ $icon = .elements.icon }}
+  {{ end }}
 
-{{ if .elements.icon }}
-  {{ $icon = .elements.icon }}
-{{ end }}
+  {{ if .elements.super_heading }}
+    {{ $superHeading = .elements.super_heading }}
+  {{ end }}
 
-{{ if .elements.super_heading }}
-  {{ $superHeading = .elements.super_heading }}
-{{ end }}
-
-{{ if .elements.heading }}
-  {{ $heading = .elements.heading }}
+  {{ if .elements.heading }}
+    {{ $heading = .elements.heading }}
+  {{ end }}
 {{ end }}
 
 {{ if .config }}
   {{ $config = .config }}
-{{ end }}
+  {{ if .config.icon }}
+    {{ $iconConfig = .config.icon }}
+  {{ end }}
 
-{{ if .config.icon }}
-  {{ $iconConfig = .config.icon }}
-{{ end }}
-
-{{ if .config.heading }}
-  {{ $headingConfig = .config.heading }}
+  {{ if .config.heading }}
+    {{ $headingConfig = .config.heading }}
+  {{ end }}
 {{ end }}
 
 {{ if $icon }}

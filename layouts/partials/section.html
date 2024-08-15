@@ -4,15 +4,10 @@
 {{ if .is_main }}
   {{ $isMain = .is_main }}
 {{ end }}
-{{ $sectionHelperClasses := "position-relative w-100 d-flex flex-column align-items-center" }}
 {{ $classes := "" }}
 {{ $backgroundImg := "" }}
 {{ $backgroundImgConfig := "" }}
-{{ $display := "" }}
-{{ $height := "" }}
-{{ $backgroundColor := "" }}
-{{ $backgroundOpacity := "" }}
-{{ $color := "" }}
+
 {{ $containerClass := "container" }}
 {{ $mask := "" }}
 {{ $bleed := "" }}
@@ -33,34 +28,20 @@
   {{ $mask = .config.section.mask }}
 {{ end }}
 
-{{ with .config.section }}
-  {{ if .display }}{{ $display = .display }}{{ end }}
-  {{ if .height }}{{ $height = .height }}{{ end }}
-  {{ if .background_color }}{{ $backgroundColor = .background_color }}{{ end }}
-  {{ if .background_opacity }}{{ $backgroundOpacity = .background_opacity }}{{ end }}
-  {{ if .color }}{{ $color = .color }}{{ end }}
-{{ end }}
-
 {{ if .config.container_class }}
   {{ $containerClass = .config.container_class }}
 {{ end }}
 
-{{ $sectionClasses := slice
-  $display
-  $height
-  $backgroundColor
-  $backgroundOpacity
-  $color
-}}
+{{ $sectionClasses := partial "utilities/section-classes.html" . }}
 
 {{ if eq $isMain true }}
-  <main id="{{ $componentId }}" class="{{ $sectionHelperClasses}} {{ range $sectionClasses }}{{ . }} {{ end }}">
+  <main id="{{ $componentId }}" class="{{ range $sectionClasses }}{{ . }} {{ end }}">
     <div class="{{ $containerClass }} my-auto position-relative">
       {{ partial "components.html" ( dict "elements" .elements "config" .config ) }}
     </div>
   </main>
 {{ else }}
-  <section id="{{ $componentId }}" aria-labelledby="{{ $ariaLabelledBy }}-label" class="{{ $sectionHelperClasses}} {{ range $sectionClasses }}{{ . }} {{ end }}">
+  <section id="{{ $componentId }}" aria-labelledby="{{ $ariaLabelledBy }}-label" class="{{ range $sectionClasses }}{{ . }} {{ end }}">
     {{ if .elements.background_image }}
       {{ partial "utilities/bg-img.html" ( dict "image" $backgroundImg "config" $backgroundImgConfig "mask" $mask ) }}
     {{ end }}

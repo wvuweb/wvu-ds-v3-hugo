@@ -1,0 +1,53 @@
+{{ $sectionClasses := "" }}
+{{ $overrides := "" }}
+
+{{ if .config }}
+  {{ if .config.section }}
+    {{ $overrides = .config.section }}
+  {{ end }}
+{{ end }}
+
+{{ if eq .component "hero" }}
+  {{ $sectionClasses = partial "get-section-classes.html" ( dict "default" site.Data.defaults.components.hero.section "overrides" $overrides ) }}
+{{ end }}
+
+{{ return $sectionClasses }}
+
+{{ define "partials/get-section-classes.html" }}
+
+  {{ $classes := .default.classes }}
+  {{ $display := .default.display }}
+  {{ $position := .default.position }}
+  {{ $flexDirection := .default.flex_direction }}
+  {{ $flexAlign := .default.flex_align }}
+  {{ $height := .default.height }}
+  {{ $backgroundColor := .default.background_color }}
+  {{ $color := .default.color }}
+
+  {{ if .overrides.classes }}
+    {{ $classes = .overrides.classes }}
+  {{ end }}
+  {{ if .overrides.height }}
+    {{ $height = .overrides.height }}
+  {{ end }}
+  {{ if .overrides.background_color }}
+    {{ $backgroundColor = .overrides.background_color }}
+  {{ end }}
+  {{ if .overrides.color }}
+    {{ $color = .overrides.color }}
+  {{ end }}
+
+  {{ $sectionClasses := slice
+    $classes
+    $display
+    $position
+    $flexDirection
+    $flexAlign
+    $height
+    $backgroundColor
+    $color
+  }}
+
+  {{ return $sectionClasses }}
+
+{{ end }}

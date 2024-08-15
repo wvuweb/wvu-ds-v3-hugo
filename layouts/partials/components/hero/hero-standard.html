@@ -1,14 +1,10 @@
 {{ $elements := "" }}
 {{ $buttons := "" }}
-{{ $config := "" }}
+{{ $config := site.Data.defaults.components.hero }}
 {{ $buttonsConfig := "" }}
 
 {{ if .elements }}
   {{ $elements = .elements }}
-{{ end }}
-
-{{ if .config }}
-  {{ $config = .config }}
 {{ end }}
 
 {{ $featuredImage := "" }}
@@ -35,10 +31,10 @@
       <div class="wvu-p-max-width">
         {{ partial "components/simple/heading-group.html" ( dict "elements" $elements "config" $config ) }}
         <!-- Lead -->
-        <p class="text-black-50 mb-3 lead">
+        <p class="mb-3 lead">
           Hand-picked Instructor and expertly crafted courses, designed for the modern students and entrepreneur.
         </p>
-        <p class="text-black-50 mb-4">
+        <p class="mb-4">
           Hand-picked Instructor and expertly crafted courses, designed for the modern students and entrepreneur.
         </p>
         {{ with .elements.ctas }}

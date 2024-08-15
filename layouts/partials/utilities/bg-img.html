@@ -1,0 +1,53 @@
+{{ $image := resources.Get .image }}
+{{ $blendMode := "" }}
+{{ $value := 20 }}
+{{ $filters := "" }}
+{{ $mask := "" }}
+{{ $disable := false }}
+
+{{ with .config }}
+  {{ $blendMode = .blend_mode }}
+  {{ $filters = .filters }}
+  {{ if .disable }}
+    {{ $disable = .disable }}
+  {{ end }}
+{{ end }}
+
+{{ if ne $disable true }}
+  {{ if .mask }}
+    {{ with .mask }}
+      {{ if .src }}
+        {{ $mask = .src }}
+      {{ end }}
+      {{ if eq .echo.enabled true }}
+        <div class="wvu-bg-img ag-mask bg-primary" style="-webkit-mask-image: url('{{ $mask }}'); mask-image: url('{{ $mask }}'); margin-left: {{ .echo.offset_x }}; margin-top: {{ .echo.offset_y }}">
+          <img
+            class="ag-bg-img {{ $blendMode }} {{ $filters }}"
+            srcset='{{ ( $image.Fill "576x248 webp Center" ).RelPermalink }} 576w, {{ ( $image.Fill "768x330 webp Center" ).RelPermalink }} 768w, {{ ( $image.Fill "992x427 webp Center" ).RelPermalink }} 992w, {{ ( $image.Fill "1200x516 webp Center" ).RelPermalink }} 1200w, {{ ( $image.Fill "1400x602 webp Center" ).RelPermalink }} 1400w, {{ ( $image.Fill "1800x771 webp Center" ).RelPermalink }} 1800w'
+            sizes="(max-width: 576px) 576px, (max-width: 768px) 768px, (max-width: 992px) 992px, (max-width: 1200px) 1200px, (max-width: 1400px) 1400px, 1800px"
+            src='{{ ( $image.Fill "1800x771 webp Center" ).RelPermalink }}'
+            alt=""
+            style="margin-left: calc(-1* ({{ .echo.offset_x }})); margin-top: calc(-1 * ({{ .echo.offset_y }}))"
+          />
+        </div>
+      {{ end }}
+    {{ end }}
+    <div class="wvu-bg-img ag-mask" style="-webkit-mask-image: url('{{ $mask }}'); mask-image: url('{{ $mask }}');">
+      <img
+        class="ag-bg-img {{ $blendMode }} {{ $filters }}"
+        srcset='{{ ( $image.Fill "576x248 webp Center" ).RelPermalink }} 576w, {{ ( $image.Fill "768x330 webp Center" ).RelPermalink }} 768w, {{ ( $image.Fill "992x427 webp Center" ).RelPermalink }} 992w, {{ ( $image.Fill "1200x516 webp Center" ).RelPermalink }} 1200w, {{ ( $image.Fill "1400x602 webp Center" ).RelPermalink }} 1400w, {{ ( $image.Fill "1800x771 webp Center" ).RelPermalink }} 1800w'
+        sizes="(max-width: 576px) 576px, (max-width: 768px) 768px, (max-width: 992px) 992px, (max-width: 1200px) 1200px, (max-width: 1400px) 1400px, 1800px"
+        src='{{ ( $image.Fill "1800x771 webp Center" ).RelPermalink }}'
+        alt=""
+      />
+    </div>
+  {{ else }}
+    <img
+        class="wvu-bg-img {{ $blendMode }} {{ $filters }}"
+        srcset='{{ ( $image.Fill "576x248 webp Center" ).RelPermalink }} 576w, {{ ( $image.Fill "768x330 webp Center" ).RelPermalink }} 768w, {{ ( $image.Fill "992x427 webp Center" ).RelPermalink }} 992w, {{ ( $image.Fill "1200x516 webp Center" ).RelPermalink }} 1200w, {{ ( $image.Fill "1400x602 webp Center" ).RelPermalink }} 1400w, {{ ( $image.Fill "1800x771 webp Center" ).RelPermalink }} 1800w'
+        sizes="(max-width: 576px) 576px, (max-width: 768px) 768px, (max-width: 992px) 992px, (max-width: 1200px) 1200px, (max-width: 1400px) 1400px, 1800px"
+        src='{{ ( $image.Fill "1800x771 webp Center" ).RelPermalink }}'
+        alt=""
+    />
+  {{ end }}
+{{ end }}
