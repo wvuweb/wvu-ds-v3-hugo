@@ -1,0 +1,43 @@
+{{ $font := "" }}
+{{ $size := "" }}
+{{ $color := "" }}
+{{ $weight := "" }}
+{{ $spacing := "" }}
+{{ $decoration := "" }}
+{{ $classes := "" }}
+
+{{ if .config }}
+
+  {{ if .config.font }}
+    {{ $font = .config.font }}
+  {{ end }}
+
+  {{ if .config.size }}
+    {{ $size = .config.size }}
+  {{ end }}
+
+  {{ if .config.color }}
+    {{ $color = .config.color }}
+  {{ end }}
+
+  {{ if .config.weight }}
+    {{ $weight = .config.weight }}
+  {{ end }}
+
+  {{ if .config.spacing }}
+    {{ $spacing = .config.spacing }}
+  {{ end }}
+
+  {{ if .config.decoration }}
+    {{ $decoration = .config.decoration }}
+  {{ end }}
+
+  {{ if .config.classes }}
+    {{ $classes = .config.classes }}
+  {{ end }}
+  
+{{ end }}
+
+{{ $classes = slice $classes $font $size $color $weight $spacing $decoration }}
+
+{{ return $classes }}

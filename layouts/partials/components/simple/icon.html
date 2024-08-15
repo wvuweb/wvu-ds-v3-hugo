@@ -1,0 +1,22 @@
+{{ $icon := "" }}
+{{ $size := "" }}
+{{ $weight := "regular" }}
+{{ $color := "" }}
+
+{{ if .icon }}
+  {{ $icon = .icon }}
+{{ end }}
+
+{{ if .weight }}
+  {{ $weight = .weight }}
+{{ end }}
+
+{{ if .size }}
+  {{ $size = .size }}
+{{ end }}
+
+{{ if .color }}
+  {{ $color = .color }}
+{{ end }}
+
+<span class="fa-{{ $weight }} fa-{{ $icon }} {{ $color }} {{ $size }}"></span>

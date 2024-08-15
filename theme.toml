@@ -1,0 +1,20 @@
+name = 'WVU Design System Version 3 Hugo Theme'
+license = 'MIT'
+licenselink = 'https://github.com/owner/repo/LICENSE'
+description = 'A base theme for making WVU-branded Hugo sites'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/wvuweb/wvu-ds-v3-hugo'
+
+# If you have a running demo of the theme
+demosite = 'https://dsv3hugo.wvu.edu'
+
+# Taxonomy terms
+tags = ['hugo', 'wvu']
+features = ['some', 'awesome', 'features']
+
+# If the theme has multiple authors
+authors = [
+  {name = 'Adam Glenn', homepage = 'Website of author'},
+  {name = 'Nathan Reckart', homepage = 'Website of author'}
+]

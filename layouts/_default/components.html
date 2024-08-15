@@ -1,0 +1,6 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ range .Page.Params.components }}
+    {{ partial "section.html" . }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,14 @@
+{{ $hierarchy := 2 }}
+{{ $id := "" }}
+
+{{ $classes := partial "utilities/utility-classes.html" ( dict "config" .config ) }}
+
+{{ if .hierarchy }}
+  {{ $hierarchy = .hierarchy }}
+{{ end }}
+
+{{ if eq $hierarchy 1 }}
+  <h1 id="{{ $id }}" class="{{- range $classes -}}{{ . }} {{ end -}}">{{ .heading }}</h1>
+{{ else if eq $hierarchy 2 }}
+  <h2 id="{{ $id }}" class="{{- range $classes -}}{{ . }} {{ end -}}">{{ .heading }}</h2>
+{{ end }}

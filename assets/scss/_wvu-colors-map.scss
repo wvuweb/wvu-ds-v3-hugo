@@ -1,0 +1,80 @@
+// Primary
+
+$wvu-blue: #002855;
+$wvu-gold: #EAAA00;
+
+// Accent
+
+$wvu-accent--old-gold: #7F6310;
+$wvu-accent--blue-dark: #1C2B39;
+$wvu-accent--blue: #0062A3;
+$wvu-accent--blue-light: #9DDAE6;
+$wvu-accent--yellow: #FFE539;
+$wvu-accent--sunset: #F58672;
+
+// Neutral
+
+$wvu-neutral--off-white: #F7F7F7;
+$wvu-neutral--cream: #F2E6C2;
+$wvu-neutral--tan: #B3A169;
+$wvu-neutral--warm-gray-light: #BEB7B3;
+$wvu-neutral--warm-gray-medium: #988E8B;
+$wvu-neutral--warm-gray-dark: #554741;
+
+// Social Media
+
+$facebook: #3b5998;
+$twitter: #00acee;
+$flickr: #ff0084;
+$instagram: #8a3ab9;
+$linkedin: #0e76a8;
+$syndication: #ee802f;
+$youtube: #c4302b;
+$github: #171515;
+
+$custom-colors: (
+  "facebook": $facebook,
+  "twitter": $twitter,
+  "flickr": $flickr,
+  "instagram": $instagram,
+  "linkedin": $linkedin,
+  "syndication": $syndication,
+  "youtube": $youtube,
+  "github": $github,
+  "wvu-blue": $wvu-blue,
+  "wvu-gold": $wvu-gold,
+  "wvu-accent--old-gold": $wvu-accent--old-gold,
+  "wvu-accent--blue-dark": $wvu-accent--blue-dark,
+  "wvu-accent--blue": $wvu-accent--blue,
+  "wvu-accent--blue-light": $wvu-accent--blue-light,
+  "wvu-accent--yellow": $wvu-accent--yellow,
+  "wvu-accent--sunset": $wvu-accent--sunset,
+  "wvu-neutral--off-white": $wvu-neutral--off-white,
+  "wvu-neutral--cream": $wvu-neutral--cream,
+  "wvu-neutral--tan": $wvu-neutral--tan,
+  "wvu-neutral--warm-gray-light": $wvu-neutral--warm-gray-light,
+  "wvu-neutral--warm-gray-medium": $wvu-neutral--warm-gray-medium,
+  "wvu-neutral--warm-gray-dark": $wvu-neutral--warm-gray-dark
+);
+
+$dark-theme-colors: (
+  "wvu-blue",
+  "wvu-accent--old-gold",
+  "wvu-neutral--warm-gray-dark",
+  "wvu-accent--blue-dark",
+  "wvu-accent--blue"
+);
+
+$light-theme-colors: (
+  "wvu-gold",
+  "wvu-neutral--tan",
+  "wvu-neutral--off-white",
+  "wvu-neutral--warm-gray-light",
+  "wvu-neutral--warm-gray-medium",
+  "wvu-neutral--cream",
+  "wvu-accent--sunset",
+  "wvu-accent--blue-light",
+  "wvu-accent--yellow"
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);

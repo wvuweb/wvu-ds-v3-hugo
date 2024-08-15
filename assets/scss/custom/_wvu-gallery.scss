@@ -1,0 +1,379 @@
+// Photo Gallery using Parvus
+//==================================================
+// Parvus gallery vendor styles + custom styles for this project
+// https://github.com/deoostfrees/Parvus
+
+
+// 1) Parvus v2.4.0 vendor styles:
+//--------------------------------------------------
+
+:root {
+  --parvus-transition-duration: 300ms;
+  --parvus-transition-timing-function: cubic-bezier(0.62, 0.16, 0.13, 1.01);
+
+  --parvus-overlay-color: hsl(23, 40%, 96%);
+  --parvus-overlay-text: hsl(228, 24%, 23%);
+
+  --parvus-button-color: hsl(228, 24%, 23%);
+  --parvus-button-text: hsl(0, 0%, 100%);
+
+  --parvus-button-hover-color: hsl(229, 24%, 33%);
+  --parvus-button-hover-text: hsl(0, 0%, 100%);
+
+  --parvus-caption-background-color: transparent;
+  --parvus-caption-color: hsl(228, 24%, 23%);
+
+  --parvus-error-loading-error-background-color: hsl(0, 0%, 100%);
+  --parvus-image-loading-error-color: hsl(228, 24%, 23%);
+
+  --parvus-loader-background-color: hsl(23, 40%, 96%);
+  --parvus-loader-color: hsl(228, 24%, 23%);
+}
+
+.parvus-is-open {
+  touch-action: none;
+}
+
+/**
+ * Parvus trigger
+ *
+ */
+
+.parvus-zoom {
+  display: block;
+  position: relative;
+
+
+  &__indicator {
+    align-items: center;
+    background-color: var(--parvus-button-color);
+    color: var(--parvus-button-text);
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    position: absolute;
+    inset-inline-end: 0.5rem;
+    inset-block-start: 0.5rem;
+  }
+
+  & img {
+    display: block;
+  }
+}
+
+/**
+ * Parvus
+ *
+ */
+
+.parvus {
+  box-sizing: border-box;
+  contain: strict;
+  inset: 0;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  position: fixed;
+  z-index: 1337;
+
+  & *,
+  & *::before,
+  & *::after {
+    box-sizing: border-box;
+  }
+
+  &[aria-hidden='true'] {
+    display: none;
+  }
+
+  &__overlay {
+    background-color: var(--parvus-overlay-color);
+    inset: 0;
+    position: absolute;
+  }
+
+  &__slider {
+    inset: 0;
+    position: absolute;
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+
+      &--animate:not(&--is-dragging) {
+        transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+        will-change: transform;
+      }
+    }
+
+    &--is-draggable {
+      cursor: grab;
+    }
+
+    &--is-dragging {
+      cursor: grabbing;
+    }
+  }
+
+  &__slide {
+    display: grid;
+    block-size: 100%;
+    justify-content: center;
+    padding-block-end: 1rem;
+    padding-block-start: 3.75rem;
+    padding-inline-end: 1rem;
+    padding-inline-start: 1rem;
+    place-items: center;
+    inline-size: 100%;
+
+
+    & img {
+      display: block;
+      block-size: auto;
+      margin-inline-start: auto;
+      margin-inline-end: auto;
+      transform-origin: left top;
+      inline-size: auto;
+    }
+  }
+
+  &__content {
+
+
+
+    &--error {
+      background-color: var(--parvus-error-loading-error-background-color);
+      color: var(--parvus-error-loading-error-color);
+      padding-block: 0.5rem;
+      padding-inline: 1rem;
+    }
+  }
+
+  &__caption {
+    background-color: var(--parvus-caption-background-color);
+    color: var(--parvus-caption-color);
+    padding-block-start: 0.5rem;
+    text-align: start;
+  }
+
+  &__loader {
+    display: inline-block;
+    block-size: 6.25rem;
+    inset-inline-start: 50%;
+    position: absolute;
+    inset-block-start: 50%;
+    transform: translate(-50%, -50%);
+    inline-size: 6.25rem;
+
+    &::before {
+      animation: spin 1s infinite;
+      border-radius: 100%;
+      border: 0.25rem solid var(--parvus-loader-background-color);
+      border-top-color: var(--parvus-loader-color);
+      content: '';
+      inset: 0;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  &__toolbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    inset-inline-start: 1rem;
+    position: absolute;
+    inset-inline-end: 1rem;
+    inset-block-start: 1rem;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__btn {
+    appearance: none;
+    background-color: var(--parvus-button-color);
+    background-image: none;
+    border-radius: 0;
+    border: 0.0625rem solid transparent;
+    color: var(--parvus-button-text);
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    padding: 0.3125rem;
+    position: relative;
+    touch-action: manipulation;
+    will-change: transform, opacity;
+    z-index: 7;
+
+    &:hover {
+      background-color: var(--parvus-button-hover-color);
+      color: var(--parvus-button-hover-text);
+    }
+
+
+    &--previous {
+      inset-inline-start: 0;
+      position: absolute;
+      inset-block-start: calc(50vh - 1rem); // 50vh - paddingTop from .parvus__slide
+      transform: translateY(-50%);
+    }
+
+    &--next {
+      position: absolute;
+      inset-inline-end: 0;
+      inset-block-start: calc(50vh - 1rem); // 50vh - paddingTop from .parvus__slide
+      transform: translateY(-50%);
+    }
+
+    & svg {
+      pointer-events: none;
+    }
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  &__counter {
+    position: relative;
+    z-index: 7;
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+
+    &__overlay,
+    &__counter,
+    &__btn--close,
+    &__btn--previous,
+    &__btn--next,
+    &__caption {
+      transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function), opacity var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+      will-change: transform, opacity;
+    }
+
+    &--is-opening,
+    &--is-closing {
+
+
+      & .parvus__overlay,
+      & .parvus__counter,
+      & .parvus__btn--close,
+      & .parvus__btn--previous,
+      & .parvus__btn--next,
+      & .parvus__caption {
+        opacity: 0;
+      }
+    }
+
+    &--is-vertical-closing {
+
+
+
+      & .parvus__counter,
+      & .parvus__btn--close {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      & .parvus__btn--previous {
+        transform: translate(-100%, -50%);
+        opacity: 0;
+      }
+
+      & .parvus__btn--next {
+        transform: translate(100%, -50%);
+        opacity: 0;
+      }
+
+      & .parvus__caption {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+// 2) Custom CSS for the Parvus Lightbox / Gallery:
+//--------------------------------------------------
+
+// NOTE: Adding some focus styles to Parvus:
+// ------------------------------------------
+// Credit to: https://css-tricks.com/the-focus-visible-trick/
+
+.parvus-trigger { // TODO: Transition!
+  &:hover {
+    .parvus-zoom__indicator svg {
+      transform: rotate(10deg) scale(1.1);
+    }
+  }
+}
+
+// Focusing .parvus__btn and .parvus-trigger with a keyboard will show a dashed red line.
+.parvus-trigger:focus-visible {
+  outline: 0;
+  .parvus-zoom__indicator {
+    outline: 2px dashed crimson;
+  }
+}
+
+.parvus__btn:focus-visible {
+  outline: 2px dashed crimson;
+  outline-offset: 2px;
+}
+
+// Focusing .parvus__btn and .parvus-trigger with a mouse, touch, or stylus
+.parvus__btn,
+.parvus-trigger {
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+}
+
+
+
+// NOTE: Some custom styles for this layout
+// ------------------------------------------
+
+$parvus-photo-gallery-height: 200px;
+
+.parvus {
+  --parvus-overlay-color: #{$wvu-neutral--warm-gray-light};
+}
+
+.parvus-gallery__item {
+  max-height: $parvus-photo-gallery-height;
+  overflow: hidden;
+
+  @media print {
+    max-height: none;
+  } //mq
+
+} //.parvus-gallery__item
+
+.parvus-gallery__thumbnail {
+  height: $parvus-photo-gallery-height;
+  object-fit: cover;
+  width: 100%;
+
+  @supports (aspect-ratio: 4 / 3) {
+    aspect-ratio: 4 / 3;
+    width: auto;
+    height: auto;
+  } // @supports
+} //.parvus-gallery__thumbnail

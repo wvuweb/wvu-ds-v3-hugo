@@ -1,0 +1,54 @@
+{{ $elements := "" }}
+{{ $buttons := "" }}
+{{ $config := "" }}
+{{ $buttonsConfig := "" }}
+
+{{ if .elements }}
+  {{ $elements = .elements }}
+{{ end }}
+
+{{ if .config }}
+  {{ $config = .config }}
+{{ end }}
+
+{{ $featuredImage := "" }}
+{{ $altText := "" }}
+{{ $width := "col-xl-5 col-lg-6 col-md-12" }}
+{{ if .config.copy.width }}
+  {{ $width = .config.copy.width }}
+{{ end }}
+
+{{ if .elements.ctas.buttons }}
+  {{ $buttons = .elements.ctas.buttons }}
+{{ end }}
+
+{{ if .config }}
+  {{ if .config.ctas.buttons }}
+    {{ $buttonsConfig = .config.ctas.buttons }}
+  {{ end }}
+{{ end }}
+
+<!-- Hero Section -->
+<div class="row align-items-center no-gutters position-relative">
+  <div class="{{ $width }}">
+    <div class="py-5 py-lg-0">
+      <div class="wvu-p-max-width">
+        {{ partial "components/simple/heading-group.html" ( dict "elements" $elements "config" $config ) }}
+        <!-- Lead -->
+        <p class="text-black-50 mb-3 lead">
+          Hand-picked Instructor and expertly crafted courses, designed for the modern students and entrepreneur.
+        </p>
+        <p class="text-black-50 mb-4">
+          Hand-picked Instructor and expertly crafted courses, designed for the modern students and entrepreneur.
+        </p>
+        {{ with .elements.ctas }}
+          {{ if eq .type "list" }}
+            {{ partial "components/simple/cta-list.html" . }}
+          {{ else }}
+            {{ partial "components/simple/cta-buttons.html" ( dict "buttons" $buttons "config" $buttonsConfig ) }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

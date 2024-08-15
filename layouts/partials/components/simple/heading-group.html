@@ -1,0 +1,50 @@
+{{ $elements := "" }}
+{{ $heading := "" }}
+{{ $superHeading := "" }}
+{{ $config := "" }}
+{{ $icon := "" }}
+{{ $iconConfig := "" }}
+{{ $superHeadingConfig := "" }}
+{{ $headingConfig := "" }}
+
+{{ if .elements }}
+  {{ $elements = .elements }}
+{{ end }}
+
+{{ if .elements.icon }}
+  {{ $icon = .elements.icon }}
+{{ end }}
+
+{{ if .elements.super_heading }}
+  {{ $superHeading = .elements.super_heading }}
+{{ end }}
+
+{{ if .elements.heading }}
+  {{ $heading = .elements.heading }}
+{{ end }}
+
+{{ if .config }}
+  {{ $config = .config }}
+{{ end }}
+
+{{ if .config.icon }}
+  {{ $iconConfig = .config.icon }}
+{{ end }}
+
+{{ if .config.heading }}
+  {{ $headingConfig = .config.heading }}
+{{ end }}
+
+{{ if $icon }}
+  {{ partial "components/simple/icon.html" ( dict "icon" $icon "config" $iconConfig ) }}
+{{ end }}
+
+{{ if $superHeading }}
+  <p class="ag-super-heading">{{ with $superHeading.label }}{{ . }} {{ end }}{{ $superHeading.text }}</p>
+{{ end }}
+
+{{ partial "components/simple/heading.html" ( dict "heading" $heading "config" $headingConfig ) }}
+
+<p class="lead">
+  Subheading
+</p>

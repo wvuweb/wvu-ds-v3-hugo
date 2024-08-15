@@ -1,0 +1,115 @@
+{{- /*
+Renders a menu for the given menu ID.
+
+@context {page} page The current page.
+@context {string} menuID The menu ID.
+
+@example: {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+*/}}
+
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
+{{- with index site.Menus $menuID }}
+  <nav aria-label="Main navigation" id="nav-primary" class="wvu-site-nav bg-wvu-accent--blue-dark navbar navbar-expand-lg p-0 navbar-dark w-100">
+    <div class="container">
+      <button aria-controls="wvu-site-nav__items" aria-expanded="false" type="button" class="wvu-site-nav__toggle js-wvu-site-nav-toggle border-0 bg-wvu-accent--blue-dark text-white position-relative ps-0 pe-2 d-flex d-lg-none align-items-center">
+        <span aria-hidden="true" class="wvu-hamburger js-wvu-hamburger">
+          <span class="wvu-hamburger__line wvu-hamburger__line--top js-wvu-hamburger__line--top"></span>
+          <span class="wvu-hamburger__line wvu-hamburger__line--middle"></span>
+          <span class="wvu-hamburger__line wvu-hamburger__line--bottom js-wvu-hamburger__line--bottom"></span>
+        </span>
+        <span class="js-wvu-site-nav-toggle-text">Open Menu</span>
+      </button>    
+      <ul class="wvu-site-nav__items js-wvu-site-nav-items position-static list-unstyled d-lg-flex align-items-lg-center flex-lg-wrap mb-0">
+        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+      </ul>
+      <div class="d-flex align-items-center">      
+        <button class="bg-transparent border-0 text-white py-2 px-2 py-lg-0 px-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#wvuNavSearchCollapse2" aria-expanded="false" aria-controls="wvuNavSearchCollapse2">
+          <span aria-hidden="true" class="fa-solid fa-magnifying-glass"></span>
+          <span class="visually-hidden">Toggle Search</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <section aria-label="nav-quicklinks" class="collapse multi-collapse" id="wvuNavSearchCollapse2">
+    <div class="bg-light py-4 w-100 text-white bg-wvu-accent--blue-dark wvu-bg-vignetting--20">
+      <div class="container wvu-z-index-content">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-12">
+                <form class="form-inline w-100" action="https://search.wvu.edu/search" method="get" role="search" aria-label="Site Search">
+                  <label id="search-label" for="q">
+                    <span class="visually-hidden">Search</span>
+                  </label>
+                  <input id="sort" name="sort" type="hidden" value="date:D:L:d1">
+                  <input id="output" name="output" type="hidden" value="xml_no_dtd">
+                  <input id="ie" name="ie" type="hidden" value="UTF-8">
+                  <input id="oe" name="oe" type="hidden" value="UTF-8">
+                  <input id="proxystylesheet" name="proxystylesheet" type="hidden" value="default_frontend">
+                  <input id="client" name="client" type="hidden" value="default_frontend">
+                  <div class="input-group shadow-sm w-100">
+                    <input id="q" class="form-control p-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary px-3 px-lg-4" name="btnG" type="submit">
+                      <span class="h5 mb-0">
+                        <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span>
+                      </span>
+                      <span class="visually-hidden">Search</span>
+                    </button>
+                  </div>
+                  <div class="row pt-1">
+                    <fieldset class="col-12">
+                      <legend class="visually-hidden">Would you like to search this site specifically, or all WVU websites?</legend>
+                      <div class="d-inline-block pe-2">
+                        <input id="form-search__sitesearch" type="radio" name="as_sitesearch" value="designsystem.wvu.edu" checked="">
+                        <label class="d-inline-block" for="form-search__sitesearch">Search this site</label>
+                      </div>
+                      <div class="d-inline-block">
+                        <input id="form-search__wvusearch" type="radio" name="as_sitesearch" value="wvu.edu">
+                        <label class="d-inline-block" for="form-search__wvusearch">Search WVU</label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </form>
+              </div>
+            </div>        
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{- end }}
+
+{{- define "partials/inline/menu/walk.html" }}
+  {{- $page := .page }}
+  {{- range .menuEntries }}
+    {{- $attrs := dict "href" .URL }}
+    {{- if $page.IsMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+    {{- else if $page.HasMenuCurrent .Menu .}}
+      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+    {{- end }}
+    {{- $name := .Name }}
+    {{- with .Identifier }}
+      {{- with T . }}
+        {{- $name = . }}
+      {{- end }}
+    {{- end }}
+    <li class="wvu-site-nav__menu-item-has-children position-relative d-lg-flex">
+      <a
+        class="nav-link px-1 py-2 fw-normal flex-grow-1"
+        {{- range $k, $v := $attrs }}
+          {{- with $v }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+          {{- end }}
+        {{- end -}}
+      >{{ $name }}</a>
+      {{- with .Children }}
+        <ul class="wvu-site-nav__sub-menu small bg-wvu-accent--blue-dark list-unstyled ms-2 ms-lg-0 wvu-site-nav__sub-menu small bg-wvu-accent--blue-dark list-unstyled ms-2 ms-lg-0--level-1">
+          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+        </ul>
+      {{- end }}
+    </li>
+  {{- end }}
+{{- end }}

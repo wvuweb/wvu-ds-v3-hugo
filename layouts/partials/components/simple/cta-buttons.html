@@ -1,0 +1,21 @@
+{{ $defaultColor := "btn-primary" }}
+{{ $color := $defaultColor }}
+{{ $size := "" }}
+{{ $icon := "" }}
+{{ $iconColor := "" }}
+
+{{ if .config }}
+  {{ if .config.color }}
+    {{ $color = .config.color }}
+  {{ end }}
+  {{ if .config.size }}
+    {{ $size = .config.size }}
+  {{ end }}
+  {{ if .config.iconColor }}
+    {{ $iconColor = .config.iconColor }}
+  {{ end }}
+{{ end }}
+
+{{ range .buttons }}
+  {{ partial "components/simple/button.html" (dict "text" .text "color" $color "size" $size "icon" .icon "iconColor" $iconColor ) }}
+{{ end }}

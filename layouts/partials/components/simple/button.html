@@ -1,0 +1,32 @@
+{{ $color := "" }}
+{{ $size := "" }}
+{{ $iconColor := "" }}
+{{ $iconWeight := "" }}
+{{ $url := "" }}
+
+{{ if .color }}
+  {{ $color = .color }}
+{{ end }}
+
+{{ if .size }}
+  {{ $size = .size }}
+{{ end }}
+
+{{ if .iconColor }}
+  {{ $iconColor = .iconColor }}
+{{ end }}
+
+{{ if .iconWeight }}
+  {{ $iconWeight = .iconWeight }}
+{{ end }}
+
+{{ if .url }}
+  {{ $url = .url }}
+{{ end }}
+
+<a class="btn {{ $color }} {{ $size }} mb-1" href="{{ $url }}">
+  {{ if .icon }}
+    {{ partial "components/simple/icon.html" ( dict "icon" .icon "weight" $iconWeight "color" $iconColor ) }}
+  {{ end }}
+  {{ .text }}
+</a>

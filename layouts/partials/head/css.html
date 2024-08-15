@@ -1,0 +1,13 @@
+{{- with resources.Get "scss/main.scss" }}
+  {{- $toCssOpt := dict "transpiler" "libsass" "targetPath" "assets/css/style.css" }}
+  {{- $css := . | toCSS $toCssOpt }}
+  {{- if eq hugo.Environment "development" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  {{- else }}
+    {{- with $css | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+<link href="https://cdn.fonts.net/kit/b339d500-35c3-11ed-aaf7-06b70d83f6b0/b339d500-35c3-11ed-aaf7-06b70d83f6b0.css" rel="stylesheet" />

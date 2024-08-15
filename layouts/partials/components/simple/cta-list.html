@@ -1,0 +1,5 @@
+<ul class="list-unstyled {{ .size }}">
+  {{ range .ctas }}
+    <li><a class="text-decoration-none" href="{{ .url }}"><span class="fa-solid fa-{{ .icon }}" aria-hidden="true"></span> {{ .text }}</a></li>
+  {{ end }}
+</ul>

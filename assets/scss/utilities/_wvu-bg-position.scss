@@ -1,0 +1,72 @@
+// WVU BG Position
+//==================================================
+// Utility classes that allow you to adjust the position of a background image. This is useful for full-bleed images with text overlayed. Position your images to allow the text to be legible.
+
+.wvu-bg-position-bottom, %wvu-bg-position-bottom {
+  background-position: bottom $global-important;
+}
+.wvu-bg-position-center, %wvu-bg-position-center {
+  background-position: center $global-important;
+}
+.wvu-bg-position-top, %wvu-bg-position-top {
+  background-position: top $global-important;
+}
+.wvu-bg-position-left, %wvu-bg-position-left {
+  background-position: left $global-important;
+}
+.wvu-bg-position-right, %wvu-bg-position-right {
+  background-position: right $global-important;
+}
+
+@media (max-width: $wvu-bp-sm) {
+  .wvu-bg-position-m-center {
+    background-position: center $global-important;
+  }
+  .wvu-bg-position-m-bottom {
+    background-position: bottom $global-important;
+  }
+  .wvu-bg-position-m-top {
+    background-position: top $global-important;
+  }
+  .wvu-bg-position-m-left {
+    background-position: left $global-important;
+  }
+  .wvu-bg-position-m-right {
+    background-position: right $global-important;
+  }
+}
+
+// Give yourself some extra padding on top or bottom on smaller screen sizes.
+
+.wvu-bg-position-spacer-top, %wvu-bg-position-spacer-top {
+  @media (max-width: $wvu-bp-sm) {
+    background-repeat: no-repeat $global-important;
+    padding-top: 24rem $global-important;
+  }
+}
+
+.wvu-bg-position-spacer-md-top, %wvu-bg-position-spacer-md-top {
+  @media (max-width: $wvu-bp-md) {
+    background-repeat: no-repeat $global-important;
+    padding-top: 24rem $global-important;
+  }
+}
+
+.wvu-bg-position-spacer-bottom, %wvu-bg-position-spacer-bottom {
+  @media (max-width: $wvu-bp-sm) {
+    background-repeat: no-repeat $global-important;
+    padding-bottom: 24rem $global-important;
+  }
+}
+
+.wvu-bg-position-spacer-md-bottom, %wvu-bg-position-spacer-md-bottom {
+  @media (max-width: $wvu-bp-md) {
+    background-repeat: no-repeat $global-important;
+    padding-bottom: 24rem $global-important;
+  }
+}
+
+// Example usage:
+// <div class="py-5 text-center text-white wvu-bg-vignetting bg-wvu-accent--blue-dark wvu-bg-pattern-grid-transparent wvu-bg-position-center-left wvu-bg-position-spacer-md-top" style="background-image: url(/files/8aa49c0c-ca6f-495b-af9d-72fd45761700/1720x1720);">
+//   ...
+// </div>
