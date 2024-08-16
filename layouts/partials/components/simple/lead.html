@@ -1,0 +1,9 @@
+{{ $classes := "lead" }}
+
+{{ if .classes }}
+  {{ $classes = .classes }}
+{{ end }}
+
+<p class="{{ $classes }}">
+  {{ . }}
+</p>

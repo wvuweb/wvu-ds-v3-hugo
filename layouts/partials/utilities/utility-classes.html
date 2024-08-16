@@ -6,36 +6,32 @@
 {{ $decoration := "" }}
 {{ $classes := "" }}
 
-{{ if .config }}
+{{ if .font }}
+  {{ $font = .font }}
+{{ end }}
 
-  {{ if .config.font }}
-    {{ $font = .config.font }}
-  {{ end }}
+{{ if .size }}
+  {{ $size = .size }}
+{{ end }}
 
-  {{ if .config.size }}
-    {{ $size = .config.size }}
-  {{ end }}
+{{ if .color }}
+  {{ $color = .color }}
+{{ end }}
 
-  {{ if .config.color }}
-    {{ $color = .config.color }}
-  {{ end }}
+{{ if .weight }}
+  {{ $weight = .weight }}
+{{ end }}
 
-  {{ if .config.weight }}
-    {{ $weight = .config.weight }}
-  {{ end }}
+{{ if .spacing }}
+  {{ $spacing = .spacing }}
+{{ end }}
 
-  {{ if .config.spacing }}
-    {{ $spacing = .config.spacing }}
-  {{ end }}
+{{ if .decoration }}
+  {{ $decoration = .decoration }}
+{{ end }}
 
-  {{ if .config.decoration }}
-    {{ $decoration = .config.decoration }}
-  {{ end }}
-
-  {{ if .config.classes }}
-    {{ $classes = .config.classes }}
-  {{ end }}
-  
+{{ if .classes }}
+  {{ $classes = .classes }}
 {{ end }}
 
 {{ $classes = slice $classes $font $size $color $weight $spacing $decoration }}

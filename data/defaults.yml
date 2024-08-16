@@ -5,13 +5,7 @@ components:
     color: btn-primary
   hero:
     layout: standard
-    align:
-    cols:
-      sm:
-      md:
-      lg:
-      xl:
-      xxl:
+    align: justify-content-start
     background_image:
       disable: false
     section:
@@ -29,4 +23,5 @@ components:
       size: display-1
       color: text-wvu-blue
       decoration: wvu-bar
-
+    copy:
+      width: col-xl-5 col-lg-6 col-md-12

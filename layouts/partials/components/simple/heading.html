@@ -1,14 +1,26 @@
 {{ $hierarchy := 2 }}
 {{ $id := "" }}
+{{ $text := "" }}
+{{ $classes := slice }}
 
-{{ $classes := partial "utilities/utility-classes.html" ( dict "config" .config ) }}
+{{ if .id }}
+  {{ $id = .id }}
+{{ end }}
+
+{{ if .text }}
+  {{ $text = .text }}
+{{ end }}
+
+{{ if .classes }}
+  {{ $classes = .classes }}
+{{ end }}
 
 {{ if .hierarchy }}
   {{ $hierarchy = .hierarchy }}
 {{ end }}
 
 {{ if eq $hierarchy 1 }}
-  <h1 id="{{ $id }}" class="{{- range $classes -}}{{ . }} {{ end -}}">{{ .heading }}</h1>
+  <h1 id="{{ $id }}" class="{{ range $classes }}{{ . }} {{ end }}">{{ .text }}</h1>
 {{ else if eq $hierarchy 2 }}
-  <h2 id="{{ $id }}" class="{{- range $classes -}}{{ . }} {{ end -}}">{{ .heading }}</h2>
+  <h2 id="{{ $id }}" class="{{ range $classes }}{{ . }} {{ end }}">{{ .text }}</h2>
 {{ end }}

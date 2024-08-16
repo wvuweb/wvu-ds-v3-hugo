@@ -6,9 +6,9 @@
 {{ $iconConfig := "" }}
 {{ $superHeadingConfig := "" }}
 {{ $headingConfig := "" }}
+{{ $headingConfigOverrides := "" }}
 
 {{ if .elements }}
-  {{ $elements = .elements }}
   {{ if .elements.icon }}
     {{ $icon = .elements.icon }}
   {{ end }}
@@ -23,7 +23,6 @@
 {{ end }}
 
 {{ if .config }}
-  {{ $config = .config }}
   {{ if .config.icon }}
     {{ $iconConfig = .config.icon }}
   {{ end }}
@@ -33,6 +32,9 @@
   {{ end }}
 {{ end }}
 
+{{ $headingConfig }}
+{{ $headingConfigOverrides }}
+
 {{ if $icon }}
   {{ partial "components/simple/icon.html" ( dict "icon" $icon "config" $iconConfig ) }}
 {{ end }}
@@ -41,7 +43,7 @@
   <p class="ag-super-heading">{{ with $superHeading.label }}{{ . }} {{ end }}{{ $superHeading.text }}</p>
 {{ end }}
 
-{{ partial "components/simple/heading.html" ( dict "heading" $heading "config" $headingConfig ) }}
+{{ partial "components/simple/heading.html" ( dict "heading" $heading "default" $headingConfig "overrides" $headingConfigOverrides ) }}
 
 <p class="lead">
   Subheading

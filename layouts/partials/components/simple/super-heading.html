@@ -1,0 +1,22 @@
+{{ $icon := "" }}
+{{ $label := "" }}
+{{ $text := "" }}
+{{ $classes := "" }}
+
+{{ if .label }}
+  {{ $label = .label }}
+{{ end }}
+
+{{ if .text }}
+  {{ $text = .text }}
+{{ end }}
+
+{{ if .classes }}
+  {{ $classes = .classes }}
+{{ end }}
+
+{{ if .labelClasses }}
+  {{ $labelClasses = .labelClasses }}
+{{ end }}
+
+<p class="{{ $classes }}">{{ if .label }}<span class="">{{ .label }}</span>{{ end }} {{ $text }}</p>

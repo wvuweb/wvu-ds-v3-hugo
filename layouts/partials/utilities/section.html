@@ -1,0 +1,33 @@
+{{ $isMain := false }}
+{{ $ariaLabelledBy := .component }}
+{{ $id := .component }}
+{{ $sectionHelperClasses := "position-relative w-100 d-flex flex-column align-items-center" }}
+{{ $sectionClasses := slice }}
+{{ $backgroundImage := "" }}
+
+{{ if .is_main }}
+  {{ $isMain = .is_main }}
+{{ end }}
+
+{{ if .config }}
+  {{ if .config.section }}
+    {{ $sectionClasses = partial "utilities/section-classes.html" .config.section }}
+  {{ end }}
+{{ end }}
+
+{{ if eq $isMain true }}
+  <main id="{{ $id }}" class="{{ $sectionHelperClasses }} {{ range $sectionClasses }}{{ . }} {{ end }}">
+    {{ with $backgroundImage }}
+      {{ partial "utilities/bg-img.html" . }}
+    {{ end }}
+    <div class="container my-auto position-relative py-10">
+      {{ block "componentContent" . }}{{ end }}
+    </div>
+  </main>
+{{ else }}
+  <section id="{{ $id }}" aria-labelledby="{{ $ariaLabelledBy }}-label" class="{{ $sectionHelperClasses }} {{ range $sectionClasses }}{{ . }} {{ end }}">
+    <div class="container my-auto position-relative py-10">
+      {{ block "componentContent" . }}{{ end }}
+    </div>
+  </section>
+{{ end }}

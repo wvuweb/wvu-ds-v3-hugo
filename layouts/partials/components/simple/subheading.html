@@ -1,0 +1,12 @@
+{{ $text := "" }}
+{{ $classes := "" }}
+
+{{ if .text }}
+  {{ $text = .text }}
+{{ end }}
+
+{{ if .classes }}
+  {{ $classes = .classes }}
+{{ end }}
+
+<p class="{{ $classes }}">{{ $text }}</p>
