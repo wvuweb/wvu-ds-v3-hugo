@@ -1,4 +1,4 @@
-{{ define "componentContent" }}
+{{ define "heroContent" }}
   {{ $elements := "" }}
   {{ $config := "" }}
   {{ $cols := "col-xl-5 col-lg-6 col-md-12" }}
@@ -43,20 +43,18 @@
     {{ end }}
   {{ end }}
 
-  {{ $headingClasses := partial "utilities/utility-classes.html" $headingConfig }}
-
   <!-- Hero Content -->
   <div class="row align-items-center no-gutters position-relative">
     <div class="{{ $cols }}">
       <div class="py-5 py-lg-0">
         <div class="wvu-p-max-width">
-          {{ partial "components/simple/heading-group-test.html" ( dict "superHeading" $superHeading "heading" $heading "subheading" $subheading "superHeadingConfig" $superHeadingConfig "headingConfig" $headingConfig "subheadingConfig" $subheadingConfig ) }}
+          {{ partial "components/simple/heading-group.html" ( dict "superHeading" $superHeading "heading" $heading "subheading" $subheading "superHeadingConfig" $superHeadingConfig "headingConfig" $headingConfig "subheadingConfig" $subheadingConfig ) }}
           <!-- Lead -->
           <p class="mb-3 lead">
             Hand-picked Instructor and expertly crafted courses, designed for the modern students and entrepreneur.
           </p>
           <!-- Copy -->
-          <p class="mb-4">
+          <p class="mb-3">
             Hand-picked Instructor and expertly crafted courses, designed for the modern students and entrepreneur.
           </p>
           <!-- CTAs -->

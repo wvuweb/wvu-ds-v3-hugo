@@ -2,21 +2,33 @@
 {{ $label := "" }}
 {{ $text := "" }}
 {{ $classes := "" }}
+{{ $labelClasses := slice }}
 
-{{ if .label }}
-  {{ $label = .label }}
+{{ if .superHeading }}
+  {{ if .superHeading.label }}
+    {{ $label = .superHeading.label }}
+  {{ end }}
+  {{ if .superHeading.text }}
+    {{ $text = .superHeading.text }}
+  {{ end }}
 {{ end }}
 
-{{ if .text }}
-  {{ $text = .text }}
+{{ if .config }}
+  {{ if .config.label }}
+    {{ $labelClasses = partial "utilities/utility-classes.html" .config.label }}
+  {{ end }}
 {{ end }}
 
-{{ if .classes }}
-  {{ $classes = .classes }}
-{{ end }}
-
-{{ if .labelClasses }}
-  {{ $labelClasses = .labelClasses }}
-{{ end }}
-
-<p class="{{ $classes }}">{{ if .label }}<span class="">{{ .label }}</span>{{ end }} {{ $text }}</p>
+<p class="{{ $classes }}">
+  {{ if .superHeading.icon }}
+    <span class="d-inline-flex align-items-center">
+      <span class="fa-regular fa-{{ .superHeading.icon }}"></span>
+    </span>
+  {{ end }}
+  {{ if .superHeading.label }}
+    <span class="{{ range $labelClasses }}{{ . }} {{ end }}">
+      {{ $label }}
+    </span>
+  {{ end }}
+  {{ $text }}
+</p>

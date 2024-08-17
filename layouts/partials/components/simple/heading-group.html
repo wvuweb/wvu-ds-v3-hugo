@@ -1,50 +1,46 @@
-{{ $elements := "" }}
-{{ $heading := "" }}
 {{ $superHeading := "" }}
-{{ $config := "" }}
-{{ $icon := "" }}
-{{ $iconConfig := "" }}
 {{ $superHeadingConfig := "" }}
-{{ $headingConfig := "" }}
-{{ $headingConfigOverrides := "" }}
 
-{{ if .elements }}
-  {{ if .elements.icon }}
-    {{ $icon = .elements.icon }}
-  {{ end }}
+{{ $heading := "" }}
+{{ $headingHierarchy := "" }}
+{{ $headingId := "" }}
+{{ $headingClasses := "" }}
 
-  {{ if .elements.super_heading }}
-    {{ $superHeading = .elements.super_heading }}
-  {{ end }}
+{{ $subheading := "" }}
+{{ $subheadingClasses := "" }}
 
-  {{ if .elements.heading }}
-    {{ $heading = .elements.heading }}
-  {{ end }}
+{{ if .superHeading }}
+  {{ $superHeading = .superHeading }}
 {{ end }}
 
-{{ if .config }}
-  {{ if .config.icon }}
-    {{ $iconConfig = .config.icon }}
-  {{ end }}
-
-  {{ if .config.heading }}
-    {{ $headingConfig = .config.heading }}
-  {{ end }}
+{{ if .heading }}
+  {{ $heading = .heading }}
 {{ end }}
 
-{{ $headingConfig }}
-{{ $headingConfigOverrides }}
-
-{{ if $icon }}
-  {{ partial "components/simple/icon.html" ( dict "icon" $icon "config" $iconConfig ) }}
+{{ if .subheading }}
+  {{ $subheading = .subheading }}
 {{ end }}
 
-{{ if $superHeading }}
-  <p class="ag-super-heading">{{ with $superHeading.label }}{{ . }} {{ end }}{{ $superHeading.text }}</p>
+{{ if .superHeadingConfig }}
+  {{ $superHeadingConfig = .superHeadingConfig }}
 {{ end }}
 
-{{ partial "components/simple/heading.html" ( dict "heading" $heading "default" $headingConfig "overrides" $headingConfigOverrides ) }}
+{{ if .headingConfig }}
+  {{ $headingClasses = partial "utilities/utility-classes.html" .headingConfig }}
+{{ end }}
 
-<p class="lead">
-  Subheading
-</p>
+{{ if .subheadingConfig }}
+  {{ $subheadingClasses = partial "utilities/utility-classes.html" .subheadingConfig }}
+{{ end }}
+
+{{ if .superHeading }}
+  {{ partial "components/simple/super-heading.html" ( dict "superHeading" $superHeading "config" $superHeadingConfig )}}
+{{ end }}
+
+{{ if .heading }}
+  {{ partial "components/simple/heading.html" ( dict "id" $headingId "hierarchy" $headingHierarchy "text" $heading "classes" $headingClasses ) }}
+{{ end }}
+
+{{ if .subheading }}
+  {{ partial "components/simple/subheading.html" ( dict "text" $subheading "classes" $subheadingClasses ) }}
+{{ end }}

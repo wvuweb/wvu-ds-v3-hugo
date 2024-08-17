@@ -1,5 +1,5 @@
 {{ $text := "" }}
-{{ $classes := "" }}
+{{ $classes := slice }}
 
 {{ if .text }}
   {{ $text = .text }}
@@ -9,4 +9,4 @@
   {{ $classes = .classes }}
 {{ end }}
 
-<p class="{{ $classes }}">{{ $text }}</p>
+<p class="{{ range $classes }}{{ . }} {{ end }}">{{ $text }}</p>

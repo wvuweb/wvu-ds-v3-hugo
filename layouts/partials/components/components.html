@@ -1,3 +1,9 @@
 {{ if eq .component "hero" }}
   {{ partial "components/hero/hero.html" . }}
+{{ else if eq .component "backpage" }}
+  {{ partial "components/backpage/backpage.html" . }}
+{{ else if eq .component "sidekick" }}
+  {{ partial "components/sidekick/sidekick.html" . }}
+{{ else }}
+  <p>No component.</p>
 {{ end }}

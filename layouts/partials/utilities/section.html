@@ -20,14 +20,14 @@
     {{ with $backgroundImage }}
       {{ partial "utilities/bg-img.html" . }}
     {{ end }}
-    <div class="container my-auto position-relative py-10">
-      {{ block "componentContent" . }}{{ end }}
+    <div class="container my-auto position-relative py-6">
+      {{ partial "utilities/blocks.html" . }}
     </div>
   </main>
 {{ else }}
   <section id="{{ $id }}" aria-labelledby="{{ $ariaLabelledBy }}-label" class="{{ $sectionHelperClasses }} {{ range $sectionClasses }}{{ . }} {{ end }}">
-    <div class="container my-auto position-relative py-10">
-      {{ block "componentContent" . }}{{ end }}
+    <div class="container my-auto position-relative py-6">
+      {{ partial "utilities/blocks.html" . }}
     </div>
   </section>
 {{ end }}

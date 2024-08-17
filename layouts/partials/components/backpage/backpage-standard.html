@@ -1,0 +1,19 @@
+{{ define "backpageContent" }}
+  <div class="row">
+    <div class="col-3">
+      Menu
+    </div>
+    <div class="col-6">
+      {{ .Content }}
+    </div>
+    <div class="col-3">
+      {{ if .sidebar_components }}
+        {{ range .sidebar_components }}
+          {{ partial "components/components" . }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+
+{{ partial "utilities/section.html" . }}
