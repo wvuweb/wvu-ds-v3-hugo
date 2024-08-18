@@ -13,31 +13,14 @@
 
   {{ if .elements }}
     {{ $elements = .elements }}
-    {{ if .elements.super_heading }}
-      {{ $superHeading = .elements.super_heading }}
-    {{ end }}
-    {{ if .elements.heading }}
-      {{ $heading = .elements.heading }}
-    {{ end }}
-    {{ if .elements.subheading }}
-      {{ $subheading = .elements.subheading }}
-    {{ end }}
     {{ if .elements.ctas.buttons }}
       {{ $buttons = .elements.ctas.buttons }}
     {{ end }}
   {{ end }}
 
+  <!-- I feel like some of these should go in the super heading partial -->
   {{ if .config }}
     {{ $config = .config }}
-    {{ if .config.super_heading }}
-      {{ $superHeadingConfig = .config.super_heading }}
-    {{ end }}
-    {{ if .config.heading }}
-      {{ $headingConfig = .config.heading }}
-    {{ end }}
-    {{ if .config.subheading }}
-      {{ $subheadingConfig = .config.subheading }}
-    {{ end }}
     {{ if .config.ctas.buttons }}
       {{ $buttonsConfig = .config.ctas.buttons }}
     {{ end }}
@@ -48,7 +31,7 @@
     <div class="{{ $cols }}">
       <div class="py-5 py-lg-0">
         <div class="wvu-p-max-width">
-          {{ partial "components/simple/heading-group.html" ( dict "superHeading" $superHeading "heading" $heading "subheading" $subheading "superHeadingConfig" $superHeadingConfig "headingConfig" $headingConfig "subheadingConfig" $subheadingConfig ) }}
+          {{ partial "components/simple/heading-group.html" ( dict "elements" .elements "config" .config ) }}
           <!-- Lead -->
           <p class="mb-3 lead">
             Hand-picked Instructor and expertly crafted courses, designed for the modern students and entrepreneur.

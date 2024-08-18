@@ -4,28 +4,46 @@
 {{ $sectionHelperClasses := "position-relative w-100 d-flex flex-column align-items-center" }}
 {{ $sectionClasses := slice }}
 {{ $backgroundImage := "" }}
+{{ $backgroundImageConfig := "" }}
+{{ $mask := "" }}
 
 {{ if .is_main }}
   {{ $isMain = .is_main }}
 {{ end }}
 
+{{ if .elements }}
+  {{ if .elements.background_image }}
+    {{ $backgroundImage = .elements.background_image }}
+  {{ end }}
+{{ end }}
+
 {{ if .config }}
   {{ if .config.section }}
     {{ $sectionClasses = partial "utilities/section-classes.html" .config.section }}
+    {{ if .config.section.is_main }}
+      {{ $isMain = .config.section.is_main }}
+    {{ end }}
+  {{ end }}
+  {{ if .config.background_image }}
+    {{ $backgroundImageConfig = .config.background_image }}
   {{ end }}
 {{ end }}
 
 {{ if eq $isMain true }}
   <main id="{{ $id }}" class="{{ $sectionHelperClasses }} {{ range $sectionClasses }}{{ . }} {{ end }}">
-    {{ with $backgroundImage }}
-      {{ partial "utilities/bg-img.html" . }}
+    {{ if and .elements .elements.background_image }}
+      {{ partial "utilities/bg-img.html" ( dict "image" $backgroundImage "config" $backgroundImageConfig "mask" $mask ) }}
     {{ end }}
     <div class="container my-auto position-relative py-6">
+      <!-- is having blocks and components redundant? -->
       {{ partial "utilities/blocks.html" . }}
     </div>
   </main>
 {{ else }}
   <section id="{{ $id }}" aria-labelledby="{{ $ariaLabelledBy }}-label" class="{{ $sectionHelperClasses }} {{ range $sectionClasses }}{{ . }} {{ end }}">
+    {{ if and .elements .elements.background_image }}
+      {{ partial "utilities/bg-img.html" ( dict "image" $backgroundImage "config" $backgroundImageConfig "mask" $mask ) }}
+    {{ end }}
     <div class="container my-auto position-relative py-6">
       {{ partial "utilities/blocks.html" . }}
     </div>

@@ -21,6 +21,6 @@
 
 {{ if eq $hierarchy 1 }}
   <h1 id="{{ $id }}" class="{{ range $classes }}{{ . }} {{ end }}">{{ .text }}</h1>
-{{ else if eq $hierarchy 2 }}
+{{ else }}
   <h2 id="{{ $id }}" class="{{ range $classes }}{{ . }} {{ end }}">{{ .text }}</h2>
 {{ end }}

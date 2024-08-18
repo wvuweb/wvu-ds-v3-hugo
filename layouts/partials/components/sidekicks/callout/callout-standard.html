@@ -1,5 +1,5 @@
 <div class="p-3 bg-wvu-accent--sunset shadow rounded-3">
-  <h2>Heading</h2>
+  {{ partial "components/simple/heading-group.html" ( dict "elements" .elements "config" .config ) }}
   <p>Copy</p>
   <a href="" class="btn btn-primary">CTA</a>
 </div>

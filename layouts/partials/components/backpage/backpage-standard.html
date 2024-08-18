@@ -9,7 +9,7 @@
     <div class="col-3">
       {{ if .sidebar_components }}
         {{ range .sidebar_components }}
-          {{ partial "components/components" . }}
+          {{ partial "components/sidekicks/sidekicks.html" . }}
         {{ end }}
       {{ end }}
     </div>
