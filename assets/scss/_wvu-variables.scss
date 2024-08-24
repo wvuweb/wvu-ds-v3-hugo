@@ -13,6 +13,9 @@ $helvetica-neue-italic: 'NeueHelvetica56Italic', $helvetica-neue-fallback !defau
 $helvetica-neue-bold-italic: 'NeueHelvetica76BoldItalic', $helvetica-neue-fallback !default;
 $helvetica-neue-condensed-black: 'NeueHelvetica97CondensedBlack', $wvu-shout-fallback !default;
 
+// Oliviar Black
+$oliviar-black: 'OliviarSansBlack', $wvu-shout-fallback !default;
+
 // Iowan
 $iowan-fallback: Iowan, 'Times New Roman', Times, Georgia, serif !default;
 $iowan-old-style: 'IowanOldStyleBTRoman', $iowan-fallback !default;
@@ -38,7 +41,8 @@ $wvu-traditional-audience: $iowan-old-style !default;
 $narrow-audience: $iowan-old-style-italic !default;
 
 // Tracking
-$wvu-letter-spacing-width: 2px !default;
+$wvu-letter-spacing-width: 1px !default;
+$wvu-letter-spacing-width-lg: 3px !default;
 
 // Color
 //==================================================
@@ -148,7 +152,7 @@ $wvu-grid-pattern: "https://static.wvu.edu/global/images/patterns/wvu/background
 $wvu-grid-pattern-transparent: "https://static.wvu.edu/global/images/patterns/wvu/background__grid-transparent--1.0.0.svg";
 $wvu-grid-pattern-zoomed: "https://static.wvu.edu/global/images/patterns/wvu/background__grid-zoomed--1.0.0.svg";
 $wvu-grid-pattern-zoomed-transparent: "https://static.wvu.edu/global/images/patterns/wvu/background__grid-zoomed-transparent--1.0.0.svg";
-$wvu-topo-map-black: "https://static.wvu.edu/global/images/patterns/wvu/background__topo-black--2.0.0.svg";
+$wvu-topo-map-black: "/patterns/topo-dark.svg";
 $wvu-topo-map-white: "https://static.wvu.edu/global/images/patterns/wvu/background__topo-white--2.0.0.svg";
 $wvu-topo-map-partial-black: "/images/topo-partial.svg";
 $wvu-topo-map-opacity: 1 !default;
@@ -223,7 +227,7 @@ $container-max-widths: (
   xl: 1360px
 );
 
-$spacer: 2rem;
+$spacer: 1rem;
 
 $spacers: (
   0: 0,
@@ -231,7 +235,7 @@ $spacers: (
   2: $spacer * .5,
   3: $spacer,
   4: $spacer * 1.5,
-  5: $spacer * 4,
+  5: $spacer * 3,
   6: $spacer * 6,
   7: $spacer * 8,
   8: $spacer * 10
@@ -271,5 +275,6 @@ $pink: #DB1A74;
 $small-font-size: 80%;
 $nameSpace: 'wvu';
 $text-shadow: 2px 2px black;
+$wvu-shadow-hard: rgba(0, 0, 0, 0.15);
 
 $enable-negative-margins: true;

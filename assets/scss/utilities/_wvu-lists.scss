@@ -540,3 +540,39 @@ ol.wvu-ol-timeline-white {
     }
   }
 }
+
+ol.wvu-ol-steps-horizontal {
+  counter-reset: listCounter;
+  margin-top: $spacer;
+  li {
+    counter-increment: listCounter;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    &:before {
+      align-items: center;
+      background-color: $wvu-gold;
+      border-radius: 50%;
+      color: $wvu-blue;
+      content: counter(listCounter);
+      display: flex;
+      font-family: $helvetica-neue-condensed-black;
+      font-size: 3rem;
+      height: 0;
+      justify-content: center;
+      padding: .85em;
+      position: absolute;
+      top: -.85em;
+      width: 0;
+    }
+  }
+  &.wvu-ol-steps-horizontal-e {
+    li {
+      &:before {
+        border: 2px solid $wvu-blue;
+        box-shadow: -5px 10px $wvu-shadow-hard;
+        font-family: $oliviar-black;
+      }
+    }
+  }
+}

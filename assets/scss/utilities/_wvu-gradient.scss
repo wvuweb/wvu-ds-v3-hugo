@@ -1,3 +1,19 @@
-.wvu-gradient--blue {
-  @include wvu-gradient(wvu-blue);
+.wvu-gradient-wvu-blue-blue {
+  background: rgb(0,40,85);
+  background: linear-gradient(122deg, rgba(0,40,85,1) 0%, rgba(0,98,163,1) 100%);
+}
+
+.wvu-gradient-blue-light-blue {
+  background: rgb(0,98,163);
+  background: linear-gradient(122deg, rgba(0,98,163,1) 0%, rgba(157,218,230,1) 100%);
+}
+
+.wvu-gradient-sunset-gold {
+  background: rgb(245,134,114);
+  background: linear-gradient(122deg, rgba(245,134,114,1) 0%, rgba(234,170,0,1) 100%);
+}
+
+.wvu-gradient-sunset-light-blue {
+  background: rgb(245,134,114);
+  background: linear-gradient(122deg, rgba(245,134,114,1) 0%, rgba(157,218,230,1) 100%);
 }

@@ -13,7 +13,7 @@ Renders a menu for the given menu ID.
 {{- with index site.Menus $menuID }}
   <nav aria-label="Main navigation" id="nav-primary" class="wvu-site-nav bg-wvu-accent--blue-dark navbar navbar-expand-lg p-0 navbar-dark w-100">
     <div class="container">
-      <button aria-controls="wvu-site-nav__items" aria-expanded="false" type="button" class="wvu-site-nav__toggle js-wvu-site-nav-toggle border-0 bg-wvu-accent--blue-dark text-white position-relative ps-0 pe-2 d-flex d-lg-none align-items-center">
+      <button aria-controls="wvu-site-nav__items" aria-expanded="false" type="button" class="wvu-site-nav__toggle js-wvu-site-nav-toggle border-0 bg-wvu-accent--blue-dark text-white position-relative ps-0 pe-3 d-flex d-lg-none align-items-center">
         <span aria-hidden="true" class="wvu-hamburger js-wvu-hamburger">
           <span class="wvu-hamburger__line wvu-hamburger__line--top js-wvu-hamburger__line--top"></span>
           <span class="wvu-hamburger__line wvu-hamburger__line--middle"></span>
@@ -25,7 +25,7 @@ Renders a menu for the given menu ID.
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       </ul>
       <div class="d-flex align-items-center">      
-        <button class="bg-transparent border-0 text-white py-2 px-2 py-lg-0 px-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#wvuNavSearchCollapse2" aria-expanded="false" aria-controls="wvuNavSearchCollapse2">
+        <button class="bg-transparent border-0 text-white py-3 px-3 py-lg-0 px-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#wvuNavSearchCollapse2" aria-expanded="false" aria-controls="wvuNavSearchCollapse2">
           <span aria-hidden="true" class="fa-solid fa-magnifying-glass"></span>
           <span class="visually-hidden">Toggle Search</span>
         </button>
@@ -98,7 +98,7 @@ Renders a menu for the given menu ID.
     {{- end }}
     <li class="wvu-site-nav__menu-item-has-children position-relative d-lg-flex">
       <a
-        class="nav-link px-1 py-2 fw-normal flex-grow-1"
+        class="nav-link px-2 py-3 fw-normal flex-grow-1"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
@@ -106,7 +106,7 @@ Renders a menu for the given menu ID.
         {{- end -}}
       >{{ $name }}</a>
       {{- with .Children }}
-        <ul class="wvu-site-nav__sub-menu small bg-wvu-accent--blue-dark list-unstyled ms-2 ms-lg-0 wvu-site-nav__sub-menu small bg-wvu-accent--blue-dark list-unstyled ms-2 ms-lg-0--level-1">
+        <ul class="wvu-site-nav__sub-menu small bg-wvu-accent--blue-dark list-unstyled ms-3 ms-lg-0 wvu-site-nav__sub-menu small bg-wvu-accent--blue-dark list-unstyled ms-3 ms-lg-0--level-1">
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
         </ul>
       {{- end }}

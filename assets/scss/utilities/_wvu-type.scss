@@ -111,6 +111,10 @@
   @include iowan-old-style-black-italic();
 }
 
+.oliviar-black, %oliviar-black {
+  @include oliviar-black();
+}
+
 // Usage example:
 // <p class="iowan-old-style">
 //   ...
@@ -121,7 +125,25 @@
 // This utility is good for elements that are all caps and uses Iowan Old Style. It gives your text a more formal look.
 
 .wvu-text-letter-spacing, %wvu-text-letter-spacing {
-  @include wvu-text-letter-spacing();
+  @include wvu-text-letter-spacing($wvu-letter-spacing-width);
+}
+
+.wvu-text-letter-spacing-lg, %wvu-text-letter-spacing {
+  @include wvu-text-letter-spacing($wvu-letter-spacing-width-lg);
+}
+
+.wvu-text-echo {
+  @include wvu-text-echo();
+}
+
+.wvu-text-echo-outline {
+  &:before {
+    @include wvu-text-echo-outline();
+  }
+}
+
+.wvu-text-echo-shadow {
+  @include wvu-text-echo-shadow();
 }
 
 // Usage example:
@@ -169,4 +191,8 @@
     a + h6, button + h6, img + h6, ol + h6, ul + h6, div + h6, p + h6, pre + h6, table + h6, blockquote + h6, fieldset + h6, figure + h6, figcaption + h6, table + h6 { margin-top: 1em }
     a + .lead, button + .lead, ol + .lead, ul + .lead, div + .lead, p + .lead, pre + .lead, table + .lead, blockquote + .lead, fieldset + .lead, h1 .lead, h2 .lead, h3 .lead, h4 .lead, h5 .lead, h6 .lead { margin-top: $spacer * 1.5;}
   }
+}
+
+.wvu-text-gradient {
+  @include wvu-text-gradient();
 }

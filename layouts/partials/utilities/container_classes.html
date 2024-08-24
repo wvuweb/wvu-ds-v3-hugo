@@ -1,0 +1,33 @@
+{{ $classes := slice }}
+
+{{ $width := "" }}
+{{ $marginY := "" }}
+{{ $paddingY := "" }}
+
+{{ if .defaults }}
+  {{ if .defaults.width }}
+    {{ $width = .defaults.width }}
+  {{ end }}
+  {{ if .defaults.margin_y }}
+    {{ $marginY = .defaults.margin_y }}
+  {{ end }}
+  {{ if .defaults.padding_y }}
+    {{ $paddingY = .defaults.padding_y }}
+  {{ end }}
+{{ end }}
+
+{{ if .config }}
+  {{ if .config.width }}
+    {{ $width = .config.width}}
+  {{ end }}
+  {{ if .config.margin_y }}
+    {{ $marginY = .config.margin_y }}
+  {{ end }}
+  {{ if .config.padding_y }}
+    {{ $paddingY = .config.padding_y }}
+  {{ end }}
+{{ end }}
+
+{{ $classes = slice $width $marginY $paddingY }}
+
+{{ return $classes }}

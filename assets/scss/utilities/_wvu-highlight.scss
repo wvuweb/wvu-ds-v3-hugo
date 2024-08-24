@@ -1,0 +1,16 @@
+.wvu-highlight {
+  display: inline-block;
+  position: relative;
+  &:before {
+    background-color: $wvu-accent--sunset;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: -0.5rem;
+    transform: skew(0deg, 2deg) rotate(-2deg) perspective(800px);
+    z-index: -1;
+  }
+}

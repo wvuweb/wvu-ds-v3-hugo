@@ -128,6 +128,22 @@
 }
 
 // Example usage:
+// .oliviar-black {
+//   @include iowan-old-style-black();
+// }
+
+@mixin oliviar-black($is-important: $global-important) {
+  font-family: $oliviar-black $is-important;
+  font-style: normal $is-important;
+  font-stretch: normal $is-important;
+  line-height: $wvu-traditional-audience-line-height $is-important;
+  -webkit-font-smoothing: antialiased $is-important;
+  &.display-1, &.display-2, &.display-3, &.display-4 {
+    line-height: 1em $is-important;
+  }
+}
+
+// Example usage:
 // .iowan-old-style-black-italic {
 //   @include iowan-old-style-black-italic();
 // }
@@ -140,6 +156,29 @@
   letter-spacing: 0 $is-important;
   line-height: $wvu-shout-line-height $is-important;
   text-transform: uppercase $is-important;
+}
+
+@mixin wvu-text-echo($is-important: $global-important) {
+  position: absolute $is-important;
+}
+
+@mixin wvu-text-echo-outline($is-important: $global-important) {
+  color: transparent $is-important;
+  content: attr(data-text);
+  font-family: inherit;
+  font-size: inherit;
+  font-stretch: inherit;
+  font-weight: inherit;
+  position: absolute;
+  text-shadow: none;
+  -webkit-text-stroke-width: 1px $is-important;
+  -webkit-text-stroke-color: $dark $is-important;
+  top: -5px $is-important;
+  left: 6px $is-important;
+}
+
+@mixin wvu-text-echo-shadow($is-important: $global-important) {
+  text-shadow: -5px 5px #ccc $is-important;
 }
 
 // Example usage:
@@ -185,11 +224,17 @@
 //==================================================
 // This is good for using with a text element that is all caps and uses Iowan Old Style. It gives your text a more formal look.
 
-@mixin wvu-text-letter-spacing() {
-  letter-spacing: $wvu-letter-spacing-width $global-important;
+@mixin wvu-text-letter-spacing($width) {
+  letter-spacing: $width $global-important;
 }
 
 // Example usage:
 // .wvu-text-letter-spacing {
 //   @include wvu-text-letter-spacing();
 // }
+
+@mixin wvu-text-gradient() {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
