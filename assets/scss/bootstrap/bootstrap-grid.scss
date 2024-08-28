@@ -13,7 +13,7 @@ $include-column-box-sizing: true !default;
 @import "mixins/grid";
 @import "mixins/utilities";
 
-@import "vendor/rfs";
+@import "ext/rfs";
 
 @import "containers";
 @import "grid";
