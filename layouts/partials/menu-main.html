@@ -22,7 +22,7 @@ Renders a menu for the given menu ID.
         <span class="js-wvu-site-nav-toggle-text">Open Menu</span>
       </button>    
       <ul class="wvu-site-nav__items js-wvu-site-nav-items position-static list-unstyled d-lg-flex align-items-lg-center flex-lg-wrap mb-0">
-        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+        {{- partial "inline/menu-main/walk.html" (dict "page" $page "menuEntries" .) }}
       </ul>
       <div class="d-flex align-items-center">      
         <button class="bg-transparent border-0 text-white py-3 px-3 py-lg-0 px-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#wvuNavSearchCollapse2" aria-expanded="false" aria-controls="wvuNavSearchCollapse2">
@@ -81,7 +81,7 @@ Renders a menu for the given menu ID.
   </section>
 {{- end }}
 
-{{- define "partials/inline/menu/walk.html" }}
+{{- define "partials/inline/menu-main/walk.html" }}
   {{- $page := .page }}
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
@@ -98,7 +98,7 @@ Renders a menu for the given menu ID.
     {{- end }}
     <li class="wvu-site-nav__menu-item-has-children position-relative d-lg-flex">
       <a
-        class="nav-link px-2 py-3 fw-normal flex-grow-1"
+        class="nav-link px-3 py-4 fw-normal flex-grow-1"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
@@ -107,7 +107,7 @@ Renders a menu for the given menu ID.
       >{{ $name }}</a>
       {{- with .Children }}
         <ul class="wvu-site-nav__sub-menu small bg-wvu-accent--blue-dark list-unstyled ms-3 ms-lg-0 wvu-site-nav__sub-menu small bg-wvu-accent--blue-dark list-unstyled ms-3 ms-lg-0--level-1">
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+          {{- partial "inline/menu-main/walk.html" (dict "page" $page "menuEntries" .) }}
         </ul>
       {{- end }}
     </li>

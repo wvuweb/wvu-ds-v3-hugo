@@ -132,11 +132,30 @@
   @include wvu-text-letter-spacing($wvu-letter-spacing-width-lg);
 }
 
-.wvu-text-echo {
+.wvu-text-spacing-wide {
+  &.wvu-shout, &.helvetica-neue-black-condensed {
+    letter-spacing: .14em $global-important;
+  }
+  &.iowan-old-style-black-italic {
+    letter-spacing: .03em $global-important;
+  }
+}
+
+.lh-lg {
+  &.wvu-shout, &.helvetica-neue-condensed-black {
+    line-height: 1.25em $global-important;
+  }
+  &.iowan-old-style-black-italic {
+    line-height: 1.25em $global-important;
+  }
+}
+
+.oliviar-black.text-uppercase.wvu-text-echo {
   @include wvu-text-echo();
 }
 
-.wvu-text-echo-outline {
+.oliviar-black.text-uppercase.wvu-text-echo-outline {
+  position: relative $global-important;
   &:before {
     @include wvu-text-echo-outline();
   }
@@ -195,4 +214,8 @@
 
 .wvu-text-gradient {
   @include wvu-text-gradient();
+}
+
+.wvu-text-gradient-accent--sunset {
+  
 }

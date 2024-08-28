@@ -1,0 +1,7 @@
+.wvu-shadow-hard {
+  box-shadow: 5px 10px $light;
+}
+
+.wvu-shadow-hard-filter {
+  filter: drop-shadow(-10px 6px rgba(50, 50, 0, 0.5));
+}

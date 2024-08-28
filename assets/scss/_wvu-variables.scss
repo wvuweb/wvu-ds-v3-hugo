@@ -157,6 +157,10 @@ $wvu-topo-map-white: "https://static.wvu.edu/global/images/patterns/wvu/backgrou
 $wvu-topo-map-partial-black: "/images/topo-partial.svg";
 $wvu-topo-map-opacity: 1 !default;
 $wvu-gradient-mesh-blue: "/images/gradient-mesh-blue.jpg";
+$wvu-container-box-skewed-1: "/containers/box-skewed-001.svg";
+$wvu-container-box-skewed-2: "/containers/box-skewed-002.svg";
+$wvu-container-box-skewed-3: "/containers/box-skewed-003.svg";
+$wvu-container-box-skewed-4: "/containers/box-skewed-004.svg";
 
 // Make !important configurable
 $global-important: !important !default; // Set to `null` to remove !important from all CSS property values, except where explicitly defined otherwise in mixin @includes.
@@ -276,5 +280,14 @@ $small-font-size: 80%;
 $nameSpace: 'wvu';
 $text-shadow: 2px 2px black;
 $wvu-shadow-hard: rgba(0, 0, 0, 0.15);
+
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  10: 10px
+);
 
 $enable-negative-margins: true;

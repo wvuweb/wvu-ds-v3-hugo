@@ -1,0 +1,26 @@
+.wvu-container-box-skewed-1 {
+  background-color: transparent $global-important;
+  display: inline-block $global-important;
+  margin-bottom: 1em $global-important;
+  margin-top: 1em $global-important;
+  position: relative $global-important;
+  z-index: 2 $global-important;
+  &:before {
+    background-color: $wvu-blue;
+    mask-image: url($wvu-container-box-skewed-1) $global-important;
+    -webkit-mask-image: url($wvu-container-box-skewed-1) $global-important;
+    mask-position: center $global-important;
+    -webkit-mask-position: center $global-important;
+    mask-size: cover $global-important;
+    -webkit-mask-size: cover $global-important;
+    bottom: 0 $global-important;
+    content: '' $global-important;
+    left: 0 $global-important;
+    margin: -0.25em -0.5em -0.25em -0.5em;
+    padding: 0.5em;
+    position: absolute $global-important;
+    right: 0 $global-important;
+    top: 0 $global-important;
+    z-index: -1 $global-important;
+  }
+}
