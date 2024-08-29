@@ -185,8 +185,9 @@ $wvu-bp-xs: 0 !default;
 $wvu-bp-sm: 576px !default;
 $wvu-bp-md: 768px !default;
 $wvu-bp-lg: 992px !default;
-$wvu-bp-xl: 1400px !default;
-$wvu-bp-xxl: 1700px !default;
+$wvu-bp-xl: 1200px !default;
+$wvu-bp-xxl: 1400px !default;
+$wvu-bp-xxxl: 1800px !default;
 
 $wvu-bp-nav: $wvu-bp-lg !default;
 $wvu-bp-nav-max-width: ($wvu-bp-nav - 1) !default;
@@ -197,7 +198,8 @@ $wvu-breakpoints: (
   $wvu-bp-md,
   $wvu-bp-lg,
   $wvu-bp-xl,
-  $wvu-bp-xxl
+  $wvu-bp-xxl,
+  $wvu-bp-xxxl
 );
 
 // Bootstrap Overrides
@@ -224,7 +226,17 @@ $grid-breakpoints: (
   md: $wvu-bp-md,
   lg: $wvu-bp-lg,
   xl: $wvu-bp-xl,
-  xxl: $wvu-bp-xxl
+  xxl: $wvu-bp-xxl,
+  xxxl: $wvu-bp-xxxl
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+  xxxl: 1720px
 );
 
 $container-max-widths: (
