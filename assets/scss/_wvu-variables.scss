@@ -269,6 +269,8 @@ $aspect-ratios: (
   --bs-aspect-ratio: 66.66667%; // 2x1
 }
 
+$grid-columns: 24 !default;
+
 $blue: #006FE6;
 $link-color: $blue;
 $blockquote-margin-y: 0;
