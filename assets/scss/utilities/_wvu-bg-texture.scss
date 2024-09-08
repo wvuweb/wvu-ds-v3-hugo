@@ -1,6 +1,9 @@
 .wvu-bg-texture-halftone-grunge-dark {
   &:before {
-    background-size: 400px;
+    background-image: url($wvu-texture);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 600px;
     content: '';
     position: absolute;
     top: 0;

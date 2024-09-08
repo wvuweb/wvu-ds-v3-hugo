@@ -11,7 +11,7 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav aria-label="Main navigation" id="nav-primary" class="wvu-site-nav bg-wvu-accent--blue-dark navbar navbar-expand-lg p-0 navbar-dark w-100">
+  <nav aria-label="Main navigation" id="nav-primary" class="wvu-site-nav bg-wvu-blue navbar navbar-expand-lg p-0 navbar-dark w-100">
     <div class="container">
       <button aria-controls="wvu-site-nav__items" aria-expanded="false" type="button" class="wvu-site-nav__toggle js-wvu-site-nav-toggle border-0 bg-wvu-accent--blue-dark text-white position-relative ps-0 pe-3 d-flex d-lg-none align-items-center">
         <span aria-hidden="true" class="wvu-hamburger js-wvu-hamburger">
@@ -98,7 +98,7 @@ Renders a menu for the given menu ID.
     {{- end }}
     <li class="wvu-site-nav__menu-item-has-children position-relative d-lg-flex">
       <a
-        class="nav-link px-3 py-4 fw-normal flex-grow-1"
+        class="nav-link text-white px-3 py-4 fw-normal flex-grow-1"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}

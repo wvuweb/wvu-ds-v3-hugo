@@ -11,7 +11,7 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <ul class="nav flex-column mb-3">
+  <ul class="nav flex-column mb-5">
     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
   </ul>
 {{- end }}
@@ -33,7 +33,7 @@ Renders a menu for the given menu ID.
     {{- end }}
     <li class="nav-item">
       <a
-        class="nav-link text-dark text-decoration-none"
+        class="nav-link text-dark text-decoration-none py-1 {{ if .Children }}helvetica-neue-bold{{ end }}"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
@@ -41,7 +41,7 @@ Renders a menu for the given menu ID.
         {{- end -}}
       >{{ $name }}</a>
       {{- with .Children }}
-        <ul class="nav flex-column ms-3">
+        <ul class="nav flex-column">
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
         </ul>
       {{- end }}

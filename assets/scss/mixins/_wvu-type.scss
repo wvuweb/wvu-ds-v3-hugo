@@ -32,6 +32,15 @@
 }
 
 // Example usage:
+// .helvetica-neue {
+//   @include helvetica-neue();
+// }
+
+@mixin helvetica-neue-condensed-black($is-important: $global-important) {
+  font-family: $helvetica-neue-condensed-black $is-important;
+}
+
+// Example usage:
 // .helvetica-neue-bold {
 //   @include helvetica-neue-bold();
 // }
@@ -173,8 +182,20 @@
   text-shadow: none;
   -webkit-text-stroke-width: 1px $is-important;
   -webkit-text-stroke-color: $dark $is-important;
-  top: -5px $is-important;
-  left: 6px $is-important;
+  top: -3px $is-important;
+  left: 3px $is-important;
+  &.display-0 {
+    top: -7px $is-important;
+    left: 8px $is-important;
+  }
+  &.display-1 {
+    top: -5px $is-important;
+    left: 6px $is-important;
+  }
+  &.display-2 {
+    top: -4px $is-important;
+    left: 5px $is-important;
+  }
 }
 
 @mixin wvu-text-echo-shadow($is-important: $global-important) {
@@ -237,4 +258,33 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@mixin wvu-text-outline($is-important: $global-important) {
+  color: transparent $is-important;
+  -webkit-text-stroke-width: 2px $is-important;
+  -webkit-text-stroke-color: $dark $is-important;
+  padding: 1rem $is-important;
+  margin: -1rem $is-important;
+  &.wvu-text-gradient {
+    display: inline-block $is-important;
+    -webkit-text-stroke-width: 4px $is-important;
+    -webkit-text-stroke-color: transparent $is-important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 1) $is-important;
+    background-clip: text $is-important;
+    mix-blend-mode: darken $is-important;
+    &.text-dark {
+      -webkit-text-fill-color: rgba(0, 0, 0, 1) $is-important;
+      mix-blend-mode: lighten $is-important;
+    }
+    &.text-wvu-accent--blue-dark {
+      -webkit-text-fill-color: $wvu-accent--blue-dark $is-important;
+    }
+  }
+  &.text-wvu-gold {
+    -webkit-text-stroke-color: $wvu-gold $is-important;
+  }
+  &.text-white {
+    -webkit-text-stroke-color: $white $is-important;
+  }
 }

@@ -3,7 +3,7 @@
 // Utility class to add a lighten effect to a background image.
 
 .wvu-bg-blend-mode-lighten, %wvu-bg-blend-mode-lighten {
-  @include wvu-bg-blend-mode(lighten);
+  mix-blend-mode: lighten $global-important;
 }
 
 // WVU BG Blend Mode Luminosity
@@ -12,6 +12,10 @@
 
 .wvu-bg-blend-mode-luminosity, %wvu-bg-blend-mode-luminosity {
   @include wvu-bg-blend-mode(luminosity);
+}
+
+.wvu-bg-blend-mode-color, %wvu-bg-blend-mode-luminosity {
+  @include wvu-bg-blend-mode(color);
 }
 
 // Add modifier values (10 - 90 in increments of 10) that adjust the contrast of the “luminosity” effect created by the utility above.

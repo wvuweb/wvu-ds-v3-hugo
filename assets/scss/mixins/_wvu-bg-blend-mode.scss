@@ -9,7 +9,7 @@
     background-size: cover $is-important;
   }
   @if $blend-mode == 'luminosity' {
-    background-blend-mode: luminosity $is-important;
+    mix-blend-mode: multiply $is-important;
     background-size: cover $is-important;
     position: relative;
     &:before {
@@ -22,6 +22,9 @@
       right: 0 $is-important;
       top: 0 $is-important;
     }
+  }
+  @if $blend-mode == 'color' {
+    mix-blend-mode: color $is-important;
   }
 }
 

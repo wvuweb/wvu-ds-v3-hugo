@@ -1,14 +1,10 @@
-.wvu-container-box-skewed-1 {
+.wvu-container-box-skewed {
   background-color: transparent $global-important;
   display: inline-block $global-important;
-  margin-bottom: 1em $global-important;
-  margin-top: 1em $global-important;
   position: relative $global-important;
-  z-index: 2 $global-important;
+  z-index: -1 $global-important;
   &:before {
-    background-color: $wvu-blue;
-    mask-image: url($wvu-container-box-skewed-1) $global-important;
-    -webkit-mask-image: url($wvu-container-box-skewed-1) $global-important;
+    background-color: $wvu-blue $global-important;
     mask-position: center $global-important;
     -webkit-mask-position: center $global-important;
     mask-size: cover $global-important;
@@ -22,5 +18,83 @@
     right: 0 $global-important;
     top: 0 $global-important;
     z-index: -1 $global-important;
+  }
+}
+
+.wvu-container-box-skewed-wvu-accent--sunset {
+  &:before {
+    background-color: $wvu-accent--sunset $global-important;
+  }
+}
+
+.wvu-container-box-skewed-wvu-gold {
+  &:before {
+    background-color: $wvu-gold $global-important;
+  }
+}
+
+.wvu-container-box-skewed-white {
+  &:before {
+    background-color: white $global-important;
+  }
+}
+
+.wvu-container-box-skewed-wvu-accent--blue {
+  &:before {
+    background-color: $wvu-accent--blue $global-important;
+  }
+}
+
+.wvu-container-box-skewed-1 {
+  &:before {
+    mask-image: url($wvu-container-box-skewed-1) $global-important;
+    -webkit-mask-image: url($wvu-container-box-skewed-1) $global-important;
+  }
+}
+
+.wvu-container-box-skewed-2 {
+  &:before {
+    mask-image: url($wvu-container-box-skewed-2) $global-important;
+    -webkit-mask-image: url($wvu-container-box-skewed-2) $global-important;
+  }
+}
+
+.wvu-container-box-skewed-3 {
+  &:before {
+    mask-image: url($wvu-container-box-skewed-3) $global-important;
+    -webkit-mask-image: url($wvu-container-box-skewed-3) $global-important;
+  }
+}
+
+.wvu-container-box-skewed-4 {
+  &:before {
+    mask-image: url($wvu-container-box-skewed-4) $global-important;
+    -webkit-mask-image: url($wvu-container-box-skewed-4) $global-important;
+  }
+}
+
+.wvu-container-box-angle {
+  &:before {
+    border-top: 1.86px solid white $global-important;
+    border-left: 1px solid white $global-important;
+    content: '' $global-important;
+    display: inline-block $global-important;
+    height: 100% $global-important;
+    padding: 0 18px 0 0 $global-important;
+    position: absolute $global-important;
+    transform: skew(0, 135deg) $global-important;
+    left: -17px $global-important;
+    top: 8px $global-important;
+  }
+  &:after {
+    border-bottom: 1px solid white $global-important;
+    border-right: 1.86px solid white $global-important;
+    bottom: -18px $global-important;
+    content: '' $global-important;
+    padding: 17px 0 0 0 $global-important;
+    position: absolute $global-important;
+    transform: skew(-45deg) $global-important;
+    right: 8px $global-important;
+    width: 100% $global-important;
   }
 }

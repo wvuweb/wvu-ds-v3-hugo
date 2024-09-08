@@ -92,7 +92,7 @@
 }
 
 .helvetica-neue-condensed-black, %helvetica-neue-condensed-black {
-  @include wvu-shout();
+  @include helvetica-neue-condensed-black();
 }
 
 .iowan-old-style, %iowan-old-style {
@@ -132,6 +132,10 @@
   @include wvu-text-letter-spacing($wvu-letter-spacing-width-lg);
 }
 
+.wvu-text-letter-spacing-lg, %wvu-text-letter-spacing {
+  @include wvu-text-letter-spacing($wvu-letter-spacing-width-xl);
+}
+
 .wvu-text-spacing-wide {
   &.wvu-shout, &.helvetica-neue-black-condensed {
     letter-spacing: .14em $global-important;
@@ -161,8 +165,27 @@
   }
 }
 
+.oliviar-black.text-uppercase.wvu-text-echo-outline-white {
+  &:before {
+    -webkit-text-stroke-color: white $global-important;
+  }
+}
+
+.display-0.oliviar-black.text-uppercase.wvu-text-echo-outline-white {
+  &:before {
+    -webkit-text-stroke-width: 2px $global-important;
+  }
+}
+
 .wvu-text-echo-shadow {
   @include wvu-text-echo-shadow();
+  &.wvu-text-echo-shadow-wvu-accent--blue-light {
+    text-shadow: -5px 5px $wvu-accent--blue-light $global-important;
+  }
+}
+
+.wvu-text-echo-shadow-dark {
+  text-shadow: -5px 5px #000 $global-important;
 }
 
 // Usage example:
@@ -216,6 +239,56 @@
   @include wvu-text-gradient();
 }
 
-.wvu-text-gradient-accent--sunset {
-  
+.display-0.wvu-text-outline, .display-1.wvu-text-outline, .display-1.wvu-text-outline, .display-1.wvu-text-outline {
+  @include wvu-text-outline();
+}
+
+.wvu-text-vertical {
+  position: absolute !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+  rotate: 180deg !important;
+  height: 100% !important;
+  text-align: right !important;
+}
+
+@media screen and (min-width: 576px) {
+  .wvu-text-sm-vertical {
+    position: absolute !important;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    rotate: 180deg !important;
+    height: 100% !important;
+    text-align: right !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wvu-text-md-vertical {
+    position: absolute !important;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    rotate: 180deg !important;
+    height: 100% !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .wvu-text-lg-vertical {
+    position: absolute !important;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    rotate: 180deg !important;
+    height: 100% !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .wvu-text-xl-vertical {
+    position: absolute !important;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    rotate: 180deg !important;
+    height: 100% !important;
+  }
 }
