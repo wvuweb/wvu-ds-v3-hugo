@@ -1,9 +1,9 @@
 @media (min-width: 1720px) {
-  .wvu-extend-margin-left {
+  .wvu-bleed-left {
     margin-left: calc((-100vw + 1720px) / 2);
     padding-left: calc((100vw - 17200px) / 2);
   }
-  .wvu-extend-margin-right {
+  .wvu-bleed-right {
     margin-right: calc((-100vw + 1720px) / 2);
     padding-right: calc((100vw - 1720px) / 2);
   }
