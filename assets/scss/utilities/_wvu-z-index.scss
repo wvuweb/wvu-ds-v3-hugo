@@ -22,6 +22,10 @@
   z-index: $wvu-z-index-max;
 }
 
+.wvu-z-index-fg-img {
+  z-index: $wvu-z-index-fg-img;
+}
+
 // Example usage:
 // <section class="py-5 bg-wvu-blue text-white text-center wvu-bg-vignetting--50 wvu-bg-pattern-blue">
 //   <div class="container wvu-z-index-content">

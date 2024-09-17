@@ -115,6 +115,14 @@
   @include oliviar-black();
 }
 
+.oliviar-black-italic, %oliviar-black-italic {
+  @include oliviar-black-italic();
+}
+
+.oliviar-thin, %oliviar-thin {
+  @include oliviar-thin();
+}
+
 // Usage example:
 // <p class="iowan-old-style">
 //   ...

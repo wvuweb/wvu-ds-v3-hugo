@@ -152,6 +152,26 @@
   }
 }
 
+@mixin oliviar-black-italic($is-important: $global-important) {
+  font-family: $oliviar-black-italic $is-important;
+  font-style: italic $is-important;
+  font-stretch: normal $is-important;
+  font-display: swap $is-important;
+  &.display-1, &.display-2, &.display-3, &.display-4 {
+    line-height: 1em $is-important;
+  }
+}
+
+@mixin oliviar-thin($is-important: $global-important) {
+  font-family: $oliviar-thin $is-important;
+  font-style: normal $is-important;
+  font-stretch: normal $is-important;
+  font-display: swap $is-important;
+  &.display-1, &.display-2, &.display-3, &.display-4 {
+    line-height: 1em $is-important;
+  }
+}
+
 // Example usage:
 // .iowan-old-style-black-italic {
 //   @include iowan-old-style-black-italic();

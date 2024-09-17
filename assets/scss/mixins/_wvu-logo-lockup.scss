@@ -25,6 +25,10 @@
     background-image: url($wvu-flying-wv-w-signature--blue) $is-important;
     color: $wvu-blue $is-important;
   }
+  &.wvu-logo-lockup--gold-blue {
+    background-image: url($wvu-flying-wv-w-signature--gold-blue) $is-important;
+    color: $dark $is-important;
+  }
 }
 
 // Example usage:

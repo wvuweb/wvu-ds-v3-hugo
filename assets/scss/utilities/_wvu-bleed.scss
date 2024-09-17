@@ -1,7 +1,7 @@
 @media (min-width: 1720px) {
   .wvu-bleed-left {
-    margin-left: calc((-100vw + 1720px) / 2);
-    padding-left: calc((100vw - 17200px) / 2);
+    margin-left: calc((100vw - 1720px) / 2 * -1);
+    padding-left: calc((100vw - 1720px) / 2);
   }
   .wvu-bleed-right {
     margin-right: calc((-100vw + 1720px) / 2);

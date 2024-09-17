@@ -16,7 +16,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    z-index: $wvu-z-index-grid;
+    z-index: $wvu-z-index-pattern;
   }
   @if $pattern-type == 'grid-zoomed' {
     mask-image: url($wvu-grid-pattern-zoomed);
@@ -31,7 +31,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    z-index: $wvu-z-index-grid;
+    z-index: $wvu-z-index-pattern;
   }
   @if $pattern-type == 'topo-dark' {
     mask-image: url($wvu-topo-map-black);
@@ -46,7 +46,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    z-index: $wvu-z-index-grid;
+    z-index: $wvu-z-index-pattern;
   }
   @if $pattern-type == 'topo-light' {
     mask-image: url($wvu-topo-map-white);
@@ -59,7 +59,7 @@
     left: 0;
     position: absolute;
     right: 0;
-    z-index: $wvu-z-index-grid;
+    z-index: $wvu-z-index-pattern;
   }
 }
 

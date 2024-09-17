@@ -4,6 +4,19 @@
 
 .wvu-bg-blend-mode-lighten, %wvu-bg-blend-mode-lighten {
   mix-blend-mode: lighten $global-important;
+  &:before {
+    background-color: $wvu-blue;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
+.wvu-bg-blend-mode-screen, %wvu-bg-blend-mode-lighten {
+  mix-blend-mode: screen $global-important;
 }
 
 // WVU BG Blend Mode Luminosity

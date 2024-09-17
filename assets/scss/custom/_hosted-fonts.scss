@@ -1,10 +1,23 @@
 @font-face {
 	font-family: 'OliviarSansBlack';
-	src: url('/fonts/oliviar-black/oliviar-black.eot');
-	src: url('/fonts/oliviar-black/oliviar-black?#iefix') format('embedded-opentype'),
-             url('/fonts/oliviar-black/oliviar-black.woff2') format('woff2'),
-	     url('/fonts/oliviar-black/oliviar-black.woff') format('woff'),
-	     url('/fonts/oliviar-black/oliviar-black.ttf') format('truetype');
+	src: url('/fonts/oliviar-black/oliviar-black.woff2') format('woff2'),
+	     url('/fonts/oliviar-black/oliviar-black.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OliviarSansBlackItalic';
+	src: url('/fonts/oliviar-black-italic/oliviar-black-italic.woff2') format('woff2'),
+	     url('/fonts/oliviar-black-italic/oliviar-black-italic.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OliviarSansThin';
+	src: url('/fonts/oliviar-thin/oliviar-thin.woff2') format('woff2'),
+	     url('/fonts/oliviar-thin/oliviar-thin.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
