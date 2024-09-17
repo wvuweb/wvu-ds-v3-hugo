@@ -1,4 +1,4 @@
-{{- with resources.Get "scss/main.scss" }}
+{{- with resources.Get "scss/site.scss" }}
   {{- $toCssOpt := dict "transpiler" "libsass" "targetPath" "assets/css/style.css" }}
   {{- $css := . | toCSS $toCssOpt }}
   {{- if eq hugo.Environment "development" }}
