@@ -4,17 +4,17 @@
       <div class="col-12">        
         <address class="mb-4">
           <p>
-            <strong>Organization Name</strong>
-            <br> Address Line 1
-            <br> Address Line 2
+            <strong>{{ .Site.Params.footer.org_name }}</strong>
+            <br> {{ .Site.Params.footer.addr1 }}
+            <br> {{ .Site.Params.footer.addr2 }}
             <br>
           </p>
           <p>
             <span class="fa-solid fa-phone" aria-hidden="true"></span>
-            <a href="tel:3041234567">(304) 123-4567</a>
+            <a href="tel:3041234567">{{ .Site.Params.footer.phone }}</a>
             <br>
             <span class="fa-solid fa-envelope" aria-hidden="true"></span>
-            <a href="mailto:email@mail.wvu.edu">email@mail.wvu.edu</a>
+            <a href="mailto:email@mail.wvu.edu">{{ .Site.Params.footer.email }}</a>
           </p>
         </address>
       </div>
@@ -39,7 +39,7 @@
         </ul>
         <p>© {{ now.Year }}
           <a class="" href="https://www.wvu.edu/">West Virginia University</a>. WVU is an EEO/Affirmative Action employer— Minority/Female/Disability/Veteran.
-          <span class="wvu-credits__last-edited">Last updated on May 11, 2022.</span>
+          <span class="wvu-credits__last-edited">Last updated on {{ time.Now | time.Format "Jan 2, 2006" }}.</span>
         </p>
       </div>
       <div class="col-md-12 text-md-end">
