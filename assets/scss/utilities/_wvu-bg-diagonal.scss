@@ -1,0 +1,7 @@
+.wvu-bg-diagonal {
+  content: '';
+  height: 100%;
+  position: absolute;
+  transform: skew($wvu-slash-skew-angle);
+  width: 100%;
+}

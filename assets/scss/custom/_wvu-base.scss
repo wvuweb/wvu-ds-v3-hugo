@@ -55,12 +55,12 @@ img {
   h6 {
     margin-top: 0;
   }
-  a + h2, button + h2, img + h2, ol + h2, ul + h2, div + h2, p + h2, pre + h2, table + h2, blockquote + h2, fieldset + h2, figure + h2, figcaption + h2, h1 + h2 { margin-top: $spacer * 2; }
-  a + h3, button + h3, img + h3, ol + h3, ul + h3, div + h3, p + h3, pre + h3, table + h3, blockquote + h3, fieldset + h3, figure + h3, figcaption + h3, h2 + h3 { margin-top: $spacer * 2; }
-  a + h4, button + h4, img + h4, ol + h4, ul + h4, div + h4, p + h4, pre + h4, table + h4, blockquote + h4, fieldset + h3, figure + h4, figcaption + h4, h3 + h4 { margin-top: $spacer * 2; }
-  a + h5, button + h5, img + h5, ol + h5, ul + h5, div + h5, p + h5, pre + h5, table + h5, blockquote + h5, fieldset + h5, figure + h5, figcaption + h5, h4 + h5 { margin-top: $spacer * 2; }
-  a + h6, button + h6, img + h6, ol + h6, ul + h6, div + h6, p + h6, pre + h6, table + h6, blockquote + h6, fieldset + h6, figure + h6, figcaption + h6, h5 + h6 { margin-top: $spacer * 2; }
-  a + .lead, button + .lead, ol + .lead, ul + .lead, div + .lead, p + .lead, pre + .lead, table + .lead, blockquote + .lead, fieldset + .lead, h1 .lead, h2 .lead, h3 .lead, h4 .lead, h5 .lead, h6 .lead { margin-top: $spacer * 1.5;}
+  a + h2, button + h2, img + h2, ol + h2, ul + h2, div + h2, p + h2, pre + h2, table + h2, blockquote + h2, fieldset + h2, figure + h2, figcaption + h2, h1 + h2 { margin-top: $spacer * 4; }
+  a + h3, button + h3, img + h3, ol + h3, ul + h3, div + h3, p + h3, pre + h3, table + h3, blockquote + h3, fieldset + h3, figure + h3, figcaption + h3, h2 + h3 { margin-top: $spacer * 4; }
+  a + h4, button + h4, img + h4, ol + h4, ul + h4, div + h4, p + h4, pre + h4, table + h4, blockquote + h4, fieldset + h3, figure + h4, figcaption + h4, h3 + h4 { margin-top: $spacer * 4; }
+  a + h5, button + h5, img + h5, ol + h5, ul + h5, div + h5, p + h5, pre + h5, table + h5, blockquote + h5, fieldset + h5, figure + h5, figcaption + h5, h4 + h5 { margin-top: $spacer * 4; }
+  a + h6, button + h6, img + h6, ol + h6, ul + h6, div + h6, p + h6, pre + h6, table + h6, blockquote + h6, fieldset + h6, figure + h6, figcaption + h6, h5 + h6 { margin-top: $spacer * 4; }
+  a + .lead, button + .lead, ol + .lead, ul + .lead, div + .lead, p + .lead, pre + .lead, table + .lead, blockquote + .lead, fieldset + .lead, h1 .lead, h2 .lead, h3 .lead, h4 .lead, h5 .lead, h6 .lead { margin-top: $spacer * 3;}
 }
 
 h1,

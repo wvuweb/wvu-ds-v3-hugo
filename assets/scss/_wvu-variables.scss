@@ -199,8 +199,9 @@ $wvu-z-index-max: 9999 !default;
 
 $wvu-z-index-bg-img: 10 !default;
 $wvu-z-index-pattern: 20 !default;
-$wvu-z-index-container: 90 !default;
-$wvu-z-index-container-shadow: 80 !default;
+$wvu-z-index-container-content: 130 !default;
+$wvu-z-index-container: 120 !default;
+$wvu-z-index-container-shadow: 110 !default;
 $wvu-z-index-fg-img: 70 !default;
 
 $wvu-z-index-slash: -1 !default;
@@ -360,5 +361,7 @@ $border-widths: (
   5: 5px,
   10: 10px
 );
+
+$wvu-slash-skew-angle: -33.75deg;
 
 $enable-negative-margins: true;

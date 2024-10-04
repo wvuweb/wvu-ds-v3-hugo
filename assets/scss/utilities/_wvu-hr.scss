@@ -1,0 +1,11 @@
+.wvu-hr-dotted {
+  border-top: 4px dotted $global-important;
+  margin: 0 $spacer * 3 $global-important;
+  opacity: 1 $global-important;
+}
+
+@each $name, $color in $custom-colors {
+  .wvu-hr-dotted-#{$name} {
+    border-color: $color $global-important;
+  }
+}

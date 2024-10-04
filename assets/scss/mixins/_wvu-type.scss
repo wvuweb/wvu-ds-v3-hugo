@@ -38,6 +38,9 @@
 
 @mixin helvetica-neue-condensed-black($is-important: $global-important) {
   font-family: $helvetica-neue-condensed-black $is-important;
+  em {
+    font-family: $helvetica-neue-condensed-black $is-important;
+  }
 }
 
 // Example usage:
@@ -150,6 +153,9 @@
   &.display-1, &.display-2, &.display-3, &.display-4 {
     line-height: 1em $is-important;
   }
+  em {
+    font-family: $oliviar-black-italic $is-important;
+  }
 }
 
 @mixin oliviar-black-italic($is-important: $global-important) {
@@ -160,6 +166,9 @@
   &.display-1, &.display-2, &.display-3, &.display-4 {
     line-height: 1em $is-important;
   }
+  em {
+    font-family: $oliviar-black $is-important;
+  }
 }
 
 @mixin oliviar-thin($is-important: $global-important) {
@@ -169,6 +178,9 @@
   font-display: swap $is-important;
   &.display-1, &.display-2, &.display-3, &.display-4 {
     line-height: 1em $is-important;
+  }
+  em {
+    font-family: $oliviar-thin $is-important;
   }
 }
 
