@@ -11,4 +11,10 @@
   {{- end }}
 {{- end }}
 
+{{- with resources.Get "js/meom-wvu-site-navigation--custom.js" }}
+  {{- with . | js.Build }}
+    <script src="{{ .RelPermalink }}" type="module"></script>
+  {{- end }}
+{{- end }}
+
 <script src="https://kit.fontawesome.com/ba40ea27ab.js" crossorigin="anonymous"></script>
