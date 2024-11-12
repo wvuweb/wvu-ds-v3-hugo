@@ -96,9 +96,9 @@ Renders a menu for the given menu ID.
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <li class="wvu-site-nav__menu-item-has-children position-relative d-lg-flex">
+    <li class="{{ if .Children }}wvu-site-nav__menu-item-has-children {{ end }}position-relative d-lg-flex">
       <a
-        class="nav-link text-white px-3 py-4 fw-normal flex-grow-1"
+        class="nav-link text-white px-3 py-3 fw-normal flex-grow-1"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}

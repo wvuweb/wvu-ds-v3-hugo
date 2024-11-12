@@ -7,15 +7,6 @@
   <header class="bg-wvu-blue">
     {{ partial "header.html" . }}
   </header>
-  
-  {{ if .IsHome }}
-  {{ else }}
-    {{ if .Params.topper }}
-      {{ partial "bookshop" (slice .Params.topper._bookshop_name .) }}
-    {{ else }}
-      {{ partial "bookshop" (slice "topper/default" .) }}
-    {{ end }}
-  {{ end }}
 
   {{ block "main" . }}{{ end }}
 
