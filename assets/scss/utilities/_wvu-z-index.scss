@@ -7,6 +7,11 @@
   z-index: 0;
 }
 
+.wvu-z-index-minus, %wvu-z-index-0 {
+  position: relative;
+  z-index: -1;
+}
+
 .wvu-z-index-breadcrumbs, %wvu-z-index-breadcrumbs {
   position: relative;
   z-index: $wvu-z-index-breadcrumbs;
