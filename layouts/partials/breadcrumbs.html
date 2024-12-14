@@ -1,6 +1,17 @@
-<ul class="list-inline small mt-2">
-  {{- range .Ancestors.Reverse }}
-    <li class="list-inline-item me-0"><a class="text-dark" href="{{ .RelPermalink }}">{{ .Title }}</a> / </li>
-  {{- end }}
-  <li class="list-inline-item text-dark">{{ .Title }}</li>
-</ul>
+{{- $color := "text-dark" -}}
+{{- if and .Params.topper.styles.breadcrumbs .Params.topper.styles.breadcrumbs.c -}}{{ $color = .Params.topper.styles.breadcrumbs.c }}{{- end -}}
+
+<div class="d-flex position-relative wvu-z-index-content" style="height: 0px;">
+  <div class="position-absolute mt-3 w-100 text-start" style="top: 0px;">
+    <div class="container">
+      <ul class="list-inline small mt-2 {{ $color }}">
+        {{ if .Ancestors }}
+          {{- range .Ancestors.Reverse }}
+            <li class="list-inline-item me-0"><a class="{{ $color }}" href="{{ .RelPermalink }}">{{ .Title }}</a> / </li>
+          {{- end }}
+        {{ end }}
+        <li class="list-inline-item">{{ .Title }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
