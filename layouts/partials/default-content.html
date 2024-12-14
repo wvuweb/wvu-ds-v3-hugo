@@ -1,0 +1,6 @@
+Default content
+{{ with .Site.GetPage "default-content" "default-content/index.md" }}
+  Page: {{ .Title }}
+  Test
+  {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
+{{ end }}
