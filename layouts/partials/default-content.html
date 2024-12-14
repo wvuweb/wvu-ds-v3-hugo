@@ -1,13 +1,7 @@
-Default content
 {{ with .Site.GetPage "default-content" "default-content/index.md" }}
-  Page: {{ .Title }}
-  Test
-  {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
   {{ range .Params.content_blocks }}
-    Test.
-    {{ . }}
     {{ if eq ._bookshop_name "section/quicklinks" }}
-      {{ partial "bookshop" (slice "section/quicklinks" (dict "live_render" false "heading" .heading "links" .links)) }}
+      {{ partial "components/quicklinks" . }}
     {{ end }}
   {{ end }}
 {{ end }}

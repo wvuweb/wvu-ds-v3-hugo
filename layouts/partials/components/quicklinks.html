@@ -1,0 +1,23 @@
+{{ $sectionMargin := "py-6" }}
+{{ if .layout.section.margin }}
+  {{ $sectionMargin = .layout.section.margin }}
+{{ end }}
+
+<section class="{{ partial "bookshop_partial" (slice "section_margin" $sectionMargin) }} bg-wvu-neutral--warm-gray-light bg-opacity-25">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-8 position-relative">
+        <h2 class="wvu-shout h1 d-inline-block wvu-text-letter-spacing-lg">
+          {{ .heading }}
+        </h2>
+      </div>
+      <div class="col-xxl-16">
+        <ul class="wvu-ul-chevrons wvu-column-count-lg-3">
+          {{ range .links }}
+            <li><a class="text-dark text-decoration-none" href="{{ .url }}">{{ .text }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
