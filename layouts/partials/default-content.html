@@ -7,7 +7,7 @@ Default content
     Test.
     {{ . }}
     {{ if eq ._bookshop_name "section/quicklinks" }}
-      {{ partial "bookshop" (slice "section/quicklinks" .) }}
+      {{ partial "bookshop" (slice "section/quicklinks" (dict "heading" .heading "links" .links)) }}
     {{ end }}
   {{ end }}
 {{ end }}
