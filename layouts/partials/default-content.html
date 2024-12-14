@@ -3,4 +3,11 @@ Default content
   Page: {{ .Title }}
   Test
   {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
+  {{ range .Params.content_blocks }}
+    Test.
+    {{ . }}
+    {{ if eq ._bookshop_name "section/quicklinks" }}
+      {{ partial "bookshop" (slice "section/quicklinks" .) }}
+    {{ end }}
+  {{ end }}
 {{ end }}
