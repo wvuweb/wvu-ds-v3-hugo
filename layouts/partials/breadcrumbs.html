@@ -1,4 +1,7 @@
 {{- $color := "text-dark" -}}
+{{ if and .Params.topper (ne .Params.topper.topper_type "Default") }}
+  {{ $color = "text-white" }}
+{{ end }}
 {{- if and .Params.topper.styles.breadcrumbs .Params.topper.styles.breadcrumbs.c -}}{{ $color = .Params.topper.styles.breadcrumbs.c }}{{- end -}}
 
 <div class="d-flex position-relative wvu-z-index-content" style="height: 0px;">

@@ -1,6 +1,6 @@
 {{ with .Site.GetPage "default-content" "default-content/index.md" }}
   {{ range .Params.content_blocks }}
-    {{ if eq ._bookshop_name "section/quicklinks" }}
+    {{ if eq ._bookshop_name "design-system/section/quicklinks" }}
       {{ partial "components/quicklinks" . }}
     {{ end }}
   {{ end }}

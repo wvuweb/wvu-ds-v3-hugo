@@ -29,9 +29,14 @@ i {
 }
 
 a {
+  color: inherit;
+  text-decoration: none;
   &:focus {
     outline: auto 2px Highlight; // for non-webkit browsers
     outline: auto 5px -webkit-focus-ring-color; // for webkit browsers
+  }
+  &:not(.btn,.stretched-link,.nav-link) {
+    box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
   }
 }
 
