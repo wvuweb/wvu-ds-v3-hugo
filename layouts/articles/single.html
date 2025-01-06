@@ -1,0 +1,9 @@
+{{ define "main" }}
+
+  Article
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "ancestors" .Ancestors)` }}
+  {{ partial "bookshop_partial" (slice "topper" (dict "topper" .Params.topper "title" .Params.title "ancestors" .Ancestors)) }}
+
+  {{ partial "bookshop_bindings" `.Params.article_blocks` }}
+  {{ partial "bookshop_partial" (slice "page" .Params.article_blocks) }}
+{{ end }}

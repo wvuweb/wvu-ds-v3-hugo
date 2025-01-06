@@ -35,7 +35,7 @@ a {
     outline: auto 2px Highlight; // for non-webkit browsers
     outline: auto 5px -webkit-focus-ring-color; // for webkit browsers
   }
-  &:not(.btn,.stretched-link,.nav-link,.wvu-article-link) {
+  &:not(.btn,.stretched-link,.nav-link,.wvu-article-link,.wvu-ds-nav-link) {
     box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
   }
 }

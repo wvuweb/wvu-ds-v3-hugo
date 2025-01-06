@@ -8,7 +8,13 @@
     {{ partial "header.html" . }}
   </header>
 
+  {{ if not .IsHome }}
+    {{ partial "breadcrumbs" . }}
+  {{ end }}
+
   {{ block "main" . }}{{ end }}
+
+  {{ partial "default-content" . }}
 
   {{ partial "footer.html" . }}
   
