@@ -12,7 +12,9 @@
     {{ partial "breadcrumbs" . }}
   {{ end }}
 
-  {{ block "main" . }}{{ end }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
 
   {{ partial "default-content" . }}
 
