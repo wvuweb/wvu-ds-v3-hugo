@@ -17,4 +17,8 @@
   {{- end }}
 {{- end }}
 
-<script src="https://kit.fontawesome.com/ba40ea27ab.js" crossorigin="anonymous"></script>
+{{ if not site.Params.env_bookshop_live }}
+  <script src="https://kit.fontawesome.com/ba40ea27ab.js" crossorigin="anonymous"></script>
+{{ else }}
+  <script data-search-pseudo-elements defer src="https://kit.fontawesome.com/a140e17a00.js" crossorigin="anonymous"></script>
+{{ end }}
