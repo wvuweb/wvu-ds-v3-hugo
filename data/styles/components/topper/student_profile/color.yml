@@ -1,0 +1,5 @@
+accent_blue:
+  section: bg-wvu-accent--blue
+  content_container: bg-white
+  h1: text-wvu-accent--blue
+  hometown: text-wvu-accent--old-gold
