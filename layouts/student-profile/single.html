@@ -3,6 +3,7 @@
   {{ partial "bookshop_partial" (slice "topper" (dict "topper" .Params.student_profile_topper "params" .Params)) }}
   <section class="py-6 wvu-backpage-main">
     <div class="container">
+      {{ .Params }}
       <div class="row">
         <div class="col-xl-5">
           <h2 class="wvu-shout h6 wvu-text-letter-spacing-lg mb-4">{{ .Section | humanize }}</h2>
