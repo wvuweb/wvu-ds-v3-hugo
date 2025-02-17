@@ -12,8 +12,8 @@
           {{ partial "bookshop_partial" (slice "page" .Params.detail_blocks) }}
         </div>
         <div class="col-xl-5">
-          {{ partial "bookshop_bindings" `.Params.column_blocks` }}
-          {{ partial "bookshop_partial" (slice "page" .Params.column_blocks) }}
+          {{ partial "bookshop_bindings" `.detail_sidebar_blocks` }}
+          {{ partial "bookshop_partial" (slice "page" .Params.detail_sidebar_blocks) }}
         </div>
       </div>
     </div>
