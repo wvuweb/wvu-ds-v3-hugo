@@ -11,11 +11,22 @@
               <br>
             </p>
             <p>
-              <span class="fa-solid fa-phone" aria-hidden="true"></span>
-              <a href="tel:3041234567">{{ .Site.Params.footer.phone }}</a>
-              <br>
-              <span class="fa-solid fa-envelope" aria-hidden="true"></span>
-              <a href="mailto:email@mail.wvu.edu">{{ .Site.Params.footer.email }}</a>
+              {{ with site.Data.site_config.site_config.phone }}
+                {{ range . }}
+                  <span class="d-block">
+                    <span class="fa-solid fa-phone" aria-hidden="true"></span>
+                    <a href="tel:{{ .digits | urlize }}">{{ .digits }}</a>
+                  </span>
+                {{ end }}
+              {{ end }}
+              {{ with site.Data.site_config.site_config.email }}
+                {{ range . }}
+                  <span class="d-block">
+                    <span class="fa-solid fa-envelope" aria-hidden="true"></span>
+                    <a href="mailto:email@mail.wvu.edu">{{ .address }}</a>
+                  </span>
+                {{ end }}
+              {{ end }}
             </p>
           </address>
         </div>

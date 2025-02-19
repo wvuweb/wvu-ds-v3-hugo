@@ -8,8 +8,8 @@
     -webkit-mask-image: url($wvu-grid-pattern);
     mask-position: center;
     -webkit-mask-position: center;
-    mask-size: 1000px 1000px $global-important;
-    -webkit-mask-size: 1000px 1000px $global-important;
+    mask-size: cover $global-important;
+    -webkit-mask-size: cover $global-important;
     bottom: 0;
     content: '';
     left: 0;
@@ -23,8 +23,8 @@
     -webkit-mask-image: url($wvu-grid-pattern-zoomed);
     mask-position: center;
     -webkit-mask-position: center;
-    mask-size: 1000px 1000px $global-important;
-    -webkit-mask-size: 1000px 1000px $global-important;
+    mask-size: cover $global-important;
+    -webkit-mask-size: cover $global-important;
     bottom: 0;
     content: '';
     left: 0;
