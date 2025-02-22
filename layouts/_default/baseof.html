@@ -10,9 +10,16 @@
 
   {{ $secondaryNav := slice }}
 
-  {{ if .Params.secondary_nav }}
-    {{ partial "bookshop_bindings" `.Params.secondary_nav` }}
-    {{ partial "bookshop" (slice "design-system/simple/horizontal-subnav" .Params.secondary_nav) }}
+  {{ if not site.Params.env_bookshop_live }}
+    {{ if .Params.secondary_nav }}
+      {{ partial "bookshop_bindings" `.Params.secondary_nav` }}
+      {{ partial "bookshop" (slice "design-system/simple/horizontal-subnav" .Params.secondary_nav) }}
+    {{ end }}
+  {{ else }}
+    {{ if and .Params.cascade .Params.cascade.secondary_nav }}
+      {{ partial "bookshop_bindings" `.Params.cascade.secondary_nav` }}
+      {{ partial "bookshop" (slice "design-system/simple/horizontal-subnav" .Params.cascade.secondary_nav) }}
+    {{ end }}
   {{ end }}
 
   {{ if not .IsHome }}
