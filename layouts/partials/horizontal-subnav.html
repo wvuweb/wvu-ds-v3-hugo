@@ -3,17 +3,15 @@
 {{ $labelColor := "" }}
 {{ $items := slice }}
 
-{{ if .background_c }}
-  {{ $backgroundColor = .background_c }}
-{{ end }}
-
-{{ if .label_c }}
-  {{ $labelColor = .label_c }}
-{{ end }}
-
 {{ range site.Data.menus }}
   {{ if eq .uuid $menu }}
     {{ $items = .items }}
+    {{ if .background_c }}
+      {{ $backgroundColor = .background_c }}
+    {{ end }}
+    {{ if .label_c }}
+      {{ $labelColor = .label_c }}
+    {{ end }}
   {{ end }}
 {{ end }}
     
