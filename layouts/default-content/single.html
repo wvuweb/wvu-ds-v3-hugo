@@ -1,0 +1,7 @@
+{{ define "main" }}
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title)` }}
+  {{ partial "bookshop_partial" (slice "topper" (dict "topper" .Params.topper "title" .Params.title)) }}
+
+  {{ partial "bookshop_bindings" `.Params.default_content_blocks` }}
+  {{ partial "bookshop_partial" (slice "page" .Params.default_content_blocks) }}
+{{ end }}
