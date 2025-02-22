@@ -8,6 +8,12 @@
     {{ partial "header.html" . }}
   </header>
 
+  {{ $secondaryNav := slice }}
+
+  {{ with .Params.secondary_nav }}
+    {{ partial "horizontal-subnav" . }}
+  {{ end }}
+
   {{ if not .IsHome }}
     {{ partial "breadcrumbs" . }}
   {{ end }}
