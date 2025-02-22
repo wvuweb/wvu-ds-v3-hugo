@@ -11,7 +11,8 @@
   {{ $secondaryNav := slice }}
 
   {{ with .Params.secondary_nav }}
-    {{ partial "horizontal-subnav" . }}
+    {{ partial "bookshop_bindings" `.` }}
+    {{ partial "bookshop" (slice "design-system/simple/horizontal-subnav" .) }}
   {{ end }}
 
   {{ if not .IsHome }}
