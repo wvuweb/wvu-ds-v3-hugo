@@ -14,19 +14,15 @@
     {{ partial "horizontal-subnav" . }}
   {{ end }}
 
-  {{ if not site.Params.env_bookshop_live }}
-    {{ if not .IsHome }}
-      {{ partial "breadcrumbs" . }}
-    {{ end }}
+  {{ if not .IsHome }}
+    {{ partial "breadcrumbs" . }}
   {{ end }}
 
   <main>
     {{ block "main" . }}{{ end }}
   </main>
 
-  {{ if not site.Params.env_bookshop_live }}
-    {{ partial "default-content" . }}
-  {{ end }}
+
 
   {{ partial "footer.html" . }}
   
