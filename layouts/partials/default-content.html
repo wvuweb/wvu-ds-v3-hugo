@@ -1,5 +1,4 @@
 {{ with .Site.GetPage "default-content" "default-content/blocks.md" }}
-  {{ range .Params.default_content_blocks }}
-    {{ partial "bookshop" . }}
-  {{ end }}
+  {{ partial "bookshop_bindings" `.Params.default_content_blocks` }}
+  {{ partial "bookshop_partial" (slice "page" .Params.default_content_blocks) }}
 {{ end }}
