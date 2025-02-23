@@ -10,3 +10,11 @@
     {{- end }}
   {{- end }}
 {{- end }}
+
+{{- if hugo.IsProduction }}
+  {{- with resources.Get "js/meom-wvu-site-navigation--custom.js" }}
+    {{- with . | js.Build }}
+      <script src="{{ .RelPermalink }}" type="module"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
