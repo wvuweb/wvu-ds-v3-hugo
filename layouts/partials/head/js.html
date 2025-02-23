@@ -13,7 +13,7 @@
 
 {{- with resources.Get "js/meom-wvu-site-navigation--custom.js" }}
   {{- with . | js.Build }}
-    <script defer src="{{ .RelPermalink }}" type="module"></script>
+    <script src="{{ .RelPermalink }}" type="module"></script>
   {{- end }}
 {{- end }}
 
