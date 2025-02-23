@@ -1,5 +1,5 @@
 {{ with .Site.GetPage "default-content" "default-content/blocks.md" }}
   {{ range .Params.default_content_blocks }}
-    {{ partial "bookshop" . }}
+    {{ partial "bookshop" (slice "design-system/section/quicklinks" .) }}
   {{ end }}
 {{ end }}
