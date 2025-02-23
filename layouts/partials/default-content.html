@@ -1,7 +1,3 @@
 {{ with .Site.GetPage "default-content" "default-content/blocks.md" }}
-  {{ range .Params.default_content_blocks }}
-    {{ if eq ._bookshop_name "design-system/section/quicklinks" }}
-      {{ partial "bookshop" (slice "design-system/section/quicklinks" (dict "heading" .heading)) }}
-    {{ end }}
-  {{ end }}
+  {{ partial "bookshop_partial" (slice "page" .Params.default_content_blocks) }}
 {{ end }}
