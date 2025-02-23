@@ -7,5 +7,13 @@
 <link rel="preconnect" href="https://static.wvu.edu">
 <link rel="preconnect" href="https://kit.fontawesome.com">
 
+<link href="https://cdn.fonts.net/kit/b339d500-35c3-11ed-aaf7-06b70d83f6b0/b339d500-35c3-11ed-aaf7-06b70d83f6b0.css" rel="stylesheet" />
+
 {{ partial "head/css.html" . }}
 {{ partial "head/js.html" . }}
+
+{{ if hugo.IsProduction }}
+  <script src="https://kit.fontawesome.com/ba40ea27ab.js" crossorigin="anonymous"></script>
+{{ else }}
+  <script data-search-pseudo-elements defer src="https://kit.fontawesome.com/a140e17a00.js" crossorigin="anonymous"></script>
+{{ end }}
