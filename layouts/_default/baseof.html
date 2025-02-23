@@ -15,7 +15,7 @@
   {{ end }}
 
   {{ if not .IsHome }}
-    {{ partial "bookshop" (slice "design-system/section/breadcrumbs" .) }}
+    {{ partial "breadcrumbs" . }}
   {{ end }}
 
   <main>
