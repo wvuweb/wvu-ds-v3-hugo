@@ -22,7 +22,9 @@
     {{ block "main" . }}{{ end }}
   </main>
 
-
+  {{ if not site.Params.env_bookshop_live }}
+    {{ partial "default-content" . }}
+  {{ end }}
 
   {{ partial "footer.html" . }}
   
