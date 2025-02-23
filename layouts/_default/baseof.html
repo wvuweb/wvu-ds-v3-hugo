@@ -14,10 +14,6 @@
     {{ partial "horizontal-subnav" . }}
   {{ end }}
 
-  {{ if not .IsHome }}
-    {{ partial "bookshop" (slice "design-system/section/breadcrumbs" (dict "rel_permalink" .RelPermalink)) }}
-  {{ end }}
-
   <main>
     {{ block "main" . }}{{ end }}
   </main>
