@@ -8,10 +8,6 @@
 
 
 
-  {{ if not .IsHome }}
-    {{ partial "breadcrumbs" . }}
-  {{ end }}
-
   <main>
     {{ block "main" . }}{{ end }}
   </main>
