@@ -1,3 +1,5 @@
-{{ with site.Data.default_content.blocks.default_content_blocks }}
-  {{ partial "bookshop_partial" (slice "page" .) }}
+{{ if not site.Params.env_bookshop_live }}
+  {{ with site.Data.default_content.blocks.default_content_blocks }}
+    {{ partial "bookshop_partial" (slice "page" .) }}
+  {{ end }}
 {{ end }}
