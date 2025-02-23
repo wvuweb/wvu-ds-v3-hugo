@@ -14,8 +14,10 @@
     {{ partial "horizontal-subnav" . }}
   {{ end }}
 
-  {{ if not .IsHome }}
-    {{ partial "breadcrumbs" . }}
+  {{ if not site.Params.env_bookshop_live }}
+    {{ if not .IsHome }}
+      {{ partial "breadcrumbs" . }}
+    {{ end }}
   {{ end }}
 
   <main>
