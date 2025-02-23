@@ -14,7 +14,7 @@
     {{ partial "horizontal-subnav" . }}
   {{ end }}
 
-  {{ if not .IsHome }}
+  {{ if or (not .IsHome) (not site.Params.env_bookshop_live) }}
     {{ partial "breadcrumbs" . }}
   {{ end }}
 
