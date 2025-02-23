@@ -1,3 +1,3 @@
 {{ with site.Data.default_content.blocks.default_content_blocks }}
-  {{ partial "bookshop_partial" (slice "page" ._bookshop_name) }}
+  {{ partial "bookshop_partial" (slice "page" .) }}
 {{ end }}
