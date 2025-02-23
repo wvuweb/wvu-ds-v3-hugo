@@ -4,9 +4,19 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+  <header class="bg-wvu-blue">
+    {{ partial "header.html" . }}
+  </header>
 
+  {{ $secondaryNav := slice }}
 
+  {{ with .Params.secondary_nav }}
+    {{ partial "horizontal-subnav" . }}
+  {{ end }}
 
+  {{ if not .IsHome }}
+    {{ partial "breadcrumbs" . }}
+  {{ end }}
 
   <main>
     {{ block "main" . }}{{ end }}
