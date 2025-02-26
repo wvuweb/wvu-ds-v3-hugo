@@ -1,7 +1,5 @@
 {{ if eq .component "hero" }}
   {{ block "heroContent" . }}{{ end }}
-{{ else if eq .component "backpage" }}
-  {{ block "backpageContent" . }}{{ end }}
 {{ else }}
   <p>No component.</p>
 {{ end }}
