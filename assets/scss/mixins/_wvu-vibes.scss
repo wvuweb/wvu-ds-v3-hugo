@@ -1,0 +1,45 @@
+@mixin wvu-vibe($vibe: 'down_to_business') {
+  @if $vibe == 'wvu-experience' {
+    .vibe-label {
+      font-family: $helvetica-neue-condensed-black $global-important;
+      text-transform: uppercase $global-important;
+    }
+    .vibe-primary-heading {
+      font-family: $oliviar-black $global-important;
+      text-transform: uppercase $global-important
+    }
+    .vibe-subheading {
+      font-family: $oliviar-black $global-important;
+    }
+  }
+  @if $vibe == 'down-to-business' {
+    .vibe-label {
+    }
+    .vibe-primary-heading {
+      @include wvu-shout();
+    }
+    .vibe-subheading {
+
+    }
+  }
+  @if $vibe == 'discovery' {
+    .vibe-label {
+    }
+    .vibe-primary-heading {
+      @include wvu-shout();
+    }
+    .vibe-subheading {
+      font-family: $iowan-old-style-black-italic $global-important;
+    }
+  }
+  @if $vibe == 'nostalgic' {
+    .vibe-label {
+    }
+    .vibe-primary-heading {
+      font-family: $oliviar-black $global-important;
+    }
+    .vibe-subheading {
+      font-family: $oliviar-thin $global-important;
+    }
+  }
+}

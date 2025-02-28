@@ -1,0 +1,29 @@
+@mixin color-palette($color) {
+  @if $color == 'wvu-blue' {
+    .color-bg-primary {
+      background-color: $wvu-blue $global-important;
+      color: white $global-important;
+    }
+    .color-primary {
+
+    }
+    .color-bg-secondary {
+
+    }
+    .color-secondary {
+      color: $wvu-gold $global-important;
+    }
+    .color-bg-label {
+      background-color: $wvu-accent--sunset;
+    }
+    .color-label {
+      
+    }
+    .color-bg-highlight {
+
+    }
+    .color-highlight {
+
+    }
+  }
+}
