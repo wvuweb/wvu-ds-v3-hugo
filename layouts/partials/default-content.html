@@ -1,9 +1,7 @@
-{{ if not site.Params.env_bookshop_live }}
-  {{ with site.Data.default_content.blocks.default_content_blocks }}
-    {{ range . }}
-      {{ $partialName := ._bookshop_name }}
-      {{ $partialName = replace $partialName "design-system/section/" "components/" }}
-      {{ partial $partialName . }}
-    {{ end }}
+{{ with site.Data.default_content.blocks.default_content_blocks }}
+  {{ range . }}
+    {{ $partialName := ._bookshop_name }}
+    {{ $partialName = replace $partialName "design-system/section/" "components/" }}
+    {{ partial $partialName . }}
   {{ end }}
 {{ end }}
