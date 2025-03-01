@@ -1,29 +1,51 @@
 @mixin color-palette($color) {
   @if $color == 'wvu-blue' {
+
+    .vibe-wvu-experience {
+      .highlight {
+
+      }
+    }
+    .vibe-down-to-business {
+      .highlight {
+        
+      }
+    }
+    .vibe-discovery {
+      .highlight {
+        
+      }
+    }
+    .vibe-nostalgic {
+      .highlight {
+        
+      }
+    }
     .color-bg-primary {
       background-color: $wvu-blue $global-important;
       color: white $global-important;
     }
     .color-primary {
-
+      color: $wvu-blue $global-important;
     }
     .color-bg-secondary {
-
+      background-color: $wvu-blue $global-important;
     }
     .color-secondary {
       color: $wvu-gold $global-important;
     }
     .color-bg-label {
-      background-color: $wvu-accent--sunset;
+      background-color: $wvu-accent--sunset $global-important;
     }
     .color-label {
-      
+      color: $dark $global-important;
     }
     .color-bg-highlight {
-
+      background-color: $wvu-accent--sunset $global-important;
+      color: $dark $global-important;
     }
     .color-highlight {
-
+      color: $wvu-gold $global-important;
     }
   }
 }
