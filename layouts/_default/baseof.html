@@ -4,6 +4,11 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+
+  <div class="alert alert-danger mb-0 rounded-0">
+    <p><strong>Page Type:</strong> {{ page.Type }}</p>
+  </div>
+
   <header class="bg-wvu-blue">
     {{ partial "header.html" . }}
   </header>
@@ -15,7 +20,7 @@
   {{ end }}
 
   {{ if not .IsHome }}
-    {{ partial "bookshop" (slice "design-system/section/breadcrumbs" (dict "rel_permalink" .RelPermalink)) }}
+    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink) }}
   {{ end }}
 
   <main>

@@ -1,3 +1,7 @@
 {{ $scss := resources.Get "scss/site.scss" }}
 {{ $styles := $scss | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+
+{{ $bookshop_scss_files := partial "bookshop_scss" . }}
+{{ $bookshopScss := $bookshop_scss_files | resources.Concat "css/bookshop.css" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $bookshopScss.Permalink }}">
