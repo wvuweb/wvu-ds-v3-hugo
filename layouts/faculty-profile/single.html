@@ -1,6 +1,11 @@
 {{ define "main" }}
-  {{ partial "bookshop_bindings" `(dict "topper" .Params.student_profile_topper "params" .Params)` }}
-  {{ partial "bookshop" (slice .Params.student_profile_topper._bookshop_name (dict "topper" .Params.student_profile_topper "params" .Params)) }}
+  {{ if and .Params.faculty_profile_topper .Params.faculty_profile_topper._bookshop_name }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.faculty_profile_topper "title" .Params.title)` }}
+    {{ partial "bookshop" (slice .Params.faculty_profile_topper._bookshop_name (dict "topper" .Params.faculty_profile_topper "title" .Params.title)) }}
+  {{ else }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.faculty_profile_topper "title" .Params.title)` }}
+    {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.topper "title" .Params.title)) }}
+  {{ end }}
   <section class="py-6 wvu-backpage-main">
     <div class="container">
       <div class="row">

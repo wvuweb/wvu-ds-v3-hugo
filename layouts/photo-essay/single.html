@@ -1,6 +1,11 @@
 {{ define "main" }}
-  {{ partial "bookshop_bindings" `(dict "topper" .Params.article_topper "title" .Params.title "authors" .Params.authors)` }}
-  {{ partial "bookshop" (slice .Params.article_topper (dict "topper" .Params.article_topper "title" .Params.title "authors" .Params.authors)) }}
+  {{ if and .Params.topper .Params.article_topper._bookshop_name }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.article_topper "title" .Params.title)` }}
+    {{ partial "bookshop" (slice .Params.article_topper._bookshop_name (dict "topper" .Params.article_topper "title" .Params.title)) }}
+  {{ else }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.article_topper "title" .Params.title)` }}
+    {{ partial "bookshop" (slice "design-system/topper/article" (dict "topper" .Params.topper "title" .Params.title)) }}
+  {{ end }}
 
   {{ partial "bookshop_bindings" `.Params.photo_essay_blocks` }}
   {{ partial "bookshop_partial" (slice "page" .Params.photo_essay_blocks) }}
