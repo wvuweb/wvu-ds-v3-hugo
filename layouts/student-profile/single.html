@@ -18,7 +18,7 @@
         <div class="col-xl-14 ms-xl-auto">
           <div class="bg-white p-6 mt-n9 position-relative" style="z-index: -1;">
             {{ if .Params.heading }}
-              {{ partial "bookshop_bindings" `.Params.heading` }}
+              {{ partial "bookshop_bindings" `(dict "text" .Params.heading "classes" "h1 oliviar-black mb-5")` }}
               {{ partial "bookshop" (slice "design-system/generic/heading" (dict "text" .Params.heading "classes" "h1 oliviar-black mb-5")) }}
             {{ end }}
             {{ partial "bookshop_bindings" `.Params.detail_blocks` }}
