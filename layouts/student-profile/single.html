@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-xl-5">
           <div class="me-lg-n5">
-            {{ partial "bookshop_bindings" `.Params.quote` }}
+            {{ partial "bookshop_bindings" `(dict "text" .Params.quote "size" "fs-5")` }}
             {{ partial "bookshop" (slice "design-system/generic/blockquote" (dict "text" .Params.quote "size" "fs-5")) }}
           </div>
         </div>
