@@ -7,9 +7,11 @@
   {{ end }}
   {{ if and page.Params.topper.styles page.Params.topper.styles.background_c }}
     {{ $color = page.Params.topper.styles.background_c }}
-  {{ else if and page.Params.article_topper.styles page.Params.article_topper.styles.background_c }}
-    {{ $color = page.Params.article_topper.styles.background_c }}
   {{ end }}
+{{ else if and page.Params.article_topper.styles page.Params.article_topper.styles.background_c }}
+  {{ $color = page.Params.article_topper.styles.background_c }}
+{{ else if and page.Params.student_profile_topper.styles page.Params.student_profile_topper.styles.background_c }}
+  {{ $color = page.Params.student_profile_topper.styles.background_c }}
 {{ end }}
 
 <div class="d-flex position-relative wvu-z-index-breadcrumbs" style="height: 0px;">

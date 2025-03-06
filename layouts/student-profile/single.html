@@ -1,16 +1,26 @@
 {{ define "main" }}
   {{ if and .Params.student_profile_topper .Params.student_profile_topper._bookshop_name }}
-    {{ partial "bookshop_bindings" `(dict "topper" .Params.student_profile_topper "title" .Params.title)` }}
-    {{ partial "bookshop" (slice .Params.student_profile_topper._bookshop_name (dict "topper" .Params.student_profile_topper "title" .Params.title)) }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.student_profile_topper "params" .Params)` }}
+    {{ partial "bookshop" (slice .Params.student_profile_topper._bookshop_name (dict "topper" .Params.student_profile_topper "params" .Params)) }}
   {{ else }}
     {{ partial "bookshop_bindings" `(dict "topper" .Params.student_profile_topper "title" .Params.title)` }}
     {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.topper "title" .Params.title)) }}
   {{ end }}
-  <section class="py-6 wvu-backpage-main">
-    <div class="container">
+  <section class="py-6 wvu-backpage-main position-relative">
+    <div class="container wvu-z-index-content">
       <div class="row">
+        <div class="col-xl-5">
+          <div class="me-lg-n5">
+            {{ partial "bookshop_bindings" `.Params.quote` }}
+            {{ partial "bookshop" (slice "design-system/generic/blockquote" (dict "text" .Params.quote "size" "fs-5")) }}
+          </div>
+        </div>
         <div class="col-xl-14 ms-xl-auto">
-          <div class="bg-white p-6 mt-n9">
+          <div class="bg-white p-6 mt-n9 position-relative" style="z-index: -1;">
+            {{ if .Params.heading }}
+              {{ partial "bookshop_bindings" `.Params.heading` }}
+              {{ partial "bookshop" (slice "design-system/generic/heading" (dict "text" .Params.heading "classes" "h1 oliviar-black mb-5")) }}
+            {{ end }}
             {{ partial "bookshop_bindings" `.Params.detail_blocks` }}
             {{ partial "bookshop_partial" (slice "page" .Params.detail_blocks) }}
           </div>
