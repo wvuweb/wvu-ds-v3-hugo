@@ -6,7 +6,7 @@
     {{ partial "bookshop_bindings" `(dict "topper" .Params.staff_profile_topper "title" .Params.title)` }}
     {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.staff_profile_topper "title" .Params.title)) }}
   {{ end }}
-  <section class="py-6 wvu-backpage-main">
+  <section class="py-6 wvu-backpage-main wvu-z-index-content">
     <div class="container">
       <div class="row">
         <div class="col-xl-14 ms-xl-auto">
