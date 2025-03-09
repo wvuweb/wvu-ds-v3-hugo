@@ -1,10 +1,10 @@
 {{ define "main" }}
   {{ if and .Params.organization_topper .Params.organization_topper._bookshop_name }}
-    {{ partial "bookshop_bindings" `(dict "topper" .Params.organization_topper "title" .Params.title)` }}
-    {{ partial "bookshop" (slice .Params.organization_topper._bookshop_name (dict "topper" .Params.organization_topper "title" .Params.title)) }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.organization_topper "title" .Params.name_of_organization)` }}
+    {{ partial "bookshop" (slice .Params.organization_topper._bookshop_name (dict "topper" .Params.organization_topper "title" .Params.name_of_organization)) }}
   {{ else }}
-    {{ partial "bookshop_bindings" `(dict "topper" .Params.organization_topper "title" .Params.title)` }}
-    {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.organization_topper "title" .Params.title)) }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.organization_topper "title" .Params.name_of_organization)` }}
+    {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.organization_topper "title" .Params.name_of_organization)) }}
   {{ end }}
   <section class="py-6 wvu-backpage-main">
     <div class="container">
