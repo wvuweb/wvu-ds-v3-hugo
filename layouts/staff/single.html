@@ -1,20 +1,14 @@
 {{ define "main" }}
-  {{ if and .Params.faculty_profile_topper .Params.faculty_profile_topper._bookshop_name }}
-    {{ partial "bookshop_bindings" `(dict "topper" .Params.faculty_profile_topper "title" .Params.title)` }}
-    {{ partial "bookshop" (slice .Params.faculty_profile_topper._bookshop_name (dict "topper" .Params.faculty_profile_topper "title" .Params.title)) }}
+  {{ if and .Params.staff_profile_topper .Params.staff_profile_topper._bookshop_name }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.staff_profile_topper "title" .Params.title)` }}
+    {{ partial "bookshop" (slice .Params.staff_profile_topper._bookshop_name (dict "topper" .Params.staff_profile_topper "title" .Params.title)) }}
   {{ else }}
-    {{ partial "bookshop_bindings" `(dict "topper" .Params.faculty_profile_topper "title" .Params.title)` }}
-    {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.faculty_profile_topper "title" .Params.title)) }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.staff_profile_topper "title" .Params.title)` }}
+    {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.staff_profile_topper "title" .Params.title)) }}
   {{ end }}
   <section class="py-6 wvu-backpage-main">
     <div class="container">
       <div class="row">
-        <div class="col-xl-5">
-          <div class="me-lg-n5">
-            {{ partial "bookshop_bindings" `(dict "text" .Params.quote "size" "fs-5")` }}
-            {{ partial "bookshop" (slice "design-system/generic/blockquote" (dict "text" .Params.quote "size" "fs-5")) }}
-          </div>
-        </div>
         <div class="col-xl-14 ms-xl-auto">
           <div class="bg-white p-6 mt-n9">
             {{ if .Params.heading }}
