@@ -1,0 +1,61 @@
+{{ $src := .topper.background_image }}
+{{ $backgroundColor := "bg-white text-dark" }}
+{{ $headingColor := "text-wvu-blue" }}
+
+{{ if .topper.background_image }}
+  {{ $backgroundColor = "bg-dark text-white" }}
+  {{ $headingColor = "text-wvu-gold" }}
+{{ end }}
+
+{{ if and .topper.styles .topper.styles.background_c }}
+  {{ $backgroundColor = .topper.styles.background_c }}
+{{ end }}
+
+{{ if and .topper.styles .topper.styles.heading_c }}
+  {{ $headingColor = .topper.styles.heading_c }}
+{{ end }}
+
+{{- if not site.Params.env_bookshop_live -}}
+  {{ $image := "" }}
+  {{/*  Get the image, either from its remote or local source  */}}
+  {{ if hasPrefix $src "http"}}
+    {{ $image = resources.GetRemote .topper.background_image }}
+  {{ else }}
+    {{ $image = resources.Get .topper.background_image }}
+  {{ end }}
+
+  {{/* Resize images and add them to a variable  */}}
+  {{ if and $image (ne $image.MediaType.SubType "svg") }}
+    {{ if eq .imageProcess "fit" }}
+      {{ $src = ($image.Fit (printf "%dx%d webp" 1920 1080)).RelPermalink }}
+    {{ else }}
+      {{ $src = ($image.Fill (printf "%dx%d webp" 1920 1080)).RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{- end -}}
+
+<header id="{{ .topper.name }}" class="c-topper-hero vibe-{{ .topper.styles.vibe }} {{ $backgroundColor }} position-relative py-7 text-center">
+  {{ partial "bookshop_partial" (slice "section_background_alt" (dict "image" $src "alt" .topper.alt_text "styles" .topper.styles)) }}
+  <div class="container wvu-z-index-content {{ .topper.styles.container_margin }}">
+    <div class="row">
+      <div class="col-xl-16 mx-xl-auto">
+        {{ if .topper.heading }}
+          {{ if .title }}
+            <h1 class="vibe-label h6 mb-6 text-uppercase wvu-text-letter-spacing-lg">{{ .title }}</h1>
+          {{ end }}
+          <h2 id="" class="vibe-primary-heading display-4 text-{{ $headingColor }}">
+            {{ range .topper.heading }}
+              <span class="d-inline-block">{{ .text }} </span>
+            {{ end }}
+          </h2>
+        {{ else }}
+          <h1 id="" class="vibe-primary-heading display-3 text-{{ $headingColor }}">{{ .title }}</h1>
+        {{ end }}
+        <p class="vibe-subheading h4 mt-4">{{ .topper.subheading }}</p>
+        <div class="vibe-body mt-4">
+          {{ .topper.body_text | markdownify }}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

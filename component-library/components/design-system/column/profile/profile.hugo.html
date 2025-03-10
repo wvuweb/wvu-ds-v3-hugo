@@ -1,0 +1,29 @@
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  <div class="bg-wvu-accent--blue text-white border border-2 border-dark p-4 mt-5">
+    <div class="row">
+      <div class="col-10">
+        <div class="mt-n6 ms-n6">
+          <div class="ratio ratio-1x1 bg-light border border-2 border-dark wvu-hard-shadow">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-14">
+        {{ if .super_heading }}
+          <div class="wvu-container-box-skewed-3 bg-wvu-gold p-3 pb-2 me-n3 ms-n5 mb-3 mt-n5" style="transform: rotate(-2deg)">
+            <p class="oliviar-black h5 text-uppercase">
+              <span class="d-block">{{ .super_heading.label }}</span>
+              {{ .super_heading.text }}
+            </p>
+        </div>
+        {{ end }}
+        <h3 class="wvu-shout text-wvu-accent--yellow">{{ .heading }}</h3>
+        <p class="iowan-old-style fs-5">Charleston, WV</p>
+      </div>
+    </div>
+    <div class="mt-4">
+      <p><span class="wvu-shout text-wvu-accent--yellow">Majors:</span> computer engineering; computer science / Minor: math</p>
+      <p><span class="wvu-shout text-wvu-accent--yellow">Employed As:</span> associate software engineer, Northrop Grumman</p>
+    </div>
+  </div>
+{{ end }}

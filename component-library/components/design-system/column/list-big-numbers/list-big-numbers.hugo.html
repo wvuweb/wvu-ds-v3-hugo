@@ -1,0 +1,14 @@
+<ol class="wvu-ol-big-numbers wvu-ol-big-numbers-wvu-blue fs-5">
+  {{ range .items }}
+    <li>
+      <span class="d-block mb-4">
+        {{ .text | markdownify }}
+        {{ if .ctas }}
+          {{ range .ctas }}
+            {{ partial "bookshop" (slice "design-system/generic/button" .) }}
+          {{ end }}
+        {{ end }}
+      </span>
+    </li>
+  {{ end }}
+</ol>

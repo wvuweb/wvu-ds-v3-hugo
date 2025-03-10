@@ -1,0 +1,14 @@
+{{ $links := site.Data.quicklinks }}
+
+{{- $url := .url -}}
+{{- $text := .text -}}
+{{- with .ref -}}
+  {{- with (index $links .) }}
+    {{- $url = .url -}}
+    {{- if not $text -}}
+      {{- $text = .text -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<a class="text-decoration-none text-dark" href="{{ $url }}">{{ $text }}</a></li>

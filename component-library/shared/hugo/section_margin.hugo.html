@@ -1,0 +1,19 @@
+{{- if not site.Params.env_bookshop_live -}}
+  {{- if eq . "pull-up" -}}
+    mt-n6
+  {{- else if eq . "pull-down" -}}
+    mb-n6
+  {{- else if eq . "pull-both" -}}
+    my-n6
+  {{- else if eq . "buffer-top" -}}
+    pt-6
+  {{- else if eq . "buffer-bottom" -}}
+    pb-6
+  {{- else if eq . "buffer-both" -}}
+    py-6
+  {{- else -}}
+    {{ . }}
+  {{- end -}}
+{{- else -}}
+  {{ . }}
+{{- end -}}

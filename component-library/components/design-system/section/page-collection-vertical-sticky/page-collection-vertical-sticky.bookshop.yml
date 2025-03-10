@@ -1,0 +1,36 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: "Page Collection Vertical - Sticky"
+  description:
+  icon:
+  tags: []
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  heading: Heading
+  items:
+    - title: Item 1 Title
+      text: Item 1 text.
+      url:
+    - title: Item 2 Title
+      text: Item 2 text.
+      url:
+    - title: Item 3 Title
+      text: Item 3 text.
+      url:
+  lead: Lead text.
+  config:
+    edit_mode_only: false
+  layout:
+    margin_y:
+  styles:
+    panels:
+    item_headings:
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:

@@ -1,0 +1,16 @@
+{{ $vibe := "" }}
+{{ $highlight := "" }}
+{{ $colorHighlight := "" }}
+
+{{ if .colorHighlight }}
+  {{ $colorHighlight = .colorHighlight }}
+{{ end }}
+
+{{ if .heading }}
+  {{ range .heading }}
+    {{ if .highlight }}
+      {{ $highlight = printf "%s%s" "wvu-container-box-skewed wvu-container-box-skewed-4 " $colorHighlight }}
+    {{ end }}
+    <span class="position-relative {{ $highlight }}"><span>{{ .text }}</span></span> 
+  {{ end }}
+{{ end }}

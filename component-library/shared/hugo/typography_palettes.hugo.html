@@ -1,0 +1,13 @@
+{{ $styles := slice }}
+
+{{ $wvuExperience := dict
+  "section" "bg-wvu-accent--blue text-white py-6"
+  "container" ""
+  "superheading" "h3 wvu-shout wvu-text-letter-spacing-lg"
+  "heading" "display-4 oliviar-black text-uppercase text-wvu-accent--sunset"
+  "subheading" "helvetica-neue-light h2"
+}}
+
+{{ $styles = $wvuExperience }}
+
+{{ return $styles }}

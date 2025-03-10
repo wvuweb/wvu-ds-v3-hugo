@@ -1,0 +1,16 @@
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  <section class="py-6">
+    <div class="container wvu-z-index-content">
+      <div class="row">
+        <div class="col-xl-16">
+          {{ partial "bookshop_bindings" `.column_a` }}
+          {{ partial "bookshop" (slice .column_a._bookshop_name .column_a) }}
+        </div>
+        <div class="col-8">
+          {{ partial "bookshop_bindings" `.Params.column_b` }}
+          {{ partial "bookshop" (slice .column_b._bookshop_name .column_b) }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

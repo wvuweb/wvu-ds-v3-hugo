@@ -10,6 +10,10 @@
   {{ end }}
 {{ else if and page.Params.article_topper.styles page.Params.article_topper.styles.background_c }}
   {{ $color = page.Params.article_topper.styles.background_c }}
+{{ else if and page.Params.faculty_profile_topper.styles page.Params.faculty_profile_topper.styles.background_c }}
+  {{ $color = page.Params.faculty_profile_topper.styles.background_c }}
+{{ else if and page.Params.organization_topper.styles page.Params.organization_topper.styles.background_c }}
+  {{ $color = page.Params.organization_topper.styles.background_c }}
 {{ else if and page.Params.student_profile_topper.styles page.Params.student_profile_topper.styles.background_c }}
   {{ $color = page.Params.student_profile_topper.styles.background_c }}
 {{ end }}

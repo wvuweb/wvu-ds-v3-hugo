@@ -1,0 +1,53 @@
+{{- $src := .src -}}
+{{- $size := "960x640" -}}
+{{- $height := 960 }}
+{{- $width := 640 }}
+{{- $classes := "" -}}
+{{- $opacity := "1" -}}
+{{- $alt := "" }}
+{{- $imageProcess := "fill" }}
+
+{{ if .width }}
+  {{ $width = .width }}
+{{ end }}
+
+{{ if .height }}
+  {{ $height = .height }}
+{{ end }}
+
+{{ if .classes }}
+  {{ $classes = .classes }}
+{{ end }}
+
+{{ if .opacity }}
+  {{ $opacity = .opacity }}
+{{ end }}
+
+{{ if .alt }}
+  {{ $alt = .alt }}
+{{ end }}
+
+{{ if .imageProcess }}
+  {{ $imageProcess := .imageProcess }}
+{{ end }}
+
+{{- if not site.Params.env_bookshop_live -}}
+  {{ $image := "" }}
+  {{/*  Get the image, either from its remote or local source  */}}
+  {{ if hasPrefix $src "http"}}
+    {{ $image = resources.GetRemote $src }}
+  {{ else }}
+    {{ $image = resources.Get $src }}
+  {{ end }}
+
+  {{/* Resize images and add them to a variable  */}}
+  {{ if and $image (ne $image.MediaType.SubType "svg") }}
+    {{ if eq .imageProcess "fit" }}
+      {{ $src = ($image.Fit (printf "%dx%d webp Lanczos" $width $height)).RelPermalink }}
+    {{ else }}
+      {{ $src = ($image.Fill (printf "%dx%d webp Lanczos" $width $height)).RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{- end -}}
+
+<img class="{{ $classes }}" src="{{ $src }}" style="opacity: {{ $opacity }}" alt="{{ $alt}}" />

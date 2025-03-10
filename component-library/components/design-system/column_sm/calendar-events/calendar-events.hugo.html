@@ -1,0 +1,8 @@
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  <h2 class="h4 oliviar-black mb-4 border-top border-1 border-wvu-blue pt-2">{{ .heading }}</h2>
+  <ul class="list-unstyled">
+    <li>
+      <p>Nov 4</p>
+    </li>
+  </ul>
+{{ end }}

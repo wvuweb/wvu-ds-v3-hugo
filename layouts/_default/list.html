@@ -1,12 +1,4 @@
 {{ define "main" }}
-  <main class="py-5">
-    <div class="container">
-      <h1>{{ .Title }}</h1>
-      {{ .Content }}
-      {{ range .Pages }}
-        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-        {{ .Summary }}
-      {{ end }}
-    </div>
-  </main>
+  {{ partial "bookshop_bindings" `.Params.content_blocks` }}
+  {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
 {{ end }}

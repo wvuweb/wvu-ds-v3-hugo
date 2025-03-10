@@ -1,0 +1,9 @@
+{{ $size := "" }}
+
+{{ if .size }}
+  {{ $size = .size }}
+{{ end }}
+
+<blockquote class="{{ $size }}">
+  {{ .text }}
+</blockquote>

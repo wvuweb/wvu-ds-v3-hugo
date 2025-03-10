@@ -1,0 +1,30 @@
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  <section id="video-feature-1" aria-labelledby="video-feature-1-label" class="section-component py-6 bg-wvu-neutral--black bg-wvu-accent--blue-dark wvu-bg-vignetting text-white text-center">  
+    <div class="container wvu-z-index-content">      
+      <h2 id="video-feature-1-label" class="display-3 wvu-shout">Video Feature Headline</h2>
+      <p class="h3 helvetica-neue-light mb-5">Subhead goes here.</p>    
+      <div class="row">
+        <div class="col-md-16 mx-auto mb-3 mb-md-0">
+          {{ if .id }}
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/{{ .id }}" title="{{ .title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+          {{ end }}
+        </div>
+        <div class="col-md-8 text-start">
+          <h3>{{ .title }}</h3>          
+          <p>
+            {{ .description }}
+          </p>
+        </div>
+      </div>
+      <div class="mt-4 wvu-z-index-content">
+        <div class="wvu-z-index-content mb-2">
+          <p class="mb-0">View 
+            <a class="text-wvu-gold" href="#">more videos</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

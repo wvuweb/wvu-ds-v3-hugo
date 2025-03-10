@@ -1,0 +1,35 @@
+{{ $image := "" }}
+{{ $alt := "" }}
+{{ $layerStyles := "" }}
+
+{{ if .topper.background_image }}{{ $image = .topper.background_image }}{{ end }}
+{{ if .topper.alt_text }}{{ $alt = .topper.alt_text }}{{ end }}
+
+<main id="big-search-1" aria-labelledby="big-search-1-label"
+  class="py-8 text-center position-relative
+    {{ partial "bookshop_partial" (slice "section_styles" (dict "styles" .topper.styles.section)) }}
+  ">
+  {{ partial "bookshop_partial" (slice "section_background" (dict "image" $image "alt" $alt "layerStyles" $layerStyles)) }}
+  <div class="container wvu-z-index-content mb-5">
+    <div class="row">
+      <div class="col-xl-16 mx-xl-auto">
+        {{ if .topper.heading }}
+          <h1 class="h2 wvu-shout wvu-text-letter-spacing-lg mb-6">{{ .title }}</h1>
+          <h2 id="big-search-1-label" class="display-5 oliviar-black text-uppercase mb-4">{{ partial "bookshop_partial" (slice "heading" (dict "heading" .topper.heading)) }}</h2>
+        {{ else }}
+          <h1 id="big-search-1-label" class="display-5 oliviar-black text-uppercase mb-4">{{ .title }}</h1>
+        {{ end }}
+        <p class="helvetica-neue-light h2 mb-0">{{ .topper.subheading }}</p> 
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mx-0 position-relative wvu-z-index-content">
+    <div class="col-md-12 mx-auto">
+      <div class="row">
+        <div class="col-md-24">
+          {{ partial "bookshop" (slice "design-system/simple/icon-bar-outlines" (dict "items" .topper.items "styles" .topper.styles.section)) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

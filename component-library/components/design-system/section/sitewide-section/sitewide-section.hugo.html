@@ -1,0 +1,15 @@
+{{ $section := .sitewide_section }}
+{{ $backgroundColor := "bg-light" }}
+
+{{ if not site.Data }}
+  {{ partial "bookshop" (slice "design-system/generic/collection-tooltip" (dict "text" "This component will not display the collection pages inside the bookshop browser" )) }}
+{{ else if and (site.Params.env_bookshop_live) }}
+  {{ partial "bookshop" (slice "design-system/generic/sitewide-component-tooltip" (dict "backgroundColor" "bg-light")) }}
+{{ else }}
+  {{ range site.Data.sitewide_components }}
+    {{ $title := .title | urlize }}
+    {{ if eq $section $title }}
+      {{ partial "bookshop" (slice ._bookshop_name .) }}
+    {{ end }}
+  {{ end }}
+{{ end }}

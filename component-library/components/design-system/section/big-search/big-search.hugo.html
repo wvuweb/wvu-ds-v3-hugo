@@ -1,0 +1,42 @@
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  <section id="big-search-1" aria-labelledby="big-search-1-label" class="section-component py-6 text-center bg-wvu-gold text-wvu-blue position-relative">  
+    <div class="container wvu-z-index-content">      
+      <h2 id="big-search-1-label" class="display-5 wvu-shout wvu-text-letter-spacing-lg mb-3">{{ .heading }}</h2>
+      <p class="helvetica-neue-light h3 mb-0">{{ .subheading }}</p>    
+      <div class="row d-flex justify-content-center mt-2">
+        <div class="col-md-12 col-lg-10 mx-auto">
+          <div class="row">
+            <div class="col-md-24">
+              <form class="form-inline w-100" action="https://search.wvu.edu/search" method="get" role="search">
+                <input id="big-search-query" type="hidden" name="q" value="site:designsystem.wvu.edu">
+                <input id="big-search-sort" name="sort" type="hidden" value="date:D:L:d1">
+                <input id="big-search-output" name="output" type="hidden" value="xml_no_dtd">
+                <input id="big-search-ie" name="ie" type="hidden" value="UTF-8">
+                <input id="big-search-oe" name="oe" type="hidden" value="UTF-8">
+                <input id="big-search-proxystylesheet" name="proxystylesheet" type="hidden" value="default_frontend">
+                <input id="big-search-client" name="client" type="hidden" value="default_frontend">
+                <label id="big-search-label" for="big-search-input">
+                  <span class="visually-hidden">Search</span>
+                </label>
+                <div class="input-group shadow-sm w-100">
+                  <input id="big-search-input" class="form-control p-4 h1 mb-0" name="q" type="search" placeholder="Type in your search term.">
+                  <button class="btn btn-primary px-4 px-lg-5" name="btnG" type="submit">
+                    <span class="d-block">
+                      <span class="h3 mb-0 fa-solid fa-magnifying-glass" aria-hidden="true"></span>
+                    </span>
+                    <span class="visually-hidden">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ with .postscript }}
+        <div class="text-center mt-4">
+          {{ partial "bookshop" (slice "design-system/simple/postscript" .) }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,87 @@
+{{ $directoryData := where site.Data.people_data "dir_include" true }}
+
+{{ $directory := sort $directoryData "last_name" "asc" }}
+
+<!-- Loop By: sort_order -->
+<section id="wvu-main-content" class="py-6">  
+  <div class="container wvu-z-index-content">
+    <div class="row">
+      <div class="col-lg-5 me-lg-auto">
+        <form>
+          <div class="mb-4">
+            <h2 class="h6 mb-1 small text-uppercase">Search</h2>
+            <input class="form-control" type="text" placeholder="First or Last Name" aria-label=".form-control example">
+          </div>
+          <div class="mb-4">
+            <h2 class="h6 mb-1 small text-uppercase">School</h2>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <h2 class="h6 mb-1 small text-uppercase">Department</h2>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-18">
+        <ul class="list-unstyled">
+          {{ range $directory }}
+            <li class="border-bottom border-1 border-black-50 pt-4 pb-4 pb-sm-4">
+              <div class="row">
+                <div class="col-24 col-sm-8 mb-2 mb-sm-0">
+                  <div class="row">
+                    <div class="col-lg-8 my-2 my-lg-0">
+                      <div class="ratio ratio-1x1">
+                        <img class="rounded-circle shadow w-100 h-100 object-fit" src="/files/5e0fcbad-8922-44ed-8940-70932b454951/200x200.webp?cb=b947a06916753b1c88fd93634e54f588" alt="Firstname Lastname headshot">
+                      </div>
+                    </div>
+                    <div class="col-lg-16 d-sm-none d-lg-block">
+                      <p class="mb-0 py-2">
+                        <strong class="d-block">{{ .name }}</strong>
+                        {{ range .position }}
+                          <span class="d-block">{{ .title }}, {{ .organization }}</span>
+                        {{ end }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-24 col-sm-14">
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="mb-0 py-2">
+                        {{ with .phone }}
+                          {{ range . }}
+                            <a href="tel:{{ .number }}">{{ .number }}</a><br>
+                          {{ end }}
+                        {{ end }}
+                        {{ with .email }}
+                          {{ range . }}
+                            <a href="mailto:{{ .email }}">{{ .email }}</a><br>
+                          {{ end }}
+                        {{ end }}
+                      </p>
+                    </div>
+                    <div class="col-12">
+                      <p class="mb-0 py-2">
+                        <span class="fa-solid fa-user-circle"></span> <a href="https://designsystem.wvu.edu/people/lorem-ipsum-dolor-sit-amet-consectetur">View Profile<span class="visually-hidden">: Lorem Ipsum Dolor Sit Amet Consectetur</span></a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

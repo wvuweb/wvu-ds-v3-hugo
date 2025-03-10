@@ -1,0 +1,26 @@
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  <div class="c-factoids">
+    <h2 class="h4 oliviar-black mb-4 border-top border-1 border-wvu-blue pt-2">{{ .heading }}</h2>
+    <div class="row">
+      {{ range .items }}
+        <div class="col">
+          <p class="text-wvu-blue">
+            {{ if .pre }}
+              <span class="d-block helvetica-neue-bold">{{ .pre }}</span>
+            {{ end }}
+            
+            <span class="d-block oliviar-black display-1">{{ .stat }}</span>
+            
+            {{ if .post }}
+              <span class="d-block helvetica-neue-bold">{{ .post }}</span>
+            {{ end }}
+      
+            {{ if .source }}
+              <span class="d-block small"><em>{{ .source }}</em></span>
+            {{ end }}
+          </p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

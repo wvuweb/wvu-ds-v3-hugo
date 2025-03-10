@@ -1,0 +1,58 @@
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+
+  {{ $order := "" }}
+
+  <section class="section-component py-6 py-xxl-7">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-24 col-xxl-20">
+          <h2 class="mb-6 text-center wvu-shout display-5 wvu-text-letter-spacing-lg">{{ .heading }}</h2>
+
+          {{ range $i, $_ := .items }}
+
+            {{ if not ( modBool $i 2 ) }}
+              {{ $order = "order-lg-3" }}
+            {{ else }}
+              {{ $order = "order-lg-1" }}
+            {{ end }}
+
+            <div class="row gx-lg-5 mb-6">
+              <div class="col-lg-12 {{ $order }} mb-5 mb-lg-0">
+                {{ if .image }}
+                  <div class="ratio ratio-3x2">
+                    {{ partial "bookshop" (slice "design-system/generic/img" (dict "src" .image "width" 960 "height" 640 "classes" "object-fit-cover" "alt" .alt_text)) }}
+                  </div>
+                {{ end }}
+              </div>
+              <div class="col-lg-12 order-2">
+                <div class="h-100 d-flex align-items-center">
+                  <div class="mt-lg-n5">
+                    <h3 class="h1 oliviar-black text-wvu-blue">{{ .heading }}</h3>
+                    <div class="mb-3">
+                      {{ .copy | markdownify }}
+                    </div>
+                    {{ range .ctas }}
+                      {{ partial "bookshop" (slice "design-system/generic/button" .) }}
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+
+          {{ with .postscript }}
+            <div class="text-center mt-5">
+              {{ .copy | markdownify }}
+
+              {{ range .postscript_links }}
+                {{ partial "bookshop" (slice "design-system-generic/button" .) }}
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+  </section>
+{{ end }}

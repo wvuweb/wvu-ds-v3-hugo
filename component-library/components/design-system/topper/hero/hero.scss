@@ -1,0 +1,16 @@
+.c-topper-hero {
+  &.color-palette-wvu-gold {
+    background-color: $wvu-gold;
+    color: $wvu-blue;
+    .color-heading {
+      color: $wvu-blue;
+    }
+  }
+  &.color-palette-wvu-blue {
+    background-color: $wvu-blue;
+    color: white;
+    .color-heading {
+      color: $wvu-gold;
+    }
+  }
+}

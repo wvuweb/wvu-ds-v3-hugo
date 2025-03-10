@@ -1,0 +1,36 @@
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  <section class="section-component position-relative py-6 bg-white">
+    <div class="container wvu-z-index-content">
+      <div class="border border-1 border-wvu-accent--sunset m-5">
+        <div class="row gx-xl-6">
+          <div class="col-xl-16 position-relative">
+            <div class="h-100 position-relative">
+              {{ if .image }}
+                <img class="img-fluid my-n5 mx-n5 position-relative" width="2100px" height="1400px" src="/img/09.jpg" style="z-index: -1;" />
+              {{ else }}
+                <div class="bg-wvu-accent--blue position-absolute" style="bottom: -3rem; left: -3rem; right: -3rem; top: -3rem; z-index: -1;">
+                  <img class="w-100 h-100 object-fit-cover" src="https://placehold.co/2100x1400" style="z-index: -1;" />
+                </div>
+              {{ end }}
+            </div>
+          </div>
+          <div class="col-xl-8 ms-xxl-auto pe-5 mt-n1 d-flex flex-column">
+            <div class="mt-n2 position-absolute bg-white">
+              <p class="h6 wvu-shout text-dark wvu-text-letter-spacing-lg p-4 ms-n4 mt-n5 mb-3 d-inline-block" style="background-color: inherit;">Places and Spaces</p>
+            </div>
+            <div class="flex-grow-1 d-flex align-items-center">
+              <div class="mx-5 my-6 mx-xl-0">
+                <h2 class="display-4 wvu-shout mb-4">{{ .heading }}</h2>
+                <p class="wvu-shout h3 wvu-container-box-skewed wvu-container-box-skewed-1 wvu-container-box-skewed-wvu-gold text-wvu-blue wvu-text-spacing-wide wvu-tilt-left"><span>{{ .subheading }}</span></p>
+                <p class="mt-3">{{ .text }}</p>
+                {{ range .ctas }}
+                  <a class="btn btn-wvu-accent--blue-light" href="#">Call to Action <span class="fa-regular fa-arrow-circle-right"></span></a>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

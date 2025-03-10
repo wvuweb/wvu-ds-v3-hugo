@@ -1,0 +1,43 @@
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  {{ if site.Params.env_bookshop_live }}
+    <p>Live editing</p>
+  {{ else }}
+    {{ $contacts := site.Data.people }}
+
+    <h2 class="h4 oliviar-black mb-4 border-top border-1 border-wvu-blue pt-2">{{ .heading }}</h2>
+
+    <div class="row gx-4">
+      {{ range .people }}
+        {{ $contact := .person }}
+        {{ range $contacts }}
+          {{ if and .uuid (eq .uuid $contact) }}
+            <div class="col-8">
+              {{ if .image }}            
+                <div class="ratio ratio-1x1">
+                  {{ $alt := "" }}
+                  {{ if .image.alt }}
+                    {{ $alt = .image.alt }}
+                  {{ else }}
+                    {{ if .name }}
+                      {{ $alt = (printf "%s%s" "Portrait of " .name) }}
+                    {{ end }}
+                  {{ end }}
+                  {{ partial "bookshop" (slice "design-system/generic/img" (dict "src" .image.src "width" 960 "height" 960 "classes" "object-fit-cover" "alt" $alt)) }}
+                </div>
+              {{ end }}
+              <h3 class="h5 mt-4">{{ .name }}</h3>
+              <p>
+                {{ with .phone }}
+                  <span class="fa-solid fa-phone"></span> <a href="tel:{{ . }}">{{ . }}</a><br>
+                {{ end }}
+                {{ with .email }}
+                  <span class="fa-solid fa-envelope"></span> <a href="mailto:{{ . }}">{{ . }}</a>
+                {{ end }}
+              </p>
+            </div>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}

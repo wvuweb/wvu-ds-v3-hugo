@@ -1,0 +1,12 @@
+{{- $backgroundColor := "" -}}
+{{- $textColor := "" -}}
+
+{{- if .styles.background_c -}}
+  {{- $backgroundColor = .styles.background_c -}}
+{{- end -}}
+
+{{- if .styles.text_c -}}
+  {{- $textColor = .styles.text_c -}}
+{{- end -}}
+
+{{ $backgroundColor }} {{ $textColor }}

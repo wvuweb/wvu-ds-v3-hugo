@@ -1,0 +1,64 @@
+{{ $imgClasses := "" }}
+{{ if eq .Params.use_cutout true }}
+  {{ $imgClasses = "mb-n5 mt-n6" }}
+{{ end }}
+
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  <section class="section-component py-0">
+    <div class="container py-6">
+      {{ if site.Params.env_bookshop_live }}
+        <p>Live editing</p>
+      {{ else }}
+        Test.
+        {{ $peopleData := site.Data.people }}
+        {{ range .profiles }}
+          {{ $person := "" }}
+          {{ if .person }}
+            {{ $person = .person }}
+          {{ end }}
+          {{ range $peopleData }}
+            <!-- This should be specific people files. -->
+            {{ range . }}
+              {{ if .name }}
+                {{ if eq .name $person }}
+                  <div class="row gx-4">
+                    <div class="col-12 mx-auto text-center">
+                      <div class="bg-white shadow-sm h-100 p-5 d-flex flex-column justify-content-center px-xxl-6">
+                        <h2 class="h6 helvetica-neue-condensed-black wvu-text-letter-spacing-lg text-uppercase mb-4">{{ with .heading }}{{ . }}{{ else }}The WVU Experience{{ end }}</h2>
+                        <blockquote class="ms-0 border-0 border-wvu-gold">
+                          <span class="d-block wvu-shout text-wvu-gold display-1 mb-n3">“</span>
+                          <p class="iowan-old-style fs-2 mb-0">{{ .quote | markdownify }}</p>   
+                        </blockquote>
+                      </div>
+                    </div>
+                    <div class="col-12 ms-auto">
+                      <div class="p-5 bg-white shadow-sm w-100 h-100 position-relative">
+                        <div class="wvu-bg-img p-5">
+                          <div class="bg-wvu-accent--blue-light h-100 w-100">
+                            <img class="h-100 w-100 object-fit wvu-bg-blend-mode-screen wvu-bg-filter-grayscale" src="/backgrounds/downtown-bg.jpg" />
+                          </div>
+                        </div>
+                        <div class="h-100 position-relative">
+                          <div class="w-100 h-100">
+                            <div class="row h-100">
+                              <div class="col-xxl-7">
+                                <div class="wvu-bg-filter-blur border border-1 border-dark border-opacity-10 text-dark p-3 mt-3 ms-n6">
+                                  <h3 class="iowan-old-style-black-italic h5">{{ .name }}</h3>
+                                  <p class="small mb-0">{{ if .subline }}{{ .subline }}<br>{{ end }}Wheeling, WV</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

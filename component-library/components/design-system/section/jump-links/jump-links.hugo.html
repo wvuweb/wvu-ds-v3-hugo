@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg bg-wvu-gold text-wvu-blue {{ if not site.Params.env_bookshop_live }}sticky-top{{ end }} {{ .background_c }} {{ .text_c }}">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        {{ range .items }}
+          <li class="nav-item">
+            <a class="nav-link wvu-shout fs-5 py-4 {{ .text_c }}" href="#{{ .anchor }}">{{ .text }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</nav>

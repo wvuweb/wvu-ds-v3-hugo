@@ -1,0 +1,49 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+  label: "Student Profile"
+  description:
+  icon:
+  tags: []
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  heading:
+  student:
+  config:
+    edit_mode_only: false
+  styles:
+    color_palette:
+    vibe:
+    volume:
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  color_palette:
+    type: select
+    options:
+      values:
+        - _select_data.brand_colors
+      value_key: class
+  vibe:
+    type: select
+    options:
+      values:
+        - name: Down to Business 1
+          class: wvu-ds-vibe-down-to-business-01
+        - name: Discovery 1
+          class: wvu-ds-vibe-discovery-01
+        - name: The WVU Experience 1
+          class: wvu-ds-vibe-wvu-experience-01
+        - name: Nostalgic 1
+          class: wvu-ds-vibe-nostalgic-01
+      value_key: class
+  volume:
+    type: range
+    options:
+      min: 1
+      max: 5
+      step: 1

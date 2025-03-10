@@ -1,0 +1,27 @@
+{{ $font := "oliviar-black" }}
+{{ $size := "display-1" }}
+{{ $color := "text-wvu-blue" }}
+
+{{ if or site.Params.env_bookshop_live (ne .config.edit_mode_only true) }}
+  <div class="c-factoids">
+    <h2 class="h6 oliviar-black mb-4 border-top border-1 border-wvu-blue pt-2">{{ .heading }}</h2>
+    {{ range .items }}
+      <p class="{{ $color }}">
+        {{ if .pre }}
+          <span class="d-block helvetica-neue-bold">{{ .pre }}</span>
+        {{ end }}
+        
+        <span class="d-block {{ $font }} {{ $size }}">{{ .stat }}</span>
+        
+        {{ if .post }}
+          <span class="d-block helvetica-neue-bold">{{ .post }}</span>
+        {{ end }}
+
+        {{ if .source }}
+          <span class="d-block small"><em>{{ .source }}</em></span>
+        {{ end }}
+      </p>
+      <hr class="wvu-hr-dotted" />
+    {{ end }}
+  </div>
+{{ end }}
