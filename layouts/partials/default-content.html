@@ -1,5 +1,5 @@
-{{ with site.Data.default_content.blocks.default_content_blocks }}
-  {{ range . }}
+{{ with .GetPage "./default_content/blocks" }}
+  {{ range .Params.default_content_blocks }}
     {{ $partialName := replace ._bookshop_name "design-system/section/" "components/" }}
     {{ partial $partialName . }}
   {{ end }}
