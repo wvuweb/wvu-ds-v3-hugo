@@ -1,4 +1,4 @@
-{{ with .GetPage "./default_content/blocks" }}
+{{ with .GetPage "default_content/blocks" }}
   {{ range .Params.default_content_blocks }}
     {{ $partialName := replace ._bookshop_name "design-system/section/" "components/" }}
     {{ partial $partialName . }}
