@@ -34,3 +34,15 @@
   background: rgb(179,161,105);
   background: linear-gradient(45deg, rgba(179,161,105,1) 0%, rgba(242,230,194,1) 100%);
 }
+
+
+
+@mixin wvu-gradient-wvu-blue() {
+  background: rgb(0,40,85);
+  background: linear-gradient(45deg, rgba(0,40,85,0) 0%, rgba(0,40,85,1) 100%);
+}
+
+@mixin wvu-gradient-wvu-gold() {
+  background: rgb(234,170,0);
+  background: linear-gradient(45deg, rgba(234,170,0,0) 0%, rgba(234,170,0,1) 100%);
+}
