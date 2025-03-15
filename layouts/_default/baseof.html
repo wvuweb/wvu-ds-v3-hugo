@@ -20,7 +20,9 @@
   {{ end }}
 
   {{ if not .IsHome }}
-    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink) }}
+    {{ if eq .Params "is_default_content" nil }}
+      {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink) }}
+    {{ end }}
   {{ end }}
 
   <main>
