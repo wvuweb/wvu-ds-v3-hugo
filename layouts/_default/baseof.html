@@ -20,7 +20,8 @@
   {{ end }}
 
   {{ if not .IsHome }}
-    {{ partial "bookshop" (slice "design-system/simple/breadcrumbs" (dict "rel_permalink" .RelPermalink)) }}
+    {{ partial "bookshop_bindings" `(dict "rel_permalink" .RelPermalink "params" .Params)` }}
+    {{ partial "bookshop" (slice "design-system/simple/breadcrumbs" (dict "rel_permalink" .RelPermalink "params" .Params)) }}
   {{ end }}
 
   <main>
