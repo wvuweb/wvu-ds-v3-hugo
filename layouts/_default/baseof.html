@@ -20,16 +20,16 @@
   {{ end }}
 
   {{ if not .IsHome }}
-    {{ if eq .Params "is_default_content" nil }}
-      {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink) }}
-    {{ end }}
+    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink) }}
   {{ end }}
 
   <main>
     {{ block "main" . }}{{ end }}
   </main>
 
-  {{ partial "default-content" . }}
+  {{ if eq .Params "is_default_content" nil }}
+    {{ partial "default-content" . }}
+  {{ end }}
 
   {{ partial "footer.html" . }}
   
