@@ -27,7 +27,7 @@
     {{ block "main" . }}{{ end }}
   </main>
 
-  {{ if eq .Params "is_default_content" nil }}
+  {{ if not (in .Params "is_default_content") }}
     {{ partial "default-content" . }}
   {{ end }}
 
