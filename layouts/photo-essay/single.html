@@ -4,7 +4,7 @@
     {{ partial "bookshop" (slice .Params.article_topper._bookshop_name (dict "topper" .Params.article_topper "params" .Params)) }}
   {{ else }}
     {{ partial "bookshop_bindings" `(dict "topper" .Params.article_topper "params" .Params)` }}
-    {{ partial "bookshop" (slice "design-system/topper/article" (dict "topper" .Params.topper "params" .Params)) }}
+    {{ partial "bookshop" (slice "design-system/topper/article-hero" (dict "topper" .Params.article_topper "params" .Params)) }}
   {{ end }}
 
   <div class="iowan-old-style">
