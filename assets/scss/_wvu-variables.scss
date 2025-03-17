@@ -215,7 +215,7 @@ $wvu-bp-md: 768px !default;
 $wvu-bp-lg: 992px !default;
 $wvu-bp-xl: 1200px !default;
 $wvu-bp-xxl: 1400px !default;
-$wvu-bp-xxxl: 1800px !default;
+$wvu-bp-xxxl: 1600px !default;
 
 $wvu-bp-nav: $wvu-bp-lg !default;
 $wvu-bp-nav-max-width: ($wvu-bp-nav - 1) !default;
@@ -279,7 +279,7 @@ $container-max-widths: (
   lg: 960px,
   xl: 1140px,
   xxl: 1320px,
-  xxxl: 1720px
+  xxxl: 1520px
 );
 
 $spacer: 1rem;
