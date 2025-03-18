@@ -8,6 +8,8 @@
   {{ if and page.Params.topper.styles page.Params.topper.styles.background_c }}
     {{ $color = page.Params.topper.styles.background_c }}
   {{ end }}
+{{ else if and page.Params.alumni_profile_topper.styles page.Params.alumni_profile_topper.styles.background_c }}
+  {{ $color = page.Params.alumni_profile_topper.styles.background_c }}
 {{ else if and page.Params.article_topper.styles page.Params.article_topper.styles.background_c }}
   {{ $color = page.Params.article_topper.styles.background_c }}
 {{ else if and page.Params.faculty_profile_topper.styles page.Params.faculty_profile_topper.styles.background_c }}
