@@ -1,14 +1,14 @@
 {{ define "main" }}
   {{ if and .Params.topper .Params.topper._bookshop_name }}
-    Yes, bookshop name
     {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title)` }}
     {{ partial "bookshop" (slice .Params.topper._bookshop_name (dict "topper" .Params.topper "title" .Params.title)) }}
   {{ else }}
-    Else, do default
     {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title)` }}
     {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.topper "title" .Params.title)) }}
   {{ end }}
-  Outside If in between
-  {{ partial "bookshop_bindings" `.Params.content_blocks` }}
-  {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
+
+  {{ if .Params.content_blocks }}
+    {{ partial "bookshop_bindings" `.Params.content_blocks` }}
+    {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
+  {{ end }}
 {{ end }}
