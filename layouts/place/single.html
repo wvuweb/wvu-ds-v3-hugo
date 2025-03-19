@@ -1,6 +1,37 @@
 {{ define "main" }}
-  {{ partial "bookshop_bindings" `(dict "topper" .Params.place_topper "params" .Params)` }}
-  {{ partial "bookshop_partial" (slice "topper" (dict "topper" .Params.place_topper "params" .Params)) }}
-  {{ partial "bookshop_bindings" `.Params.place_blocks` }}
-  {{ partial "bookshop_partial" (slice "page" .Params.place_blocks) }}
+  {{ if and .Params.student_profile_topper .Params.place_topper_bookshop_name }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.student_profile_topper "params" .Params)` }}
+    {{ partial "bookshop" (slice .Params.place_topper_bookshop_name (dict "topper" .Params.student_profile_topper "params" .Params)) }}
+  {{ else }}
+    {{ partial "bookshop_bindings" `(dict "topper" .Params.student_profile_topper "title" .Params.title)` }}
+    {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.topper "title" .Params.title)) }}
+  {{ end }}
+  <section class="py-6 wvu-backpage-main wvu-z-index-content">
+    <div class="container wvu-z-index-content">
+      <div class="row">
+        <div class="col-xl-5">
+          <div class="me-lg-n5">
+            {{ partial "bookshop_bindings" `(dict "text" .Params.quote "size" "fs-5")` }}
+            {{ partial "bookshop" (slice "design-system/generic/blockquote" (dict "text" .Params.quote "size" "fs-5")) }}
+          </div>
+        </div>
+        <div class="col-xl-14 ms-xl-auto">
+          <div class="bg-white p-6 mt-n9 position-relative" style="z-index: -1;">
+            {{ if .Params.heading }}
+              {{ partial "bookshop_bindings" `(dict "text" .Params.heading "classes" "h1 oliviar-black mb-5")` }}
+              {{ partial "bookshop" (slice "design-system/generic/heading" (dict "text" .Params.heading "classes" "h1 oliviar-black mb-5")) }}
+            {{ end }}
+            {{ partial "bookshop_bindings" `.Params.place_blocks` }}
+            {{ partial "bookshop_partial" (slice "page" .Params.place_blocks) }}
+          </div>
+        </div>
+        <div class="col-xl-5">
+          <div class="ms-lg-n5">
+            {{ partial "bookshop_bindings" `.Params.profile_sidebar_blocks` }}
+            {{ partial "bookshop_partial" (slice "page" .Params.profile_sidebar_blocks) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {{ end }}
