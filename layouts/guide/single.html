@@ -8,7 +8,9 @@
     {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.topper "title" .Params.title)) }}
   {{ end }}
 
-  {{ partial "bookshop_bindings" `.Params.content_blocks` }}
-  {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
+  {{ if .Params.content_blocks }}
+    {{ partial "bookshop_bindings" `.Params.content_blocks` }}
+    {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
+  {{ end }}
   
 {{ end }}
