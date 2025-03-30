@@ -1,20 +1,6 @@
 {{ define "main" }}
-  {{ if and .Params.article_topper .Params.article_topper._bookshop_name }}
-    {{ partial "bookshop_bindings" `(dict "topper" .Params.article_topper "params" .Params)` }}
-    {{ partial "bookshop" (slice .Params.article_topper._bookshop_name (dict "topper" .Params.article_topper "params" .Params)) }}
-  {{ else }}
-    {{ partial "bookshop_bindings" `(dict "topper" .Params.article_topper "params" .Params)` }}
-    {{ partial "bookshop" (slice "design-system/topper/article" (dict "topper" .Params.topper "params" .Params)) }}
-  {{ end }}
 
-  <section class="py-6">
-    <div class="container iowan-old-style">
-      <div class="row">
-        <div class="col-xl-12 col-xxl-10 mx-xl-auto">
-          {{ partial "bookshop_bindings" `.Params.article_blocks` }}
-          {{ partial "bookshop_partial" (slice "page" .Params.article_blocks) }}
-        </div>
-      </div>
-    </div>
-  </section>
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.article_topper "params" .Params "article_blocks" .Params.article_blocks)` }}
+  {{ partial "bookshop_partial" (slice "page-profile" (dict "topper" .Params.article_topper "params" .Params "article_blocks" .Params.article_blocks)) }}
+
 {{ end }}
