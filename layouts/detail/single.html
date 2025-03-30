@@ -1,28 +1,6 @@
 {{ define "main" }}
 
   {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks)` }}
-
-  {{ if .Params.topper._bookshop_name }}
-    {{ partial "bookshop" (slice .Params.topper._bookshop_name (dict "topper" .Params.topper "title" .Params.title)) }}
-  {{ else }}
-    {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.topper "title" .Params.title)) }}
-  {{ end }}
-
-  <main class="py-6 wvu-backpage-main">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-5">
-          <h2 class="wvu-shout h6 wvu-text-letter-spacing-lg mb-4">{{ .Section | humanize }}</h2>
-          {{ partial "section-menu" . }}
-        </div>
-        <div class="col-xl-10 mx-xl-auto">
-          {{ partial "bookshop_partial" (slice "page" .Params.detail_blocks) }}
-        </div>
-        <div class="col-xl-5">
-          {{ partial "bookshop_partial" (slice "page" .Params.detail_sidebar_blocks) }}
-        </div>
-      </div>
-    </div>
-  </main>
+  {{ partial "bookshop_partial" (slice "page-detail" (dict "topper" .Params.topper "title" .Params.title "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks)) }}
 
 {{ end }}
