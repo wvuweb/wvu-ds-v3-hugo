@@ -1,31 +1,6 @@
 {{ define "main" }}
-  {{ if and .Params.staff_profile_topper .Params.staff_profile_topper._bookshop_name }}
-    {{ partial "bookshop_bindings" `(dict "topper" .Params.staff_profile_topper "params" .Params)` }}
-    {{ partial "bookshop" (slice .Params.staff_profile_topper._bookshop_name (dict "topper" .Params.staff_profile_topper "params" .Params)) }}
-  {{ else }}
-    {{ partial "bookshop_bindings" `(dict "topper" .Params.staff_profile_topper "params" .Params)` }}
-    {{ partial "bookshop" (slice "design-system/topper/staff" (dict "topper" .Params.staff_profile_topper "params" .Params)) }}
-  {{ end }}
-  <section class="py-6 wvu-backpage-main wvu-z-index-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-14 col-xxl-12 ms-xl-auto">
-          <div class="">
-            {{ if .Params.heading }}
-              {{ partial "bookshop_bindings" `(dict "text" .Params.heading "classes" "h1 oliviar-black mb-5")` }}
-              {{ partial "bookshop" (slice "design-system/generic/heading" (dict "text" .Params.heading "classes" "h1 oliviar-black mb-5")) }}
-            {{ end }}
-            {{ partial "bookshop_bindings" `.Params.detail_blocks` }}
-            {{ partial "bookshop_partial" (slice "page" .Params.detail_blocks) }}
-          </div>
-        </div>
-        <div class="col-xl-5">
-          <div class="ms-lg-n5">
-            {{ partial "bookshop_bindings" `.Params.profile_sidebar_blocks` }}
-            {{ partial "bookshop_partial" (slice "page" .Params.profile_sidebar_blocks) }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.faculty_profile_topper "params" .Params "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.profile_sidebar_blocks)` }}
+  {{ partial "bookshop_partial" (slice "page-staff" (dict "topper" .Params.staff_profile_topper "params" .Params "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.profile_sidebar_blocks)) }}
+
 {{ end }}
