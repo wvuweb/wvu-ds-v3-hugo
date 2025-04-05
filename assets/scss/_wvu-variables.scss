@@ -99,21 +99,37 @@ $wvu-accent--blue-light: #9DDAE6;
 $wvu-accent--yellow: #FFE539;
 $wvu-accent--sunset: #F3674F;
 
-$wvu-blue-subtle: tint-color($wvu-blue, 80%);
-$wvu-gold-subtle: tint-color($wvu-gold, 80%);
+$wvu-blue-bg-subtle: tint-color($wvu-blue, 10%);
+$wvu-gold-bg-subtle: tint-color($wvu-gold, 10%);
 
-$wvu-accent--old-gold-subtle: tint-color($wvu-accent--old-gold, 80%);
-$wvu-neutral--off-white-subtle: tint-color($wvu-neutral--off-white, 80%);
-$wvu-neutral--cream-subtle: tint-color($wvu-neutral--cream, 80%);
-$wvu-neutral--tan-subtle: tint-color($wvu-neutral--tan, 80%);
-$wvu-neutral--warm-gray-light-subtle: tint-color($wvu-neutral--warm-gray-light, 80%);
-$wvu-neutral--warm-gray-medium-subtle: tint-color($wvu-neutral--warm-gray-medium, 80%);
-$wvu-neutral--warm-gray-dark-subtle: tint-color($wvu-neutral--warm-gray-dark, 80%);
-$wvu-accent--blue-dark-subtle: tint-color($wvu-accent--blue-dark, 80%);
-$wvu-accent--blue-subtle: tint-color($wvu-accent--blue, 80%);
-$wvu-accent--blue-light-subtle: tint-color($wvu-accent--blue-light, 80%);
-$wvu-accent--yellow-subtle: tint-color($wvu-accent--yellow, 80%);
-$wvu-accent--sunset-subtle: tint-color($wvu-accent--sunset, 80%);
+$wvu-accent--old-gold-bg-subtle: tint-color($wvu-accent--old-gold, 10%);
+$wvu-neutral--off-white-bg-subtle: tint-color($wvu-neutral--off-white, 10%);
+$wvu-neutral--cream-bg-subtle: tint-color($wvu-neutral--cream, 10%);
+$wvu-neutral--tan-bg-subtle: tint-color($wvu-neutral--tan, 10%);
+$wvu-neutral--warm-gray-light-bg-subtle: tint-color($wvu-neutral--warm-gray-light, 10%);
+$wvu-neutral--warm-gray-medium-bg-subtle: tint-color($wvu-neutral--warm-gray-medium, 10%);
+$wvu-neutral--warm-gray-dark-bg-subtle: tint-color($wvu-neutral--warm-gray-dark, 10%);
+$wvu-accent--blue-dark-bg-subtle: tint-color($wvu-accent--blue-dark, 10%);
+$wvu-accent--blue-bg-subtle: tint-color($wvu-accent--blue, 10%);
+$wvu-accent--blue-light-bg-subtle: tint-color($wvu-accent--blue-light, 10%);
+$wvu-accent--yellow-bg-subtle: tint-color($wvu-accent--yellow, 10%);
+$wvu-accent--sunset-bg-subtle: tint-color($wvu-accent--sunset, 10%);
+
+$wvu-blue-bg-subtle-dark: shade-color($wvu-blue, 10%);
+$wvu-gold-bg-subtle-dark: shade-color($wvu-gold, 10%);
+
+$wvu-accent--old-gold-bg-subtle-dark: shade-color($wvu-accent--old-gold, 10%);
+$wvu-neutral--off-white-bg-subtle-dark: shade-color($wvu-neutral--off-white, 10%);
+$wvu-neutral--cream-bg-subtle-dark: shade-color($wvu-neutral--cream, 10%);
+$wvu-neutral--tan-bg-subtle-dark: shade-color($wvu-neutral--tan, 10%);
+$wvu-neutral--warm-gray-light-bg-subtle-dark: shade-color($wvu-neutral--warm-gray-light, 10%);
+$wvu-neutral--warm-gray-medium-bg-subtle-dark: shade-color($wvu-neutral--warm-gray-medium, 10%);
+$wvu-neutral--warm-gray-dark-bg-subtle-dark: shade-color($wvu-neutral--warm-gray-dark, 10%);
+$wvu-accent--blue-dark-bg-subtle-dark: shade-color($wvu-accent--blue-dark, 10%);
+$wvu-accent--blue-bg-subtle-dark: shade-color($wvu-accent--blue, 10%);
+$wvu-accent--blue-light-bg-subtle-dark: shade-color($wvu-accent--blue-light, 10%);
+$wvu-accent--yellow-bg-subtle-dark: shade-color($wvu-accent--yellow, 10%);
+$wvu-accent--sunset-bg-subtle-dark: shade-color($wvu-accent--sunset, 10%);
 
 // Old Colors
 // Neutral
