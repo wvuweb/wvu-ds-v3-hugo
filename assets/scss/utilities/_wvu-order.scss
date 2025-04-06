@@ -1,0 +1,12 @@
+@media (min-width: $wvu-bp-xl) {
+  .alternating-grid {
+    .order-rotate {
+      order: 1;
+    }
+    &:nth-child(odd) {
+      .order-rotate {
+        order: 3;
+      }
+    }
+  }
+}
