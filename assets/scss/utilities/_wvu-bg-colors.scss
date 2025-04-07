@@ -1,0 +1,19 @@
+@each $key, $value in $dark-theme-colors {
+  .bg-#{$key} {
+    color: white;
+  }
+  .bg-#{$key}-subtle {
+    background-color: shade($value, 7%) !important;
+    color: white;
+  }
+}
+
+@each $key, $value in $light-theme-colors {
+  .bg-#{$key} {
+    color: $dark;
+  }
+  .bg-#{$key}-subtle {
+    background-color: tint($value, 7%) !important;
+    color: $dark;
+  }
+}
