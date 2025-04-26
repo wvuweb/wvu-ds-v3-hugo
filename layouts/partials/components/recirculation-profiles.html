@@ -1,0 +1,44 @@
+{{ $pages := .CurrentSection.Pages.ByParam "last_name" }}
+{{ $pages = where $pages ".Params.type" .Params.type }}
+
+<section>
+  <div class="container-fluid mx-0">
+    <div class="row justify-content-between">
+
+      {{ with $pages.Prev . }}
+        <div class="col-xxl-4 mx-0">
+          <div class="bg-dark">
+            <div class="row">
+              <div class="col-12">
+
+              </div>
+              <div class="col-12">
+                <div class="p-5">
+                  <a href="{{ .RelPermalink }}">{{ .Params.name }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+
+      {{ with $pages.Next . }}
+        <div class="col-xxl-4 mx-0">
+          <div class="bg-dark">
+            <div class="row">
+              <div class="col-12">
+                <div class="p-5">
+                  <a href="{{ .RelPermalink }}">{{ .Params.name }}</a>
+                </div>
+              </div>
+              <div class="col-12">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+      
+    </div>
+  </div>
+</section>
