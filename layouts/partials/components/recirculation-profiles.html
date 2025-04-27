@@ -7,14 +7,15 @@
 
       {{ with $pages.Prev . }}
         <div class="col-xxl-4 mx-0">
-          <div class="bg-dark">
-            <div class="row">
+          <div class="bg-dark position-relative">
+            <div class="row gx-0">
               <div class="col-12">
-
+                <div class="h-100 bg-light">
+                </div>
               </div>
               <div class="col-12">
-                <div class="p-5">
-                  <a href="{{ .RelPermalink }}">{{ .Params.name }}</a>
+                <div class="p-4">
+                  <a class="text-decoration-none oliviar-black stretched-link lh-1" href="{{ .RelPermalink }}">{{ .Params.name }}</a>
                 </div>
               </div>
             </div>
@@ -24,15 +25,16 @@
 
       {{ with $pages.Next . }}
         <div class="col-xxl-4 mx-0">
-          <div class="bg-dark">
-            <div class="row">
+          <div class="bg-dark position-relative">
+            <div class="row gx-0">
               <div class="col-12">
-                <div class="p-5">
-                  <a href="{{ .RelPermalink }}">{{ .Params.name }}</a>
+                <div class="p-4">
+                  <a class="text-decoration-none oliviar-black stretched-link lh-1" href="{{ .RelPermalink }}">{{ .Params.name }}</a>
                 </div>
               </div>
               <div class="col-12">
-
+                <div class="h-100 bg-light">
+                </div>
               </div>
             </div>
           </div>
