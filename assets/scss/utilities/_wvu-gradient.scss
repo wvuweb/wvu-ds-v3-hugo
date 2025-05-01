@@ -25,3 +25,11 @@
 .wvu-gradient-tan-cream {
   @include wvu-gradient-tan-cream();
 }
+
+.bg-gradient-wvu-blue-accent-blue-accent-blue-light {
+  background:
+    linear-gradient(200deg, rgba(0, 98, 163, 1), transparent),
+    linear-gradient(300deg, rgba(0, 40, 85, 1), transparent),
+    linear-gradient(100deg, rgba(157, 218, 230, 1), transparent);
+  color: white $global-important;
+}
