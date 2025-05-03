@@ -1,0 +1,88 @@
+/* Brand Audience should define
+  1. Which typeface to use for display headings, subheaings, superheadings, labels, body copy
+  2. Which pattern to use on an element with a .wvu-b-pattern class
+*/
+
+@each $name, $audience in $audiences-typography {
+  .audience-#{$name} {
+    @each $name, $font in $audience {
+      .wvu-b-#{$name} {
+        font-family: $font $global-important;
+      }
+    }
+  }
+}
+
+@mixin brand-palette($audience, $level) {
+  @if $audience == "alumni" {
+    @if $level == "2" or $level == "3" {
+      .wvu-b-pattern {
+        
+      }
+    }
+    @if $level == "3" {
+
+    }
+  } @else if $audience == "general" {
+    .wvu-b-display-heading {
+      text-transform: uppercase $global-important;
+    }
+  } @else if $audience == "prospective_students" {
+    .wvu-b-display-heading {
+      text-transform: uppercase $global-important;
+    }
+    @if $level == "2" or $level == "3" {
+      .wvu-b-border {
+        border-width: 2px $global-important;
+      }
+      .wvu-b-shadow {
+  
+      }
+      .wvu-b-pattern {
+        
+      }
+    }
+  }
+}
+
+/* Brand Level should define
+  1. If a shadow is present on elements with .wvu-b-shadow class
+  2. If a pattern is present on elements with a .wvu-b-pattern class
+  3. If a gradient should be applied to display headings
+*/
+
+.audience-alumni {
+  &.level-1 {
+    @include brand-palette("alumni", "1");
+  }
+  &.level-2 {
+    @include brand-palette("alumni", "2");
+  }
+  &.level-3 {
+    @include brand-palette("alumni", "3");
+  }
+}
+
+.audience-general {
+  &.level-1 {
+    @include brand-palette("general", "1");
+  }
+  &.level-2 {
+    @include brand-palette("general", "2");
+  }
+  &.level-3 {
+    @include brand-palette("general", "3");
+  }
+}
+
+.audience-prospective_students {
+  &.level-1 {
+    @include brand-palette("prospective_students", "1");
+  }
+  &.level-2 {
+    @include brand-palette("prospective_students", "2");
+  }
+  &.level-3 {
+    @include brand-palette("prospective_students", "3");
+  }
+}

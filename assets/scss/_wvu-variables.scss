@@ -348,6 +348,28 @@ $aspect-ratios: (
 
 $grid-columns: 24 !default;
 
+$audience-general-typography: (
+  "label": $helvetica-neue-condensed-black,
+  "super-heading": $iowan-old-style-black,
+  "display-heading": $helvetica-neue-condensed-black,
+  "subheading": $helvetica-neue-light,
+  "body": $helvetica-neue
+);
+
+$audience-prospective-students-typography: (
+  "label": $helvetica-neue-condensed-black,
+  "super-heading": $oliviar-black,
+  "display-heading": $oliviar-black,
+  "display-heading-transform": uppercase,
+  "subheading": $helvetica-neue-light,
+  "body": $helvetica-neue
+);
+
+$audiences-typography: (
+  "general": $audience-general-typography,
+  "prospective_students": $audience-prospective-students-typography
+);
+
 $blue: #006FE6;
 $link-color: $blue;
 $blockquote-margin-y: 0;
