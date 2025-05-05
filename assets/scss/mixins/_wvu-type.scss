@@ -184,6 +184,14 @@
   }
 }
 
+@mixin rustica($is-important: $global-important) {
+  font-family: $rustica $is-important;
+	font-style: italic $is-important;
+	font-stretch: normal $is-important;
+	font-weight: 900 $is-important;
+  font-display: swap $is-important;
+}
+
 // Example usage:
 // .iowan-old-style-black-italic {
 //   @include iowan-old-style-black-italic();

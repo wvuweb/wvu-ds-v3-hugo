@@ -25,6 +25,7 @@
     }
   } @else if $audience == "general" {
     .wvu-b-display-heading {
+      line-height: $wvu-shout-line-height $global-important;
       text-transform: uppercase $global-important;
     }
   } @else if $audience == "prospective_students" {
@@ -84,5 +85,69 @@
   }
   &.level-3 {
     @include brand-palette("prospective_students", "3");
+  }
+}
+
+.c-profile-generic-css {
+  .audience-alumni {
+    &.bg-option-1 {
+      background-color: $wvu-blue $global-important;
+      color: white $global-important;
+      .wvu-b-accent-bg {
+        background-color: $wvu-gold $global-important;
+      }
+      .wvu-b-accent-text {
+        color: $wvu-gold $global-important;
+      }
+    }
+    &.bg-option-2 {
+      background-color: $wvu-gold $global-important;
+      .wvu-b-accent-bg {
+        background-color: $wvu-blue $global-important;
+      }
+      .wvu-b-accent-text {
+        color: $wvu-blue $global-important;
+      }
+    }
+  }
+  .audience-general {
+    &.bg-option-1 {
+      .wvu-b-accent-bg {
+
+      }
+      .wvu-b-accent-text {
+
+      }
+    }
+    &.bg-option-2 {
+      .wvu-b-accent-bg {
+
+      }
+      .wvu-b-accent-text {
+
+      }
+    }
+  }
+  .audience-prospective_students {
+    &.bg-option-1 {
+      background-color: $wvu-accent--blue $global-important;
+      color: $white;
+      .wvu-b-accent-bg {
+        background-color: $wvu-accent--yellow $global-important;
+        color: $wvu-accent--blue $global-important;
+      }
+      .wvu-b-accent-text {
+        color: $wvu-accent--yellow $global-important;
+      }
+    }
+    &.bg-option-2 {
+      background-color: $wvu-accent--yellow $global-important;
+      .wvu-b-accent-bg {
+        background-color: $wvu-accent--blue $global-important;
+      }
+      .wvu-b-accent-text {
+        color: $wvu-accent--blue $global-important;
+      }
+    }
   }
 }

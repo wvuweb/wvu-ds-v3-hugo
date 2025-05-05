@@ -123,6 +123,10 @@
   @include oliviar-thin();
 }
 
+.rustica, %rustica {
+  @include rustica();
+}
+
 // Usage example:
 // <p class="iowan-old-style">
 //   ...

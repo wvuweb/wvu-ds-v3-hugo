@@ -18,6 +18,9 @@ $oliviar-black: 'OliviarSansBlack', $wvu-shout-fallback !default;
 $oliviar-black-italic: 'OliviarSansBlackItalic', $wvu-shout-fallback !default;
 $oliviar-thin: 'OliviarSansThin', $wvu-shout-fallback !default;
 
+// Rustica
+$rustica: 'Rustica', $wvu-shout-fallback !default;
+
 // Iowan
 $iowan-fallback: Iowan, 'Times New Roman', Times, Georgia, serif !default;
 $iowan-old-style: 'IowanOldStyleBTRoman', $iowan-fallback !default;
@@ -359,8 +362,7 @@ $audience-general-typography: (
 $audience-prospective-students-typography: (
   "label": $helvetica-neue-condensed-black,
   "super-heading": $oliviar-black,
-  "display-heading": $oliviar-black,
-  "display-heading-transform": uppercase,
+  "display-heading": $rustica,
   "subheading": $helvetica-neue-light,
   "body": $helvetica-neue
 );

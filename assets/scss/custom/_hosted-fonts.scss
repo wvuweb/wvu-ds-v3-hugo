@@ -21,3 +21,12 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@font-face {
+  font-family: "Rustica";
+  font-style: italic;
+  font-weight: 900;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('/fonts/rustica/Rustica_italic_normal_900.woff2') format('woff2'), url('/fonts/rustica/Rustica_italic_normal_900.woff') format('woff');
+}
