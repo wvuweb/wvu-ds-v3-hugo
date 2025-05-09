@@ -8,6 +8,14 @@
   }
 }
 
+// @each $key, $value in ($dark-theme-colors, $dark-theme-accents) {
+//   .bg-#{$key}, .bg-#{$key} {
+//     .wvu-b-accent {
+      
+//     }
+//   }
+// }
+
 @each $key, $value in $light-theme-colors {
   .bg-#{$key} {
     color: $dark;
