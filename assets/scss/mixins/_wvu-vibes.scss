@@ -5,7 +5,7 @@
       text-transform: uppercase $global-important;
     }
     .vibe-primary-heading {
-      font-family: $oliviar-black $global-important;
+      @include config();
       text-transform: uppercase $global-important
     }
     .vibe-subheading {
