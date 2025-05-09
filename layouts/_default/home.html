@@ -1,4 +1,7 @@
+
 {{ define "main" }}
-  {{ partial "bookshop_bindings" `.Params.content_blocks` }}
-  {{ partial "bookshop_partial" (slice "page" .Params.content_blocks) }}
+
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "blocks" .Params.content_blocks)` }}
+  {{ partial "bookshop_partial" (slice "page-guide" (dict "topper" .Params.topper "title" .Params.title "blocks" .Params.content_blocks)) }}
+  
 {{ end }}
