@@ -127,6 +127,14 @@
   @include rustica();
 }
 
+.config {
+  @include config();
+}
+
+.ivyepic {
+  @include ivyepic();
+}
+
 // Usage example:
 // <p class="iowan-old-style">
 //   ...

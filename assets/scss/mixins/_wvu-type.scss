@@ -328,3 +328,12 @@
     -webkit-text-stroke-color: $white $is-important;
   }
 }
+
+@mixin ivyepic() {
+  font-family: $ivyepic;
+}
+
+@mixin config() {
+  font-family: $config;
+  font-variation-settings: "slnt" 9, "wdth" 100, "wght" 800;
+}
