@@ -373,9 +373,25 @@ $audience-prospective-students-typography: (
   "body": $helvetica-neue
 );
 
+$audiences: (
+  "general",
+  "alumni",
+  "parents",
+  "current_students",
+  "prospective_students",
+  "faculty_staff",
+  "leaders_partners"
+);
+
 $audiences-typography: (
   "general": $audience-general-typography,
   "prospective_students": $audience-prospective-students-typography
+);
+
+$tones-typography: (
+  "tone-1": "",
+  "tone-2": "",
+  "tone-3": "",
 );
 
 $blue: #006FE6;

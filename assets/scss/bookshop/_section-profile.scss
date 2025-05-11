@@ -1,3 +1,256 @@
+// $section-profile-generic-prospective-students-tone-1: (
+//   "audience": "prospective_students",
+//   "tone": "1",
+//   "pattern": "",
+//   "border": "",
+//   "shadow": "",
+//   "display-heading-shadow": "",
+//   "display-heading-outline": "false",
+//   "display-heading-case": "uppercase"
+// );
+
+// $section-profile-generic-prospective-students-tone-2: (
+//   "audience": "prospective_students",
+//   "tone": "3",
+//   "pattern": "",
+//   "border": "2px solid",
+//   "shadow": "",
+//   "display-heading-shadow": "",
+//   "display-heading-outline": "false",
+//   "display-heading-case": "uppercase"
+// );
+
+// $section-profile-generic-prospective-students-tone-3: (
+//   "audience": "prospective_students",
+//   "tone": "3",
+//   "pattern": "",
+//   "border": "2px solid",
+//   "shadow": "true",
+//   "display-heading-shadow": "true",
+//   "display-heading-outline": "true",
+//   "display-heading-case": "uppercase"
+// );
+
+// $section-profile-styles: (
+//   "section-profile-generic-prospective_students-tone-1": $section-profile-generic-prospective-students-tone-1,
+//   "section-profile-generic-prospective_students-tone-2": $section-profile-generic-prospective-students-tone-2,
+//   "section-profile-generic-prospective_students-tone-3": $section-profile-generic-prospective-students-tone-3
+// );
+
+$section-profile-generic-styles: (
+  "general": (
+    "1": (
+      "pattern": "",
+      "border": "2px solid",
+      "shadow": "true",
+      "display-heading-shadow": "true",
+      "display-heading-outline": "true",
+      "display-heading-case": "uppercase",
+      "color-palettes": (
+        "1": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "2": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "3": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        )
+      )
+    ),
+    "2": (
+      "pattern": "",
+      "border": "2px solid",
+      "shadow": "true",
+      "display-heading-shadow": "true",
+      "display-heading-outline": "true",
+      "display-heading-case": "uppercase",
+      "color-palettes": (
+        "1": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "2": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "3": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        )
+      )
+    ),
+    "3": (
+      "pattern": "",
+      "border": "2px solid",
+      "shadow": "true",
+      "display-heading-shadow": "true",
+      "display-heading-outline": "true",
+      "display-heading-case": "uppercase",
+      "color-palettes": (
+        "1": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "2": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "3": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        )
+      )
+    )
+  ),
+  "prospective_students": (
+    "1": (
+      "pattern": "",
+      "border": 3px solid,
+      "shadow": "true",
+      "display-heading-shadow": "true",
+      "display-heading-outline": "true",
+      "display-heading-case": "uppercase",
+      "color-palettes": (
+        "1": (
+          "background": $wvu-blue,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "2": (
+          "background": $wvu-blue,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "3": (
+          "background": $wvu-blue,
+          "text": white,
+          "accent": $wvu-accent--sunset,
+          "pattern": ""
+        )
+      )
+    ),
+    "2": (
+      "pattern": "",
+      "border": 3px solid,
+      "shadow": "true",
+      "display-heading-shadow": "true",
+      "display-heading-outline": "true",
+      "display-heading-case": "uppercase",
+      "color-palettes": (
+        "1": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "2": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "3": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        )
+      )
+    ),
+    "3": (
+      "pattern": "",
+      "border": 3px solid,
+      "shadow": "true",
+      "display-heading-shadow": "true",
+      "display-heading-outline": "true",
+      "display-heading-case": "uppercase",
+      "color-palettes": (
+        "1": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "2": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "3": (
+          "background": $wvu-accent--sunset,
+          "text": "white",
+          "accent": "",
+          "pattern": ""
+        )
+      )
+    )
+  )
+);
+
+@each $audience, $tones in $section-profile-generic-styles {
+  .audience-#{$audience} {
+    @each $tone, $properties in $tones {
+      .tone-#{$tone}, &.tone-#{$tone} {
+        .c-section-profile-generic-css, &.c-section-profile-generic-css {
+          @each $property, $value in $properties {
+            @if $property == "border" and $value != "" {
+              .wvu-b-border {
+                border: $value $dark $global-important;
+              }
+            } @else if $property == "color-palettes" {
+              @each $option, $values in $value {
+                &.bg-option-#{$option}, .bg-option-#{$option} {
+                  @each $element, $color in $values {
+                    @if $element == "background" and $color != "" {
+                      background-color: $color $global-important;
+                      $accent-bg-text: $color !global;
+                    } @else if $element == "text" and $color != "" {
+                      color: $color $global-important;
+                    } @else if $element == "accent" and $color != "" {
+                      .wvu-b-accent-text {
+                        color: $color $global-important;
+                      }
+                      .wvu-b-accent-bg {
+                        background-color: $color $global-important;
+                        color: $accent-bg-text;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 /* Brand Audience should define
   1. Which typeface to use for display headings, subheaings, superheadings, labels, body copy
   2. Which pattern to use on an element with a .wvu-b-pattern class
@@ -13,141 +266,228 @@
   }
 }
 
-@mixin brand-palette($audience, $level) {
-  @if $audience == "alumni" {
-    @if $level == "2" or $level == "3" {
-      .wvu-b-pattern {
+// @mixin brand-palette($audience, $tone) {
+//   @if $audience == "alumni" {
+//     @if $tone == "2" or $tone == "3" {
+//       .wvu-b-pattern {
         
-      }
-    }
-    @if $level == "3" {
+//       }
+//     }
+//     @if $tone == "3" {
 
-    }
-  } @else if $audience == "general" {
-    .wvu-b-display-heading {
-      line-height: $wvu-shout-line-height $global-important;
-      text-transform: uppercase $global-important;
-    }
-  } @else if $audience == "prospective_students" {
-    .wvu-b-display-heading {
-      text-transform: uppercase $global-important;
-    }
-    @if $level == "2" or $level == "3" {
-      .wvu-b-border {
-        border-width: 2px $global-important;
-      }
-      .wvu-b-shadow {
+//     }
+//   } @else if $audience == "general" {
+//     .wvu-b-display-heading {
+//       line-height: $wvu-shout-line-height $global-important;
+//       text-transform: uppercase $global-important;
+//     }
+//     @if $tone == "2" or $tone == "3" {
+
+//     }
+//   } @else if $audience == "prospective_students" {
+//     .wvu-b-display-heading {
+//       text-transform: uppercase $global-important;
+//     }
+//     @if $tone == "2" or $tone == "3" {
+//       .wvu-b-border {
+//         border-width: 2px $global-important;
+//       }
+//       .wvu-b-shadow {
   
-      }
-      .wvu-b-pattern {
+//       }
+//       .wvu-b-pattern {
         
-      }
-    }
-  }
-}
+//       }
+//     }
+//     @if $tone == "3" {
+//       .wvu-b-display-heading {
+//         position: relative $global-important;
+//         &.display-0, &.display-1, &.display-2 {
+//           &:before {
+//             @include wvu-text-echo-outline();
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
-/* Brand Level should define
-  1. If a shadow is present on elements with .wvu-b-shadow class
-  2. If a pattern is present on elements with a .wvu-b-pattern class
-  3. If a gradient should be applied to display headings
-*/
+// /* Brand Level should define
+//   1. If a shadow is present on elements with .wvu-b-shadow class
+//   2. If a pattern is present on elements with a .wvu-b-pattern class
+//   3. If a gradient should be applied to display headings
+// */
 
-.audience-alumni {
-  &.level-1 {
-    @include brand-palette("alumni", "1");
-  }
-  &.level-2 {
-    @include brand-palette("alumni", "2");
-  }
-  &.level-3 {
-    @include brand-palette("alumni", "3");
-  }
-}
+// .audience-alumni {
+//   &.tone-1 {
+//     @include brand-palette("alumni", "1");
+//   }
+//   &.tone-2 {
+//     @include brand-palette("alumni", "2");
+//   }
+//   &.tone-3 {
+//     @include brand-palette("alumni", "3");
+//   }
+// }
 
-.audience-general {
-  &.level-1 {
-    @include brand-palette("general", "1");
-  }
-  &.level-2 {
-    @include brand-palette("general", "2");
-  }
-  &.level-3 {
-    @include brand-palette("general", "3");
-  }
-}
+// .audience-general {
+//   &.tone-1 {
+//     @include brand-palette("general", "1");
+//   }
+//   &.tone-2 {
+//     @include brand-palette("general", "2");
+//   }
+//   &.tone-3 {
+//     @include brand-palette("general", "3");
+//   }
+// }
 
-.audience-prospective_students {
-  &.level-1 {
-    @include brand-palette("prospective_students", "1");
-  }
-  &.level-2 {
-    @include brand-palette("prospective_students", "2");
-  }
-  &.level-3 {
-    @include brand-palette("prospective_students", "3");
-  }
-}
+// .audience-prospective_students {
+//   &.tone-1 {
+//     @include brand-palette("prospective_students", "1");
+//   }
+//   &.tone-2 {
+//     @include brand-palette("prospective_students", "2");
+//   }
+//   &.tone-3 {
+//     @include brand-palette("prospective_students", "3");
+//   }
+// }
 
-.c-profile-generic-css {
-  .audience-alumni {
-    &.bg-option-1 {
-      background-color: $wvu-blue $global-important;
-      color: white $global-important;
-      .wvu-b-accent-bg {
-        background-color: $wvu-gold $global-important;
-      }
-      .wvu-b-accent-text {
-        color: $wvu-gold $global-important;
-      }
-    }
-    &.bg-option-2 {
-      background-color: $wvu-gold $global-important;
-      .wvu-b-accent-bg {
-        background-color: $wvu-blue $global-important;
-      }
-      .wvu-b-accent-text {
-        color: $wvu-blue $global-important;
-      }
-    }
-  }
-  .audience-general {
-    &.bg-option-1 {
-      .wvu-b-accent-bg {
+// .c-profile-generic-css {
+//   .audience-alumni, &.audience-alumni {
+//     .bg-option-1 {
+//       background-color: $wvu-blue $global-important;
+//       color: white $global-important;
+//       .wvu-b-accent-bg {
+//         background-color: $wvu-gold $global-important;
+//       }
+//       .wvu-b-accent-text {
+//         color: $wvu-gold $global-important;
+//       }
+//     }
+//     .bg-option-2 {
+//       background-color: $wvu-gold $global-important;
+//       .wvu-b-accent-bg {
+//         background-color: $wvu-blue $global-important;
+//       }
+//       .wvu-b-accent-text {
+//         color: $wvu-blue $global-important;
+//       }
+//     }
+//   }
+//   .audience-general, &.audience-general {
+//     .bg-option-1 {
+//       .wvu-b-accent-bg {
 
-      }
-      .wvu-b-accent-text {
+//       }
+//       .wvu-b-accent-text {
 
-      }
-    }
-    &.bg-option-2 {
-      .wvu-b-accent-bg {
+//       }
+//     }
+//     .bg-option-2 {
+//       .wvu-b-accent-bg {
 
-      }
-      .wvu-b-accent-text {
+//       }
+//       .wvu-b-accent-text {
 
-      }
-    }
-  }
-  .audience-prospective_students {
-    &.bg-option-1 {
-      background-color: $wvu-accent--blue $global-important;
-      color: $white;
-      .wvu-b-accent-bg {
-        background-color: $wvu-accent--yellow $global-important;
-        color: $wvu-accent--blue $global-important;
-      }
-      .wvu-b-accent-text {
-        color: $wvu-accent--yellow $global-important;
-      }
-    }
-    &.bg-option-2 {
-      background-color: $wvu-accent--yellow $global-important;
-      .wvu-b-accent-bg {
-        background-color: $wvu-accent--blue $global-important;
-      }
-      .wvu-b-accent-text {
-        color: $wvu-accent--blue $global-important;
-      }
-    }
-  }
-}
+//       }
+//     }
+//   }
+//   .audience-prospective_students, &.audience-prospective_students {
+//     &.tone-1 {
+//       .bg-option-1 {
+//         background-color: $wvu-blue $global-important;
+//         color: $white;
+//         .wvu-b-accent-bg {
+//           background-color: $wvu-accent--yellow $global-important;
+//           color: $wvu-accent--yellow $global-important;
+//         }
+//         .wvu-b-accent-text {
+//           color: $wvu-accent--yellow $global-important;
+//         }
+//       }
+//       .bg-option-2 {
+//         background-color: $wvu-gold $global-important;
+//         .wvu-b-accent-bg {
+//           background-color: $wvu-accent--blue $global-important;
+//         }
+//         .wvu-b-accent-text {
+//           color: $wvu-accent--blue $global-important;
+//         }
+//       }
+//       .bg-option-3 {
+//         background-color: $wvu-accent--blue-light $global-important;
+//         .wvu-b-accent-bg {
+//           background-color: $wvu-blue $global-important;
+//           color: $wvu-accent--blue-light $global-important
+//         }
+//         .wvu-b-accent-text {
+//           color: $wvu-blue $global-important;
+//         }
+//       }
+//     }
+//     &.tone-2 {
+//       .bg-option-1 {
+//         background-color: $wvu-accent--blue $global-important;
+//         color: $white;
+//         .wvu-b-accent-bg {
+//           background-color: $wvu-accent--yellow $global-important;
+//           color: $wvu-accent--blue $global-important;
+//         }
+//         .wvu-b-accent-text {
+//           color: $wvu-accent--yellow $global-important;
+//         }
+//       }
+//       .bg-option-2 {
+//         background-color: $wvu-accent--yellow $global-important;
+//         .wvu-b-accent-bg {
+//           background-color: $wvu-accent--blue $global-important;
+//         }
+//         .wvu-b-accent-text {
+//           color: $wvu-accent--blue $global-important;
+//         }
+//       }
+//       .bg-option-3 {
+//         background-color: $wvu-accent--sunset $global-important;
+//         .wvu-b-accent-bg {
+//           background-color: $wvu-accent--blue $global-important;
+//         }
+//         .wvu-b-accent-text {
+//           color: $wvu-accent--blue $global-important;
+//         }
+//       }
+//     }
+//     &.tone-3 {
+//       .bg-option-1 {
+//         background-color: $wvu-accent--blue $global-important;
+//         color: $white;
+//         .wvu-b-accent-bg {
+//           background-color: $wvu-accent--yellow $global-important;
+//           color: $wvu-accent--blue $global-important;
+//         }
+//         .wvu-b-accent-text {
+//           color: $wvu-accent--yellow $global-important;
+//         }
+//       }
+//       .bg-option-2 {
+//         background-color: $wvu-accent--yellow $global-important;
+//         .wvu-b-accent-bg {
+//           background-color: $wvu-accent--blue $global-important;
+//         }
+//         .wvu-b-accent-text {
+//           color: $wvu-accent--blue $global-important;
+//         }
+//       }
+//       .bg-option-3 {
+//         background-color: $wvu-accent--sunset $global-important;
+//         .wvu-b-accent-bg {
+//           background-color: $wvu-accent--blue $global-important;
+//         }
+//         .wvu-b-accent-text {
+//           color: $wvu-accent--blue $global-important;
+//         }
+//       }
+//     }
+//   }
+// }
