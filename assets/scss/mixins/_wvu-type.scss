@@ -239,7 +239,8 @@
 }
 
 @mixin wvu-text-echo-shadow($is-important: $global-important) {
-  text-shadow: -5px 5px #ccc $is-important;
+  // text-shadow: -5px 5px #ccc $is-important;
+  text-shadow: -5px 5px rgba(0, 0, 0, 0.5) $global-important;
 }
 
 // Example usage:
@@ -300,32 +301,51 @@
   -webkit-text-fill-color: transparent;
 }
 
-@mixin wvu-text-outline($is-important: $global-important) {
-  color: transparent $is-important;
-  -webkit-text-stroke-width: 2px $is-important;
-  -webkit-text-stroke-color: $dark $is-important;
-  padding: 1rem $is-important;
-  margin: -1rem $is-important;
-  &.wvu-text-gradient {
-    display: inline-block $is-important;
-    -webkit-text-stroke-width: 4px $is-important;
-    -webkit-text-stroke-color: transparent $is-important;
-    -webkit-text-fill-color: rgba(255, 255, 255, 1) $is-important;
-    background-clip: text $is-important;
-    mix-blend-mode: darken $is-important;
-    &.text-dark {
-      -webkit-text-fill-color: rgba(0, 0, 0, 1) $is-important;
-      mix-blend-mode: lighten $is-important;
-    }
-    &.text-wvu-accent--blue-dark {
-      -webkit-text-fill-color: $wvu-accent--blue-dark $is-important;
-    }
-  }
-  &.text-wvu-gold {
-    -webkit-text-stroke-color: $wvu-gold $is-important;
-  }
-  &.text-white {
-    -webkit-text-stroke-color: $white $is-important;
+// @mixin wvu-text-outline($is-important: $global-important) {
+//   color: transparent $is-important;
+//   -webkit-text-stroke-width: 2px $is-important;
+//   -webkit-text-stroke-color: $dark $is-important;
+//   padding: 1rem $is-important;
+//   margin: -1rem $is-important;
+//   &.wvu-text-gradient {
+//     display: inline-block $is-important;
+//     -webkit-text-stroke-width: 4px $is-important;
+//     -webkit-text-stroke-color: transparent $is-important;
+//     -webkit-text-fill-color: rgba(255, 255, 255, 1) $is-important;
+//     background-clip: text $is-important;
+//     mix-blend-mode: darken $is-important;
+//     &.text-dark {
+//       -webkit-text-fill-color: rgba(0, 0, 0, 1) $is-important;
+//       mix-blend-mode: lighten $is-important;
+//     }
+//     &.text-wvu-accent--blue-dark {
+//       -webkit-text-fill-color: $wvu-accent--blue-dark $is-important;
+//     }
+//   }
+//   &.text-wvu-gold {
+//     -webkit-text-stroke-color: $wvu-gold $is-important;
+//   }
+//   &.text-white {
+//     -webkit-text-stroke-color: $white $is-important;
+//   }
+// }
+
+@mixin wvu-text-outline {
+  position: relative;
+  display: inline-block;
+  &::after {
+    color: rgba(0,0,0, 0.0) $global-important;
+    content: attr(data-text);
+    position: absolute;
+    top: -3px;
+    left: 5px;
+    color: white;
+    // -webkit-text-stroke-width: 1px $global-important;
+    // -webkit-text-stroke-color: $dark $global-important;
+    // -webkit-text-fill-color: transparent $global-important;
+    // text-shadow: none $global-important;
+    text-shadow: 1px 1px 2px blue;
+    // mix-blend-mode: overlay;
   }
 }
 
@@ -334,6 +354,6 @@
 }
 
 @mixin config() {
-  font-family: $config;
-  font-variation-settings: "slnt" 9, "wdth" 100, "wght" 800;
+  font-family: $config $global-important;
+  font-variation-settings: "slnt" 9, "wdth" 100, "wght" 800 $global-important;
 }

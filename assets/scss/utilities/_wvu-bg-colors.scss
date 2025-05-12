@@ -3,7 +3,7 @@
     color: white;
   }
   .bg-#{$key}-subtle {
-    background-color: shade($value, 7%) !important;
+    background-color: shade($value, 15%) !important;
     color: white;
   }
 }
@@ -21,7 +21,7 @@
     color: $dark;
   }
   .bg-#{$key}-subtle {
-    background-color: tint($value, 7%) !important;
+    background-color: tint($value, 50%) !important;
     color: $dark;
   }
 }
