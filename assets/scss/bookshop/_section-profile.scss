@@ -496,61 +496,63 @@ $section-profile-generic-styles: (
 );
 
 @each $audience, $tones in $section-profile-generic-styles {
-  .site-audience-#{$audience} .audience-, .audience-#{$audience} {
-    @each $tone, $properties in $tones {
-      &.tone-, &.tone-#{$tone} {
-        // .c-section-profile-generic-css, &.c-section-profile-generic-css {
-          @each $property, $value in $properties {
-            @if $property == "display-heading" and $value != "" {
-              .wvu-b-display-heading {
-                @if $value == "config" {
-                  @include config();
-                } @else if $value == "shout" {
-                  @include wvu-shout();
-                } @else {
+  .site-audience-#{$audience} .audience-, .site-audience-#{$audience} .audience-, .audience-#{$audience} {
+    &:not(.override-audience-styles-site), &:not(.override-audience-styles-page) {
+      @each $tone, $properties in $tones {
+        &.tone-, &.tone-#{$tone} {
+          // .c-section-profile-generic-css, &.c-section-profile-generic-css {
+            @each $property, $value in $properties {
+              @if $property == "display-heading" and $value != "" {
+                .wvu-b-display-heading {
+                  @if $value == "config" {
+                    @include config();
+                  } @else if $value == "shout" {
+                    @include wvu-shout();
+                  } @else {
+                    font-family: $value $global-important;
+                  }
+                }
+              } @else if $property == "display-heading-shadow" and $value == "true" {
+                .wvu-b-text-shadow {
+                  @include wvu-text-echo-shadow();
+                }
+              // } @else if $property == "display-heading-outline" and $value == "true" {
+              //   .wvu-b-text-outline {
+              //     @include wvu-text-outline();
+              //   }
+              } @else if $property == "label" {
+                .wvu-b-label {
                   font-family: $value $global-important;
                 }
-              }
-            } @else if $property == "display-heading-shadow" and $value == "true" {
-              .wvu-b-text-shadow {
-                @include wvu-text-echo-shadow();
-              }
-            // } @else if $property == "display-heading-outline" and $value == "true" {
-            //   .wvu-b-text-outline {
-            //     @include wvu-text-outline();
-            //   }
-            } @else if $property == "label" {
-              .wvu-b-label {
-                font-family: $value $global-important;
-              }
-            } @else if $property == "border" and $value != "" {
-              .wvu-b-border {
-                border: $value $dark $global-important;
-              }
-            } @else if $property == "color-palettes" {
-              @each $option, $values in $value {
-                &.bg-option-#{$option}, .bg-option-#{$option}, .bg-option- {
-                  @each $element, $color in $values {
-                    @if $element == "background" and $color != "" {
-                      background-color: $color $global-important;
-                      $accent-bg-text: $color !global;
-                    } @else if $element == "text" and $color != "" {
-                      color: $color $global-important;
-                    } @else if $element == "accent" and $color != "" {
-                      .wvu-b-accent-text {
-                        color: $color $global-important;
-                      }
-                      .wvu-b-accent-bg {
+              } @else if $property == "border" and $value != "" {
+                .wvu-b-border {
+                  border: $value $dark $global-important;
+                }
+              } @else if $property == "color-palettes" {
+                @each $option, $values in $value {
+                  &.bg-option-#{$option}, .bg-option-#{$option}, .bg-option- {
+                    @each $element, $color in $values {
+                      @if $element == "background" and $color != "" {
                         background-color: $color $global-important;
-                        color: $accent-bg-text;
+                        $accent-bg-text: $color !global;
+                      } @else if $element == "text" and $color != "" {
+                        color: $color $global-important;
+                      } @else if $element == "accent" and $color != "" {
+                        .wvu-b-accent-text {
+                          color: $color $global-important;
+                        }
+                        .wvu-b-accent-bg {
+                          background-color: $color $global-important;
+                          color: $accent-bg-text;
+                        }
                       }
                     }
                   }
                 }
               }
             }
-          }
-        // }
+          // }
+        }
       }
     }
   }
