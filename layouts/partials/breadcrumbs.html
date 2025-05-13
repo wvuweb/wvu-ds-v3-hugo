@@ -1,40 +1,27 @@
-{{ $topper := "" }}
-{{- $color := "bg-white text-dark" -}}
+{{ $audienceOverride := "" }}
+{{ $toneOverride := "" }}
+{{ $audience := "" }}
+{{ $tone := "" }}
+{{ $color := "" }}
 
-{{ if page.Params.topper }}
-  {{ if eq page.Params.topper.topper_type "default" }}
-    {{ $color = "text-dark" }}
-  {{ end }}
-  {{ if and page.Params.topper.styles page.Params.topper.styles.background_c }}
-    {{ $color = page.Params.topper.styles.background_c }}
-  {{ end }}
-{{ else if and page.Params.alumni_profile_topper.styles page.Params.alumni_profile_topper.styles.background_c }}
-  {{ $color = page.Params.alumni_profile_topper.styles.background_c }}
-{{ else if and page.Params.article_topper.styles page.Params.article_topper.styles.background_c }}
-  {{ $color = page.Params.article_topper.styles.background_c }}
-{{ else if and page.Params.faculty_profile_topper.styles page.Params.faculty_profile_topper.styles.background_c }}
-  {{ $color = page.Params.faculty_profile_topper.styles.background_c }}
-{{ else if and page.Params.organization_topper.styles page.Params.organization_topper.styles.background_c }}
-  {{ $color = page.Params.organization_topper.styles.background_c }}
-{{ else if and page.Params.student_profile_topper.styles page.Params.student_profile_topper.styles.background_c }}
-  {{ $color = page.Params.student_profile_topper.styles.background_c }}
+{{ if and .styles .styles.audience }}
+  {{ $audienceOverride = "override-audience-styles-site" }}
+  {{ $audience = .styles.audience }}
 {{ end }}
 
-{{ $audience := site.Params.audience }}
-{{ $tone := site.Params.tone }}
-
-{{ with .params.topper.settings.styles.audience }}
-  {{ $audience = . }}
+{{ if and .styles .styles.tone }}
+  {{ $toneOverride = "override-tone-styles-site" }}
+  {{ $tone = .styles.tone}}
 {{ end }}
 
-{{ with .params.topper.settings.styles.tone }}
-  {{ $tone = . }}
+{{ if and .styles .styles.color_palette }}
+  {{ $color = .styles.color_palette }}
 {{ end }}
 
 <div class="d-flex position-relative wvu-z-index-breadcrumbs" style="height: 0px;">
   <div class="position-absolute mt-3 w-100 text-start" style="top: 0px;">
     <div class="container">
-      <ul class="audience-{{ $audience }} tone-{{ $tone }} bg-option-{{ .backgroundColor }} list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1" style="background-color: inherit;">
+      <ul class="{{ $audienceOverride }} {{ $toneOverride }} audience-{{ $audience }} tone-{{ $tone }} bg-{{ $color }} list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1" style="background-color: inherit;">
         {{ $breadcrumb := split (replaceRE `\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}` "" (trim .rel_permalink "/" )) "/" }}
         {{ $crumb_link := "/" }}
         {{ $rel_permalink := .rel_permalink }}

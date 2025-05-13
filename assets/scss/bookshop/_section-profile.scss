@@ -500,15 +500,15 @@ $section-profile-generic-styles: (
       "pattern": "",
       "border": 3px solid,
       "shadow": "",
-      "display-heading": "config",
+      "display-heading": "rustica",
       "display-heading-shadow": "",
       "display-heading-outline": "false",
       "display-heading-case": none,
       "color-palettes": (
         "1": (
           "background": $wvu-blue,
-          "text": "",
-          "accent": "",
+          "text": white,
+          "accent": $wvu-gold,
           "pattern": ""
         ),
         "2": (
@@ -529,7 +529,7 @@ $section-profile-generic-styles: (
       "pattern": "",
       "border": "",
       "shadow": "",
-      "display-heading": "config",
+      "display-heading": "rustica",
       "display-heading-shadow": "",
       "display-heading-outline": "",
       "display-heading-case": uppercase,
@@ -558,7 +558,7 @@ $section-profile-generic-styles: (
       "pattern": "",
       "border": 3px solid,
       "shadow": "true",
-      "display-heading": "config",
+      "display-heading": "rustica",
       "display-heading-shadow": "true",
       "display-heading-outline": "true",
       "display-heading-case": uppercase,
@@ -600,6 +600,8 @@ $section-profile-generic-styles: (
                       @include config();
                     } @else if $value == "shout" {
                       @include wvu-shout();
+                    } @else if $value == "rustica" {
+                      @include rustica();
                     } @else {
                       font-family: $value $global-important;
                     }
