@@ -149,7 +149,7 @@ $section-profile-generic-styles: (
       "display-heading-case": "uppercase",
       "color-palettes": (
         "1": (
-          "background": $wvu-accent--sunset,
+          "background": "",
           "text": "",
           "accent": $wvu-gold,
           "pattern": ""
@@ -231,17 +231,17 @@ $section-profile-generic-styles: (
   "leaders_partners": (
     "1": (
       "pattern": "",
-      "border": "2px solid",
-      "shadow": "true",
+      "border": "",
+      "shadow": "",
       "display-heading": "shout",
       "display-heading-shadow": "",
       "display-heading-outline": "",
-      "display-heading-case": none,
+      "display-heading-case": uppercase,
       "color-palettes": (
         "1": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
+          "background": $wvu-neutral--cream,
+          "text": $wvu-accent--blue-dark,
+          "accent": $wvu-accent--blue-dark,
           "pattern": ""
         ),
         "2": (
@@ -405,20 +405,21 @@ $section-profile-generic-styles: (
       )
     )
   ),
-  // Prospective Students
-  "prospective_students": (
+  // Alumni
+  "alumni": (
     "1": (
       "pattern": "",
-      "border": 3px solid,
-      "shadow": "true",
+      "border": "",
+      "shadow": "",
+      "display-heading": $iowan-old-style,
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
-      "display-heading-case": uppercase,
+      "display-heading-case": none,
       "color-palettes": (
         "1": (
           "background": $wvu-blue,
-          "text": "",
-          "accent": "",
+          "text": white,
+          "accent": $wvu-gold,
           "pattern": ""
         ),
         "2": (
@@ -439,8 +440,8 @@ $section-profile-generic-styles: (
       "pattern": "",
       "border": 3px solid,
       "shadow": "true",
-      "display-heading-shadow": "true",
-      "display-heading-outline": "true",
+      "display-heading-shadow": "false",
+      "display-heading-outline": "false",
       "display-heading-case": uppercase,
       "color-palettes": (
         "1": (
@@ -468,8 +469,8 @@ $section-profile-generic-styles: (
       "border": 3px solid,
       "shadow": "true",
       "display-heading": "config",
-      "display-heading-shadow": "true",
-      "display-heading-outline": "true",
+      "display-heading-shadow": "false",
+      "display-heading-outline": "false",
       "display-heading-case": uppercase,
       "color-palettes": (
         "1": (
@@ -492,69 +493,174 @@ $section-profile-generic-styles: (
         )
       )
     )
+  ),
+  // Prospective Students
+  "prospective_students": (
+    "1": (
+      "pattern": "",
+      "border": 3px solid,
+      "shadow": "",
+      "display-heading": "config",
+      "display-heading-shadow": "",
+      "display-heading-outline": "false",
+      "display-heading-case": none,
+      "color-palettes": (
+        "1": (
+          "background": $wvu-blue,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "2": (
+          "background": $wvu-blue,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "3": (
+          "background": $wvu-blue,
+          "text": white,
+          "accent": $wvu-accent--sunset,
+          "pattern": ""
+        )
+      )
+    ),
+    "2": (
+      "pattern": "",
+      "border": "",
+      "shadow": "",
+      "display-heading": "config",
+      "display-heading-shadow": "",
+      "display-heading-outline": "",
+      "display-heading-case": uppercase,
+      "color-palettes": (
+        "1": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "2": (
+          "background": $wvu-accent--yellow,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        ),
+        "3": (
+          "background": $wvu-accent--sunset,
+          "text": "",
+          "accent": "",
+          "pattern": ""
+        )
+      )
+    ),
+    "3": (
+      "pattern": "",
+      "border": 3px solid,
+      "shadow": "true",
+      "display-heading": "config",
+      "display-heading-shadow": "true",
+      "display-heading-outline": "true",
+      "display-heading-case": uppercase,
+      "color-palettes": (
+        "1": (
+          "background": $wvu-blue,
+          "text": white,
+          "accent": $wvu-gold,
+          "pattern": $wvu-accent--blue-light
+        ),
+        "2": (
+          "background": $wvu-accent--blue,
+          "text": white,
+          "accent": $wvu-accent--yellow,
+          "pattern": $wvu-accent--blue-light
+        ),
+        "3": (
+          "background": $wvu-accent--yellow,
+          "text": $dark,
+          "accent": $wvu-accent--blue,
+          "pattern": $wvu-accent--old-gold
+        )
+      )
+    )
   )
 );
 
 @each $audience, $tones in $section-profile-generic-styles {
-  .site-audience-#{$audience} .audience-, .site-audience-#{$audience} .audience-, .audience-#{$audience} {
-    &:not(.override-audience-styles-site), &:not(.override-audience-styles-page) {
+  .site-audience-#{$audience} :not(.override-audience-styles-site), .audience-#{$audience} {
+    // &:not(.override-audience-styles-page) {
       @each $tone, $properties in $tones {
         &.tone-, &.tone-#{$tone} {
-          // .c-section-profile-generic-css, &.c-section-profile-generic-css {
-            @each $property, $value in $properties {
-              @if $property == "display-heading" and $value != "" {
-                .wvu-b-display-heading {
-                  @if $value == "config" {
-                    @include config();
-                  } @else if $value == "shout" {
-                    @include wvu-shout();
-                  } @else {
+          // &:not(.override-tone-styles-site), &:not(.override-tone-styles-page) {
+            // .c-section-profile-generic-css, &.c-section-profile-generic-css {
+              @each $property, $value in $properties {
+                @if $property == "display-heading" and $value != "" {
+                  .wvu-b-display-heading {
+                    @if $value == "config" {
+                      @include config();
+                    } @else if $value == "shout" {
+                      @include wvu-shout();
+                    } @else {
+                      font-family: $value $global-important;
+                    }
+                  }
+                } @else if $property == "display-heading-case" and $value != "" {
+                  .wvu-b-display-heading {
+                    text-transform: $value $global-important;
+                  }
+                } @else if $property == "shadow" and $value == "true" {
+                  .wvu-b-shadow {
+                    filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+                  }
+                } @else if $property == "display-heading-shadow" and $value == "true" {
+                  .wvu-b-text-shadow {
+                    filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+                  }
+                // } @else if $property == "display-heading-outline" and $value == "true" {
+                //   .wvu-b-text-outline {
+                //     @include wvu-text-outline();
+                //   }
+                } @else if $property == "label" {
+                  .wvu-b-label {
                     font-family: $value $global-important;
                   }
-                }
-              } @else if $property == "display-heading-shadow" and $value == "true" {
-                .wvu-b-text-shadow {
-                  @include wvu-text-echo-shadow();
-                }
-              // } @else if $property == "display-heading-outline" and $value == "true" {
-              //   .wvu-b-text-outline {
-              //     @include wvu-text-outline();
-              //   }
-              } @else if $property == "label" {
-                .wvu-b-label {
-                  font-family: $value $global-important;
-                }
-              } @else if $property == "border" and $value != "" {
-                .wvu-b-border {
-                  border: $value $dark $global-important;
-                }
-              } @else if $property == "color-palettes" {
-                @each $option, $values in $value {
-                  &.bg-option-#{$option}, .bg-option-#{$option}, .bg-option- {
-                    @each $element, $color in $values {
-                      @if $element == "background" and $color != "" {
-                        background-color: $color $global-important;
-                        $accent-bg-text: $color !global;
-                      } @else if $element == "text" and $color != "" {
-                        color: $color $global-important;
-                      } @else if $element == "accent" and $color != "" {
-                        .wvu-b-accent-text {
-                          color: $color $global-important;
-                        }
-                        .wvu-b-accent-bg {
+                } @else if $property == "border" and $value != "" {
+                  .wvu-b-border {
+                    border: $value $dark $global-important;
+                  }
+                } @else if $property == "color-palettes" {
+                  .bg-option-2 {
+                    background-color: $wvu-accent--blue $global-important;
+                  }
+                  @each $option, $values in $value {
+                    &.bg-option-#{$option}, .bg-option-#{$option} {
+                      @each $element, $color in $values {
+                        @if $element == "background" and $color != "" {
                           background-color: $color $global-important;
-                          color: $accent-bg-text;
+                        } @else if $element == "text" and $color != "" {
+                          color: $color $global-important;
+                        } @else if $element == "accent" and $color != "" {
+                          .wvu-b-accent-text {
+                            color: $color $global-important;
+                          }
+                          .wvu-b-accent-bg {
+                            background-color: $color $global-important;
+                          }
+                        } @else if $element == "pattern" and $color != "" {
+                          .wvu-b-pattern-color {
+                            background-color: $color $global-important;
+                          }
                         }
                       }
                     }
                   }
                 }
               }
-            }
+            // }
           // }
         }
       }
-    }
+    // }
   }
 }
 

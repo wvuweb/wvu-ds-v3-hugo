@@ -356,4 +356,5 @@
 @mixin config() {
   font-family: $config $global-important;
   font-variation-settings: "slnt" 9, "wdth" 100, "wght" 800 $global-important;
+  line-height: 1em $global-important;
 }
