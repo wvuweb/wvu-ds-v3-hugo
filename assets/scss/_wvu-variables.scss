@@ -108,6 +108,22 @@ $wvu-accent--blue-light: #9DDAE6;
 $wvu-accent--yellow: #FFE539;
 $wvu-accent--sunset: #F3674F;
 
+$wvu-blue-rgb: rgba(0, 40, 85, 1);
+$wvu-gold-rgb: rgba(234, 170, 0, 1);
+
+$wvu-accent--old-gold-rgb: rgba(127, 99, 16, 1);
+$wvu-neutral--off-white-rgb: rgba(247, 247, 247, 1);
+$wvu-neutral--cream-rgb: rgba(242, 230, 194, 1);
+$wvu-neutral--tan-rgb: rgba(179, 161, 105, 1);
+$wvu-neutral--warm-gray-light-rgb: rgba(190,183,179, 1);
+$wvu-neutral--warm-gray-medium-rgb: rgba(152, 142, 139, 1);
+$wvu-neutral--warm-gray-dark-rgb: rgba(85, 71, 65, 1);
+$wvu-accent--blue-dark-rgb: rgba(28, 43, 57, 1);
+$wvu-accent--blue-rgb: rgba(0, 98, 163, 1);
+$wvu-accent--blue-light-rgb: rgba(157, 218, 230, 1);
+$wvu-accent--yellow-rgb: rgba(255, 229, 57, 1);
+$wvu-accent--sunset-rgb: rgba(245, 134, 114, 1);
+
 $wvu-blue-bg-subtle: tint-color($wvu-blue, 10%);
 $wvu-gold-bg-subtle: tint-color($wvu-gold, 10%);
 
@@ -139,6 +155,10 @@ $wvu-accent--blue-bg-subtle-dark: shade-color($wvu-accent--blue, 10%);
 $wvu-accent--blue-light-bg-subtle-dark: shade-color($wvu-accent--blue-light, 10%);
 $wvu-accent--yellow-bg-subtle-dark: shade-color($wvu-accent--yellow, 10%);
 $wvu-accent--sunset-bg-subtle-dark: shade-color($wvu-accent--sunset, 10%);
+
+// Gradients
+$wvu-gradient-wvu-gold-accent-yellow-accent-sunset: linear-gradient(300deg, $wvu-gold, transparent), linear-gradient(200deg, $wvu-accent--yellow, transparent), linear-gradient(100deg, $wvu-accent--sunset, transparent);
+$wvu-gradient-wvu-blue-accent-blue-accent-blue-light: linear-gradient(300deg, $wvu-blue, transparent), linear-gradient(200deg, $wvu-accent--blue, transparent), linear-gradient(100deg, $wvu-accent--blue-light, transparent);
 
 // Old Colors
 // Neutral
@@ -392,6 +412,12 @@ $tones-typography: (
   "tone-1": "",
   "tone-2": "",
   "tone-3": "",
+);
+
+$gradient-wvu-blue-accent-blue-accent-blue-light: (
+  "color-1",
+  "color-2",
+  "color-3"
 );
 
 $blue: #006FE6;

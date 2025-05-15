@@ -1,3 +1,11 @@
+@mixin wvu-gradient($color-1, $color-2, $color-3) {
+  background: linear-gradient(200deg, rgba($color-1, 1), transparent), linear-gradient(300deg, rgba($color-2, 1), transparent), linear-gradient(100deg($color-2, 1), transparent);
+}
+
+@mixin wvu-gradient-wvu-gold-accent-yellow-accent-sunset () {
+  @include wvu-gradient($wvu-gold, $wvu-accent--yellow, $wvu-accent--sunset);
+}
+
 @mixin wvu-gradient-wvu-blue-blue() {
   background: rgb(0,40,85);
   background: linear-gradient(45deg, rgba(0,40,85,1) 0%, rgba(0,98,163,1) 100%);
@@ -45,4 +53,17 @@
 @mixin wvu-gradient-wvu-gold() {
   background: rgb(234,170,0);
   background: linear-gradient(45deg, rgba(234,170,0,0) 0%, rgba(234,170,0,1) 100%);
+}
+
+@mixin gradient-wvu-blue-accent-blue-accent-blue-light() {
+  background-color: $wvu-blue;
+  background-image:
+    linear-gradient(200deg, rgba(0, 98, 163, 1), transparent),
+    linear-gradient(300deg, rgba(0, 40, 85, 1), transparent),
+    linear-gradient(100deg, rgba(157, 218, 230, 1), transparent);
+  color: white $global-important;
+}
+
+.wvu-gradient-wvu-gold-accent-yellow-accent-sunset {
+  @include wvu-gradient-wvu-gold-accent-yellow-accent-sunset();
 }

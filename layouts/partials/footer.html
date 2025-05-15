@@ -2,30 +2,41 @@
 {{ $socialMediaAccounts := site.Data.settings.social_media_accounts }}
 {{ with site.Data.default_content.footer }}
   <footer>
-    <div class="py-6 bg-wvu-neutral--off-white-subtle text-dark">
+    <div class="py-6 bg-wvu-accent--blue-dark-subtle text-white">
       <div class="container">
-        <div class="mb-5 text-wvu-blue">
-          <h2 class="wvu-shout">{{ $title }}</h2>
-          <p class="iowan-old-style-italic fs-5">Eberly College of Arts and Sciences</p>
-        </div>
+        
         <div class="row small">
-          <div class="col-12">
-            
-            <address class="mb-4 wvu-bar">
-              <p>
-                <strong>{{ .address_heading }}</strong>
-                {{ range .address }}
-                  <br> {{ . }}
-                {{ end }}
-              </p>
-              <p>                
-                <span class="d-block">
-                  <span class="fa-solid fa-phone" aria-hidden="true"></span>
-                  <a href="tel:{{ .phone | urlize }}">{{ .phone }}</a>
+          <div class="col-6 me-auto">
+            <div class="mb-5">
+              <h2 class="wvu-shout wvu-bar">{{ $title }}</h2>
+              <p class="iowan-old-style-italic fs-5">Eberly College of Arts and Sciences</p>
+            </div>
+            <address class="mb-4">
+              <p class="d-flex mb-2">
+                <span class="d-block" style="width: 20px;">
+                  <span class="fa-solid fa-location-dot text-wvu-gold" aria-hidden="true"></span>
                 </span>
                 <span class="d-block">
-                  <span class="fa-solid fa-envelope" aria-hidden="true"></span>
-                  <a href="mailto:{{ .email }}">{{ .email }}</a>
+                <strong>{{ .address_heading }}</strong>
+                  {{ range .address }}
+                    <br> {{ . }}
+                  {{ end }}
+                </span>
+              </p>
+              <p class="d-flex mb-2">
+                <span class="d-block" style="width: 20px;">
+                  <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
+                </span>
+                <span class="d-block">
+                  <a class="text-decoration-none" href="tel:{{ .phone | urlize }}">{{ .phone }}</a>
+                </span>
+              </p>
+              <p class="d-flex">
+                <span class="d-block" style="width: 20px;">
+                  <span class="fa-solid fa-envelope text-light" aria-hidden="true"></span>
+                </span>
+                <span class="d-block">
+                  <a class="text-decoration-none" href="mailto:{{ .email }}">{{ .email }}</a>
                 </span>
               </p>
             </address>
@@ -41,10 +52,95 @@
               {{ end }}
             </ul>
           </div>
-          <div class="col-6">      </div>
-          <div class="col-6">      </div>
+          <div class="col-md-4">
+            <h2 class="h6 small wvu-text-letter-spacing-lg iowan-old-style-black text-uppercase text-wvu-gold">Site Menu</h2>
+            <ul class="list-unstyled mb-0 lh-lg">
+              <li class="list-item">
+                <a class="" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://campusmap.wvu.edu">Campus Map</a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://careers.wvu.edu/career-opportunities">WVU Careers</a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://directory.wvu.edu">WVU Directory</a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://give.wvu.edu/">Give</a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://careerservices.wvu.edu/students/handshake-login">Handshake</a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://alert.wvu.edu/">WVU Alert</a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://wvutoday.wvu.edu">WVU Today</a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://portal.wvu.edu">WVU Portal</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h2 class="h6 small wvu-text-letter-spacing-lg iowan-old-style-black text-uppercase text-wvu-gold">Quicklinks</h2>
+            <ul class="list-unstyled lh-lg">
+              
+              <li class="list-item">
+                <a class="" href="https://www.facebook.com/wvumountaineers">
+                  <span class="fa-brands fa-facebook" aria-hidden="true"></span>
+                  <span>WVU on Facebook</span>
+                </a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://twitter.com/WestVirginiaU">
+                  <span class="fa-brands fa-twitter" aria-hidden="true"></span>
+                  <span>WVU on Twitter</span>
+                </a>
+              </li>
+              <li class="list-item">
+                <a class="" href="https://www.youtube.com/user/westvirginiau">
+                  <span class="fa-brands fa-youtube" aria-hidden="true"></span>
+                  <span>WVU on YouTube</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h2 class="h6 small wvu-text-letter-spacing-lg iowan-old-style-black text-uppercase text-wvu-gold">University Resources</h2>
+            <ul class="wvu-ul-chevrons mb-0 lh-lg">
+              <li class="list-item">
+                <a class="text-decoration-none" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a>
+              </li>
+              <li class="list-item">
+                <a class="text-decoration-none" href="https://campusmap.wvu.edu">Campus Map</a>
+              </li>
+              <li class="list-item">
+                <a class="text-decoration-none" href="https://careers.wvu.edu/career-opportunities">WVU Careers</a>
+              </li>
+              <li class="list-item">
+                <a class="text-decoration-none" href="https://directory.wvu.edu">WVU Directory</a>
+              </li>
+              <li class="list-item">
+                <a class="text-decoration-none" href="https://give.wvu.edu/">Give</a>
+              </li>
+              <li class="list-item">
+                <a class="text-decoration-none" href="https://careerservices.wvu.edu/students/handshake-login">Handshake</a>
+              </li>
+              <li class="list-item">
+                <a class="text-decoration-none" href="https://alert.wvu.edu/">WVU Alert</a>
+              </li>
+              <li class="list-item">
+                <a class="text-decoration-none" href="https://wvutoday.wvu.edu">WVU Today</a>
+              </li>
+              <li class="list-item">
+                <a class="text-decoration-none" href="https://portal.wvu.edu">WVU Portal</a>
+              </li>
+          </div>
         </div>
-        <div class="d-flex border-top border-bottom border-1 border-dark mt-5 py-4">
+        <div class="d-flex border-top border-bottom border-1 border-wvu-accent--blue-light mt-5 py-4">
           <h2 class="d-inline-block h5 iowan-old-style mb-0 me-4">Your journey at the Eberly College of Arts and Sciences</h2>
           <ul class="list-inline d-inline-block mb-0">
             <li class="list-inline-item"><a href="">Departments and Units</a></li>
@@ -53,91 +149,49 @@
         </div>
       </div>
     </div>
-    <div class="py-6 bg-wvu-neutral--off-white text-dark position-relative">
-      <div class="container wvu-z-index-content">
-        <div class="row">
-          <div class="col-xxl-18 mx-xxl-auto">
-            <div class="row small">
-              <div class="col-md-6 me-auto">
-                <h2 class="h5">West Virginia University</h2>
-                <p>© {{ now.Year }}
-                  <a class="" href="https://www.wvu.edu/">West Virginia University</a>.
-                  <br><span class="wvu-credits__last-edited">Last updated on {{ time.Now | time.Format "Jan 2, 2006" }}.</span>
-                </p>
-              </div>
-              <div class="col-md-4">
-                <h2 class="h6">Heading</h2>
-                <ul class="list-unstyled lh-lg">
-                  <li class="list-item">
-                    <a class="" href="https://about.wvu.edu/wvu-facts">Accreditations</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://webstandards.wvu.edu">Web Standards</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://www.wvu.edu/privacy">Privacy Notice</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="mailto:web_services@mail.wvu.edu">Questions or Comments?</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <h2 class="h6">Heading</h2>
-                <ul class="list-unstyled mb-0 lh-lg">
-                  <li class="list-item">
-                    <a class="" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://campusmap.wvu.edu">Campus Map</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://careers.wvu.edu/career-opportunities">WVU Careers</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://directory.wvu.edu">WVU Directory</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://give.wvu.edu/">Give</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://careerservices.wvu.edu/students/handshake-login">Handshake</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://alert.wvu.edu/">WVU Alert</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://wvutoday.wvu.edu">WVU Today</a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://portal.wvu.edu">WVU Portal</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-unstyled lh-lg">
-                  <h2 class="h6">Follow WVU</h2>
-                  <li class="list-item">
-                    <a class="" href="https://www.facebook.com/wvumountaineers">
-                      <span class="fa-brands fa-facebook" aria-hidden="true"></span>
-                      <span>WVU on Facebook</span>
-                    </a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://twitter.com/WestVirginiaU">
-                      <span class="fa-brands fa-twitter" aria-hidden="true"></span>
-                      <span>WVU on Twitter</span>
-                    </a>
-                  </li>
-                  <li class="list-item">
-                    <a class="" href="https://www.youtube.com/user/westvirginiau">
-                      <span class="fa-brands fa-youtube" aria-hidden="true"></span>
-                      <span>WVU on YouTube</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+    <div class="py-5 bg-wvu-accent--blue-dark text-white position-relative">
+      <div class="container wvu-z-index-content py-2">
+        <div class="row small">
+          <div class="col-md-8 mx-auto text-center">
+            <img src="https://static.wvu.edu/global/images/logos/wvu/wvu-logo--2.0.0.svg" class="mb-4" alt="West Virginia University logo" height="60px" width="280px" />
+            <h2 class="visually-hidden">West Virginia University</h2>
+            <p class="mb-1">© {{ now.Year }}
+              <a class="" href="https://www.wvu.edu/">West Virginia University</a>. <span class="wvu-credits__last-edited">Last updated on {{ time.Now | time.Format "Jan 2, 2006" }}.</span>
+            </p>
+            <ul class="list-inline mb-3">
+              <li class="list-inline-item">
+                <a class="" href="https://about.wvu.edu/wvu-facts">Accreditations</a>
+              </li>
+              <li class="list-inline-item">
+                <a class="" href="https://webstandards.wvu.edu">Web Standards</a>
+              </li>
+              <li class="list-inline-item">
+                <a class="" href="https://www.wvu.edu/privacy">Privacy Notice</a>
+              </li>
+              <li class="list-inline-item">
+                <a class="" href="mailto:web_services@mail.wvu.edu">Questions or Comments?</a>
+              </li>
+            </ul>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a class="text-decoration-none" href="https://www.facebook.com/wvumountaineers">
+                  <span class="fa-brands fa-facebook" aria-hidden="true"></span>
+                  <span class="visually-hidden">WVU on Facebook</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="text-decoration-none" href="https://twitter.com/WestVirginiaU">
+                  <span class="fa-brands fa-twitter" aria-hidden="true"></span>
+                  <span class="visually-hidden">WVU on Twitter</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="text-decoration-none" href="https://www.youtube.com/user/westvirginiau">
+                  <span class="fa-brands fa-youtube" aria-hidden="true"></span>
+                  <span class="visually-hidden">WVU on YouTube</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
