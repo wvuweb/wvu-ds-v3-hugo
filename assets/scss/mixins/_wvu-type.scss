@@ -362,3 +362,61 @@
 @mixin rustica() {
   font-family: $rustica;
 }
+
+@mixin antonia($style, $weight) {
+  font-family: $antonia $global-important;
+  font-variation-settings: "wght" $weight;
+}
+
+@mixin antonia-bold() {
+  @include antonia(null, 700);
+  em {
+    font-style: italic $global-important;
+  }
+}
+
+@mixin antonia-italic() {
+  @include antonia(italic, 300);
+  font-style: italic $global-important;
+  em {
+    font-style: normal $global-important;
+  }
+}
+
+@mixin antonia-bold-italic() {
+  @include antonia(italic, 700);
+  font-style: italic $global-important;
+  em {
+    font-style: normal $global-important;
+  }
+}
+
+@mixin antonia-heavy() {
+  @include antonia(null, 825);
+  em {
+    font-style: italic $global-important;
+  }
+}
+
+@mixin antonia-heavy-italic() {
+  @include antonia(italic, 800);
+  font-style: italic $global-important;
+  em {
+    font-style: normal $global-important;
+  }
+}
+
+@mixin antonia-black() {
+  @include antonia(null, 900);
+  em {
+    font-style: italic $global-important;
+  }
+}
+
+@mixin antonia-black-italic() {
+  @include antonia(italic, 900);
+  font-style: italic $global-important;
+  em {
+    font-style: normal $global-important;
+  }
+}

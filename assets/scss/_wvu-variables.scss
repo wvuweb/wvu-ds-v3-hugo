@@ -18,6 +18,10 @@ $oliviar-black: 'OliviarSansBlack', $wvu-shout-fallback !default;
 $oliviar-black-italic: 'OliviarSansBlackItalic', $wvu-shout-fallback !default;
 $oliviar-thin: 'OliviarSansThin', $wvu-shout-fallback !default;
 
+// Antonia
+$antonia-fallback: Antonia, 'Times New Roman', Times, Georgia, serif !default;
+$antonia: 'antonia-variable', $antonia-fallback !default;
+
 // Config Variable
 $config: "config-variable", $wvu-shout-fallback, sans-serif;
 

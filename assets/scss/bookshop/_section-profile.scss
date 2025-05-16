@@ -530,7 +530,7 @@ $section-profile-generic-styles: (
       "pattern": "",
       "border": "",
       "shadow": "",
-      "display-heading": $iowan-old-style-black-italic,
+      "display-heading": "antonia-bold",
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
       "display-heading-case": none,
@@ -559,7 +559,7 @@ $section-profile-generic-styles: (
       "pattern": "",
       "border": 3px solid,
       "shadow": "true",
-      "display-heading": $iowan-old-style-black-italic,
+      "display-heading": "antonia-black-italic",
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
       "display-heading-case": none,
@@ -588,7 +588,7 @@ $section-profile-generic-styles: (
       "pattern": "",
       "border": 3px solid,
       "shadow": "true",
-      "display-heading": $iowan-old-style-black-italic,
+      "display-heading": "antonia-black-italic",
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
       "display-heading-case": none,
@@ -652,7 +652,7 @@ $section-profile-generic-styles: (
       "display-heading": "config",
       "display-heading-shadow": "",
       "display-heading-outline": "",
-      "display-heading-case": uppercase,
+      "display-heading-case": none,
       "color-palettes": (
         "1": (
           "background": $wvu-accent--sunset,
@@ -701,20 +701,32 @@ $section-profile-generic-styles: (
           "text": $dark,
           "accent": $wvu-accent--blue,
           "pattern": $wvu-accent--old-gold
+        )
+      )
+    ),
+    "4": (
+      "pattern": "",
+      "gradient": "",
+      "border": 3px solid,
+      "shadow": "true",
+      "display-heading": "config",
+      "display-heading-shadow": "true",
+      "display-heading-outline": "true",
+      "display-heading-case": uppercase,
+      "color-palettes": (
+        "1": (
+          "background": $wvu-blue,
+          "text": white,
+          "accent": $wvu-gold,
+          "pattern": $wvu-accent--blue-light
         ),
-        "4": (
-          "background": $gradient-wvu-blue-accent-blue-accent-blue-light,
-          "text": $dark,
-          "accent": $wvu-accent--blue,
-          "pattern": $wvu-accent--old-gold
+        "2": (
+          "background": $wvu-accent--blue,
+          "text": white,
+          "accent": $wvu-accent--yellow,
+          "pattern": $wvu-accent--blue-light
         ),
-        "5": (
-          "background": $wvu-accent--yellow,
-          "text": $dark,
-          "accent": $wvu-accent--blue,
-          "pattern": $wvu-accent--old-gold
-        ),
-        "6": (
+        "3": (
           "background": $wvu-accent--yellow,
           "text": $dark,
           "accent": $wvu-accent--blue,
@@ -744,8 +756,22 @@ $wvu-b-text-color: "";
                       }
                     } @else if $value == "shout" {
                       @include wvu-shout();
-                    } @else if $value == "rustica" {
-                      @include rustica();
+                    } @else if $value == "antonia" {
+                      @include antonia();
+                    } @else if $value == "antonia-bold" {
+                      @include antonia-bold();
+                    } @else if $value == "antonia-italic" {
+                      @include antonia-italic();
+                    } @else if $value == "antonia-bold-italic" {
+                      @include antonia-bold-italic();
+                    } @else if $value == "antonia-heavy" {
+                      @include antonia-heavy();
+                    } @else if $value == "antonia-heavy-italic" {
+                      @include antonia-heavy-italic();
+                    } @else if $value == "antonia-black" {
+                      @include antonia-black();
+                    } @else if $value == "antonia-black-italic" {
+                      @include antonia-black-italic();
                     } @else {
                       font-family: $value $global-important;
                     }

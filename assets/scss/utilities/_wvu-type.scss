@@ -111,28 +111,38 @@
   @include iowan-old-style-black-italic();
 }
 
-.oliviar-black, %oliviar-black {
-  @include oliviar-black();
-}
-
-.oliviar-black-italic, %oliviar-black-italic {
-  @include oliviar-black-italic();
-}
-
 .oliviar-thin, %oliviar-thin {
   @include oliviar-thin();
-}
-
-.rustica, %rustica {
-  @include rustica();
 }
 
 .config {
   @include config();
 }
 
-.ivyepic {
-  @include ivyepic();
+.antonia {
+  @include antonia(null, 300);
+  em {
+    font-style: italic $global-important;
+  }
+  strong {
+    font-variation-settings: "wght" 700 $global-important;
+  }
+}
+
+.antonia-bold {
+  @include antonia-bold();
+}
+
+.antonia-italic {
+  @include antonia-italic();
+}
+
+.antonia-heavy {
+  @include antonia-heavy();
+}
+
+.antonia-heavy-italic {
+  @include antonia-heavy-italic();
 }
 
 // Usage example:
