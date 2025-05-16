@@ -335,7 +335,7 @@
   display: inline-block;
   &::after {
     color: rgba(0,0,0, 0.0) $global-important;
-    content: attr(data-text);
+    // content: attr(data-text);
     position: absolute;
     top: -3px;
     left: 5px;

@@ -1,21 +1,29 @@
-<div class="wvu-masthead py-2">
-  <div class="container">
-    <div class="row">
-      <div class="align-self-center col-12 col-lg-4">        
-        <a class="d-flex position-relative my-4 align-items-center justify-content-center justify-content-lg-start text-decoration-none text-white" href="/">
-          <span class="visually-hidden">West Virginia University </span>
-          <span class="wvu-logo-lockup mt-n2">{{ range site.Data.default_content.masthead.masthead_title }}<span class="d-block">{{ . }}{{ end }}</span>        
-        </a>      
-      </div>
-      {{ with site.Data.default_content.masthead.masthead_buttons }}
-        <div class="col-12 col-lg d-flex flex-column">
-          <div class="px-0 flex-grow-1 d-flex align-content-center justify-content-center justify-content-lg-end my-3">
-            {{ range . }}
-              <a href="{{ .url }}" class="ms-1 mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-accent--blue-light">{{ .text }}</a>
-            {{ end }}
-          </div>
+{{ with site.Data.settings.settings.masthead }}
+  <div class="wvu-masthead">
+    <div class="container">
+      <div class="row">
+        <div class="align-self-center col-12 col-lg">        
+          <div class="d-flex position-relative my-4 align-items-center justify-content-center justify-content-lg-start text-decoration-none text-white" href="/">
+            <span class="visually-hidden">West Virginia University </span>
+            <img class="me-3" src="https://static.wvu.edu/global/images/logos/wvu/flying-wv--1.0.0.svg" height="70px" width="65px" />
+            <div class="border-start border-1 border-white py-1 ps-3">
+              {{ with .super_heading }}
+                <span class="d-block mb-2">{{ . }}</span>
+              {{ end }}
+              <span class="mt-n2 helvetica-neue-bold h3 lh-1">{{ range .title }}<span class="d-block">{{ . }}{{ end }}</span>
+            </div>
+          </div>      
         </div>
-      {{ end }}
+        {{ with .buttons }}
+          <div class="col-12 col-lg d-flex flex-column">
+            <div class="px-0 flex-grow-1 d-flex align-content-center justify-content-center justify-content-lg-end my-3">
+              {{ range . }}
+                <a href="{{ .url }}" class="ms-1 mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-accent--blue-light">{{ .text }}</a>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
     </div>
   </div>
-</div>
+{{ end }}

@@ -576,3 +576,27 @@ ol.wvu-ol-steps-horizontal {
     }
   }
 }
+
+.row.justify-content-center.wvu-justify-children {
+  &:has(> :nth-child(3)) {
+    @media (min-width: $wvu-bp-lg) {
+      justify-content: start $global-important;
+    }
+    @media (min-width: $wvu-bp-xl) {
+      justify-content: center $global-important;
+    }
+  }
+  &:has(> :nth-child(4)) {
+    @media (min-width: $wvu-bp-xl) {
+      justify-content: start $global-important;
+    }
+    @media (min-width: $wvu-bp-xxl) {
+      justify-content: center $global-important;
+    }
+  }
+  &:has(> :nth-child(5)) {
+    @media (min-width: $wvu-bp-xxl) {
+      justify-content: start $global-important;
+    }
+  }
+}

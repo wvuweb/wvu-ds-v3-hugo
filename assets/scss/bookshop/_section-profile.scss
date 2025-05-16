@@ -1,139 +1,8 @@
-// $section-profile-generic-prospective-students-tone-1: (
-//   "audience": "prospective_students",
-//   "tone": "1",
-//   "pattern": "",
-//   "border": "",
-//   "shadow": "",
-//   "display-heading-shadow": "",
-//   "display-heading-outline": "false",
-//   "display-heading-case": "uppercase"
-// );
-
-// $section-profile-generic-prospective-students-tone-2: (
-//   "audience": "prospective_students",
-//   "tone": "3",
-//   "pattern": "",
-//   "border": "2px solid",
-//   "shadow": "",
-//   "display-heading-shadow": "",
-//   "display-heading-outline": "false",
-//   "display-heading-case": "uppercase"
-// );
-
-// $section-profile-generic-prospective-students-tone-3: (
-//   "audience": "prospective_students",
-//   "tone": "3",
-//   "pattern": "",
-//   "border": "2px solid",
-//   "shadow": "true",
-//   "display-heading-shadow": "true",
-//   "display-heading-outline": "true",
-//   "display-heading-case": "uppercase"
-// );
-
-// $section-profile-styles: (
-//   "section-profile-generic-prospective_students-tone-1": $section-profile-generic-prospective-students-tone-1,
-//   "section-profile-generic-prospective_students-tone-2": $section-profile-generic-prospective-students-tone-2,
-//   "section-profile-generic-prospective_students-tone-3": $section-profile-generic-prospective-students-tone-3
-// );
-
 .wvu-b-label {
   font-family: $helvetica-neue-condensed-black;
   letter-spacing: $wvu-letter-spacing-width-lg;
   text-transform: uppercase;
 }
-
-// .wvu-b-display-heading {
-//   @include wvu-shout();
-// }
-
-// $section-profile-generic-styles-2: (
-//   // General
-//   "general": (
-//     "display-heading": shout,
-//     "display-heading-size": "",
-//     "display-heading-shadow": false,
-//     "display-heading-outline": false,
-//     "display-heading-case": uppercase,
-//     "tone": (
-//       "default": (
-//         "pattern": "",
-//         "border": 2px solid,
-//         "shadow": true,
-//         "color_palettes": (
-//           "1": (
-//             "background": $wvu-accent--sunset,
-//             "text": "",
-//             "accent": "",
-//             "pattern": ""
-//           ),
-//           "2": (
-//             "background": $wvu-accent--sunset,
-//             "text": "",
-//             "accent": "",
-//             "pattern": ""
-//           ),
-//           "3": (
-//             "background": $wvu-accent--sunset,
-//             "text": "",
-//             "accent": "",
-//             "pattern": ""
-//           )
-//         )
-//       ),
-//       "formal": (
-//         "pattern": "",
-//         "border": 2px solid,
-//         "shadow": true,
-//         "color_palettes": (
-//           "1": (
-//             "background": $wvu-accent--sunset,
-//             "text": "",
-//             "accent": "",
-//             "pattern": ""
-//           ),
-//           "2": (
-//             "background": $wvu-accent--sunset,
-//             "text": "",
-//             "accent": "",
-//             "pattern": ""
-//           ),
-//           "3": (
-//             "background": $wvu-accent--sunset,
-//             "text": "",
-//             "accent": "",
-//             "pattern": ""
-//           )
-//         )
-//       ),
-//       "fun": (
-//         "pattern": "",
-//         "border": 2px solid,
-//         "shadow": true,
-//         "color_palettes": (
-//           "1": (
-//             "background": $wvu-accent--sunset,
-//             "text": "",
-//             "accent": "",
-//             "pattern": ""
-//           ),
-//           "2": (
-//             "background": $wvu-accent--sunset,
-//             "text": "",
-//             "accent": "",
-//             "pattern": ""
-//           ),
-//           "3": (
-//             "background": $wvu-accent--sunset,
-//             "text": "",
-//             "accent": "",
-//             "pattern": ""
-//           )
-//         )
-//       )
-//     )
-//   )
-// );
 
 $section-profile-generic-styles: (
   // General
@@ -146,7 +15,7 @@ $section-profile-generic-styles: (
       "display-heading-size": "",
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
-      "display-heading-case": "uppercase",
+      "display-heading-case": uppercase,
       "color-palettes": (
         "1": (
           "background": $wvu-blue,
@@ -175,7 +44,7 @@ $section-profile-generic-styles: (
       "display-heading": "shout",
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
-      "display-heading-case": "uppercase",
+      "display-heading-case": uppercase,
       "color-palettes": (
         "1": (
           "background": $wvu-neutral--off-white,
@@ -204,7 +73,7 @@ $section-profile-generic-styles: (
       "display-heading": "shout",
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
-      "display-heading-case": "uppercase",
+      "display-heading-case": uppercase,
       "color-palettes": (
         "1": (
           "background": $wvu-accent--blue-light,
@@ -233,7 +102,7 @@ $section-profile-generic-styles: (
       "display-heading": "shout",
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
-      "display-heading-case": "uppercase",
+      "display-heading-case": uppercase,
       "color-palettes": (
         "1": (
           "background": $wvu-neutral--off-white,
@@ -504,7 +373,7 @@ $section-profile-generic-styles: (
       "display-heading": "shout",
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
-      "display-heading-case": "uppercase",
+      "display-heading-case": uppercase,
       "color-palettes": (
         "1": (
           "background": $wvu-blue,
@@ -656,18 +525,21 @@ $section-profile-generic-styles: (
       "color-palettes": (
         "1": (
           "background": $wvu-accent--sunset,
+          "subtle": "shade",
           "text": "",
           "accent": "",
           "pattern": ""
         ),
         "2": (
           "background": $wvu-accent--yellow,
+          "subtle": "tint",
           "text": "",
           "accent": "",
           "pattern": ""
         ),
         "3": (
           "background": $wvu-accent--sunset,
+          "subtle": "shade",
           "text": "",
           "accent": "",
           "pattern": ""
@@ -686,18 +558,21 @@ $section-profile-generic-styles: (
       "color-palettes": (
         "1": (
           "background": $wvu-blue,
+          "subtle": "shade",
           "text": white,
           "accent": $wvu-gold,
           "pattern": $wvu-accent--blue-light
         ),
         "2": (
           "background": $wvu-accent--blue,
+          "subtle": "shade",
           "text": white,
           "accent": $wvu-accent--yellow,
           "pattern": $wvu-accent--blue-light
         ),
         "3": (
           "background": $wvu-accent--yellow,
+          "subtle": "tint",
           "text": $dark,
           "accent": $wvu-accent--blue,
           "pattern": $wvu-accent--old-gold
@@ -716,18 +591,21 @@ $section-profile-generic-styles: (
       "color-palettes": (
         "1": (
           "background": $wvu-blue,
+          "subtle": "shade",
           "text": white,
           "accent": $wvu-gold,
           "pattern": $wvu-accent--blue-light
         ),
         "2": (
           "background": $wvu-accent--blue,
+          "subtle": "shade",
           "text": white,
           "accent": $wvu-accent--yellow,
           "pattern": $wvu-accent--blue-light
         ),
         "3": (
           "background": $wvu-accent--yellow,
+          "subtle": "tint",
           "text": $dark,
           "accent": $wvu-accent--blue,
           "pattern": $wvu-accent--old-gold
@@ -737,13 +615,81 @@ $section-profile-generic-styles: (
   )
 );
 
+$wvu-b-bg-color: "";
 $wvu-b-text-color: "";
 
 @each $audience, $tones in $section-profile-generic-styles {
-  .site-audience-#{$audience} :not(.override-audience-styles-site), .audience-#{$audience} {
+  .site-audience-#{$audience} :not(.override-audience-styles-site) {
+    @each $tone, $properties in $tones {
+      @if $tone == "1" {
+        .tone- {
+          @each $property, $value in $properties {
+            @if $property == "display-heading" and $value != "" {
+              .wvu-b-display-heading {
+                @if $value == "config" {
+                  @include config();
+                  .wvu-b-font-adjust {
+                    font-size: 1.2em $global-important;
+                  }
+                } @else if $value == "shout" {
+                  @include wvu-shout();
+                } @else if $value == "antonia" {
+                  @include antonia();
+                } @else if $value == "antonia-bold" {
+                  @include antonia-bold();
+                } @else if $value == "antonia-italic" {
+                  @include antonia-italic();
+                } @else if $value == "antonia-bold-italic" {
+                  @include antonia-bold-italic();
+                } @else if $value == "antonia-heavy" {
+                  @include antonia-heavy();
+                } @else if $value == "antonia-heavy-italic" {
+                  @include antonia-heavy-italic();
+                } @else if $value == "antonia-black" {
+                  @include antonia-black();
+                } @else if $value == "antonia-black-italic" {
+                  @include antonia-black-italic();
+                } @else {
+                  font-family: $value $global-important;
+                }
+              }
+            } @else if $property == "display-heading-case" and $value != "" {
+              .wvu-b-display-heading {
+                text-transform: $value $global-important;
+              }
+            } @else if $property == "shadow" and $value == "true" {
+              .wvu-b-shadow {
+                filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+              }
+            } @else if $property == "display-heading-shadow" and $value == "true" {
+              .wvu-b-text-shadow {
+                filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+              }
+            // } @else if $property == "display-heading-outline" and $value == "true" {
+            //   .wvu-b-text-outline {
+            //     @include wvu-text-outline();
+            //   }
+            } @else if $property == "label" {
+              .wvu-b-label {
+                font-family: $value $global-important;
+              }
+            } @else if $property == "border" and $value != "" {
+              .wvu-b-border {
+                border: $value $dark $global-important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $audience, $tones in $section-profile-generic-styles {
+  .audience-#{$audience} {
     // &:not(.override-audience-styles-page) {
       @each $tone, $properties in $tones {
-        &.tone-, &.tone-#{$tone} {
+        &.tone-#{$tone} {
           // &:not(.override-tone-styles-site), &:not(.override-tone-styles-page) {
             // .c-section-profile-generic-css, &.c-section-profile-generic-css {
               @each $property, $value in $properties {
@@ -809,10 +755,21 @@ $wvu-b-text-color: "";
                       @each $element, $color in $values {
                         @if $element == "background" and $color != "" {
                           background-color: $color $global-important;
+                          $wvu-b-bg-color: $color !global;
                           @if $color == "transparent" {
                             $wvu-b-text-color: white !global;
                           } @else {
                             $wvu-b-text-color: $color !global;
+                          }
+                        } @else if $element == "subtle" and $color != "" {
+                          @if $color == "shade" {
+                            &.wvu-b-subtle {
+                              background-color: tint($wvu-b-bg-color, 15%) !important;
+                            }
+                          } @else if $color == "tint" {
+                            &.wvu-b-subtle {
+                              background-color: tint($wvu-b-bg-color, 50%) !important;
+                            }
                           }
                         } @else if $element == "text" and $color != "" {
                           color: $color $global-important;
