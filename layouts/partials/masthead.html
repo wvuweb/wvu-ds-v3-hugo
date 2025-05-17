@@ -8,9 +8,9 @@
             <img class="me-4" src="https://static.wvu.edu/global/images/logos/wvu/flying-wv--1.0.0.svg" height="70px" width="65px" />
             <div class="border-start border-1 border-white py-1 ps-4">
               {{ with .super_heading }}
-                <span class="d-block mb-2">{{ . }}</span>
+                <span class="d-block mb-2 small">{{ . }}</span>
               {{ end }}
-              <span class="mt-n2 helvetica-neue-bold h3 lh-1">{{ range .title }}<span class="d-block">{{ . }}{{ end }}</span>
+              <span class="mt-n2 helvetica-neue-bold h4 lh-1">{{ range .title }}<span class="d-block">{{ . }}{{ end }}</span>
             </div>
           </div>      
         </div>

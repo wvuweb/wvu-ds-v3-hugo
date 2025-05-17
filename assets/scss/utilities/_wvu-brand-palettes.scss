@@ -4,6 +4,8 @@
   text-transform: uppercase $global-important;
 }
 
+$border: 3px solid $dark;
+
 $section-styles: (
   // General
   "general": (
@@ -109,7 +111,9 @@ $section-styles: (
           "text": $wvu-blue,
           "accent": $wvu-blue,
           "pattern": $wvu-gold,
-          "gradient": $wvu-gradient-wvu-gold-accent-yellow-accent-sunset
+          "gradient": $wvu-gradient-wvu-gold-accent-yellow-accent-sunset,
+          "breadcrumbs-bg": $wvu-gold,
+          "breadcrumbs-text": $wvu-blue
         ),
         "2": (
           "background": $wvu-accent--blue,
@@ -218,7 +222,7 @@ $section-styles: (
     ),
     "4": (
       "pattern": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "true",
       "display-heading": "config",
       "display-heading-shadow": "false",
@@ -250,7 +254,7 @@ $section-styles: (
   "parents": (
     "1": (
       "pattern": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "true",
       "display-heading": "shout",
       "display-heading-shadow": "false",
@@ -279,7 +283,7 @@ $section-styles: (
     ),
     "2": (
       "pattern": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "true",
       "display-heading-shadow": "false",
       "display-heading-outline": "false",
@@ -307,7 +311,7 @@ $section-styles: (
     ),
     "3": (
       "pattern": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "true",
       "display-heading": "config",
       "display-heading-shadow": "false",
@@ -336,7 +340,7 @@ $section-styles: (
     ),
     "4": (
       "pattern": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "true",
       "display-heading": "config",
       "display-heading-shadow": "false",
@@ -426,7 +430,7 @@ $section-styles: (
     ),
     "3": (
       "pattern": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "true",
       "display-heading": "antonia-black-italic",
       "display-heading-shadow": "false",
@@ -455,7 +459,7 @@ $section-styles: (
     ),
     "4": (
       "pattern": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "true",
       "display-heading": "antonia-black-italic",
       "display-heading-shadow": "false",
@@ -487,7 +491,7 @@ $section-styles: (
   "prospective_students": (
     "1": (
       "pattern": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "",
       "display-heading": "config",
       "display-heading-shadow": "",
@@ -516,7 +520,7 @@ $section-styles: (
     ),
     "2": (
       "pattern": "",
-      "border": "",
+      "border": $border,
       "shadow": "",
       "display-heading": "config",
       "display-heading-shadow": "",
@@ -549,7 +553,7 @@ $section-styles: (
     "3": (
       "pattern": "",
       "gradient": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "true",
       "display-heading": "config",
       "display-heading-shadow": "true",
@@ -582,7 +586,7 @@ $section-styles: (
     "4": (
       "pattern": "",
       "gradient": "",
-      "border": 3px solid,
+      "border": $border,
       "shadow": "true",
       "display-heading": "config",
       "display-heading-shadow": "true",
@@ -617,6 +621,8 @@ $section-styles: (
 
 $wvu-b-bg-color: "";
 $wvu-b-text-color: "";
+$wvu-b-breadcrumbs-bg-color: "";
+$wvu-b-breadcrumbs-text-color: "";
 
 @each $audience, $tones in $section-styles {
   .site-audience-#{$audience} :not(.override-audience-styles-site) {
@@ -675,7 +681,7 @@ $wvu-b-text-color: "";
               }
             } @else if $property == "border" and $value != "" {
               .wvu-b-border {
-                border: $value $dark $global-important;
+                border: $value $global-important;
               }
             }
           }
@@ -741,12 +747,9 @@ $wvu-b-text-color: "";
             }
           } @else if $property == "border" and $value != "" {
             .wvu-b-border {
-              border: $value $dark $global-important;
+              border: $value $global-important;
             }
           } @else if $property == "color-palettes" {
-            .bg-option-2 {
-              background-color: $wvu-accent--blue $global-important;
-            }
             @each $option, $values in $value {
               &.bg-option-#{$option}, .bg-option-#{$option} {
                 @each $element, $color in $values {
@@ -789,10 +792,21 @@ $wvu-b-text-color: "";
                     .wvu-b-pattern-color {
                       opacity: 1 $global-important;
                     }
+                  } @else if $element == "breadcrumbs-bg" and $color != "" {
+                    $wvu-b-breadcrumbs-bg-color: $color !global;
+                  } @else if $element == "breadcrumbs-text" and $color != "" {
+                    $wvu-b-breadcrumbs-text-color: $color !global;
                   }
                 }
               }
             }
+          }
+        }
+        .wvu-b-breadcrumbs {
+          background-color: $wvu-b-breadcrumbs-bg-color $global-important;
+          color: $wvu-b-breadcrumbs-text-color $global-important;
+          a:link, a:visited {
+            color: $wvu-b-breadcrumbs-text-color $global-important;
           }
         }
       }
