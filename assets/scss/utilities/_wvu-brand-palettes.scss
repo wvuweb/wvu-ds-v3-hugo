@@ -1,10 +1,10 @@
 .wvu-b-label {
-  font-family: $helvetica-neue-condensed-black;
-  letter-spacing: $wvu-letter-spacing-width-lg;
-  text-transform: uppercase;
+  font-family: $helvetica-neue-condensed-black $global-important;
+  letter-spacing: $wvu-letter-spacing-width-lg $global-important;
+  text-transform: uppercase $global-important;
 }
 
-$section-profile-generic-styles: (
+$section-styles: (
   // General
   "general": (
     "1": (
@@ -618,7 +618,7 @@ $section-profile-generic-styles: (
 $wvu-b-bg-color: "";
 $wvu-b-text-color: "";
 
-@each $audience, $tones in $section-profile-generic-styles {
+@each $audience, $tones in $section-styles {
   .site-audience-#{$audience} :not(.override-audience-styles-site) {
     @each $tone, $properties in $tones {
       @if $tone == "1" {
@@ -685,364 +685,117 @@ $wvu-b-text-color: "";
   }
 }
 
-@each $audience, $tones in $section-profile-generic-styles {
+@each $audience, $tones in $section-styles {
   .audience-#{$audience} {
-    // &:not(.override-audience-styles-page) {
-      @each $tone, $properties in $tones {
-        &.tone-#{$tone} {
-          // &:not(.override-tone-styles-site), &:not(.override-tone-styles-page) {
-            // .c-section-profile-generic-css, &.c-section-profile-generic-css {
-              @each $property, $value in $properties {
-                @if $property == "display-heading" and $value != "" {
-                  .wvu-b-display-heading {
-                    @if $value == "config" {
-                      @include config();
-                      .wvu-b-font-adjust {
-                        font-size: 1.2em $global-important;
-                      }
-                    } @else if $value == "shout" {
-                      @include wvu-shout();
-                    } @else if $value == "antonia" {
-                      @include antonia();
-                    } @else if $value == "antonia-bold" {
-                      @include antonia-bold();
-                    } @else if $value == "antonia-italic" {
-                      @include antonia-italic();
-                    } @else if $value == "antonia-bold-italic" {
-                      @include antonia-bold-italic();
-                    } @else if $value == "antonia-heavy" {
-                      @include antonia-heavy();
-                    } @else if $value == "antonia-heavy-italic" {
-                      @include antonia-heavy-italic();
-                    } @else if $value == "antonia-black" {
-                      @include antonia-black();
-                    } @else if $value == "antonia-black-italic" {
-                      @include antonia-black-italic();
+    @each $tone, $properties in $tones {
+      &.tone-#{$tone} {
+        @each $property, $value in $properties {
+          @if $property == "display-heading" and $value != "" {
+            .wvu-b-display-heading {
+              @if $value == "config" {
+                @include config();
+                .wvu-b-font-adjust {
+                  font-size: 1.2em $global-important;
+                }
+              } @else if $value == "shout" {
+                @include wvu-shout();
+              } @else if $value == "antonia" {
+                @include antonia();
+              } @else if $value == "antonia-bold" {
+                @include antonia-bold();
+              } @else if $value == "antonia-italic" {
+                @include antonia-italic();
+              } @else if $value == "antonia-bold-italic" {
+                @include antonia-bold-italic();
+              } @else if $value == "antonia-heavy" {
+                @include antonia-heavy();
+              } @else if $value == "antonia-heavy-italic" {
+                @include antonia-heavy-italic();
+              } @else if $value == "antonia-black" {
+                @include antonia-black();
+              } @else if $value == "antonia-black-italic" {
+                @include antonia-black-italic();
+              } @else {
+                font-family: $value $global-important;
+              }
+            }
+          } @else if $property == "display-heading-case" and $value != "" {
+            .wvu-b-display-heading {
+              text-transform: $value $global-important;
+            }
+          } @else if $property == "shadow" and $value == "true" {
+            .wvu-b-shadow {
+              filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+            }
+          } @else if $property == "display-heading-shadow" and $value == "true" {
+            .wvu-b-text-shadow {
+              filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+            }
+          // } @else if $property == "display-heading-outline" and $value == "true" {
+          //   .wvu-b-text-outline {
+          //     @include wvu-text-outline();
+          //   }
+          } @else if $property == "label" {
+            .wvu-b-label {
+              font-family: $value $global-important;
+            }
+          } @else if $property == "border" and $value != "" {
+            .wvu-b-border {
+              border: $value $dark $global-important;
+            }
+          } @else if $property == "color-palettes" {
+            .bg-option-2 {
+              background-color: $wvu-accent--blue $global-important;
+            }
+            @each $option, $values in $value {
+              &.bg-option-#{$option}, .bg-option-#{$option} {
+                @each $element, $color in $values {
+                  @if $element == "background" and $color != "" {
+                    background-color: $color $global-important;
+                    $wvu-b-bg-color: $color !global;
+                    @if $color == "transparent" {
+                      $wvu-b-text-color: white !global;
                     } @else {
-                      font-family: $value $global-important;
+                      $wvu-b-text-color: $color !global;
                     }
-                  }
-                } @else if $property == "display-heading-case" and $value != "" {
-                  .wvu-b-display-heading {
-                    text-transform: $value $global-important;
-                  }
-                } @else if $property == "shadow" and $value == "true" {
-                  .wvu-b-shadow {
-                    filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
-                  }
-                } @else if $property == "display-heading-shadow" and $value == "true" {
-                  .wvu-b-text-shadow {
-                    filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
-                  }
-                // } @else if $property == "display-heading-outline" and $value == "true" {
-                //   .wvu-b-text-outline {
-                //     @include wvu-text-outline();
-                //   }
-                } @else if $property == "label" {
-                  .wvu-b-label {
-                    font-family: $value $global-important;
-                  }
-                } @else if $property == "border" and $value != "" {
-                  .wvu-b-border {
-                    border: $value $dark $global-important;
-                  }
-                } @else if $property == "color-palettes" {
-                  .bg-option-2 {
-                    background-color: $wvu-accent--blue $global-important;
-                  }
-                  @each $option, $values in $value {
-                    &.bg-option-#{$option}, .bg-option-#{$option} {
-                      @each $element, $color in $values {
-                        @if $element == "background" and $color != "" {
-                          background-color: $color $global-important;
-                          $wvu-b-bg-color: $color !global;
-                          @if $color == "transparent" {
-                            $wvu-b-text-color: white !global;
-                          } @else {
-                            $wvu-b-text-color: $color !global;
-                          }
-                        } @else if $element == "subtle" and $color != "" {
-                          @if $color == "shade" {
-                            &.wvu-b-subtle {
-                              background-color: tint($wvu-b-bg-color, 15%) !important;
-                            }
-                          } @else if $color == "tint" {
-                            &.wvu-b-subtle {
-                              background-color: tint($wvu-b-bg-color, 50%) !important;
-                            }
-                          }
-                        } @else if $element == "text" and $color != "" {
-                          color: $color $global-important;
-                        } @else if $element == "accent" and $color != "" {
-                          .wvu-b-accent-text {
-                            color: $color $global-important;
-                          }
-                          .wvu-b-accent-bg {
-                            background-color: $color $global-important;
-                            color: $wvu-b-text-color $global-important;
-                          }
-                        } @else if $element == "pattern" and $color != "" {
-                          .wvu-b-pattern-color {
-                            background-color: $color $global-important;
-                          }
-                        } @else if $element == "gradient" and $color != "" {
-                          .wvu-b-gradient {
-                            background: $color;
-                          }
-                          .wvu-b-pattern-color {
-                            opacity: 1 $global-important;
-                          }
-                        }
+                  } @else if $element == "subtle" and $color != "" {
+                    @if $color == "shade" {
+                      &.wvu-b-subtle {
+                        background-color: tint($wvu-b-bg-color, 15%) !important;
                       }
+                    } @else if $color == "tint" {
+                      &.wvu-b-subtle {
+                        background-color: tint($wvu-b-bg-color, 50%) !important;
+                      }
+                    }
+                  } @else if $element == "text" and $color != "" {
+                    color: $color $global-important;
+                  } @else if $element == "accent" and $color != "" {
+                    .wvu-b-accent-text {
+                      color: $color $global-important;
+                    }
+                    .wvu-b-accent-bg {
+                      background-color: $color $global-important;
+                      color: $wvu-b-text-color $global-important;
+                    }
+                  } @else if $element == "pattern" and $color != "" {
+                    .wvu-b-pattern-color {
+                      background-color: $color $global-important;
+                    }
+                  } @else if $element == "gradient" and $color != "" {
+                    .wvu-b-gradient {
+                      background: $color;
+                    }
+                    .wvu-b-pattern-color {
+                      opacity: 1 $global-important;
                     }
                   }
                 }
               }
-            // }
-          // }
+            }
+          }
         }
       }
-    // }
+    }
   }
 }
-
-/* Brand Audience should define
-  1. Which typeface to use for display headings, subheaings, superheadings, labels, body copy
-  2. Which pattern to use on an element with a .wvu-b-pattern class
-*/
-
-// @each $name, $audience in $audiences-typography {
-//   .audience-#{$name} {
-//     @each $name, $font in $audience {
-//       .wvu-b-#{$name} {
-//         font-family: $font $global-important;
-//       }
-//     }
-//   }
-// }
-
-// @mixin brand-palette($audience, $tone) {
-//   @if $audience == "alumni" {
-//     @if $tone == "2" or $tone == "3" {
-//       .wvu-b-pattern {
-        
-//       }
-//     }
-//     @if $tone == "3" {
-
-//     }
-//   } @else if $audience == "general" {
-//     .wvu-b-display-heading {
-//       line-height: $wvu-shout-line-height $global-important;
-//       text-transform: uppercase $global-important;
-//     }
-//     @if $tone == "2" or $tone == "3" {
-
-//     }
-//   } @else if $audience == "prospective_students" {
-//     .wvu-b-display-heading {
-//       text-transform: uppercase $global-important;
-//     }
-//     @if $tone == "2" or $tone == "3" {
-//       .wvu-b-border {
-//         border-width: 2px $global-important;
-//       }
-//       .wvu-b-shadow {
-  
-//       }
-//       .wvu-b-pattern {
-        
-//       }
-//     }
-//     @if $tone == "3" {
-//       .wvu-b-display-heading {
-//         position: relative $global-important;
-//         &.display-0, &.display-1, &.display-2 {
-//           &:before {
-//             @include wvu-text-echo-outline();
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// /* Brand Level should define
-//   1. If a shadow is present on elements with .wvu-b-shadow class
-//   2. If a pattern is present on elements with a .wvu-b-pattern class
-//   3. If a gradient should be applied to display headings
-// */
-
-// .audience-alumni {
-//   &.tone-1 {
-//     @include brand-palette("alumni", "1");
-//   }
-//   &.tone-2 {
-//     @include brand-palette("alumni", "2");
-//   }
-//   &.tone-3 {
-//     @include brand-palette("alumni", "3");
-//   }
-// }
-
-// .audience-general {
-//   &.tone-1 {
-//     @include brand-palette("general", "1");
-//   }
-//   &.tone-2 {
-//     @include brand-palette("general", "2");
-//   }
-//   &.tone-3 {
-//     @include brand-palette("general", "3");
-//   }
-// }
-
-// .audience-prospective_students {
-//   &.tone-1 {
-//     @include brand-palette("prospective_students", "1");
-//   }
-//   &.tone-2 {
-//     @include brand-palette("prospective_students", "2");
-//   }
-//   &.tone-3 {
-//     @include brand-palette("prospective_students", "3");
-//   }
-// }
-
-// .c-profile-generic-css {
-//   .audience-alumni, &.audience-alumni {
-//     .bg-option-1 {
-//       background-color: $wvu-blue $global-important;
-//       color: white $global-important;
-//       .wvu-b-accent-bg {
-//         background-color: $wvu-gold $global-important;
-//       }
-//       .wvu-b-accent-text {
-//         color: $wvu-gold $global-important;
-//       }
-//     }
-//     .bg-option-2 {
-//       background-color: $wvu-gold $global-important;
-//       .wvu-b-accent-bg {
-//         background-color: $wvu-blue $global-important;
-//       }
-//       .wvu-b-accent-text {
-//         color: $wvu-blue $global-important;
-//       }
-//     }
-//   }
-//   .audience-general, &.audience-general {
-//     .bg-option-1 {
-//       .wvu-b-accent-bg {
-
-//       }
-//       .wvu-b-accent-text {
-
-//       }
-//     }
-//     .bg-option-2 {
-//       .wvu-b-accent-bg {
-
-//       }
-//       .wvu-b-accent-text {
-
-//       }
-//     }
-//   }
-//   .audience-prospective_students, &.audience-prospective_students {
-//     &.tone-1 {
-//       .bg-option-1 {
-//         background-color: $wvu-blue $global-important;
-//         color: $white;
-//         .wvu-b-accent-bg {
-//           background-color: $wvu-accent--yellow $global-important;
-//           color: $wvu-accent--yellow $global-important;
-//         }
-//         .wvu-b-accent-text {
-//           color: $wvu-accent--yellow $global-important;
-//         }
-//       }
-//       .bg-option-2 {
-//         background-color: $wvu-gold $global-important;
-//         .wvu-b-accent-bg {
-//           background-color: $wvu-accent--blue $global-important;
-//         }
-//         .wvu-b-accent-text {
-//           color: $wvu-accent--blue $global-important;
-//         }
-//       }
-//       .bg-option-3 {
-//         background-color: $wvu-accent--blue-light $global-important;
-//         .wvu-b-accent-bg {
-//           background-color: $wvu-blue $global-important;
-//           color: $wvu-accent--blue-light $global-important
-//         }
-//         .wvu-b-accent-text {
-//           color: $wvu-blue $global-important;
-//         }
-//       }
-//     }
-//     &.tone-2 {
-//       .bg-option-1 {
-//         background-color: $wvu-accent--blue $global-important;
-//         color: $white;
-//         .wvu-b-accent-bg {
-//           background-color: $wvu-accent--yellow $global-important;
-//           color: $wvu-accent--blue $global-important;
-//         }
-//         .wvu-b-accent-text {
-//           color: $wvu-accent--yellow $global-important;
-//         }
-//       }
-//       .bg-option-2 {
-//         background-color: $wvu-accent--yellow $global-important;
-//         .wvu-b-accent-bg {
-//           background-color: $wvu-accent--blue $global-important;
-//         }
-//         .wvu-b-accent-text {
-//           color: $wvu-accent--blue $global-important;
-//         }
-//       }
-//       .bg-option-3 {
-//         background-color: $wvu-accent--sunset $global-important;
-//         .wvu-b-accent-bg {
-//           background-color: $wvu-accent--blue $global-important;
-//         }
-//         .wvu-b-accent-text {
-//           color: $wvu-accent--blue $global-important;
-//         }
-//       }
-//     }
-//     &.tone-3 {
-//       .bg-option-1 {
-//         background-color: $wvu-accent--blue $global-important;
-//         color: $white;
-//         .wvu-b-accent-bg {
-//           background-color: $wvu-accent--yellow $global-important;
-//           color: $wvu-accent--blue $global-important;
-//         }
-//         .wvu-b-accent-text {
-//           color: $wvu-accent--yellow $global-important;
-//         }
-//       }
-//       .bg-option-2 {
-//         background-color: $wvu-accent--yellow $global-important;
-//         .wvu-b-accent-bg {
-//           background-color: $wvu-accent--blue $global-important;
-//         }
-//         .wvu-b-accent-text {
-//           color: $wvu-accent--blue $global-important;
-//         }
-//       }
-//       .bg-option-3 {
-//         background-color: $wvu-accent--sunset $global-important;
-//         .wvu-b-accent-bg {
-//           background-color: $wvu-accent--blue $global-important;
-//         }
-//         .wvu-b-accent-text {
-//           color: $wvu-accent--blue $global-important;
-//         }
-//       }
-//     }
-//   }
-// }

@@ -16,3 +16,9 @@
     <script src="{{ .RelPermalink }}" type="module"></script>
   {{- end }}
 {{- end }}
+
+{{- with resources.Get "js/bootstrap-alert--custom.js" }}
+  {{- with . | js.Build }}
+    <script src="{{ .RelPermalink }}" type="module"></script>
+  {{- end }}
+{{- end }}
