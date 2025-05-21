@@ -310,6 +310,63 @@ $wvu-color-palette-sunset-dark-blue: (
   "pattern": $wvu-blue
 );
 
+// General
+
+$color-palettes-general-tone-default: (
+  "1": $wvu-color-palette-wvu-blue-wvu-gold,
+  "2": $wvu-color-palette-wvu-gold-wvu-blue,
+  "3": $wvu-color-palette-white-wvu-blue,
+  "4": $wvu-color-palette-wvu-gold-gradient
+);
+
+$color-palettes-general-tone-reserved: (
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-off-white-accent-blue,
+  "3": $wvu-color-palette-warm-gray-light-dark-blue,
+  "4": $wvu-color-palette-warm-gray-dark-off-white,
+  "5": $wvu-color-palette--warm-gray-dark-light-blue,
+  "6": $wvu-color-palette-warm-gray-dark-yellow,
+  "7": $wvu-color-palette-warm-gray-dark-cream,
+  "8": $wvu-color-palette-cream-wvu-blue,
+  "9": $wvu-color-palette-cream-warm-gray-dark,
+  "10": $wvu-color-palette-cream-accent-blue,
+  "11": $wvu-color-palette-tan-wvu-blue,
+  "12": $wvu-color-palette-warm-gray-medium-dark-blue,
+  "100": $wvu-color-palette-off-white-gold-gradient,
+);
+
+$color-palettes-general-tone-loud: (
+  "1": $wvu-color-palette-dark-blue-wvu-gold,
+  "2": $wvu-color-palette-dark-blue-tan,
+  "3": $wvu-color-palette-dark-blue-light-blue,
+  "4": $wvu-color-palette-dark-blue-yellow,
+  "5": $wvu-color-palette-dark-blue-sunset,
+  "6": $wvu-color-palette-dark-blue-cream,
+  "7": $wvu-color-palette-light-blue-wvu-blue,
+  "8": $wvu-color-palette-accent-blue-yellow,
+  "9": $wvu-color-palette-accent-blue-cream,
+  "10": $wvu-color-palette-yellow-wvu-blue,
+  "11": $wvu-color-palette-yellow-accent-blue,
+  "12": $wvu-color-palette-yellow-warm-gray-dark,
+  "13": $wvu-color-palette-old-gold-yellow,
+  "14": $wvu-color-palette-old-gold-cream,
+  "15": $wvu-color-palette-sunset-dark-blue
+);
+
+$color-palettes-general-tone-lets-go: (
+  "1": $wvu-color-palette-wvu-blue-wvu-gold,
+  "2": $wvu-color-palette-wvu-gold-wvu-blue,
+  "3": $wvu-color-palette-off-white-wvu-blue,
+  "100": $wvu-color-palette-off-white-gold-gradient
+);
+
+$color-palettes-general: (
+  "default": $color-palettes-general-tone-default,
+  "reserved": $color-palettes-general-tone-reserved,
+  "loud": $color-palettes-general-tone-loud,
+  "lets-go": $color-palettes-general-tone-lets-go
+);
+
 // Prospective Students
 
 $color-palettes-prospective-students-tone-default: (

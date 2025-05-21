@@ -9,14 +9,14 @@ $border: 3px solid $dark;
 $wvu-brand-audiences: (
   "general",
   "prospective_students",
-  "alumni",
-  "leaders_partners"
+  "alumni"
 );
 
 $wvu-brand-tones: (
-  "general",
+  "default",
   "formal",
-  "fun"
+  "fun",
+  "lets-go"
 );
 
 // $wvu-elements-kitchen-sink: (
@@ -48,6 +48,10 @@ $wvu-elements-prospective-students: (
 );
 
 $wvu-elements-alumni: (
+  "lets-go": $wvu-elements-kitchen-sink
+);
+
+$wvu-elements-general: (
   "lets-go": $wvu-elements-kitchen-sink
 );
 
@@ -148,6 +152,13 @@ $wvu-typography-palettes-alumni: (
   "lets-go": $wvu-typography-palette-antonia-lets-go
 );
 
+$wvu-typography-palettes-general: (
+  "default": $wvu-typography-palette-helvetica,
+  "reserved": $wvu-typography-palette-helvetica-reserved,
+  "loud": $wvu-typography-palette-helvetica-loud,
+  "lets-go": $wvu-typography-palette-helvetica-lets-go
+);
+
 @each $audience in $wvu-brand-audiences {
   .audience-#{$audience} {
     @if $audience == "prospective_students" {
@@ -156,6 +167,9 @@ $wvu-typography-palettes-alumni: (
     } @else if $audience == "alumni" {
       @include wvu-elements-typography($wvu-elements-alumni, $wvu-typography-palettes-alumni);
       @include wvu-color-palettes($color-palettes-alumni);
+    } @else {
+      @include wvu-elements-typography($wvu-elements-general, $wvu-typography-palettes-general);
+      @include wvu-color-palettes($color-palettes-general);
     }
   }
 }
