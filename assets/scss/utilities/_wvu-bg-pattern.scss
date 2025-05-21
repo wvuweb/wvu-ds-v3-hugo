@@ -26,6 +26,10 @@
   @include wvu-bg-pattern(topo-light);
 }
 
+.wvu-bg-distressed-lines {
+  @include wvu-bg-pattern(distressed-lines);
+}
+
 // Example usage:
 // <section class="wvu-bg-topo-dark">
 //   ...

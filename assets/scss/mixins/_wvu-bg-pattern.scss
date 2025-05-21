@@ -61,6 +61,19 @@
     right: 0;
     z-index: $wvu-z-index-pattern;
   }
+  @if $pattern-type == 'distressed-lines' {
+    mask-image: url('/uploads/distressed-lines.svg');
+    -webkit-mask-image: url('/uploads/distressed-lines.svg');
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-size: 2000px 1000px $global-important;
+    -webkit-mask-size: 2000px 1000px $global-important;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: $wvu-z-index-pattern;
+  }
 }
 
 // Usage example:

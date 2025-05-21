@@ -14,6 +14,7 @@
 @import 'bootstrap/variables';
 @import 'bootstrap/variables-dark';
 @import 'wvu-colors-map';
+@import 'wvu-color-palettes';
 @import 'bootstrap/maps';
 @import 'bootstrap/mixins';
 @import 'bootstrap/utilities';
@@ -64,7 +65,9 @@
 @import 'mixins/wvu-bg-pattern';
 @import 'mixins/wvu-bg-tint';
 @import 'mixins/wvu-bg-vignetting';
+@import 'mixins/wvu-brand-palettes';
 @import 'mixins/wvu-co-branding';
+@import 'mixins/wvu-elements';
 @import 'mixins/wvu-gradient';
 @import 'mixins/wvu-highlight';
 @import 'mixins/wvu-lists';
@@ -108,7 +111,6 @@
 @import 'utilities/wvu-tilt';
 @import 'utilities/wvu-section-component';
 @import 'utilities/wvu-type';
-@import 'utilities/wvu-vibes';
 @import 'utilities/wvu-z-index';
 
 // Custom

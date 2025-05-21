@@ -6,810 +6,1010 @@
 
 $border: 3px solid $dark;
 
-$section-styles: (
-  // General
-  "general": (
-    "1": (
-      "pattern": "",
-      "border": "",
-      "shadow": "",
-      "display-heading": "shout",
-      "display-heading-size": "",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-blue,
-          "text": white,
-          "accent": $wvu-gold,
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-gold,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": ""
-        ),
-        "3": (
-          "background": "transparent",
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": ""
-        )
-      )
-    ),
-    "2": (
-      "pattern": "",
-      "border": "",
-      "shadow": "",
-      "display-heading": "shout",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-neutral--off-white,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-neutral--cream,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-neutral--warm-gray-dark,
-          "text": white,
-          "accent": $wvu-gold,
-          "pattern": ""
-        )
-      )
-    ),
-    "3": (
-      "pattern": "",
-      "border": "",
-      "shadow": "",
-      "display-heading": "shout",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--blue-light,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": $wvu-blue
-        ),
-        "2": (
-          "background": $wvu-accent--blue,
-          "text": white,
-          "accent": $wvu-gold,
-          "pattern": $wvu-accent--blue-light
-        ),
-        "3": (
-          "background": $wvu-accent--blue-dark,
-          "text": white,
-          "accent": $wvu-gold,
-          "pattern": $wvu-accent--blue-light
-        )
-      )
-    ),
-    "4": (
-      "pattern": "",
-      "border": "",
-      "shadow": "",
-      "display-heading": "shout",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-neutral--off-white,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": $wvu-gold,
-          "gradient": $wvu-gradient-wvu-gold-accent-yellow-accent-sunset,
-          "breadcrumbs-bg": $wvu-gold,
-          "breadcrumbs-text": $wvu-blue
-        ),
-        "2": (
-          "background": $wvu-accent--blue,
-          "text": white,
-          "accent": $wvu-gold,
-          "pattern": $wvu-accent--blue,
-          "gradient": $wvu-gradient-wvu-blue-accent-blue-accent-blue-light
-        ),
-        "3": (
-          "background": $wvu-neutral--off-white,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": $wvu-gold,
-          "gradient": $wvu-gradient-wvu-gold-accent-yellow-accent-sunset
-        )
-      )
-    )
-  ),
-  // Leaders and Partners
-  "leaders_partners": (
-    "1": (
-      "pattern": "",
-      "border": "",
-      "shadow": "",
-      "display-heading": "shout",
-      "display-heading-shadow": "",
-      "display-heading-outline": "",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-neutral--cream,
-          "text": $wvu-accent--blue-dark,
-          "accent": $wvu-accent--blue-dark,
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    ),
-    "2": (
-      "pattern": "",
-      "border": "2px solid",
-      "shadow": "true",
-      "display-heading": $iowan-old-style,
-      "display-heading-shadow": "",
-      "display-heading-outline": "",
-      "display-heading-case": none,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-neutral--warm-gray-medium,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    ),
-    "3": (
-      "pattern": "",
-      "border": "2px solid",
-      "shadow": "true",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": none,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    ),
-    "4": (
-      "pattern": "",
-      "border": $border,
-      "shadow": "true",
-      "display-heading": "config",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-accent--sunset,
-          "text": "white",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    ),
-  ),
-  // Parents
-  "parents": (
-    "1": (
-      "pattern": "",
-      "border": $border,
-      "shadow": "true",
-      "display-heading": "shout",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-blue,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-blue,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-blue,
-          "text": white,
-          "accent": $wvu-accent--sunset,
-          "pattern": ""
-        )
-      )
-    ),
-    "2": (
-      "pattern": "",
-      "border": $border,
-      "shadow": "true",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    ),
-    "3": (
-      "pattern": "",
-      "border": $border,
-      "shadow": "true",
-      "display-heading": "config",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-accent--sunset,
-          "text": "white",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    ),
-    "4": (
-      "pattern": "",
-      "border": $border,
-      "shadow": "true",
-      "display-heading": "config",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-accent--sunset,
-          "text": "white",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    ),
-  ),
-  // Alumni
-  "alumni": (
-    "1": (
-      "pattern": "",
-      "border": "",
-      "shadow": "",
-      "display-heading": "shout",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-blue,
-          "text": white,
-          "accent": $wvu-gold,
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-gold,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": ""
-        ),
-        "3": (
-          "background": $white,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": ""
-        )
-      )
-    ),
-    "2": (
-      "pattern": "",
-      "border": "",
-      "shadow": "",
-      "display-heading": "antonia-bold",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": none,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-neutral--off-white,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-neutral--cream,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-neutral--warm-gray-light,
-          "text": $wvu-blue,
-          "accent": $wvu-blue,
-          "pattern": ""
-        )
-      )
-    ),
-    "3": (
-      "pattern": "",
-      "border": $border,
-      "shadow": "true",
-      "display-heading": "antonia-black-italic",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": none,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-accent--sunset,
-          "text": "white",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    ),
-    "4": (
-      "pattern": "",
-      "border": $border,
-      "shadow": "true",
-      "display-heading": "antonia-black-italic",
-      "display-heading-shadow": "false",
-      "display-heading-outline": "false",
-      "display-heading-case": none,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--sunset,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-accent--sunset,
-          "text": "white",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    )
-  ),
-  // Prospective Students
-  "prospective_students": (
-    "1": (
-      "pattern": "",
-      "border": $border,
-      "shadow": "",
-      "display-heading": "config",
-      "display-heading-shadow": "",
-      "display-heading-outline": "false",
-      "display-heading-case": none,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-blue,
-          "text": white,
-          "accent": $wvu-gold,
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-blue,
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-blue,
-          "text": white,
-          "accent": $wvu-accent--sunset,
-          "pattern": ""
-        )
-      )
-    ),
-    "2": (
-      "pattern": "",
-      "border": $border,
-      "shadow": "",
-      "display-heading": "config",
-      "display-heading-shadow": "",
-      "display-heading-outline": "",
-      "display-heading-case": none,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-accent--sunset,
-          "subtle": "shade",
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "2": (
-          "background": $wvu-accent--yellow,
-          "subtle": "tint",
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        ),
-        "3": (
-          "background": $wvu-accent--sunset,
-          "subtle": "shade",
-          "text": "",
-          "accent": "",
-          "pattern": ""
-        )
-      )
-    ),
-    "3": (
-      "pattern": "",
-      "gradient": "",
-      "border": $border,
-      "shadow": "true",
-      "display-heading": "config",
-      "display-heading-shadow": "true",
-      "display-heading-outline": "true",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-blue,
-          "subtle": "shade",
-          "text": white,
-          "accent": $wvu-gold,
-          "pattern": $wvu-accent--blue-light
-        ),
-        "2": (
-          "background": $wvu-accent--blue,
-          "subtle": "shade",
-          "text": white,
-          "accent": $wvu-accent--yellow,
-          "pattern": $wvu-accent--blue-light
-        ),
-        "3": (
-          "background": $wvu-accent--yellow,
-          "subtle": "tint",
-          "text": $dark,
-          "accent": $wvu-accent--blue,
-          "pattern": $wvu-accent--old-gold
-        )
-      )
-    ),
-    "4": (
-      "pattern": "",
-      "gradient": "",
-      "border": $border,
-      "shadow": "true",
-      "display-heading": "config",
-      "display-heading-shadow": "true",
-      "display-heading-outline": "true",
-      "display-heading-case": uppercase,
-      "color-palettes": (
-        "1": (
-          "background": $wvu-blue,
-          "subtle": "shade",
-          "text": white,
-          "accent": $wvu-gold,
-          "pattern": $wvu-accent--blue-light
-        ),
-        "2": (
-          "background": $wvu-accent--blue,
-          "subtle": "shade",
-          "text": white,
-          "accent": $wvu-accent--yellow,
-          "pattern": $wvu-accent--blue-light
-        ),
-        "3": (
-          "background": $wvu-accent--yellow,
-          "subtle": "tint",
-          "text": $dark,
-          "accent": $wvu-accent--blue,
-          "pattern": $wvu-accent--old-gold
-        )
-      )
-    )
-  )
+$wvu-brand-audiences: (
+  "general",
+  "prospective_students",
+  "alumni",
+  "leaders_partners"
 );
 
-$wvu-b-bg-color: "";
-$wvu-b-text-color: "";
-$wvu-b-breadcrumbs-bg-color: "";
-$wvu-b-breadcrumbs-text-color: "";
+$wvu-brand-tones: (
+  "general",
+  "formal",
+  "fun"
+);
 
-@each $audience, $tones in $section-styles {
-  .site-audience-#{$audience} :not(.override-audience-styles-site) {
-    @each $tone, $properties in $tones {
-      @if $tone == "1" {
-        .tone- {
-          @each $property, $value in $properties {
-            @if $property == "display-heading" and $value != "" {
-              .wvu-b-display-heading {
-                @if $value == "config" {
-                  @include config();
-                  .wvu-b-font-adjust {
-                    font-size: 1.2em $global-important;
-                  }
-                } @else if $value == "shout" {
-                  @include wvu-shout();
-                } @else if $value == "antonia" {
-                  @include antonia();
-                } @else if $value == "antonia-bold" {
-                  @include antonia-bold();
-                } @else if $value == "antonia-italic" {
-                  @include antonia-italic();
-                } @else if $value == "antonia-bold-italic" {
-                  @include antonia-bold-italic();
-                } @else if $value == "antonia-heavy" {
-                  @include antonia-heavy();
-                } @else if $value == "antonia-heavy-italic" {
-                  @include antonia-heavy-italic();
-                } @else if $value == "antonia-black" {
-                  @include antonia-black();
-                } @else if $value == "antonia-black-italic" {
-                  @include antonia-black-italic();
-                } @else {
-                  font-family: $value $global-important;
-                }
-              }
-            } @else if $property == "display-heading-case" and $value != "" {
-              .wvu-b-display-heading {
-                text-transform: $value $global-important;
-              }
-            } @else if $property == "shadow" and $value == "true" {
-              .wvu-b-shadow {
-                filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
-              }
-            } @else if $property == "display-heading-shadow" and $value == "true" {
-              .wvu-b-text-shadow {
-                filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
-              }
-            // } @else if $property == "display-heading-outline" and $value == "true" {
-            //   .wvu-b-text-outline {
-            //     @include wvu-text-outline();
-            //   }
-            } @else if $property == "label" {
-              .wvu-b-label {
-                font-family: $value $global-important;
-              }
-            } @else if $property == "border" and $value != "" {
-              .wvu-b-border {
-                border: $value $global-important;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+// $wvu-elements-kitchen-sink: (
+//   "display-heading-shadow": true,
+//   "display-heading-outline": true,
+//   "pattern": topo-light
+// );
 
-@each $audience, $tones in $section-styles {
+// @mixin wvu-brand-elements($elements) {
+//   @each $element, $value in $elements {
+//     @if $element == "display-heading-shadow" and $value == true {
+//       .wvu-b-text-shadow {
+//         @include wvu-shadow-hard-filter();
+//       }
+//     }
+//   }
+// }
+
+// Elements
+
+$wvu-elements-kitchen-sink: (
+  "border": $border,
+  "shadow": true,
+  "pattern": topo-light
+);
+
+$wvu-elements-prospective-students: (
+  "lets-go": $wvu-elements-kitchen-sink
+);
+
+$wvu-elements-alumni: (
+  "lets-go": $wvu-elements-kitchen-sink
+);
+
+// Typography Palettes
+
+// Antonia
+
+$wvu-typography-palette-antonia: (
+  "display-heading": "antonia-heavy",
+  "subheading": "config",
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-antonia-reserved: (
+  "display-heading": "antonia-regular",
+  "subheading": "antonia-bold",
+  "text": $antonia
+);
+
+$wvu-typography-palette-antonia-loud: (
+  "display-heading": "antonia-heavy-italic",
+  "subheading": "config",
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-antonia-lets-go: (
+  "display-heading": "antonia-heavy-italic",
+  "subheading": "config",
+  "text": $helvetica-neue
+);
+
+// Helvetica
+
+$wvu-typography-palette-helvetica: (
+  "display-heading": "shout",
+  "subheading": $helvetica-neue-bold,
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-helvetica-reserved: (
+  "display-heading": "shout",
+  "subheading": "antonia-bold",
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-helvetica-loud: (
+  "display-heading": "shout",
+  "subheading": $helvetica-neue-light,
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-helvetica-lets-go: (
+  "display-heading": "shout",
+  "subheading": $helvetica-neue-light,
+  "text": $helvetica-neue
+);
+
+// Config
+
+$wvu-typography-palette-config: (
+  "display-heading": "config-extra-bold-italic",
+  "subheading": "config-extra-bold",
+  "text": "config"
+);
+
+$wvu-typography-palette-config-reserved: (
+  "display-heading": "config-extra-bold-italic",
+  "subheading": "antonia-bold",
+  "text": "config"
+);
+
+$wvu-typography-palette-config-loud: (
+  "display-heading": "config-extra-bold-italic",
+  "display-heading-case": uppercase,
+  "subheading": "config-extra-bold",
+  "text": "config"
+);
+
+$wvu-typography-palette-config-lets-go: (
+  "display-heading": "config-extra-bold-italic",
+  "display-heading-case": uppercase,
+  "display-heading-shadow": true,
+  "subheading": "config-extra-bold",
+  "text": "config"
+);
+
+$wvu-typography-palettes-prospective-students: (
+  "default": $wvu-typography-palette-config,
+  "reserved": $wvu-typography-palette-config-reserved,
+  "loud": $wvu-typography-palette-config-loud,
+  "lets-go": $wvu-typography-palette-config-lets-go
+);
+
+$wvu-typography-palettes-alumni: (
+  "default": $wvu-typography-palette-antonia,
+  "reserved": $wvu-typography-palette-antonia-reserved,
+  "loud": $wvu-typography-palette-antonia-loud,
+  "lets-go": $wvu-typography-palette-antonia-lets-go
+);
+
+@each $audience in $wvu-brand-audiences {
   .audience-#{$audience} {
-    @each $tone, $properties in $tones {
-      &.tone-#{$tone} {
-        @each $property, $value in $properties {
-          @if $property == "display-heading" and $value != "" {
-            .wvu-b-display-heading {
-              @if $value == "config" {
-                @include config();
-                .wvu-b-font-adjust {
-                  font-size: 1.2em $global-important;
-                }
-              } @else if $value == "shout" {
-                @include wvu-shout();
-              } @else if $value == "antonia" {
-                @include antonia();
-              } @else if $value == "antonia-bold" {
-                @include antonia-bold();
-              } @else if $value == "antonia-italic" {
-                @include antonia-italic();
-              } @else if $value == "antonia-bold-italic" {
-                @include antonia-bold-italic();
-              } @else if $value == "antonia-heavy" {
-                @include antonia-heavy();
-              } @else if $value == "antonia-heavy-italic" {
-                @include antonia-heavy-italic();
-              } @else if $value == "antonia-black" {
-                @include antonia-black();
-              } @else if $value == "antonia-black-italic" {
-                @include antonia-black-italic();
-              } @else {
-                font-family: $value $global-important;
-              }
-            }
-          } @else if $property == "display-heading-case" and $value != "" {
-            .wvu-b-display-heading {
-              text-transform: $value $global-important;
-            }
-          } @else if $property == "shadow" and $value == "true" {
-            .wvu-b-shadow {
-              filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
-            }
-          } @else if $property == "display-heading-shadow" and $value == "true" {
-            .wvu-b-text-shadow {
-              filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
-            }
-          // } @else if $property == "display-heading-outline" and $value == "true" {
-          //   .wvu-b-text-outline {
-          //     @include wvu-text-outline();
-          //   }
-          } @else if $property == "label" {
-            .wvu-b-label {
-              font-family: $value $global-important;
-            }
-          } @else if $property == "border" and $value != "" {
-            .wvu-b-border {
-              border: $value $global-important;
-            }
-          } @else if $property == "color-palettes" {
-            @each $option, $values in $value {
-              &.bg-option-#{$option}, .bg-option-#{$option} {
-                @each $element, $color in $values {
-                  @if $element == "background" and $color != "" {
-                    background-color: $color $global-important;
-                    $wvu-b-bg-color: $color !global;
-                    @if $color == "transparent" {
-                      $wvu-b-text-color: white !global;
-                    } @else {
-                      $wvu-b-text-color: $color !global;
-                    }
-                  } @else if $element == "subtle" and $color != "" {
-                    @if $color == "shade" {
-                      &.wvu-b-subtle {
-                        background-color: tint($wvu-b-bg-color, 15%) !important;
-                      }
-                    } @else if $color == "tint" {
-                      &.wvu-b-subtle {
-                        background-color: tint($wvu-b-bg-color, 50%) !important;
-                      }
-                    }
-                  } @else if $element == "text" and $color != "" {
-                    color: $color $global-important;
-                  } @else if $element == "accent" and $color != "" {
-                    .wvu-b-accent-text {
-                      color: $color $global-important;
-                    }
-                    .wvu-b-accent-bg {
-                      background-color: $color $global-important;
-                      color: $wvu-b-text-color $global-important;
-                    }
-                  } @else if $element == "pattern" and $color != "" {
-                    .wvu-b-pattern-color {
-                      background-color: $color $global-important;
-                    }
-                  } @else if $element == "gradient" and $color != "" {
-                    .wvu-b-gradient {
-                      background: $color;
-                    }
-                    .wvu-b-pattern-color {
-                      opacity: 1 $global-important;
-                    }
-                  } @else if $element == "breadcrumbs-bg" and $color != "" {
-                    $wvu-b-breadcrumbs-bg-color: $color !global;
-                  } @else if $element == "breadcrumbs-text" and $color != "" {
-                    $wvu-b-breadcrumbs-text-color: $color !global;
-                  }
-                }
-              }
-            }
-          }
-        }
-        .wvu-b-breadcrumbs {
-          background-color: $wvu-b-breadcrumbs-bg-color $global-important;
-          color: $wvu-b-breadcrumbs-text-color $global-important;
-          a:link, a:visited {
-            color: $wvu-b-breadcrumbs-text-color $global-important;
-          }
-        }
-      }
+    @if $audience == "prospective_students" {
+      @include wvu-elements-typography($wvu-elements-prospective-students, $wvu-typography-palettes-prospective-students);
+      @include wvu-color-palettes($color-palettes-prospective-students);
+    } @else if $audience == "alumni" {
+      @include wvu-elements-typography($wvu-elements-alumni, $wvu-typography-palettes-alumni);
+      @include wvu-color-palettes($color-palettes-alumni);
     }
   }
 }
+
+// @each $audience in $wvu-brand-audiences {
+//   .audience-#{$audience} {
+//     @each $tone in $wvu-brand-tones {
+//       .tone-#{$tone} {
+//         @include wvu-brand-palette($audience, $tone);
+//       }
+//     }
+//   }
+// };
+
+// @each $audience in $wvu-brand-audiences {
+//   @each $tone, $properties in $wvu-brand-tones {
+//     @each $property in $properties {
+//       @if $property == "elements" {
+//         @include element-palette($element-palette);
+//       } @else if $property == "typography" {
+//         @include typography-palette($typography-palettes);
+//       } @else if $property == "color_palettes" {
+//         @each $color-palette in $color-palettes {
+//           @include color-palette($color-palette);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// $section-styles: (
+//   // General
+//   "general": (
+//     "1": (
+//       "pattern": "",
+//       "border": "",
+//       "shadow": "",
+//       "display-heading": "shout",
+//       "display-heading-size": "",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-blue,
+//           "text": white,
+//           "accent": $wvu-gold,
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-gold,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": "transparent",
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "2": (
+//       "pattern": "",
+//       "border": "",
+//       "shadow": "",
+//       "display-heading": "shout",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-neutral--off-white,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-neutral--cream,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-neutral--warm-gray-dark,
+//           "text": white,
+//           "accent": $wvu-gold,
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "3": (
+//       "pattern": "",
+//       "border": "",
+//       "shadow": "",
+//       "display-heading": "shout",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-accent--blue-light,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": $wvu-blue
+//         ),
+//         "2": (
+//           "background": $wvu-accent--blue,
+//           "text": white,
+//           "accent": $wvu-gold,
+//           "pattern": $wvu-accent--blue-light
+//         ),
+//         "3": (
+//           "background": $wvu-accent--blue-dark,
+//           "text": white,
+//           "accent": $wvu-gold,
+//           "pattern": $wvu-accent--blue-light
+//         )
+//       )
+//     ),
+//     "4": (
+//       "pattern": "",
+//       "border": "",
+//       "shadow": "",
+//       "display-heading": "shout",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-neutral--off-white,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": $wvu-gold,
+//           "gradient": $wvu-gradient-wvu-gold-accent-yellow-accent-sunset,
+//           "breadcrumbs-bg": $wvu-gold,
+//           "breadcrumbs-text": $wvu-blue
+//         ),
+//         "2": (
+//           "background": $wvu-accent--blue,
+//           "text": white,
+//           "accent": $wvu-gold,
+//           "pattern": $wvu-accent--blue,
+//           "gradient": $wvu-gradient-wvu-blue-accent-blue-accent-blue-light
+//         ),
+//         "3": (
+//           "background": $wvu-neutral--off-white,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": $wvu-gold,
+//           "gradient": $wvu-gradient-wvu-gold-accent-yellow-accent-sunset
+//         )
+//       )
+//     )
+//   ),
+//   // Leaders and Partners
+//   "leaders_partners": (
+//     "1": (
+//       "pattern": "",
+//       "border": "",
+//       "shadow": "",
+//       "display-heading": "shout",
+//       "display-heading-shadow": "",
+//       "display-heading-outline": "",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-neutral--cream,
+//           "text": $wvu-accent--blue-dark,
+//           "accent": $wvu-accent--blue-dark,
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "2": (
+//       "pattern": "",
+//       "border": "2px solid",
+//       "shadow": "true",
+//       "display-heading": $iowan-old-style,
+//       "display-heading-shadow": "",
+//       "display-heading-outline": "",
+//       "display-heading-case": none,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-neutral--warm-gray-medium,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "3": (
+//       "pattern": "",
+//       "border": "2px solid",
+//       "shadow": "true",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": none,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "4": (
+//       "pattern": "",
+//       "border": $border,
+//       "shadow": "true",
+//       "display-heading": "config",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-accent--sunset,
+//           "text": "white",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//   ),
+//   // Parents
+//   "parents": (
+//     "1": (
+//       "pattern": "",
+//       "border": $border,
+//       "shadow": "true",
+//       "display-heading": "shout",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-blue,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-blue,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-blue,
+//           "text": white,
+//           "accent": $wvu-accent--sunset,
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "2": (
+//       "pattern": "",
+//       "border": $border,
+//       "shadow": "true",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "3": (
+//       "pattern": "",
+//       "border": $border,
+//       "shadow": "true",
+//       "display-heading": "config",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-accent--sunset,
+//           "text": "white",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "4": (
+//       "pattern": "",
+//       "border": $border,
+//       "shadow": "true",
+//       "display-heading": "config",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-accent--sunset,
+//           "text": "white",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//   ),
+//   // Alumni
+//   "alumni": (
+//     "1": (
+//       "pattern": "",
+//       "border": "",
+//       "shadow": "",
+//       "display-heading": "shout",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-blue,
+//           "text": white,
+//           "accent": $wvu-gold,
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-gold,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $white,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "2": (
+//       "pattern": "",
+//       "border": "",
+//       "shadow": "",
+//       "display-heading": "antonia-bold",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": none,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-neutral--off-white,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-neutral--cream,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-neutral--warm-gray-light,
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "3": (
+//       "pattern": "",
+//       "border": $border,
+//       "shadow": "true",
+//       "display-heading": "antonia-black-italic",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": none,
+//       "text": "antonia",
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-accent--sunset,
+//           "text": "white",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "4": (
+//       "pattern": "",
+//       "border": $border,
+//       "shadow": "true",
+//       "display-heading": "antonia-black-italic",
+//       "display-heading-shadow": "false",
+//       "display-heading-outline": "false",
+//       "display-heading-case": none,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--sunset,
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-accent--sunset,
+//           "text": "white",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     )
+//   ),
+//   // Prospective Students
+//   "prospective_students": (
+//     "1": (
+//       "pattern": "",
+//       "border": $border,
+//       "shadow": "",
+//       "display-heading": "config",
+//       "display-heading-shadow": "",
+//       "display-heading-outline": "false",
+//       "display-heading-case": none,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-blue,
+//           "subtle": "shade",
+//           "text": white,
+//           "accent": $wvu-gold,
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-gold,
+//           "subtle": "tint",
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": transparent,
+//           "subtle": "tint",
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "2": (
+//       "pattern": "",
+//       "border": $border,
+//       "shadow": "",
+//       "display-heading": "config",
+//       "display-heading-shadow": "",
+//       "display-heading-outline": "",
+//       "display-heading-case": none,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-neutral--off-white,
+//           "subtle": "shade",
+//           "text": $wvu-blue,
+//           "accent": $wvu-blue,
+//           "pattern": ""
+//         ),
+//         "2": (
+//           "background": $wvu-accent--yellow,
+//           "subtle": "tint",
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         ),
+//         "3": (
+//           "background": $wvu-accent--sunset,
+//           "subtle": "shade",
+//           "text": "",
+//           "accent": "",
+//           "pattern": ""
+//         )
+//       )
+//     ),
+//     "3": (
+//       "pattern": "",
+//       "gradient": "",
+//       "border": $border,
+//       "shadow": "true",
+//       "display-heading": "config",
+//       "display-heading-shadow": "true",
+//       "display-heading-outline": "true",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-blue,
+//           "subtle": "shade",
+//           "text": white,
+//           "accent": $wvu-gold,
+//           "pattern": $wvu-accent--blue-light
+//         ),
+//         "2": (
+//           "background": $wvu-accent--blue,
+//           "subtle": "shade",
+//           "text": white,
+//           "accent": $wvu-accent--yellow,
+//           "pattern": $wvu-accent--blue-light
+//         ),
+//         "3": (
+//           "background": $wvu-accent--yellow,
+//           "subtle": "tint",
+//           "text": $dark,
+//           "accent": $wvu-accent--blue,
+//           "pattern": $wvu-accent--old-gold
+//         )
+//       )
+//     ),
+//     "4": (
+//       "pattern": "",
+//       "gradient": "",
+//       "border": $border,
+//       "shadow": "true",
+//       "display-heading": "config",
+//       "display-heading-shadow": "true",
+//       "display-heading-outline": "true",
+//       "display-heading-case": uppercase,
+//       "color-palettes": (
+//         "1": (
+//           "background": $wvu-blue,
+//           "subtle": "shade",
+//           "text": white,
+//           "accent": $wvu-gold,
+//           "pattern": $wvu-accent--blue-light
+//         ),
+//         "2": (
+//           "background": $wvu-accent--blue,
+//           "subtle": "shade",
+//           "text": white,
+//           "accent": $wvu-accent--yellow,
+//           "pattern": $wvu-accent--blue-light
+//         ),
+//         "3": (
+//           "background": $wvu-accent--yellow,
+//           "subtle": "tint",
+//           "text": $dark,
+//           "accent": $wvu-accent--blue,
+//           "pattern": $wvu-accent--old-gold,
+//           "gradient": $wvu-gradient-wvu-gold-accent-yellow-accent-sunset
+//         )
+//       )
+//     )
+//   )
+// );
+
+// $wvu-b-bg-color: "";
+// $wvu-b-text-color: "";
+// $wvu-b-breadcrumbs-bg-color: "";
+// $wvu-b-breadcrumbs-text-color: "";
+
+// @each $audience, $tones in $section-styles {
+//   .site-audience-#{$audience} :not(.override-audience-styles-site) {
+//     @each $tone, $properties in $tones {
+//       @if $tone == "1" {
+//         .tone- {
+//           @each $property, $value in $properties {
+//             @if $property == "display-heading" and $value != "" {
+//               .wvu-b-display-heading {
+//                 @if $value == "config" {
+//                   @include config();
+//                   .wvu-b-font-adjust {
+//                     font-size: 1.2em $global-important;
+//                   }
+//                 } @else if $value == "shout" {
+//                   @include wvu-shout();
+//                 } @else if $value == "antonia" {
+//                   @include antonia();
+//                 } @else if $value == "antonia-bold" {
+//                   @include antonia-bold();
+//                 } @else if $value == "antonia-italic" {
+//                   @include antonia-italic();
+//                 } @else if $value == "antonia-bold-italic" {
+//                   @include antonia-bold-italic();
+//                 } @else if $value == "antonia-heavy" {
+//                   @include antonia-heavy();
+//                 } @else if $value == "antonia-heavy-italic" {
+//                   @include antonia-heavy-italic();
+//                 } @else if $value == "antonia-black" {
+//                   @include antonia-black();
+//                 } @else if $value == "antonia-black-italic" {
+//                   @include antonia-black-italic();
+//                 } @else {
+//                   font-family: $value $global-important;
+//                 }
+//               }
+//             } @else if $property == "display-heading-case" and $value != "" {
+//               .wvu-b-display-heading {
+//                 text-transform: $value $global-important;
+//               }
+//             } @else if $property == "text" and $value != "" {
+//               &.wvu-b-text, .wvu-b-text {
+//                 @if $value == "antonia" {
+//                   @include antonia-regular();
+//                 }
+//               }
+//             } @else if $property == "shadow" and $value == "true" {
+//               .wvu-b-shadow {
+//                 filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+//               }
+//             } @else if $property == "display-heading-shadow" and $value == "true" {
+//               .wvu-b-text-shadow {
+//                 filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+//               }
+//             // } @else if $property == "display-heading-outline" and $value == "true" {
+//             //   .wvu-b-text-outline {
+//             //     @include wvu-text-outline();
+//             //   }
+//             } @else if $property == "label" {
+//               .wvu-b-label {
+//                 font-family: $value $global-important;
+//               }
+//             } @else if $property == "border" and $value != "" {
+//               .wvu-b-border {
+//                 border: $value $global-important;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @each $audience, $tones in $section-styles {
+//   .audience-#{$audience} {
+//     @each $tone, $properties in $tones {
+//       &.tone-#{$tone} {
+//         @each $property, $value in $properties {
+//           @if $property == "display-heading" and $value != "" {
+//             .wvu-b-display-heading {
+//               @if $value == "config" {
+//                 @include config();
+//                 .wvu-b-font-adjust {
+//                   font-size: 1.2em $global-important;
+//                 }
+//               } @else if $value == "shout" {
+//                 @include wvu-shout();
+//               } @else if $value == "antonia" {
+//                 @include antonia-regular();
+//               } @else if $value == "antonia-bold" {
+//                 @include antonia-bold();
+//               } @else if $value == "antonia-italic" {
+//                 @include antonia-italic();
+//               } @else if $value == "antonia-bold-italic" {
+//                 @include antonia-bold-italic();
+//               } @else if $value == "antonia-heavy" {
+//                 @include antonia-heavy();
+//               } @else if $value == "antonia-heavy-italic" {
+//                 @include antonia-heavy-italic();
+//               } @else if $value == "antonia-black" {
+//                 @include antonia-black();
+//               } @else if $value == "antonia-black-italic" {
+//                 @include antonia-black-italic();
+//               } @else {
+//                 font-family: $value $global-important;
+//               }
+//             }
+//           } @else if $property == "display-heading-case" and $value != "" {
+//             .wvu-b-display-heading {
+//               text-transform: $value $global-important;
+//             }
+//           } @else if $property == "shadow" and $value == "true" {
+//             .wvu-b-shadow {
+//               filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+//             }
+//           } @else if $property == "display-heading-shadow" and $value == "true" {
+//             .wvu-b-text-shadow {
+//               filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
+//             }
+//           // } @else if $property == "display-heading-outline" and $value == "true" {
+//           //   .wvu-b-text-outline {
+//           //     @include wvu-text-outline();
+//           //   }
+//           } @else if $property == "text" and $value != "" {
+//             &.wvu-b-text, .wvu-b-text {
+//               @if $value == "antonia" {
+//                 @include antonia-regular();
+//               }
+//             }
+//           } @else if $property == "label" {
+//             .wvu-b-label {
+//               font-family: $value $global-important;
+//             }
+//           } @else if $property == "border" and $value != "" {
+//             .wvu-b-border {
+//               border: $value $global-important;
+//             }
+//           } @else if $property == "color-palettes" {
+//             @each $option, $values in $value {
+//               &.bg-option-#{$option}, .bg-option-#{$option} {
+//                 @each $element, $color in $values {
+//                   @if $element == "background" and $color != "" {
+//                     background-color: $color $global-important;
+//                     $wvu-b-bg-color: $color !global;
+//                     @if $color == "transparent" {
+//                       $wvu-b-text-color: white !global;
+//                     } @else {
+//                       $wvu-b-text-color: $color !global;
+//                     }
+//                   } @else if $element == "subtle" and $color != "" {
+//                     @if $color == "shade" {
+//                       &.wvu-b-subtle {
+//                         background-color: tint($wvu-b-bg-color, 15%) !important;
+//                       }
+//                     } @else if $color == "tint" {
+//                       &.wvu-b-subtle {
+//                         background-color: tint($wvu-b-bg-color, 50%) !important;
+//                       }
+//                     }
+//                   } @else if $element == "text" and $color != "" {
+//                     color: $color $global-important;
+//                   } @else if $element == "accent" and $color != "" {
+//                     .wvu-b-accent-text {
+//                       color: $color $global-important;
+//                     }
+//                     .wvu-b-accent-bg {
+//                       background-color: $color $global-important;
+//                       color: $wvu-b-text-color $global-important;
+//                     }
+//                     .wvu-b-btn {
+//                       @include button-variant($background: $color, $border: $color);
+//                     }
+//                   } @else if $element == "pattern" and $color != "" {
+//                     .wvu-b-pattern-color {
+//                       background-color: $color $global-important;
+//                     }
+//                   } @else if $element == "gradient" and $color != "" {
+//                     .wvu-b-gradient {
+//                       background: $color;
+//                     }
+//                     .wvu-b-pattern-color {
+//                       opacity: 1 $global-important;
+//                     }
+//                   } @else if $element == "breadcrumbs-bg" and $color != "" {
+//                     $wvu-b-breadcrumbs-bg-color: $color !global;
+//                   } @else if $element == "breadcrumbs-text" and $color != "" {
+//                     $wvu-b-breadcrumbs-text-color: $color !global;
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
+//         .wvu-b-breadcrumbs {
+//           background-color: $wvu-b-breadcrumbs-bg-color $global-important;
+//           color: $wvu-b-breadcrumbs-text-color $global-important;
+//           a:link, a:visited {
+//             color: $wvu-b-breadcrumbs-text-color $global-important;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

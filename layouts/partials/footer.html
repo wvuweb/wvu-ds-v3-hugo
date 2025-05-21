@@ -9,7 +9,7 @@
           <div class="col-6 me-auto">
             <div class="mb-5">
               <h2 class="wvu-shout wvu-bar">{{ $title }}</h2>
-              <p class="iowan-old-style-italic fs-5">Eberly College of Arts and Sciences</p>
+              <p class="antonia-italic fs-5">Eberly College of Arts and Sciences</p>
             </div>
             <address class="mb-4">
               <p class="d-flex mb-2">
@@ -53,7 +53,7 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold">Site Menu</h2>
+            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold small">Site Menu</h2>
             <ul class="list-unstyled mb-0 lh-lg">
               <li class="list-item">
                 <a class="" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a>
@@ -85,7 +85,7 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold">Quicklinks</h2>
+            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold small">Quicklinks</h2>
             <ul class="list-unstyled lh-lg">
               
               <li class="list-item">
@@ -109,7 +109,7 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold">University Resources</h2>
+            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold small">University Resources</h2>
             <ul class="wvu-ul-chevrons mb-0 lh-lg">
               <li class="list-item">
                 <a class="text-decoration-none" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a>
@@ -141,7 +141,7 @@
           </div>
         </div>
         <div class="d-flex border-top border-bottom border-1 border-wvu-accent--blue-light mt-5 py-4">
-          <h2 class="d-inline-block h5 iowan-old-style mb-0 me-4">Your journey at the Eberly College of Arts and Sciences</h2>
+          <h2 class="d-inline-block h5 antonia mb-0 me-3">Your journey at the Eberly College of Arts and Sciences</h2>
           <ul class="list-inline d-inline-block mb-0">
             <li class="list-inline-item"><a href="">Departments and Units</a></li>
             <li class="list-inline-item"><a href="">Courses of Study</a></li>
@@ -152,8 +152,11 @@
     <div class="py-5 bg-wvu-accent--blue-dark-subtle text-white position-relative">
       <div class="container wvu-z-index-content py-2">
         <div class="row small">
-          <div class="col-md-8 mx-auto text-center">
-            <img src="https://static.wvu.edu/global/images/logos/wvu/wvu-logo--2.0.0.svg" class="mb-4" alt="West Virginia University logo" height="60px" width="280px" />
+          <div class="col-md-8 mx-auto text-center align-items-center">
+            <div class="d-inline-flex mb-4">
+              <img class="me-3" src="https://static.wvu.edu/global/images/logos/wvu/flying-wv--1.0.0.svg" height="60px" width="56px" />
+              <h2 class="text-wvu-gold config-extra-bold-italic h1 mt-1">Let's Go!</h2>
+            </div>
             <h2 class="visually-hidden">West Virginia University</h2>
             <p class="mb-1">© {{ now.Year }}
               <a class="" href="https://www.wvu.edu/">West Virginia University</a>. <span class="wvu-credits__last-edited">Last updated on {{ time.Now | time.Format "Jan 2, 2006" }}.</span>

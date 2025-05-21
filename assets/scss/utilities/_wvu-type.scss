@@ -111,12 +111,16 @@
   @include iowan-old-style-black-italic();
 }
 
-.oliviar-thin, %oliviar-thin {
-  @include oliviar-thin();
+.config-regular {
+  @include config-regular();
 }
 
-.config {
-  @include config();
+.config-extra-bold {
+  @include config-extra-bold();
+}
+
+.config-extra-bold-italic {
+  @include config-extra-bold-italic();
 }
 
 .antonia {
@@ -181,29 +185,6 @@
   }
   &.iowan-old-style-black-italic {
     line-height: 1.25em $global-important;
-  }
-}
-
-.oliviar-black.text-uppercase.wvu-text-echo {
-  @include wvu-text-echo();
-}
-
-.oliviar-black.text-uppercase.wvu-text-echo-outline {
-  position: relative $global-important;
-  &:before {
-    @include wvu-text-echo-outline();
-  }
-}
-
-.oliviar-black.text-uppercase.wvu-text-echo-outline-white {
-  &:before {
-    -webkit-text-stroke-color: white $global-important;
-  }
-}
-
-.display-0.oliviar-black.text-uppercase.wvu-text-echo-outline-white {
-  &:before {
-    -webkit-text-stroke-width: 2px $global-important;
   }
 }
 
