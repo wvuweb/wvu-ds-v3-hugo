@@ -27,7 +27,7 @@ $wvu-b-bg-color: null;
           .wvu-b-text-shadow {
             filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
           }
-        } @else {
+        } @else if $element == "display-heading" {
           .wvu-b-#{$element} {
             @if $typeface == "shout" {
               @include wvu-shout();
@@ -46,8 +46,6 @@ $wvu-b-bg-color: null;
               .wvu-b-font-adjust {
                 font-size: 1.2em $global-important;
               }
-            } @else if $typeface == "shout" {
-              @include wvu-shout();
             } @else if $typeface == "antonia-regular" {
               @include antonia-regular();
             } @else if $typeface == "antonia-bold" {
