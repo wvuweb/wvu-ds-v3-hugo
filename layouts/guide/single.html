@@ -13,8 +13,6 @@
         {{ if eq .uuid $sitewideSection }}
           {{ $blocks = $blocks | append . }}
         {{ end }}
-      {{ else }}
-        Content hidden to speed up editing.
       {{ end }}
     {{ else }}
       {{ $blocks = $blocks | append . }}
