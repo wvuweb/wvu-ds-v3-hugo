@@ -4,7 +4,7 @@
   {{ if .is_active }}
     {{ if .home_page_only }}
       {{ if $isHome }}
-        <section id="js-bootstrap-alert" role="alert" aria-label="Alert" class="wvu-alert-banner alert alert-{{ .alert_style }} py-2 mb-0">
+        <section id="js-bootstrap-alert" role="alert" aria-label="Alert" class="wvu-alert-banner alert alert-{{ .alert_type }} py-2 mb-0">
           <div class="container py-2">
             <div class="d-flex justify-content-between">
               <div>
@@ -16,7 +16,7 @@
         </section>
       {{ end }}
     {{ else }}
-      <section id="js-bootstrap-alert" role="alert" aria-label="Alert" class="wvu-alert-banner alert alert-{{ .alert_style }} py-2 mb-0">
+      <section id="js-bootstrap-alert" role="alert" aria-label="Alert" class="wvu-alert-banner alert alert-{{ .alert_type }} py-2 mb-0">
         <div class="container py-2">
           <div class="d-flex justify-content-between">
             <div>
