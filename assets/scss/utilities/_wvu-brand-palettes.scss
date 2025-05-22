@@ -61,25 +61,27 @@ $wvu-elements-general: (
 
 $wvu-typography-palette-antonia: (
   "display-heading": "antonia-heavy",
-  "subheading": "config",
+  "subheading": "antonia-regular",
   "text": $helvetica-neue
 );
 
 $wvu-typography-palette-antonia-reserved: (
-  "display-heading": "antonia-regular",
-  "subheading": "antonia-bold",
+  "display-heading": "antonia-light",
+  "subheading": "antonia-regular",
   "text": $antonia
 );
 
 $wvu-typography-palette-antonia-loud: (
-  "display-heading": "antonia-heavy-italic",
-  "subheading": "config",
-  "text": $helvetica-neue
+  "display-heading": "antonia-heavy",
+  "display-heading-case": none,
+  "subheading": "antonia-regular",
+  "text": "antonia"
 );
 
 $wvu-typography-palette-antonia-lets-go: (
   "display-heading": "antonia-heavy-italic",
-  "subheading": "config",
+  "display-heading-case": uppercase,
+  "subheading": "antonia-regular",
   "text": $helvetica-neue
 );
 
@@ -119,7 +121,7 @@ $wvu-typography-palette-config: (
 
 $wvu-typography-palette-config-reserved: (
   "display-heading": "config-extra-bold-italic",
-  "subheading": "antonia-bold",
+  "subheading": "antonia-regular",
   "text": "config"
 );
 
@@ -134,7 +136,7 @@ $wvu-typography-palette-config-lets-go: (
   "display-heading": "config-extra-bold-italic",
   "display-heading-case": uppercase,
   "display-heading-shadow": true,
-  "subheading": "config-extra-bold",
+  "subheading": "config-extra-bold-italic",
   "text": "config"
 );
 

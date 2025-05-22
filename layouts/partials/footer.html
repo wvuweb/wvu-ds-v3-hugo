@@ -44,7 +44,7 @@
               {{ range $socialMediaAccounts }}
                 {{ $class := .platform | urlize }}
                 <li class="list-inline-item">
-                  <a class="bg-{{ $class }} text-white mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3" href="{{ .url }}">
+                  <a class="bg-wvu-gold border border-2 border-wvu-blue text-wvu-blue mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3" href="{{ .url }}">
                     <span class="fab fa-{{ $class }} position-absolute" aria-hidden="true"></span>
                     <span class="visually-hidden">{{ .platform }}</span>
                   </a>

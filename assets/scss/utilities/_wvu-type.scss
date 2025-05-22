@@ -123,14 +123,22 @@
   @include config-extra-bold-italic();
 }
 
-.antonia {
-  @include antonia(null, 300);
-  em {
-    font-style: italic $global-important;
-  }
-  strong {
-    font-variation-settings: "wght" 700 $global-important;
-  }
+// .antonia {
+//   @include antonia(null, 300);
+//   em {
+//     font-style: italic $global-important;
+//   }
+//   strong {
+//     font-variation-settings: "wght" 700 $global-important;
+//   }
+// }
+
+.antonia-regular {
+  @include antonia-regular();
+}
+
+.antonia-light {
+  @include antonia-light();
 }
 
 .antonia-bold {

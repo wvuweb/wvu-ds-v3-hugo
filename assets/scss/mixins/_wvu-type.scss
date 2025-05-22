@@ -369,12 +369,20 @@
   em {
     font-style: italic;
   }
+  &.wvu-b-display-heading {
+    line-height: 1.2em $global-important;
+    margin-bottom: .5em $global-important;
+  }
 }
 
 @mixin config-extra-bold-italic() {
   @include config(9, 100, 800);
   em {
     font-style: normal;
+  }
+  &.wvu-b-display-heading {
+    line-height: 1.2em $global-important;
+    margin-bottom: .5em $global-important;
   }
 }
 
@@ -385,6 +393,13 @@
 
 @mixin antonia-regular() {
   @include antonia(6.5714, 410);
+  em {
+    font-style: italic $global-important;
+  }
+}
+
+@mixin antonia-light() {
+  @include antonia(26.5714, 300);
   em {
     font-style: italic $global-important;
   }
