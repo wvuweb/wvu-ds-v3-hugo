@@ -1,6 +1,7 @@
 {{ $title := site.Title }}
 {{ $socialMediaAccounts := site.Data.settings.settings.social_media_accounts }}
-{{ with site.Data.default_content.footer }}
+
+{{ with site.Data.settings.settings.footer }}
   <footer>
     <div class="py-6 bg-wvu-accent--blue-dark text-white">
       <div class="container">
@@ -11,35 +12,37 @@
               <h2 class="wvu-shout wvu-bar">{{ $title }}</h2>
               <p class="antonia-italic fs-5">Eberly College of Arts and Sciences</p>
             </div>
-            <address class="mb-4">
-              <p class="d-flex mb-2">
-                <span class="d-block" style="width: 20px;">
-                  <span class="fa-solid fa-location-dot text-wvu-gold" aria-hidden="true"></span>
-                </span>
-                <span class="d-block">
-                <strong>{{ .address_heading }}</strong>
-                  {{ range .address }}
-                    <br> {{ . }}
-                  {{ end }}
-                </span>
-              </p>
-              <p class="d-flex mb-2">
-                <span class="d-block" style="width: 20px;">
-                  <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
-                </span>
-                <span class="d-block">
-                  <a class="text-decoration-none" href="tel:{{ .phone | urlize }}">{{ .phone }}</a>
-                </span>
-              </p>
-              <p class="d-flex">
-                <span class="d-block" style="width: 20px;">
-                  <span class="fa-solid fa-envelope text-light" aria-hidden="true"></span>
-                </span>
-                <span class="d-block">
-                  <a class="text-decoration-none" href="mailto:{{ .email }}">{{ .email }}</a>
-                </span>
-              </p>
-            </address>
+            {{ range .info_blocks }}
+              <address class="mb-4">
+                <p class="d-flex mb-2">
+                  <span class="d-block" style="width: 20px;">
+                    <span class="fa-solid fa-location-dot text-wvu-gold" aria-hidden="true"></span>
+                  </span>
+                  <span class="d-block">
+                  <strong>{{ .address_heading }}</strong>
+                    {{ range .address }}
+                      <br> {{ . }}
+                    {{ end }}
+                  </span>
+                </p>
+                <p class="d-flex mb-2">
+                  <span class="d-block" style="width: 20px;">
+                    <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
+                  </span>
+                  <span class="d-block">
+                    <a class="text-decoration-none" href="tel:{{ .phone | urlize }}">{{ .phone }}</a>
+                  </span>
+                </p>
+                <p class="d-flex">
+                  <span class="d-block" style="width: 20px;">
+                    <span class="fa-solid fa-envelope text-light" aria-hidden="true"></span>
+                  </span>
+                  <span class="d-block">
+                    <a class="text-decoration-none" href="mailto:{{ .email }}">{{ .email }}</a>
+                  </span>
+                </p>
+              </address>
+            {{ end }}
             <ul class="list-inline mb-0">
               {{ range $socialMediaAccounts }}
                 {{ $class := .platform | urlize }}
