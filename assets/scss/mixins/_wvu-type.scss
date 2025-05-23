@@ -369,10 +369,10 @@
   em {
     font-style: italic;
   }
-  &.wvu-b-display-heading {
-    line-height: 1.2em $global-important;
-    margin-bottom: .5em $global-important;
-  }
+  // &.wvu-b-display-heading {
+  //   line-height: 1.2em $global-important;
+  //   margin-bottom: .5em $global-important;
+  // }
 }
 
 @mixin config-extra-bold-italic() {
@@ -380,10 +380,10 @@
   em {
     font-style: normal;
   }
-  &.wvu-b-display-heading {
-    line-height: 1.2em $global-important;
-    margin-bottom: .5em $global-important;
-  }
+  // &.wvu-b-display-heading {
+  //   line-height: 1.2em $global-important;
+  //   margin-bottom: .5em $global-important;
+  // }
 }
 
 @mixin antonia($optical-size, $weight) {
@@ -456,4 +456,17 @@
   em {
     font-style: normal $global-important;
   }
+}
+
+@mixin config-display-adjust() {
+  display: block $global-important;
+  font-size: 1.1em $global-important;
+  line-height: 1 $global-important;
+  // margin-bottom: -.2em $global-important;
+}
+
+@mixin antonia-display-adjust() {
+  display: block $global-important;
+  line-height: 1 $global-important;
+  // margin-bottom: -.2em $global-important;
 }

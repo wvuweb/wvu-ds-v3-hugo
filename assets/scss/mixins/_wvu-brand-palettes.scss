@@ -35,75 +35,62 @@ $wvu-b-bg-color: null;
             } @else if $typeface == "config-regular" {
               @include config-regular();
               .wvu-b-font-adjust {
-                font-size: 1.2em $global-important;
+                @include config-display-adjust();
               }
             } @else if $typeface == "config-extra-bold" {
               @include config-extra-bold();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                font-size: 1.2em $global-important;
-                margin-bottom: -.2em $global-important;
+                @include config-display-adjust();
               }
             } @else if $typeface == "config-extra-bold-italic" {
               @include config-extra-bold-italic();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                font-size: 1.2em $global-important;
-                margin-bottom: -.2em $global-important;
+                @include config-display-adjust();
               }
             } @else if $typeface == "antonia-regular" {
               @include antonia-regular();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                margin-bottom: -.2em $global-important;
+                
               }
             } @else if $typeface == "antonia-light" {
               @include antonia-light();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                margin-bottom: -.2em $global-important;
+                @include antonia-display-adjust();
               }
             } @else if $typeface == "antonia-bold" {
               @include antonia-bold();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                margin-bottom: -.2em $global-important;
+                @include antonia-display-adjust();
               }
             } @else if $typeface == "antonia-italic" {
               @include antonia-italic();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                margin-bottom: -.2em $global-important;
+                @include antonia-display-adjust();
               }
             } @else if $typeface == "antonia-bold-italic" {
               @include antonia-bold-italic();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                margin-bottom: -.2em $global-important;
+                @include antonia-display-adjust();
               }
             } @else if $typeface == "antonia-heavy" {
               @include antonia-heavy();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                margin-bottom: -.2em $global-important;
+                @include antonia-display-adjust();
               }
             } @else if $typeface == "antonia-heavy-italic" {
               @include antonia-heavy-italic();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                margin-bottom: -.2em $global-important;
+                @include antonia-display-adjust();
               }
             } @else if $typeface == "antonia-black" {
               @include antonia-black();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                margin-bottom: -.2em $global-important;
+                @include antonia-display-adjust();
               }
             } @else if $typeface == "antonia-black-italic" {
               @include antonia-black-italic();
               .wvu-b-font-adjust {
-                display: block $global-important;
-                margin-bottom: -.2em $global-important;
+                @include antonia-display-adjust();
               }
             } @else {
               font-family: $typeface $global-important;
