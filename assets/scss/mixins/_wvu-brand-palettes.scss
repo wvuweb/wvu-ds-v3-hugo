@@ -32,6 +32,9 @@ $wvu-b-bg-color: null;
           .wvu-b-#{$element} {
             @if $typeface == "shout" {
               @include wvu-shout();
+              .wvu-b-font-adjust {
+                @include shout-display-adjust();
+              }
             } @else if $typeface == "config-regular" {
               @include config-regular();
               .wvu-b-font-adjust {

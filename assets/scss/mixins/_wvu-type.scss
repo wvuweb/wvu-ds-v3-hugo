@@ -458,6 +458,13 @@
   }
 }
 
+@mixin shout-display-adjust() {
+  display: block $global-important;
+  font-size: 1.2em $global-important;
+  line-height: 1 $global-important;
+  // margin-bottom: -.2em $global-important;
+}
+
 @mixin config-display-adjust() {
   display: block $global-important;
   font-size: 1.1em $global-important;
