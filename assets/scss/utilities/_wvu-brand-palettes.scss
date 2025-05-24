@@ -206,6 +206,38 @@ $wvu-typography-palette-config-lets-go: (
   "text": "config"
 );
 
+// By Audience and Tone
+
+$wvu-typography-palette-general-default: (
+  "display-heading": $helvetica-neue-bold,
+  "display-heading-case": normal,
+  "subheading": $helvetica-neue-light,
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-general-reserved: (
+  "display-heading": "antonia-regular",
+  "display-heading-case": normal,
+  "subheading": $helvetica-neue-light,
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-general-loud: (
+  "display-heading": "shout",
+  "display-heading-case": uppercase,
+  "subheading": $helvetica-neue-light,
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-general-lets-go: (
+  "display-heading": "shout",
+  "display-heading-case": uppercase,
+  "subheading": $helvetica-neue-light,
+  "text": $helvetica-neue
+);
+
+// Palettes
+
 $wvu-typography-palettes-prospective-students: (
   "default": $wvu-typography-palette-config,
   "reserved": $wvu-typography-palette-config-reserved,
@@ -221,10 +253,10 @@ $wvu-typography-palettes-alumni: (
 );
 
 $wvu-typography-palettes-general: (
-  "default": $wvu-typography-palette-helvetica,
-  "reserved": $wvu-typography-palette-helvetica-reserved,
-  "loud": $wvu-typography-palette-helvetica-loud,
-  "lets-go": $wvu-typography-palette-helvetica-lets-go
+  "default": $wvu-typography-palette-general-default,
+  "reserved": $wvu-typography-palette-general-reserved,
+  "loud": $wvu-typography-palette-general-loud,
+  "lets-go": $wvu-typography-palette-general-lets-go
 );
 
 @each $audience in $wvu-brand-audiences {
