@@ -1,5 +1,6 @@
 {{ $title := site.Title }}
 {{ $socialMediaAccounts := site.Data.settings.settings.social_media_accounts }}
+{{ $siteMenu := site.Data.settings.settings.primary_navigation.nav_links }}
 
 {{ with site.Data.settings.settings.footer }}
   <footer>
@@ -12,7 +13,7 @@
               <h2 class="wvu-shout wvu-bar">{{ $title }}</h2>
               <p class="antonia-italic fs-5">Eberly College of Arts and Sciences</p>
             </div>
-            {{ range .info_blocks }}
+            {{ range .contact_info_blocks }}
               <address class="mb-4">
                 <p class="d-flex mb-2">
                   <span class="d-block" style="width: 20px;">
@@ -58,62 +59,27 @@
           <div class="col-md-4">
             <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold small">Site Menu</h2>
             <ul class="list-unstyled mb-0 lh-lg">
-              <li class="list-item">
-                <a class="" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://campusmap.wvu.edu">Campus Map</a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://careers.wvu.edu/career-opportunities">WVU Careers</a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://directory.wvu.edu">WVU Directory</a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://give.wvu.edu/">Give</a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://careerservices.wvu.edu/students/handshake-login">Handshake</a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://alert.wvu.edu/">WVU Alert</a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://wvutoday.wvu.edu">WVU Today</a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://portal.wvu.edu">WVU Portal</a>
-              </li>
+              {{ range $siteMenu }}
+                {{ $rel_link := .link | relURL }}
+                <li>
+                  <a class="text-decoration-none" href="{{ .link }}">{{ .text }}</a>
+                </li>
+              {{ end }}
             </ul>
           </div>
           <div class="col-md-4">
             <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold small">Quicklinks</h2>
             <ul class="list-unstyled lh-lg">
-              
-              <li class="list-item">
-                <a class="" href="https://www.facebook.com/wvumountaineers">
-                  <span class="fa-brands fa-facebook" aria-hidden="true"></span>
-                  <span>WVU on Facebook</span>
-                </a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://twitter.com/WestVirginiaU">
-                  <span class="fa-brands fa-twitter" aria-hidden="true"></span>
-                  <span>WVU on Twitter</span>
-                </a>
-              </li>
-              <li class="list-item">
-                <a class="" href="https://www.youtube.com/user/westvirginiau">
-                  <span class="fa-brands fa-youtube" aria-hidden="true"></span>
-                  <span>WVU on YouTube</span>
-                </a>
-              </li>
+              {{ range .quicklinks }}
+                <li class="list-item">
+                  <a class="text-decoration-none" href="{{ .url }}">{{ .text }}</a>
+                </li>
+              {{ end }}
             </ul>
           </div>
           <div class="col-md-4">
             <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold small">University Resources</h2>
-            <ul class="wvu-ul-chevrons mb-0 lh-lg">
+            <ul class="list-unstyled mb-0 lh-lg">
               <li class="list-item">
                 <a class="text-decoration-none" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a>
               </li>
@@ -143,13 +109,24 @@
               </li>
           </div>
         </div>
-        <div class="d-flex border-top border-bottom border-1 border-wvu-accent--blue-light mt-5 py-4">
-          <h2 class="d-inline-block h5 antonia mb-0 me-3">Your journey at the Eberly College of Arts and Sciences</h2>
-          <ul class="list-inline d-inline-block mb-0">
-            <li class="list-inline-item"><a href="">Departments and Units</a></li>
-            <li class="list-inline-item"><a href="">Courses of Study</a></li>
-          </ul>
-        </div>
+        {{ with .postscript }}
+          <div class="d-flex border-top border-bottom border-1 border-wvu-accent--blue-light mt-5 py-4">
+            <h2 class="d-inline-block h5 antonia mb-0 me-3">Your journey at the Eberly College of Arts and Sciences</h2>
+            {{ with .items }}
+              <ul class="list-inline d-inline-block mb-0">
+                {{ range . }}                  
+                  <li class="list-inline-item">
+                    {{ if .url }}
+                      {{ with .label }}<strong>{{ . }}</strong>{{ end }} <a href="{{ .url }}">{{ .text }}</a></li>
+                    {{ else }}
+                      {{ with .label }}<strong>{{ . }}</strong>{{ end }} {{ .text }}</a>
+                    {{ end }}
+                  </li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </div>
+        {{ end }}
       </div>
     </div>
     <div class="py-5 bg-wvu-accent--blue-dark-subtle text-white position-relative">
