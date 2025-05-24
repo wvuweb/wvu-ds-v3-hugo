@@ -72,6 +72,27 @@ $wvu-elements-lets-go: (
   "pattern": topo-light
 );
 
+$wvu-elements-prospective-students-default: (
+  "border": $border,
+  "shadow": true,
+  "text-shadow": "",
+  "pattern": ""
+);
+
+$wvu-elements-prospective-students-reserved: (
+  "border": $border,
+  "shadow": true,
+  "text-shadow": "",
+  "pattern": ""
+);
+
+$wvu-elements-prospective-students-loud: (
+  "border": $border,
+  "shadow": true,
+  "text-shadow": "",
+  "pattern": ""
+);
+
 $wvu-elements-prospective-students-lets-go: (
   "border": $border,
   "shadow": true,
@@ -87,9 +108,9 @@ $wvu-elements-general: (
 );
 
 $wvu-elements-prospective-students: (
-  "default": $wvu-elements-default,
-  "reserved": $wvu-elements-reserved,
-  "loud": $wvu-elements-loud,
+  "default": $wvu-elements-prospective-students-default,
+  "reserved": $wvu-elements-prospective-students-reserved,
+  "loud": $wvu-elements-prospective-students-loud,
   "lets-go": $wvu-elements-prospective-students-lets-go
 );
 
