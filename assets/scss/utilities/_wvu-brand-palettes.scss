@@ -4,6 +4,13 @@
   text-transform: uppercase $global-important;
 }
 
+// .wvu-b-pattern, .wvu-b-gradient {
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+// }
+
 $border: 3px solid $dark;
 
 $wvu-brand-audiences: (
@@ -37,22 +44,60 @@ $wvu-brand-tones: (
 
 // Elements
 
-$wvu-elements-kitchen-sink: (
+$wvu-elements-default: (
+  "border": "",
+  "shadow": "",
+  "text-shadow": "",
+  "pattern": ""
+);
+
+$wvu-elements-reserved: (
   "border": $border,
   "shadow": true,
+  "text-shadow": true,
+  "pattern": ""
+);
+
+$wvu-elements-loud: (
+  "border": $border,
+  "shadow": true,
+  "text-shadow": "",
+  "pattern": ""
+);
+
+$wvu-elements-lets-go: (
+  "border": $border,
+  "shadow": true,
+  "text-shadow": true,
   "pattern": topo-light
 );
 
-$wvu-elements-prospective-students: (
-  "lets-go": $wvu-elements-kitchen-sink
-);
-
-$wvu-elements-alumni: (
-  "lets-go": $wvu-elements-kitchen-sink
+$wvu-elements-prospective-students-lets-go: (
+  "border": $border,
+  "shadow": true,
+  "text-shadow": true,
+  "pattern": distressed-lines
 );
 
 $wvu-elements-general: (
-  "lets-go": $wvu-elements-kitchen-sink
+  "default": $wvu-elements-default,
+  "reserved": $wvu-elements-reserved,
+  "loud": $wvu-elements-loud,
+  "lets-go": $wvu-elements-lets-go
+);
+
+$wvu-elements-prospective-students: (
+  "default": $wvu-elements-default,
+  "reserved": $wvu-elements-reserved,
+  "loud": $wvu-elements-loud,
+  "lets-go": $wvu-elements-prospective-students-lets-go
+);
+
+$wvu-elements-alumni: (
+  "default": $wvu-elements-default,
+  "reserved": $wvu-elements-reserved,
+  "loud": $wvu-elements-loud,
+  "lets-go": $wvu-elements-lets-go
 );
 
 // Typography Palettes

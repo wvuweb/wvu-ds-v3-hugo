@@ -9,8 +9,8 @@ $wvu-b-bg-color: null;
             border: $value $global-important;
           } @else if $property == "shadow" and $value == true {
             @include wvu-shadow-hard-filter();
-          } @else if $property == "pattern" and $value == true {
-            @include wvu-bg-pattern(topo-light);
+          } @else if $property == "pattern" and $value != "" {
+            @include wvu-bg-pattern($value);
           }
         }
       }
@@ -50,7 +50,7 @@ $wvu-b-bg-color: null;
             } @else if $typeface == "antonia-regular" {
               @include antonia-regular();
               .wvu-b-font-adjust {
-                
+                @include antonia-display-adjust();
               }
             } @else if $typeface == "antonia-light" {
               @include antonia-light();
@@ -132,15 +132,19 @@ $wvu-b-bg-color: null;
       }
     } @else if $element == "text" {
       color: $color $global-important;
-    } @else if $element == "gradient" {
-      .wvu-b-gradient {
-        background: $color $global-important;
+    } @else if $element == "gradient" and $color != "" {
+      &.wvu-b-gradient, .wvu-b-gradient {
+        @include wvu-gradient($color);
+      }
+    } @else if $element == "pattern-color" and $color != "" {
+      &.wvu-b-pattern-color, .wvu-b-pattern-color {
+        background-color: $color $global-important;
       }
     } @else if $element == "gradient-accent" {
       .wvu-b-gradient-accent {
         background: $color $global-important;
       }
-      .wvu-b-pattern-color {
+      &.wvu-b-pattern-color, .wvu-b-pattern-color {
         opacity: 1 $global-important;
       }
     } @else {

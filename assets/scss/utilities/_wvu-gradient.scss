@@ -1,36 +1,39 @@
-.wvu-gradient-wvu-blue-blue {
-  @include wvu-gradient-wvu-blue-blue();
-}
-.wvu-gradient-blue-dark-wvu-blue {
-  @include wvu-gradient-blue-dark-wvu-blue();
-}
-.wvu-gradient-wvu-gold-yellow {
-  @include wvu-gradient-wvu-gold-yellow();
-}
-.wvu-gradient-wvu-gold-cream {
-  @include wvu-gradient-wvu-gold-cream();
-}
-.wvu-gradient-wvu-gold-tan {
-  @include wvu-gradient-wvu-gold-tan();
-}
-.wvu-gradient-warm-gray-medium-warm-gray-light {
-  @include wvu-gradient-warm-gray-medium-warm-gray-light();
-}
-.wvu-gradient-warm-gray-light-off-white {
-  @include wvu-gradient-warm-gray-light-off-white();
-}
-.wvu-gradient-warm-gray-medium-off-white {
-  @include wvu-gradient-warm-gray-medium-off-white();
-}
-.wvu-gradient-tan-cream {
-  @include wvu-gradient-tan-cream();
+.wvu-gradient--sunset--yellow--wvu-gold {
+  @include wvu-gradient($gradient--sunset--yellow--wvu-gold);
 }
 
-.bg-gradient-wvu-blue-accent-blue-accent-blue-light {
-  background-color: $wvu-blue;
-  background-image:
-    linear-gradient(200deg, rgba(0, 98, 163, 1), transparent),
-    linear-gradient(300deg, rgba(0, 40, 85, 1), transparent),
-    linear-gradient(100deg, rgba(157, 218, 230, 1), transparent);
-  color: white $global-important;
+.wvu-gradient--sunset--blue-light--accent-blue {
+  @include wvu-gradient($gradient--sunset--blue-light--accent-blue);
 }
+
+.wvu-gradient--wvu-blue--blue-light--accent-blue {
+  @include wvu-gradient($gradient--wvu-blue--blue-light--accent-blue);
+}
+
+.wvu-gradient--wvu-blue--sunset--blue-light {
+  @include wvu-gradient($gradient--wvu-blue--sunset--blue-light);
+}
+
+.wvu-gradient--old-gold--cream--wvu-gold {
+  @include wvu-gradient($gradient--old-gold--cream--wvu-gold);
+}
+
+.wvu-gradient--warm-gray-dark--cream--wvu-gold {
+  @include wvu-gradient($gradient--warm-gray-dark--cream--wvu-gold);
+}
+
+.wvu-gradient--warm-gray-dark--wvu-gold--yellow {
+  @include wvu-gradient($gradient--warm-gray-dark--wvu-gold--yellow);
+}
+
+// .wvu-gradient--sunset--light-blue--accent-blue {
+//   @include wvu-gradient($wvu-accent--sunset, $wvu-accent--sunset, $wvu-accent--blue-light, $wvu-accent--blue);
+// }
+
+// .wvu-gradient--wvu-blue--light-blue--accent-blue {
+//   @include wvu-gradient($wvu-accent--blue, $wvu-blue, $wvu-accent--blue-light, $wvu-accent--blue);
+// }
+
+// .wvu-gradient--wvu-blue--sunset--light-blue {
+//   @include wvu-gradient($wvu-blue, $wvu-blue, $wvu-accent--sunset, $wvu-accent--blue-light);
+// }
