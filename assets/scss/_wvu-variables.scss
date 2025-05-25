@@ -239,6 +239,27 @@ $gradient--warm-gray-dark--wvu-gold--yellow: (
   "color-lr": $wvu-accent--yellow
 );
 
+$gradient--warm-gray-dark--yellow--warm-gray-dark: (
+  "background": $wvu-neutral--warm-gray-dark,
+  "color-ll": $wvu-neutral--warm-gray-dark,
+  "color-ur": $wvu-accent--yellow,
+  "color-lr": $wvu-neutral--warm-gray-dark
+);
+
+$gradient--blue-dark--warm-gray-dark--blue-dark: (
+  "background": $wvu-accent--blue-dark,
+  "color-ll": $wvu-accent--blue-dark,
+  "color-ur": $wvu-neutral--warm-gray-dark,
+  "color-lr": $wvu-accent--blue-dark
+);
+
+$gradient--blue-dark--old-gold--blue-dark: (
+  "background": $wvu-accent--blue-dark,
+  "color-ll": $wvu-accent--blue-dark,
+  "color-ur": $wvu-accent--old-gold,
+  "color-lr": $wvu-accent--blue-dark
+);
+
 // Breadcrumbs
 $wvu-breadcrumbs-color: #8F9699;
 

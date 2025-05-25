@@ -364,6 +364,33 @@
   }
 }
 
+@mixin config-condensed-regular() {
+  @include config(0, 50, 400);
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-variation-settings: "wdth" 100, "wght" 700
+  }
+}
+
+@mixin config-condensed-regular-italic() {
+  @include config(9, 50, 400);
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-variation-settings: "wdth" 100, "wght" 700
+  }
+}
+
+@mixin config-condensed-bold() {
+  @include config(0, 50, 700);
+  em {
+    font-style: italic;
+  }
+}
+
 @mixin config-extra-bold() {
   @include config(0, 100, 800);
   em {
@@ -373,6 +400,26 @@
   //   line-height: 1.2em $global-important;
   //   margin-bottom: .5em $global-important;
   // }
+}
+
+@mixin config-light() {
+  @include config(0, 100, 300);
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-variation-settings: "wdth" 100, "wght" 700
+  }
+}
+
+@mixin config-light-italic() {
+  @include config(9, 100, 300);
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-variation-settings: "wdth" 100, "wght" 700
+  }
 }
 
 @mixin config-extra-bold-italic() {

@@ -1,5 +1,5 @@
 .wvu-b-label {
-  font-family: $helvetica-neue-condensed-black $global-important;
+  @include config-condensed-bold();
   letter-spacing: $wvu-letter-spacing-width-lg $global-important;
   text-transform: uppercase $global-important;
 }
@@ -194,7 +194,7 @@ $wvu-typography-palette-config: (
 );
 
 $wvu-typography-palette-config-reserved: (
-  "display-heading": "config-extra-bold-italic",
+  "display-heading": "config-light",
   "subheading": "antonia-regular",
   "text": "config"
 );
@@ -202,7 +202,8 @@ $wvu-typography-palette-config-reserved: (
 $wvu-typography-palette-config-loud: (
   "display-heading": "config-extra-bold-italic",
   "display-heading-case": uppercase,
-  "subheading": "config-extra-bold",
+  "subheading": "config-condensed-regular-italic",
+  "subheading-letter-spacing": .05em,
   "text": "config"
 );
 
@@ -210,7 +211,8 @@ $wvu-typography-palette-config-lets-go: (
   "display-heading": "config-extra-bold-italic",
   "display-heading-case": uppercase,
   "display-heading-shadow": true,
-  "subheading": "config-extra-bold-italic",
+  "subheading": "config-condensed-regular-italic",
+  "subheading-letter-spacing": .05em,
   "text": "config"
 );
 
@@ -244,10 +246,63 @@ $wvu-typography-palette-general-lets-go: (
   "text": $helvetica-neue
 );
 
+// Alumni
+
+$wvu-typography-palette-alumni-reserved: (
+  "display-heading": "antonia-light",
+  "display-heading-case": normal,
+  "subheading": "antonia-light",
+  // "subheading-letter-spacing": .1em,
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-alumni-loud: (
+  "display-heading": "antonia-heavy-italic",
+  "display-heading-case": uppercase,
+  "display-heading-letter-spacing": .1em,
+  "subheading": "antonia-light",
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-alumni-lets-go: (
+  "display-heading": "antonia-heavy-italic",
+  "display-heading-case": uppercase,
+  "display-heading-letter-spacing": .1em,
+  "subheading": "antonia-regular",
+  "text": $helvetica-neue
+);
+
+// State Leaders and Partners
+
+$wvu-typography-palette-leaders-partners-default: (
+  "display-heading": "antonia-regular",
+  "display-heading-case": normal,
+  "display-heading-letter-spacing": .1em,
+  "subheading": "config-light",
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-leaders-partners-reserved: (
+  "display-heading": "antonia-italic",
+  "display-heading-case": normal,
+  "display-heading-letter-spacing": .1em,
+  "subheading": "config-light",
+  "text": $helvetica-neue
+);
+
+$wvu-typography-palette-leaders-partners-loud: (
+  "display-heading": "antonia-heavy",
+  "display-heading-case": uppercase,
+  "display-heading-letter-spacing": .1em,
+  "subheading": "config-light",
+  "text": $helvetica-neue
+);
+
 $wvu-typography-palette-leaders-partners-lets-go: (
   "display-heading": "antonia-heavy",
   "display-heading-case": uppercase,
-  "subheading": $helvetica-neue-light,
+  "display-heading-letter-spacing": .1em,
+  "subheading": "config-light",
   "text": $helvetica-neue
 );
 
@@ -262,9 +317,9 @@ $wvu-typography-palettes-prospective-students: (
 
 $wvu-typography-palettes-alumni: (
   "default": $wvu-typography-palette-antonia,
-  "reserved": $wvu-typography-palette-antonia-reserved,
-  "loud": $wvu-typography-palette-antonia-loud,
-  "lets-go": $wvu-typography-palette-antonia-lets-go
+  "reserved": $wvu-typography-palette-alumni-reserved,
+  "loud": $wvu-typography-palette-alumni-loud,
+  "lets-go": $wvu-typography-palette-alumni-lets-go
 );
 
 $wvu-typography-palettes-general: (
@@ -275,10 +330,10 @@ $wvu-typography-palettes-general: (
 );
 
 $wvu-typography-palettes-leaders-partners: (
-  "default": $wvu-typography-palette-general-default,
-  "reserved": $wvu-typography-palette-general-reserved,
-  "loud": $wvu-typography-palette-general-loud,
-  "lets-go": $wvu-typography-palette-general-lets-go
+  "default": $wvu-typography-palette-leaders-partners-default,
+  "reserved": $wvu-typography-palette-leaders-partners-reserved,
+  "loud": $wvu-typography-palette-leaders-partners-loud,
+  "lets-go": $wvu-typography-palette-leaders-partners-lets-go
 );
 
 @each $audience in $wvu-brand-audiences {
@@ -291,7 +346,7 @@ $wvu-typography-palettes-leaders-partners: (
       @include wvu-color-palettes($color-palettes-alumni);
     } @else if $audience == "leaders_partners" {
       @include wvu-elements-typography($wvu-elements-general, $wvu-typography-palettes-leaders-partners);
-      @include wvu-color-palettes($color-palettes-general);
+      @include wvu-color-palettes($color-palettes-leaders-partners);
     } @else {
       @include wvu-elements-typography($wvu-elements-general, $wvu-typography-palettes-general);
       @include wvu-color-palettes($color-palettes-general);

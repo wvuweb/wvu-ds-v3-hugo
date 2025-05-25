@@ -309,7 +309,7 @@ $wvu-color-palette-gradient-sunset-light-blue-accent-blue: (
   "accent-text": $wvu-blue,
   "accent-bg": $wvu-blue,
   "gradient": $gradient--sunset--blue-light--accent-blue,
-  "pattern-color": $wvu-accent--blue
+  "pattern-color": $wvu-accent--sunset
 );
 
 $wvu-color-palette-gradient-wvu-blue-light-blue-accent-blue: (
@@ -324,8 +324,8 @@ $wvu-color-palette-gradient-wvu-blue-light-blue-accent-blue: (
 $wvu-color-palette-gradient-wvu-blue-sunset-light-blue: (
   "background": $wvu-blue,
   "text": white,
-  "accent-text": $wvu-blue,
-  "accent-bg": $wvu-accent--sunset,
+  "accent-text": $wvu-gold,
+  "accent-bg": $wvu-gold,
   "gradient": $gradient--wvu-blue--sunset--blue-light,
   "pattern-color": $wvu-blue
 );
@@ -339,6 +339,33 @@ $wvu-color-palette-gradient-warm-gray-dark-wvu-gold-yellow: (
   "pattern-color": $wvu-gold
 );
 
+$wvu-color-palette-gradient-warm-gray-dark-yellow-warm-gray-dark: (
+  "background": $wvu-neutral--warm-gray-dark,
+  "text": white,
+  "accent-text": $wvu-gold,
+  "accent-bg": $wvu-neutral--warm-gray-dark,
+  "gradient": $gradient--warm-gray-dark--yellow--warm-gray-dark,
+  "pattern-color": $wvu-gold
+);
+
+$wvu-color-palette-gradient-dark-blue-warm-gray-dark-dark-blue: (
+  "background": $wvu-accent--blue-dark,
+  "text": white,
+  "accent-text": $wvu-gold,
+  "accent-bg": $wvu-gold,
+  "gradient": $gradient--blue-dark--warm-gray-dark--blue-dark,
+  "pattern-color": $wvu-accent--blue-dark
+);
+
+$wvu-color-palette-gradient-dark-blue-old-gold-dark-blue: (
+  "background": $wvu-accent--blue-dark,
+  "text": white,
+  "accent-text": $wvu-gold,
+  "accent-bg": $wvu-gold,
+  "gradient": $gradient--blue-dark--old-gold--blue-dark,
+  "pattern-color": $wvu-accent--old-gold
+);
+
 // General
 
 $color-palettes-general-tone-default: (
@@ -350,46 +377,25 @@ $color-palettes-general-tone-default: (
 );
 
 $color-palettes-general-tone-reserved: (
-  "1": $wvu-color-palette-cream-warm-gray-dark,
-  "2": $wvu-color-palette-dark-blue-cream,
-  "3": $wvu-color-palette-warm-gray-light-dark-blue,
-  "4": $wvu-color-palette-warm-gray-dark-cream,
-  "5": $wvu-color-palette-old-gold-cream
-  // "1": $wvu-color-palette-off-white-wvu-blue,
-  // "2": $wvu-color-palette-off-white-accent-blue,
-  // "3": $wvu-color-palette-warm-gray-light-dark-blue,
-  // "4": $wvu-color-palette-warm-gray-dark-off-white,
-  // "5": $wvu-color-palette--warm-gray-dark-light-blue,
-  // "6": $wvu-color-palette-warm-gray-dark-yellow,
-  // "7": $wvu-color-palette-warm-gray-dark-cream,
-  // "8": $wvu-color-palette-cream-wvu-blue,
-  // "9": $wvu-color-palette-cream-warm-gray-dark,
-  // "10": $wvu-color-palette-cream-accent-blue,
-  // "11": $wvu-color-palette-tan-wvu-blue,
-  // "12": $wvu-color-palette-warm-gray-medium-dark-blue
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-wvu-blue-wvu-gold,
+  "3": $wvu-color-palette-wvu-gold-wvu-blue,
+  "4": $wvu-color-palette-cream-warm-gray-dark,
+  "5": $wvu-color-palette-dark-blue-cream,
+  "6": $wvu-color-palette-warm-gray-light-dark-blue,
+  "7": $wvu-color-palette-warm-gray-dark-cream,
+  "8": $wvu-color-palette-old-gold-cream
 );
 
 $color-palettes-general-tone-loud: (
-  "1": $wvu-color-palette-yellow-accent-blue,
-  "2": $wvu-color-palette-accent-blue-yellow,
-  "3": $wvu-color-palette-dark-blue-light-blue,
-  "4": $wvu-color-palette-dark-blue-sunset,
-  "5": $wvu-color-palette-sunset-dark-blue
-  // "1": $wvu-color-palette-dark-blue-wvu-gold,
-  // "2": $wvu-color-palette-dark-blue-tan,
-  // "3": $wvu-color-palette-dark-blue-light-blue,
-  // "4": $wvu-color-palette-dark-blue-yellow,
-  // "5": $wvu-color-palette-dark-blue-sunset,
-  // "6": $wvu-color-palette-dark-blue-cream,
-  // "7": $wvu-color-palette-light-blue-wvu-blue,
-  // "8": $wvu-color-palette-accent-blue-yellow,
-  // "9": $wvu-color-palette-accent-blue-cream,
-  // "10": $wvu-color-palette-yellow-wvu-blue,
-  // "11": $wvu-color-palette-yellow-accent-blue,
-  // "12": $wvu-color-palette-yellow-warm-gray-dark,
-  // "13": $wvu-color-palette-old-gold-yellow,
-  // "14": $wvu-color-palette-old-gold-cream,
-  // "15": $wvu-color-palette-sunset-dark-blue
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-wvu-blue-wvu-gold,
+  "3": $wvu-color-palette-wvu-gold-wvu-blue,
+  "4": $wvu-color-palette-yellow-accent-blue,
+  "5": $wvu-color-palette-accent-blue-yellow,
+  "6": $wvu-color-palette-dark-blue-light-blue,
+  "7": $wvu-color-palette-dark-blue-sunset,
+  "8": $wvu-color-palette-sunset-dark-blue
 );
 
 $color-palettes-general-tone-lets-go: (
@@ -397,10 +403,10 @@ $color-palettes-general-tone-lets-go: (
   "2": $wvu-color-palette-gradient-sunset-light-blue-accent-blue,
   "3": $wvu-color-palette-gradient-wvu-blue-light-blue-accent-blue,
   "4": $wvu-color-palette-gradient-wvu-blue-sunset-light-blue,
-  "5": $wvu-color-palette-gradient-warm-gray-dark-wvu-gold-yellow
-  // "1": $wvu-color-palette-wvu-blue-wvu-gold,
-  // "2": $wvu-color-palette-wvu-gold-wvu-blue,
-  // "3": $wvu-color-palette-off-white-wvu-blue
+  "5": $wvu-color-palette-gradient-warm-gray-dark-wvu-gold-yellow,
+  "6": $wvu-color-palette-gradient-warm-gray-dark-yellow-warm-gray-dark,
+  "7": $wvu-color-palette-gradient-dark-blue-warm-gray-dark-dark-blue,
+  "8": $wvu-color-palette-gradient-dark-blue-old-gold-dark-blue
 );
 
 $color-palettes-general: (
@@ -421,46 +427,25 @@ $color-palettes-prospective-students-tone-default: (
 );
 
 $color-palettes-prospective-students-tone-reserved: (
-  "1": $wvu-color-palette-cream-warm-gray-dark,
-  "2": $wvu-color-palette-dark-blue-cream,
-  "3": $wvu-color-palette-warm-gray-light-dark-blue,
-  "4": $wvu-color-palette-warm-gray-dark-cream,
-  "5": $wvu-color-palette-old-gold-cream
-  // "1": $wvu-color-palette-off-white-wvu-blue,
-  // "2": $wvu-color-palette-off-white-accent-blue,
-  // "3": $wvu-color-palette-warm-gray-light-dark-blue,
-  // "4": $wvu-color-palette-warm-gray-dark-off-white,
-  // "5": $wvu-color-palette--warm-gray-dark-light-blue,
-  // "6": $wvu-color-palette-warm-gray-dark-yellow,
-  // "7": $wvu-color-palette-warm-gray-dark-cream,
-  // "8": $wvu-color-palette-cream-wvu-blue,
-  // "9": $wvu-color-palette-cream-warm-gray-dark,
-  // "10": $wvu-color-palette-cream-accent-blue,
-  // "11": $wvu-color-palette-tan-wvu-blue,
-  // "12": $wvu-color-palette-warm-gray-medium-dark-blue
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-wvu-blue-wvu-gold,
+  "3": $wvu-color-palette-wvu-gold-wvu-blue,
+  "4": $wvu-color-palette-cream-warm-gray-dark,
+  "5": $wvu-color-palette-dark-blue-cream,
+  "6": $wvu-color-palette-warm-gray-light-dark-blue,
+  "7": $wvu-color-palette-warm-gray-dark-cream,
+  "8": $wvu-color-palette-old-gold-cream
 );
 
 $color-palettes-prospective-students-tone-loud: (
-  "1": $wvu-color-palette-yellow-accent-blue,
-  "2": $wvu-color-palette-accent-blue-yellow,
-  "3": $wvu-color-palette-dark-blue-light-blue,
-  "4": $wvu-color-palette-dark-blue-sunset,
-  "5": $wvu-color-palette-sunset-dark-blue
-  // "1": $wvu-color-palette-dark-blue-wvu-gold,
-  // "2": $wvu-color-palette-dark-blue-tan,
-  // "3": $wvu-color-palette-dark-blue-light-blue,
-  // "4": $wvu-color-palette-dark-blue-yellow,
-  // "5": $wvu-color-palette-dark-blue-sunset,
-  // "6": $wvu-color-palette-dark-blue-cream,
-  // "7": $wvu-color-palette-light-blue-wvu-blue,
-  // "8": $wvu-color-palette-accent-blue-yellow,
-  // "9": $wvu-color-palette-accent-blue-cream,
-  // "10": $wvu-color-palette-yellow-wvu-blue,
-  // "11": $wvu-color-palette-yellow-accent-blue,
-  // "12": $wvu-color-palette-yellow-warm-gray-dark,
-  // "13": $wvu-color-palette-old-gold-yellow,
-  // "14": $wvu-color-palette-old-gold-cream,
-  // "15": $wvu-color-palette-sunset-dark-blue
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-wvu-blue-wvu-gold,
+  "3": $wvu-color-palette-wvu-gold-wvu-blue,
+  "4": $wvu-color-palette-yellow-accent-blue,
+  "5": $wvu-color-palette-accent-blue-yellow,
+  "6": $wvu-color-palette-dark-blue-light-blue,
+  "7": $wvu-color-palette-dark-blue-sunset,
+  "8": $wvu-color-palette-sunset-dark-blue
 );
 
 $color-palettes-prospective-students-tone-lets-go: (
@@ -468,7 +453,10 @@ $color-palettes-prospective-students-tone-lets-go: (
   "2": $wvu-color-palette-gradient-sunset-light-blue-accent-blue,
   "3": $wvu-color-palette-gradient-wvu-blue-light-blue-accent-blue,
   "4": $wvu-color-palette-gradient-wvu-blue-sunset-light-blue,
-  "5": $wvu-color-palette-gradient-warm-gray-dark-wvu-gold-yellow
+  "5": $wvu-color-palette-gradient-warm-gray-dark-wvu-gold-yellow,
+  "6": $wvu-color-palette-gradient-warm-gray-dark-yellow-warm-gray-dark,
+  "7": $wvu-color-palette-gradient-dark-blue-warm-gray-dark-dark-blue,
+  "8": $wvu-color-palette-gradient-dark-blue-old-gold-dark-blue
 );
 
 $color-palettes-prospective-students: (
@@ -489,47 +477,25 @@ $color-palettes-alumni-tone-default: (
 );
 
 $color-palettes-alumni-tone-reserved: (
-  "1": $wvu-color-palette-cream-warm-gray-dark,
-  "2": $wvu-color-palette-dark-blue-cream,
-  "3": $wvu-color-palette-warm-gray-light-dark-blue,
-  "4": $wvu-color-palette-warm-gray-dark-cream,
-  "5": $wvu-color-palette-old-gold-cream
-  // "1": $wvu-color-palette-off-white-wvu-blue,
-  // "2": $wvu-color-palette-off-white-accent-blue,
-  // // "3": $wvu-color-palette-off-white-gold-gradient-wvu-gold,
-  // "3": $wvu-color-palette-warm-gray-light-dark-blue,
-  // "4": $wvu-color-palette-warm-gray-dark-off-white,
-  // "5": $wvu-color-palette--warm-gray-dark-light-blue,
-  // "6": $wvu-color-palette-warm-gray-dark-yellow,
-  // "7": $wvu-color-palette-warm-gray-dark-cream,
-  // "8": $wvu-color-palette-cream-wvu-blue,
-  // "9": $wvu-color-palette-cream-warm-gray-dark,
-  // "10": $wvu-color-palette-cream-accent-blue,
-  // "11": $wvu-color-palette-tan-wvu-blue,
-  // "12": $wvu-color-palette-warm-gray-medium-dark-blue
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-wvu-blue-wvu-gold,
+  "3": $wvu-color-palette-wvu-gold-wvu-blue,
+  "4": $wvu-color-palette-cream-warm-gray-dark,
+  "5": $wvu-color-palette-dark-blue-cream,
+  "6": $wvu-color-palette-warm-gray-light-dark-blue,
+  "7": $wvu-color-palette-warm-gray-dark-cream,
+  "8": $wvu-color-palette-old-gold-cream
 );
 
 $color-palettes-alumni-tone-loud: (
-  "1": $wvu-color-palette-yellow-accent-blue,
-  "2": $wvu-color-palette-accent-blue-yellow,
-  "3": $wvu-color-palette-dark-blue-light-blue,
-  "4": $wvu-color-palette-dark-blue-sunset,
-  "5": $wvu-color-palette-sunset-dark-blue
-  // "1": $wvu-color-palette-dark-blue-wvu-gold,
-  // "2": $wvu-color-palette-dark-blue-tan,
-  // "3": $wvu-color-palette-dark-blue-light-blue,
-  // "4": $wvu-color-palette-dark-blue-yellow,
-  // "5": $wvu-color-palette-dark-blue-sunset,
-  // "6": $wvu-color-palette-dark-blue-cream,
-  // "7": $wvu-color-palette-light-blue-wvu-blue,
-  // "8": $wvu-color-palette-accent-blue-yellow,
-  // "9": $wvu-color-palette-accent-blue-cream,
-  // "10": $wvu-color-palette-yellow-wvu-blue,
-  // "11": $wvu-color-palette-yellow-accent-blue,
-  // "12": $wvu-color-palette-yellow-warm-gray-dark,
-  // "13": $wvu-color-palette-old-gold-yellow,
-  // "14": $wvu-color-palette-old-gold-cream,
-  // "15": $wvu-color-palette-sunset-dark-blue
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-wvu-blue-wvu-gold,
+  "3": $wvu-color-palette-wvu-gold-wvu-blue,
+  "4": $wvu-color-palette-yellow-accent-blue,
+  "5": $wvu-color-palette-accent-blue-yellow,
+  "6": $wvu-color-palette-dark-blue-light-blue,
+  "7": $wvu-color-palette-dark-blue-sunset,
+  "8": $wvu-color-palette-sunset-dark-blue
 );
 
 $color-palettes-alumni-tone-lets-go: (
@@ -537,7 +503,10 @@ $color-palettes-alumni-tone-lets-go: (
   "2": $wvu-color-palette-gradient-sunset-light-blue-accent-blue,
   "3": $wvu-color-palette-gradient-wvu-blue-light-blue-accent-blue,
   "4": $wvu-color-palette-gradient-wvu-blue-sunset-light-blue,
-  "5": $wvu-color-palette-gradient-warm-gray-dark-wvu-gold-yellow
+  "5": $wvu-color-palette-gradient-warm-gray-dark-wvu-gold-yellow,
+  "6": $wvu-color-palette-gradient-warm-gray-dark-yellow-warm-gray-dark,
+  "7": $wvu-color-palette-gradient-dark-blue-warm-gray-dark-dark-blue,
+  "8": $wvu-color-palette-gradient-dark-blue-old-gold-dark-blue
 );
 
 $color-palettes-alumni: (
@@ -545,4 +514,54 @@ $color-palettes-alumni: (
   "reserved": $color-palettes-alumni-tone-reserved,
   "loud": $color-palettes-alumni-tone-loud,
   "lets-go": $color-palettes-alumni-tone-lets-go
+);
+
+// Leaders and Partners
+
+$color-palettes-leaders-partners-tone-default: (
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-wvu-blue-wvu-gold,
+  "3": $wvu-color-palette-wvu-gold-wvu-blue,
+  "4": $wvu-color-palette-accent-blue-yellow,
+  "5": $wvu-color-palette-light-blue-wvu-blue
+);
+
+$color-palettes-leaders-partners-tone-reserved: (
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-wvu-blue-wvu-gold,
+  "3": $wvu-color-palette-wvu-gold-wvu-blue,
+  "4": $wvu-color-palette-cream-warm-gray-dark,
+  "5": $wvu-color-palette-dark-blue-cream,
+  "6": $wvu-color-palette-warm-gray-light-dark-blue,
+  "7": $wvu-color-palette-warm-gray-dark-cream,
+  "8": $wvu-color-palette-old-gold-cream
+);
+
+$color-palettes-leaders-partners-tone-loud: (
+  "1": $wvu-color-palette-off-white-wvu-blue,
+  "2": $wvu-color-palette-wvu-blue-wvu-gold,
+  "3": $wvu-color-palette-wvu-gold-wvu-blue,
+  "4": $wvu-color-palette-yellow-accent-blue,
+  "5": $wvu-color-palette-accent-blue-yellow,
+  "6": $wvu-color-palette-dark-blue-light-blue,
+  "7": $wvu-color-palette-dark-blue-sunset,
+  "8": $wvu-color-palette-sunset-dark-blue
+);
+
+$color-palettes-leaders-partners-tone-lets-go: (
+  "1": $wvu-color-palette-gradient-sunset-yellow-wvu-gold,
+  "2": $wvu-color-palette-gradient-sunset-light-blue-accent-blue,
+  "3": $wvu-color-palette-gradient-wvu-blue-light-blue-accent-blue,
+  "4": $wvu-color-palette-gradient-wvu-blue-sunset-light-blue,
+  "5": $wvu-color-palette-gradient-warm-gray-dark-wvu-gold-yellow,
+  "6": $wvu-color-palette-gradient-warm-gray-dark-yellow-warm-gray-dark,
+  "7": $wvu-color-palette-gradient-dark-blue-warm-gray-dark-dark-blue,
+  "8": $wvu-color-palette-gradient-dark-blue-old-gold-dark-blue
+);
+
+$color-palettes-leaders-partners: (
+  "default": $color-palettes-alumni-tone-default,
+  "reserved": $color-palettes-alumni-tone-reserved,
+  "loud": $color-palettes-alumni-tone-loud,
+  "lets-go": $color-palettes-leaders-partners-tone-lets-go
 );

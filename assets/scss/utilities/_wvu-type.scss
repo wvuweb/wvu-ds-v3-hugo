@@ -115,6 +115,10 @@
   @include config-regular();
 }
 
+.config-light-italic {
+  @include config-light-italic();
+}
+
 .config-extra-bold {
   @include config-extra-bold();
 }

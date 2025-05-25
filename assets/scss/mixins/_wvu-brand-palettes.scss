@@ -28,6 +28,14 @@ $wvu-b-bg-color: null;
           .wvu-b-text-shadow {
             filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
           }
+        } @else if $element == "display-heading-letter-spacing" {
+          .wvu-b-display-heading {
+            letter-spacing: $typeface $global-important;
+          }
+        } @else if $element == "subheading-letter-spacing" {
+          .wvu-b-subheading {
+            letter-spacing: $typeface $global-important;
+          }
         } @else if $element == "display-heading" or $element == "subheading" {
           .wvu-b-#{$element} {
             @if $typeface == "shout" {
@@ -37,6 +45,26 @@ $wvu-b-bg-color: null;
               }
             } @else if $typeface == "config-regular" {
               @include config-regular();
+              .wvu-b-font-adjust {
+                @include config-display-adjust();
+              }
+            } @else if $typeface == "config-condensed-regular" {
+              @include config-condensed-regular();
+              .wvu-b-font-adjust {
+                @include config-display-adjust();
+              }
+            } @else if $typeface == "config-condensed-regular-italic" {
+              @include config-condensed-regular-italic();
+              .wvu-b-font-adjust {
+                @include config-display-adjust();
+              }
+            } @else if $typeface == "config-light" {
+              @include config-light();
+              .wvu-b-font-adjust {
+                @include config-display-adjust();
+              }
+            } @else if $typeface == "config-light-italic" {
+              @include config-light-italic();
               .wvu-b-font-adjust {
                 @include config-display-adjust();
               }
