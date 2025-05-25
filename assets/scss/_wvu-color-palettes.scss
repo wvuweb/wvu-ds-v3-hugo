@@ -38,6 +38,14 @@ $wvu-color-palette-wvu-blue-sunset: (
   "pattern-color": $wvu-gold
 );
 
+$wvu-color-palette-wvu-blue-old-gold: (
+  "background": $wvu-blue,
+  "text": white,
+  "accent-text": $wvu-accent--old-gold,
+  "accent-bg": $wvu-accent--old-gold,
+  "pattern-color": $wvu-gold
+);
+
 // WVU Gold
 
 $wvu-color-palette-wvu-gold-wvu-blue: (
@@ -109,6 +117,14 @@ $wvu-color-palette-warm-gray-dark-cream: (
   "text": white,
   "accent-text": $wvu-neutral--cream,
   "accent-bg": $wvu-neutral--cream,
+  "pattern-color": $wvu-gold
+);
+
+$wvu-color-palette-warm-gray-dark-light-blue: (
+  "background": $wvu-neutral--warm-gray-dark,
+  "text": white,
+  "accent-text": $wvu-accent--blue-light,
+  "accent-bg": $wvu-accent--blue-light,
   "pattern-color": $wvu-gold
 );
 
@@ -250,7 +266,7 @@ $wvu-color-palette-green-wvu-gold: (
 
 // Red
 
-$wvu-color-palette-red-off-white: (
+$wvu-color-palette-red-wvu-gold: (
   "background": $wvu-accent--red,
   "text": white,
   "accent-text": $wvu-gold,
