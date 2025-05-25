@@ -121,6 +121,13 @@ $wvu-elements-alumni: (
   "lets-go": $wvu-elements-lets-go
 );
 
+$wvu-elements-leaders-partners: (
+  "default": $wvu-elements-default,
+  "reserved": $wvu-elements-reserved,
+  "loud": $wvu-elements-loud,
+  "lets-go": $wvu-elements-lets-go
+);
+
 // Typography Palettes
 
 // Antonia
@@ -236,6 +243,13 @@ $wvu-typography-palette-general-lets-go: (
   "text": $helvetica-neue
 );
 
+$wvu-typography-palette-leaders-partners-lets-go: (
+  "display-heading": "antonia-heavy",
+  "display-heading-case": uppercase,
+  "subheading": $helvetica-neue-light,
+  "text": $helvetica-neue
+);
+
 // Palettes
 
 $wvu-typography-palettes-prospective-students: (
@@ -259,6 +273,13 @@ $wvu-typography-palettes-general: (
   "lets-go": $wvu-typography-palette-general-lets-go
 );
 
+$wvu-typography-palettes-leaders-partners: (
+  "default": $wvu-typography-palette-general-default,
+  "reserved": $wvu-typography-palette-general-reserved,
+  "loud": $wvu-typography-palette-general-loud,
+  "lets-go": $wvu-typography-palette-general-lets-go
+);
+
 @each $audience in $wvu-brand-audiences {
   .audience-#{$audience} {
     @if $audience == "prospective_students" {
@@ -267,6 +288,9 @@ $wvu-typography-palettes-general: (
     } @else if $audience == "alumni" {
       @include wvu-elements-typography($wvu-elements-alumni, $wvu-typography-palettes-alumni);
       @include wvu-color-palettes($color-palettes-alumni);
+    } @else if $audience == "leaders_partners" {
+      @include wvu-elements-typography($wvu-elements-general, $wvu-typography-palettes-leaders-partners);
+      @include wvu-color-palettes($color-palettes-general);
     } @else {
       @include wvu-elements-typography($wvu-elements-general, $wvu-typography-palettes-general);
       @include wvu-color-palettes($color-palettes-general);

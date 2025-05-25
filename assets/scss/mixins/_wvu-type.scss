@@ -474,6 +474,6 @@
 
 @mixin antonia-display-adjust() {
   display: block $global-important;
-  line-height: 1 $global-important;
+  line-height: $wvu-traditional-audience-line-height $global-important;
   // margin-bottom: -.2em $global-important;
 }
