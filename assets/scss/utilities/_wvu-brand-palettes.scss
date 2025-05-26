@@ -53,8 +53,8 @@ $wvu-elements-default: (
 );
 
 $wvu-elements-reserved: (
-  "border": $border,
-  "shadow": true,
+  "border": "",
+  "shadow": "",
   "text-shadow": true,
   "pattern": ""
 );
@@ -74,15 +74,15 @@ $wvu-elements-lets-go: (
 );
 
 $wvu-elements-prospective-students-default: (
-  "border": $border,
-  "shadow": true,
+  "border": "",
+  "shadow": "",
   "text-shadow": "",
   "pattern": ""
 );
 
 $wvu-elements-prospective-students-reserved: (
-  "border": $border,
-  "shadow": true,
+  "border": "",
+  "shadow": "",
   "text-shadow": "",
   "pattern": ""
 );
@@ -277,7 +277,7 @@ $wvu-typography-palette-alumni-lets-go: (
 $wvu-typography-palette-leaders-partners-default: (
   "display-heading": "antonia-regular",
   "display-heading-case": normal,
-  "display-heading-letter-spacing": .1em,
+  "display-heading-letter-spacing": .05em,
   "subheading": "config-light",
   "text": $helvetica-neue
 );
