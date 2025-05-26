@@ -1,4 +1,6 @@
 $wvu-b-bg-color: null;
+$wvu-b-breadcrumbs-bg-color: null;
+$wvu-b-breadcrumbs-text-color: null;
 
 @mixin wvu-elements-typography($elements, $typography-palettes) {
   @each $tone, $properties in $elements {
@@ -138,6 +140,7 @@ $wvu-b-bg-color: null;
     @if $element == "background" {
       background-color: $color $global-important;
       $wvu-b-bg-color: $color !global;
+      $wvu-b-breadcrumbs-bg-color: $color !global;
       @if $color == $wvu-blue or $color == $wvu-accent--blue-dark or $color == $wvu-accent--blue or $color == $wvu-accent--old-gold or $color == $wvu-neutral--warm-gray-dark {
         &.wvu-b-subtle, .wvu-b-subtle {
           color: test-dark;
@@ -163,6 +166,7 @@ $wvu-b-bg-color: null;
       }
     } @else if $element == "text" {
       color: $color $global-important;
+      $wvu-b-breadcrumbs-text-color: $color !global;
     } @else if $element == "gradient" and $color != "" {
       &.wvu-b-gradient, .wvu-b-gradient {
         @include wvu-gradient($color);
@@ -178,9 +182,20 @@ $wvu-b-bg-color: null;
       &.wvu-b-pattern-color, .wvu-b-pattern-color {
         opacity: 1 $global-important;
       }
+    } @else if $element == "breadcrumbs-bg" and $color != "" {
+      $wvu-b-breadcrumbs-bg-color: $color !global;
+    } @else if $element == "breadcrumbs-text" and $color != "" {
+      $wvu-b-breadcrumbs-text-color: $color !global;
     } @else {
       .wvu-b-#{$element} {
         color: $color $global-important;
+      }
+    }
+    .wvu-b-breadcrumbs {
+      background-color: $wvu-b-breadcrumbs-bg-color $global-important;
+      color: $wvu-b-breadcrumbs-text-color $global-important;
+      a:link, a:visited {
+        color: $wvu-b-breadcrumbs-text-color $global-important;
       }
     }
   }
