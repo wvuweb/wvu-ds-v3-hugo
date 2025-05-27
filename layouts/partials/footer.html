@@ -57,54 +57,54 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <h2 class="h6 wvu-text-letter-spacing wvu-b-label text-uppercase text-wvu-gold">Site Menu</h2>
-            <ul class="list-unstyled mb-0 lh-lg">
+            <h2 class="h6 wvu-text-letter-spacing wvu-b-label text-uppercase text-wvu-gold mb-3">Site Menu</h2>
+            <ul class="list-unstyled mb-0 lh-sm">
               {{ range $siteMenu }}
                 {{ $rel_link := .link | relURL }}
-                <li>
+                <li class="mb-3">
                   <a class="text-decoration-none" href="{{ .link }}">{{ .text }}</a>
                 </li>
               {{ end }}
             </ul>
           </div>
           <div class="col-md-4">
-            <h2 class="h6 wvu-text-letter-spacing wvu-b-label text-uppercase text-wvu-gold">Quicklinks</h2>
-            <ul class="list-unstyled lh-lg">
+            <h2 class="h6 wvu-text-letter-spacing wvu-b-label text-uppercase text-wvu-gold mb-3">Quicklinks</h2>
+            <ul class="list-unstyled lh-sm">
               {{ range .quicklinks }}
-                <li class="list-item">
+                <li class="mb-3">
                   <a class="text-decoration-none" href="{{ .url }}">{{ .text }}</a>
                 </li>
               {{ end }}
             </ul>
           </div>
           <div class="col-md-4">
-            <h2 class="h6 wvu-text-letter-spacing wvu-b-label text-uppercase text-wvu-gold">University Resources</h2>
-            <ul class="list-unstyled mb-0 lh-lg">
-              <li class="list-item">
+            <h2 class="h6 wvu-text-letter-spacing wvu-b-label text-uppercase text-wvu-gold mb-3">University Resources</h2>
+            <ul class="list-unstyled mb-0 lh-sm">
+              <li class="mb-3">
                 <a class="text-decoration-none" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a>
               </li>
-              <li class="list-item">
+              <li class="mb-3">
                 <a class="text-decoration-none" href="https://campusmap.wvu.edu">Campus Map</a>
               </li>
-              <li class="list-item">
+              <li class="mb-3">
                 <a class="text-decoration-none" href="https://careers.wvu.edu/career-opportunities">WVU Careers</a>
               </li>
-              <li class="list-item">
+              <li class="mb-3">
                 <a class="text-decoration-none" href="https://directory.wvu.edu">WVU Directory</a>
               </li>
-              <li class="list-item">
+              <li class="mb-3">
                 <a class="text-decoration-none" href="https://give.wvu.edu/">Give</a>
               </li>
-              <li class="list-item">
+              <li class="mb-3">
                 <a class="text-decoration-none" href="https://careerservices.wvu.edu/students/handshake-login">Handshake</a>
               </li>
-              <li class="list-item">
+              <li class="mb-3">
                 <a class="text-decoration-none" href="https://alert.wvu.edu/">WVU Alert</a>
               </li>
-              <li class="list-item">
+              <li class="mb-3">
                 <a class="text-decoration-none" href="https://wvutoday.wvu.edu">WVU Today</a>
               </li>
-              <li class="list-item">
+              <li class="mb-3">
                 <a class="text-decoration-none" href="https://portal.wvu.edu">WVU Portal</a>
               </li>
           </div>

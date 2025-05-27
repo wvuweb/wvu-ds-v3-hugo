@@ -219,30 +219,30 @@ $wvu-typography-palette-config-lets-go: (
 // By Audience and Tone
 
 $wvu-typography-palette-general-default: (
-  "display-heading": $helvetica-neue-bold,
+  "display-heading": "config-bold",
   "display-heading-case": normal,
-  "subheading": $helvetica-neue-light,
+  "subheading": "config-light",
   "text": $helvetica-neue
 );
 
 $wvu-typography-palette-general-reserved: (
   "display-heading": "antonia-regular",
   "display-heading-case": normal,
-  "subheading": $helvetica-neue-light,
+  "subheading": "config-light",
   "text": $helvetica-neue
 );
 
 $wvu-typography-palette-general-loud: (
-  "display-heading": "shout",
+  "display-heading": "config-condensed-black",
   "display-heading-case": uppercase,
-  "subheading": $helvetica-neue-light,
+  "subheading": "config-light",
   "text": $helvetica-neue
 );
 
 $wvu-typography-palette-general-lets-go: (
-  "display-heading": "shout",
+  "display-heading": "config-condensed-black",
   "display-heading-case": uppercase,
-  "subheading": $helvetica-neue-light,
+  "subheading": "config-light",
   "text": $helvetica-neue
 );
 

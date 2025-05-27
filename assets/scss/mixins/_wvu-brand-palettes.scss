@@ -50,6 +50,11 @@ $wvu-b-breadcrumbs-text-color: null;
               .wvu-b-font-adjust {
                 @include config-display-adjust();
               }
+            } @else if $typeface == "config-bold" {
+              @include config-bold();
+              .wvu-b-font-adjust {
+                @include config-display-adjust();
+              }
             } @else if $typeface == "config-condensed-regular" {
               @include config-condensed-regular();
               .wvu-b-font-adjust {
@@ -57,6 +62,11 @@ $wvu-b-breadcrumbs-text-color: null;
               }
             } @else if $typeface == "config-condensed-regular-italic" {
               @include config-condensed-regular-italic();
+              .wvu-b-font-adjust {
+                @include config-display-adjust();
+              }
+            } @else if $typeface == "config-condensed-black" {
+              @include config-condensed-black();
               .wvu-b-font-adjust {
                 @include config-display-adjust();
               }

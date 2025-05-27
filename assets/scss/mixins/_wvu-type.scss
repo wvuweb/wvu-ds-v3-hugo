@@ -384,8 +384,22 @@
   }
 }
 
+@mixin config-bold() {
+  @include config(0, 100, 700);
+  em {
+    font-style: italic;
+  }
+}
+
 @mixin config-condensed-bold() {
   @include config(0, 50, 700);
+  em {
+    font-style: italic;
+  }
+}
+
+@mixin config-condensed-black() {
+  @include config(0, 50, 900);
   em {
     font-style: italic;
   }
