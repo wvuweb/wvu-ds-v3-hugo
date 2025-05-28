@@ -497,7 +497,7 @@
 }
 
 @mixin antonia-heavy-italic() {
-  @include antonia(48, 800);
+  @include antonia(8, 800);
   font-style: italic $global-important;
   em {
     font-style: normal $global-important;

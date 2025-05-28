@@ -23,21 +23,20 @@ $wvu-b-breadcrumbs-text-color: null;
       @each $element, $typeface in $typography-palette {
         @if $element == "display-heading-case" and $typeface == uppercase {
           .wvu-b-display-heading {
-            color: test;
             text-transform: uppercase $global-important;
           }
         } @else if $element == "display-heading-shadow" and $typeface == true {
           .wvu-b-text-shadow {
             filter: drop-shadow(-10px 10px rgba(50, 50, 0, 0.15));
           }
-        } @else if $element == "display-heading-letter-spacing" {
-          .wvu-b-display-heading {
-            letter-spacing: $typeface $global-important;
-          }
-        } @else if $element == "subheading-letter-spacing" {
-          .wvu-b-subheading {
-            letter-spacing: $typeface $global-important;
-          }
+        // } @else if $element == "display-heading-letter-spacing" {
+        //   .wvu-b-display-heading {
+        //     letter-spacing: $typeface $global-important;
+        //   }
+        // } @else if $element == "subheading-letter-spacing" {
+        //   .wvu-b-subheading {
+        //     letter-spacing: $typeface $global-important;
+        //   }
         } @else if $element == "display-heading" or $element == "subheading" {
           .wvu-b-#{$element} {
             @if $typeface == "shout" {
