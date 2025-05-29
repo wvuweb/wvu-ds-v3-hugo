@@ -4,24 +4,24 @@
 {{ $tone := "" }}
 {{ $color := "" }}
 
-{{ if and .styles .styles.audience }}
+{{ if and .topper .topper.settings.styles .topper.settings.styles.audience }}
   {{ $audienceOverride = "override-audience-styles-site" }}
-  {{ $audience = .styles.audience }}
+  {{ $audience = .topper.settings.styles.audience }}
 {{ end }}
 
-{{ if and .styles .styles.tone }}
+{{ if and .topper .topper.settings.styles .topper.settings.styles.tone }}
   {{ $toneOverride = "override-tone-styles-site" }}
-  {{ $tone = .styles.tone}}
+  {{ $tone = .topper.settings.styles.tone}}
 {{ end }}
 
-{{ if and .styles .styles.color_palette }}
-  {{ $color = .styles.color_palette }}
+{{ if and .topper .topper.settings.styles .topper.settings.styles.color_palette }}
+  {{ $color = .topper.settings.styles.color_palette }}
 {{ end }}
 
 <div class="d-flex position-relative wvu-z-index-breadcrumbs {{ $audienceOverride }} {{ $toneOverride }} audience-{{ $audience }} tone-{{ $tone }} bg-{{ $color }}" style="height: 0px;">
   <div class="position-absolute mt-3 w-100 text-start" style="top: 0px;">
     <div class="container">
-      <ul class="list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1 wvu-b-breadcrumbs">
+      <ul class="list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1 {{ if and .topper .topper.background_image .topper.settings.styles (not .topper.settings.styles.enable_blend) }}bg-dark text-white{{ else }}wvu-b-breadcrumbs{{ end }}">
         {{ $breadcrumb := split (replaceRE `\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}` "" (trim .rel_permalink "/" )) "/" }}
         {{ $crumb_link := "/" }}
         {{ $rel_permalink := .rel_permalink }}

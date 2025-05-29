@@ -1,4 +1,5 @@
-{{ $title := site.Title }}
+{{ $title := site.Data.settings.settings.masthead.title }}
+{{ $parentOrg := site.Data.settings.settings.masthead.parent_org }}
 {{ $socialMediaAccounts := site.Data.settings.settings.social_media_accounts }}
 {{ $siteMenu := site.Data.settings.settings.primary_navigation.nav_links }}
 
@@ -10,8 +11,14 @@
         <div class="row small">
           <div class="col-6 me-auto">
             <div class="mb-5">
-              <h2 class="wvu-shout wvu-bar">{{ $title }}</h2>
-              <p class="antonia-italic fs-5">Eberly College of Arts and Sciences</p>
+              <h2 class="helvetica-neue-bold h4 wvu-bar">
+                {{ range $title }}
+                  <span class="d-block">{{ . }}</span>
+                {{ end }}
+              </h2>
+              {{ with $parentOrg }}
+                <p class="antonia-italic fs-5">{{ .title }}</p>
+              {{ end }}
             </div>
             {{ range .contact_info_blocks }}
               <address class="mb-4">
@@ -109,23 +116,25 @@
               </li>
           </div>
         </div>
-        {{ with .postscript }}
-          <div class="d-flex border-top border-bottom border-1 border-wvu-accent--blue-light mt-5 py-4">
-            <h2 class="d-inline-block h5 antonia mb-0 me-3">Your journey at the Eberly College of Arts and Sciences</h2>
-            {{ with .items }}
-              <ul class="list-inline d-inline-block mb-0">
-                {{ range . }}                  
-                  <li class="list-inline-item">
-                    {{ if .url }}
-                      {{ with .label }}<strong>{{ . }}</strong>{{ end }} <a href="{{ .url }}">{{ .text }}</a></li>
-                    {{ else }}
-                      {{ with .label }}<strong>{{ . }}</strong>{{ end }} {{ .text }}</a>
-                    {{ end }}
-                  </li>
-                {{ end }}
-              </ul>
-            {{ end }}
-          </div>
+        {{ if .postscript.heading }}
+          {{ with .postscript }}
+            <div class="d-flex border-top border-bottom border-1 border-wvu-accent--blue-light mt-5 py-4">
+              <h2 class="d-inline-block h5 antonia mb-0 me-3">{{ .text }}</h2>
+              {{ with .items }}
+                <ul class="list-inline d-inline-block mb-0">
+                  {{ range . }}                  
+                    <li class="list-inline-item">
+                      {{ if .url }}
+                        {{ with .label }}<strong>{{ . }}</strong>{{ end }} <a href="{{ .url }}">{{ .text }}</a></li>
+                      {{ else }}
+                        {{ with .label }}<strong>{{ . }}</strong>{{ end }} {{ .text }}</a>
+                      {{ end }}
+                    </li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+            </div>
+          {{ end }}
         {{ end }}
       </div>
     </div>
