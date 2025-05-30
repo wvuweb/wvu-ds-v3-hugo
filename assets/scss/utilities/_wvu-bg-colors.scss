@@ -25,3 +25,7 @@
     color: $dark;
   }
 }
+
+.bg-inherit {
+  background-color: inherit $global-important;
+}
