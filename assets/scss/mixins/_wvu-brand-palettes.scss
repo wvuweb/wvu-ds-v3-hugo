@@ -152,12 +152,10 @@ $wvu-b-breadcrumbs-text-color: null;
       $wvu-b-breadcrumbs-bg-color: $color !global;
       @if $color == $wvu-blue or $color == $wvu-accent--blue-dark or $color == $wvu-accent--blue or $color == $wvu-accent--old-gold or $color == $wvu-neutral--warm-gray-dark {
         &.wvu-b-subtle, .wvu-b-subtle {
-          color: test-dark;
           background-color: shade($wvu-b-bg-color, 7%) !important;
         }
       } @else {
         &.wvu-b-subtle, .wvu-b-subtle {
-          color: test-light;
           background-color: tint($wvu-b-bg-color, 20%) !important;
         }
       }
@@ -176,6 +174,9 @@ $wvu-b-breadcrumbs-text-color: null;
     } @else if $element == "text" {
       color: $color $global-important;
       $wvu-b-breadcrumbs-text-color: $color !global;
+      .wvu-b-text, .wvu-b-text a:link, .wvu-b-text a:visited {
+        color: $color $global-important;
+      }
     } @else if $element == "gradient" and $color != "" {
       &.wvu-b-gradient, .wvu-b-gradient {
         @include wvu-gradient($color);

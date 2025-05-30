@@ -45,6 +45,13 @@
   }
 }
 
+.text-center .wvu-bar, .text-center.wvu-bar {
+  &:before, &:after {
+    left: 50% $global-important;
+    margin-left: -($wvu-bar-width * .5) $global-important;
+  }
+}
+
 // .text-center .wvu-bar {
 //   display: inline-block $global-important;
 //   &:before, &:after {

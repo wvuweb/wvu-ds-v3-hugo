@@ -4,6 +4,11 @@
 
 @mixin wvu-bar($wvu-bar-color, $wvu-bar-position, $global-important: $global-important) {
   position: relative $global-important;
+  &:before {
+    -ms-transform: skewX(149deg) $global-important; /* IE 9 */
+    -webkit-transform: skewX(149deg) $global-important; /* Safari */
+    transform: skewX(149deg) $global-important;
+  }
   @if $wvu-bar-position == 'top' {
     // margin-top: $spacer * 2 $global-important;
     padding-top: 1.5rem;

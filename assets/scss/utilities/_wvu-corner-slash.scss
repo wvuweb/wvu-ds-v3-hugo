@@ -1,0 +1,14 @@
+.wvu-corner-slash {
+  position: relative;
+  &::before {
+    background-color: $wvu-gold;
+    clip-path: polygon(100% 2%, 44% 100%, 100% 100%);
+    content: '';
+    display: block;
+    height: .8em;
+    position: absolute;
+    left: -1.3em;
+    top: .1em;
+    width: 1em;
+  }
+}

@@ -2,7 +2,7 @@
   <div class="wvu-masthead">
     <div class="container">
       <div class="row">
-        <div class="align-self-center col-12 col-lg">        
+        <div class="align-self-center col-24 col-lg">        
           <div class="d-flex position-relative my-4 align-items-center justify-content-center justify-content-lg-start text-decoration-none text-white" href="/">
             <span class="visually-hidden">West Virginia University </span>
             <img class="me-4" src="https://static.wvu.edu/global/images/logos/wvu/flying-wv--1.0.0.svg" height="70px" width="65px" />
@@ -10,18 +10,26 @@
               {{ with .super_heading }}
                 <span class="d-block mb-2 small">{{ . }}</span>
               {{ end }}
-              <span class="mt-n2 helvetica-neue-bold h4 lh-1">{{ range .title }}<span class="d-block">{{ . }}{{ end }}</span>
+              <span class="mt-n2 helvetica-neue-bold h4 lh-1">{{ range .title }}<span class="d-block">{{ . }}</span>{{ end }}</span>
             </div>
           </div>      
         </div>
-        {{ with .buttons }}
-          <div class="col-12 col-lg d-flex flex-column">
-            <div class="px-0 flex-grow-1 d-flex align-content-center justify-content-center justify-content-lg-end my-3">
-              {{ range . }}
-                <a href="{{ .url }}" class="ms-1 mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-accent--blue-light">{{ .text }}</a>
-              {{ end }}
+        {{ if or .buttons.button_1.text .buttons.button_2.text .buttons.button_3.text }}
+          {{ with .buttons }}
+            <div class="col-24 col-lg d-flex flex-column">
+              <div class="px-0 flex-grow-1 d-flex align-content-center justify-content-center justify-content-lg-end my-3">
+                {{ with .button_1 }}
+                  <a href="{{ .url }}" class="mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-gold">{{ .text }}</a>
+                {{ end }}
+                {{ with .button_2 }}
+                  <a href="{{ .url }}" class="ms-2 mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-accent--sunset">{{ .text }}</a>
+                {{ end }}
+                {{ with .button_3 }}
+                  <a href="{{ .url }}" class="ms-2 mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-accent--blue-light">{{ .text }}</a>
+                {{ end }}
+              </div>
             </div>
-          </div>
+          {{ end }}
         {{ end }}
       </div>
     </div>
