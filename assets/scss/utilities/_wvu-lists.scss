@@ -600,3 +600,14 @@ ol.wvu-ol-steps-horizontal {
     }
   }
 }
+
+.wvu-comma-list-item {
+  &::after {
+    content: ", ";
+  }
+  &:last-child {
+    &::after {
+      content: "";
+    }
+  }
+}
