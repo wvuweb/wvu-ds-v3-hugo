@@ -3,7 +3,10 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body class="audience-{{ .Site.Params.audience }}">
+<body class="site-audience-{{ .Site.Params.audience }} bg-wvu-neutral--off-white">
+  <a class="visually-hidden-focusable" href="#wvu-main-content">Skip to main content</a>
+
+  {{ partial "alert-banner" . }}
 
   <header class="bg-wvu-blue">
     {{ partial "header.html" . }}
@@ -16,10 +19,15 @@
   {{ end }}
 
   {{ if not .IsHome }}
-    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink) }}
+    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" page.Params.topper) }}
+    {{ if not .Params.topper._bookshop_name }}
+      <section aria-labelledby="heading-label">
+        <h1 id="heading-label" class="visually-hidden">{{ .Params.title }}</h1>
+      </section>
+    {{ end }}
   {{ end }}
 
-  <main>
+  <main id="wvu-main-content">
     {{ block "main" . }}{{ end }}
   </main>
 
