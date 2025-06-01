@@ -18,8 +18,14 @@
     {{ partial "horizontal-subnav" . }}
   {{ end }}
 
+  {{ $topper := page.Params.topper }}
+
+  {{ with page.Params.article_topper }}
+    {{ $topper = . }}
+  {{ end }}
+
   {{ if not .IsHome }}
-    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" page.Params.topper) }}
+    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" $topper) }}
     {{ if not .Params.topper._bookshop_name }}
       <section aria-labelledby="heading-label">
         <h1 id="heading-label" class="visually-hidden">{{ .Params.title }}</h1>

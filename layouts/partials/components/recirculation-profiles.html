@@ -1,21 +1,36 @@
 {{ $pages := .CurrentSection.Pages.ByParam "last_name" }}
 {{ $pages = where $pages ".Params.type" .Params.type }}
 
-<section>
+<section class="bg-wvu-neutral--warm-gray-medium">
   <div class="container-fluid mx-0">
     <div class="row justify-content-between">
 
       {{ with $pages.Prev . }}
-        <div class="col-xxl-4 mx-0">
-          <div class="bg-dark position-relative">
+        <div class="col-12 col-xxl-6 me-auto px-0">
+          <div class="bg-wvu-neutral--warm-gray-medium-subtle position-relative">
+            <div class="d-flex align-items-center justify-content-start w-100 h-100 position-absolute">
+              <span class="fa-solid fa-circle-chevron-left text-dark fs-3 ms-3"></span>
+            </div>
             <div class="row gx-0">
-              <div class="col-12">
-                <div class="h-100 bg-light">
+              <div class="col-14 ms-auto">
+                <div class="p-4">
+                  <div class="p-2">
+                    <h3><a class="h4 text-decoration-none config-bold stretched-link lh-1 d-block" href="{{ .RelPermalink }}">{{ .Params.name }}</a></h3>
+                    {{ if .Params.job_title }}
+                      <p class="small">
+                        {{ range first 1 .Params.job_title }}
+                          <span class="d-block">{{ . }}</span>
+                        {{ end }}
+                      </p>
+                    {{ end }}
+                  </div>
                 </div>
               </div>
-              <div class="col-12">
-                <div class="p-4">
-                  <a class="text-decoration-none oliviar-black stretched-link lh-1" href="{{ .RelPermalink }}">{{ .Params.name }}</a>
+              <div class="col-8">
+                <div class="h-100 bg-light w-100">
+                  <div class="w-100 h-100 bg-light">
+                    <img class="w-100 h-100 object-fit-cover" src="{{ .Params.profile_image }}" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -24,16 +39,29 @@
       {{ end }}
 
       {{ with $pages.Next . }}
-        <div class="col-xxl-4 mx-0">
-          <div class="bg-dark position-relative">
+        <div class="col-12 col-xxl-6 ms-auto px-0">
+          <div class="bg-wvu-neutral--warm-gray-medium-subtle position-relative">
             <div class="row gx-0">
-              <div class="col-12">
-                <div class="p-4">
-                  <a class="text-decoration-none oliviar-black stretched-link lh-1" href="{{ .RelPermalink }}">{{ .Params.name }}</a>
+              <div class="col-8">
+                <div class="d-flex align-items-center justify-content-end w-100 h-100 position-absolute">
+                  <span class="fa-solid fa-circle-chevron-right text-dark fs-3 me-3"></span>
+                </div>
+                <div class="w-100 h-100 bg-light">
+                  <img class="w-100 h-100 object-fit-cover" src="{{ .Params.profile_image }}" />
                 </div>
               </div>
-              <div class="col-12">
-                <div class="h-100 bg-light">
+              <div class="col-14 me-auto">
+                <div class="p-4">
+                  <div class="p-2">
+                  <h3><a class="h4 text-decoration-none config-bold stretched-link lh-1 d-block" href="{{ .RelPermalink }}">{{ .Params.name }}</a></h3>
+                    {{ if .Params.job_title }}
+                      <p class="small">
+                        {{ range first 1 .Params.job_title }}
+                          <span class="d-block">{{ . }}</span>
+                        {{ end }}
+                      </p>
+                    {{ end }}
+                  </div>
                 </div>
               </div>
             </div>
