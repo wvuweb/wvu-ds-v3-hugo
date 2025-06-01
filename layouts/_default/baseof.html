@@ -26,7 +26,7 @@
 
   {{ if not .IsHome }}
     {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" $topper) }}
-    {{ if not .Params.topper._bookshop_name }}
+    {{ if not $topper._bookshop_name }}
       <section aria-labelledby="heading-label">
         <h1 id="heading-label" class="visually-hidden">{{ .Params.title }}</h1>
       </section>

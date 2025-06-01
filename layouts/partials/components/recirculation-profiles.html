@@ -16,11 +16,9 @@
                 <div class="p-4">
                   <div class="p-2">
                     <h3><a class="h4 text-decoration-none config-bold stretched-link lh-1 d-block" href="{{ .RelPermalink }}">{{ .Params.name }}</a></h3>
-                    {{ if .Params.job_title }}
+                    {{ with .Params.occupation }}
                       <p class="small">
-                        {{ range first 1 .Params.job_title }}
-                          <span class="d-block">{{ . }}</span>
-                        {{ end }}
+                        <span class="d-block">{{ . }}</span>
                       </p>
                     {{ end }}
                   </div>
@@ -54,11 +52,9 @@
                 <div class="p-4">
                   <div class="p-2">
                   <h3><a class="h4 text-decoration-none config-bold stretched-link lh-1 d-block" href="{{ .RelPermalink }}">{{ .Params.name }}</a></h3>
-                    {{ if .Params.job_title }}
+                    {{ with .Params.occupation }}
                       <p class="small">
-                        {{ range first 1 .Params.job_title }}
-                          <span class="d-block">{{ . }}</span>
-                        {{ end }}
+                        <span class="d-block">{{ . }}</span>
                       </p>
                     {{ end }}
                   </div>
