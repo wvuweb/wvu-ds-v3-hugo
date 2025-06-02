@@ -160,7 +160,7 @@ $wvu-b-breadcrumbs-text-color: null;
         }
       } @else if $color == $wvu-neutral--off-white {
         &.wvu-b-subtle, .wvu-b-subtle {
-          background-color: white !important;
+          background-color: tint($wvu-b-bg-color, 50%) !important;
         }
       } @else {
         &.wvu-b-subtle, .wvu-b-subtle {
