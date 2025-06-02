@@ -150,9 +150,17 @@ $wvu-b-breadcrumbs-text-color: null;
       background-color: $color $global-important;
       $wvu-b-bg-color: $color !global;
       $wvu-b-breadcrumbs-bg-color: $color !global;
-      @if $color == $wvu-blue or $color == $wvu-accent--blue-dark or $color == $wvu-accent--blue or $color == $wvu-accent--old-gold or $color == $wvu-neutral--warm-gray-dark {
+      @if $color == $wvu-accent--blue-dark or $color == $wvu-accent--blue or $color == $wvu-accent--old-gold or $color == $wvu-neutral--warm-gray-dark {
         &.wvu-b-subtle, .wvu-b-subtle {
           background-color: shade($wvu-b-bg-color, 7%) !important;
+        }
+      } @else if $color == $wvu-blue {
+        &.wvu-b-subtle, .wvu-b-subtle {
+          background-color: shade($wvu-b-bg-color, 20%) !important;
+        }
+      } @else if $color == $wvu-neutral--off-white {
+        &.wvu-b-subtle, .wvu-b-subtle {
+          background-color: white !important;
         }
       } @else {
         &.wvu-b-subtle, .wvu-b-subtle {

@@ -8,7 +8,7 @@
           <div class="container py-2">
             <div class="d-flex justify-content-between">
               <div>
-                <p class="mb-0">{{ .message }}</p>
+                <p class="mb-0">{{ .markdown | markdownify }}</p>
               </div>
               <button type="button" class="btn-close ms-2" data-bs-dismiss="alert" aria-label="Close Alert Banner"></button>
             </div>
@@ -20,7 +20,7 @@
         <div class="container py-2">
           <div class="d-flex justify-content-between">
             <div>
-              <p class="mb-0">{{ .message }}</p>
+              <p class="mb-0">{{ .markdown | markdownify }}</p>
             </div>
             <button type="button" class="btn-close ms-2" data-bs-dismiss="alert" aria-label="Close Alert Banner"></button>
           </div>
