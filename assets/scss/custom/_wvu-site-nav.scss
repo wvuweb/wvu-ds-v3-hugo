@@ -6,7 +6,7 @@
 
 // Heavily edited vendor styles:
 
-$background-color: #285380;
+$background-color: #134982;
 
 .wvu-site-nav__toggle {
   z-index: 400;
@@ -219,7 +219,7 @@ $background-color: #285380;
 }
 
 .wvu-site-nav__items > li:not(:last-child) {
-  border-bottom: 1px solid #2c3a47;
+  border-bottom: 1px solid #003567;
 }
 
 @media (min-width: $wvu-bp-nav) {
@@ -259,7 +259,7 @@ $background-color: #285380;
 
 .wvu-site-nav__sub-toggle,
 .wvu-site-nav__sub-sub-toggle {
-  border: 1px solid #2c3a47;
+  border: 1px solid #003567;
   position: absolute;
   right: 1rem;
   top: .4rem;

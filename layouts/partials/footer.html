@@ -75,7 +75,7 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold mb-3">Quicklinks</h2>
+            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold mb-3">{{ .quicklinks_heading }}</h2>
             <ul class="list-unstyled lh-sm">
               {{ range .quicklinks }}
                 <li class="mb-3">
@@ -116,10 +116,12 @@
               </li>
           </div>
         </div>
-        {{ if .postscript.heading }}
+        {{ if .postscript.show }}
           {{ with .postscript }}
             <div class="d-flex border-top border-bottom border-1 border-wvu-accent--blue-light mt-5 py-4">
-              <h2 class="d-inline-block h5 antonia mb-0 me-3">{{ .text }}</h2>
+              {{ with .text }}
+                <h2 class="d-inline-block h5 antonia mb-0 me-3">{{ . }}</h2>
+              {{ end }}
               {{ with .items }}
                 <ul class="list-inline d-inline-block mb-0">
                   {{ range . }}                  
