@@ -161,6 +161,9 @@ $wvu-b-breadcrumbs-text-color: null;
       } @else if $color == $wvu-neutral--off-white {
         &.wvu-b-subtle, .wvu-b-subtle {
           background-color: tint($wvu-b-bg-color, 50%) !important;
+          .wvu-b-subtle {
+            background-color: $wvu-b-bg-color $global-important;
+          }
         }
       } @else {
         &.wvu-b-subtle, .wvu-b-subtle {
