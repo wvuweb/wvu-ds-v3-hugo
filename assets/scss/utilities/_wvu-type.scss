@@ -119,10 +119,6 @@
   @include config-light();
 }
 
-.config-bold {
-  @include config-bold();
-}
-
 .config-light-italic {
   @include config-light-italic();
 }
