@@ -349,66 +349,66 @@
   }
 }
 
-@mixin config($slant, $width, $weight) {
-  font-family: $config $global-important;
-  font-variation-settings: "slnt" $slant, "wdth" $width, "wght" $weight;
+@mixin config($slant, $width, $weight, $is-important: $global-important) {
+  font-family: $config $is-important;
+  font-variation-settings: "slnt" $slant, "wdth" $width, "wght" $weight $is-important;
 }
 
-@mixin config-regular() {
-  @include config(0, 50, 100);
+@mixin config-regular($is-important: $global-important) {
+  @include config(0, 50, 100, $is-important);
   em {
-    font-style: italic;
+    font-style: italic $is-important;
   }
   strong {
-    font-variation-settings: "wdth" 100, "wght" 700
+    font-variation-settings: "wdth" 100, "wght" 700 $is-important;
   }
 }
 
-@mixin config-condensed-regular() {
-  @include config(0, 50, 400);
+@mixin config-condensed-regular($is-important: $global-important) {
+  @include config(0, 50, 400, $is-important);
   em {
-    font-style: italic;
+    font-style: italic $is-important;
   }
   strong {
-    font-variation-settings: "wdth" 100, "wght" 700
+    font-variation-settings: "wdth" 100, "wght" 700 $is-important;
   }
 }
 
-@mixin config-condensed-regular-italic() {
-  @include config(9, 50, 400);
+@mixin config-condensed-regular-italic($is-important: $global-important) {
+  @include config(9, 50, 400, $is-important);
   em {
-    font-style: italic;
+    font-style: italic $is-important;
   }
   strong {
-    font-variation-settings: "wdth" 100, "wght" 700
+    font-variation-settings: "wdth" 100, "wght" 700 $is-important;
   }
 }
 
-@mixin config-bold() {
-  @include config(0, 100, 700);
+@mixin config-bold($is-important: $global-important) {
+  @include config(0, 100, 700, $is-important);
   em {
-    font-style: italic;
+    font-style: italic $is-important;
   }
 }
 
-@mixin config-condensed-bold() {
-  @include config(0, 50, 700);
+@mixin config-condensed-bold($is-important: $global-important) {
+  @include config(0, 50, 700, $is-important);
   em {
-    font-style: italic;
+    font-style: italic $is-important;
   }
 }
 
-@mixin config-condensed-black() {
-  @include config(0, 50, 900);
+@mixin config-condensed-black($is-important: $global-important) {
+  @include config(0, 50, 900, $is-important);
   em {
-    font-style: italic;
+    font-style: italic $is-important;
   }
 }
 
-@mixin config-extra-bold() {
-  @include config(0, 100, 800);
+@mixin config-extra-bold($is-important: $global-important) {
+  @include config(0, 100, 800, $is-important);
   em {
-    font-style: italic;
+    font-style: italic $is-important;
   }
   // &.wvu-b-display-heading {
   //   line-height: 1.2em $global-important;
@@ -416,30 +416,30 @@
   // }
 }
 
-@mixin config-light() {
-  @include config(0, 100, 300);
+@mixin config-light($is-important: $global-important) {
+  @include config(0, 100, 300, $is-important);
   em {
-    font-style: italic;
+    font-style: italic $is-important;
   }
   strong {
-    font-variation-settings: "wdth" 100, "wght" 700
+    font-variation-settings: "wdth" 100, "wght" 700 $is-important;
   }
 }
 
-@mixin config-light-italic() {
-  @include config(9, 100, 300);
+@mixin config-light-italic($is-important: $global-important) {
+  @include config(9, 100, 300, $is-important);
   em {
-    font-style: italic;
+    font-style: italic $is-important;
   }
   strong {
-    font-variation-settings: "wdth" 100, "wght" 700
+    font-variation-settings: "wdth" 100, "wght" 700 $is-important;
   }
 }
 
-@mixin config-extra-bold-italic() {
-  @include config(9, 100, 800);
+@mixin config-extra-bold-italic($is-important: $global-important) {
+  @include config(9, 100, 800, $is-important);
   em {
-    font-style: normal;
+    font-style: normal $is-important;
   }
   // &.wvu-b-display-heading {
   //   line-height: 1.2em $global-important;
@@ -447,75 +447,75 @@
   // }
 }
 
-@mixin antonia($optical-size, $weight) {
-  font-family: $antonia $global-important;
-  font-variation-settings: "opsz" $optical-size, "wght" $weight;
+@mixin antonia($optical-size, $weight, $is-important: $global-important) {
+  font-family: $antonia $is-important;
+  font-variation-settings: "opsz" $optical-size, "wght" $weight $is-important;
 }
 
-@mixin antonia-regular() {
-  @include antonia(6.5714, 410);
+@mixin antonia-regular($is-important: $global-important) {
+  @include antonia(6.5714, 410, $is-important);
   em {
-    font-style: italic $global-important;
+    font-style: italic $is-important;
   }
 }
 
-@mixin antonia-light() {
-  @include antonia(26.5714, 300);
+@mixin antonia-light($is-important: $global-important) {
+  @include antonia(26.5714, 300, $is-important);
   em {
-    font-style: italic $global-important;
+    font-style: italic $is-important;
   }
 }
 
-@mixin antonia-bold() {
-  @include antonia(48, 725);
+@mixin antonia-bold($is-important: $global-important) {
+  @include antonia(48, 725, $is-important);
   em {
-    font-style: italic $global-important;
+    font-style: italic $is-important;
   }
 }
 
-@mixin antonia-italic() {
-  @include antonia(italic, 300);
-  font-style: italic $global-important;
+@mixin antonia-italic($is-important: $global-important) {
+  @include antonia(italic, 300, $is-important);
+  font-style: italic $is-important;
   em {
-    font-style: normal $global-important;
+    font-style: normal $is-important;
   }
 }
 
-@mixin antonia-bold-italic() {
-  @include antonia(italic, 700);
-  font-style: italic $global-important;
+@mixin antonia-bold-italic($is-important: $global-important) {
+  @include antonia(italic, 700, $is-important);
+  font-style: italic $is-important;
   em {
-    font-style: normal $global-important;
+    font-style: normal $is-important;
   }
 }
 
-@mixin antonia-heavy() {
-  @include antonia(26.5714, 825);
+@mixin antonia-heavy($is-important: $global-important) {
+  @include antonia(26.5714, 825, $is-important);
   em {
-    font-style: italic $global-important;
+    font-style: italic $is-important;
   }
 }
 
-@mixin antonia-heavy-italic() {
-  @include antonia(8, 800);
-  font-style: italic $global-important;
+@mixin antonia-heavy-italic($is-important: $global-important) {
+  @include antonia(8, 800, $is-important);
+  font-style: italic $is-important;
   em {
-    font-style: normal $global-important;
+    font-style: normal $is-important;
   }
 }
 
-@mixin antonia-black() {
-  @include antonia(48, 900);
+@mixin antonia-black($is-important: $global-important) {
+  @include antonia(48, 900, $is-important);
   em {
-    font-style: italic $global-important;
+    font-style: italic $is-important;
   }
 }
 
-@mixin antonia-black-italic() {
-  @include antonia(48, 900);
-  font-style: italic $global-important;
+@mixin antonia-black-italic($is-important: $global-important) {
+  @include antonia(48, 900, $is-important);
+  font-style: italic $is-important;
   em {
-    font-style: normal $global-important;
+    font-style: normal $is-important;
   }
 }
 

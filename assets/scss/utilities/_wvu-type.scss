@@ -95,22 +95,6 @@
   @include helvetica-neue-condensed-black();
 }
 
-.iowan-old-style, %iowan-old-style {
-  @include iowan-old-style();
-}
-
-.iowan-old-style-italic, %iowan-old-style-italic {
-  @include iowan-old-style-italic();
-}
-
-.iowan-old-style-black, %iowan-old-style-black {
-  @include iowan-old-style-black();
-}
-
-.iowan-old-style-black-italic, %iowan-old-style-black-italic {
-  @include iowan-old-style-black-italic();
-}
-
 .config-regular {
   @include config-regular();
 }

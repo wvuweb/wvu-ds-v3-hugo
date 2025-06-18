@@ -19,7 +19,7 @@
     {{ end }}
   {{ end }}
 
-  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "blocks" .Params.content_blocks)` }}
-  {{ partial "bookshop_partial" (slice "page-guide" (dict "topper" .Params.topper "title" .Params.title "blocks" $blocks)) }}
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "params" .Params "blocks" .Params.content_blocks)` }}
+  {{ partial "bookshop_partial" (slice "page-guide" (dict "topper" .Params.topper "title" .Params.title "params" .Params "blocks" $blocks)) }}
   
 {{ end }}

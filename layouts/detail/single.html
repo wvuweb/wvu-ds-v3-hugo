@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks)` }}
-  {{ partial "bookshop_partial" (slice "page-detail" (dict "topper" .Params.topper "title" .Params.title "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks "current_page" . "section_pages" .CurrentSection.Pages)) }}
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "params" .Params "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks)` }}
+  {{ partial "bookshop_partial" (slice "page-detail" (dict "topper" .Params.topper "title" .Params.title "params" .Params "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks "current_page" . "section_pages" .CurrentSection.Pages)) }}
 
 {{ end }}

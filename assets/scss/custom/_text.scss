@@ -1,7 +1,7 @@
 // Adding a lead utility class that contains helvetica neue light
 
 .lead {
-  font-family: $helvetica-neue-light;
+  @include config-light();
 }
 
 // NOTE: These override Bootstrap’s .display classes. We want different sizes than Bootstrap provides by default.
