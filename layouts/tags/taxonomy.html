@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <header class="pt-6 pb-4 position-relative">
+    <div class="container wvu-z-index-content">
+      <h1 class="config-extra-bold display-3 text-wvu-blue"><span class="wvu-b-font-adjust">{{ .Title }}</span></h1>
+    </div>
+  </header>
+  <div class="py-6">
+    <div class="container">
+      {{ range .Pages }}
+        <h2><a href="{{ .Page.RelPermalink }}">{{ .Params.title }}</a></h2>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
