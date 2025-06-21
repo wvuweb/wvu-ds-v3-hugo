@@ -1,7 +1,6 @@
 {{ define "main" }}
 
-  {{ partial "bookshop" (slice "design-system/topper/article" (dict "topper" .Params.topper "params" .Params "title" .Params.title)) }}
-  {{ partial "bookshop_bindings" `(dict "params" .Params "article_blocks" .Params.article_blocks)` }}
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.article_topper "params" .Params "article_blocks" .Params.article_blocks)` }}
   {{ partial "bookshop_partial" (slice "page-article" (dict "topper" .Params.article_topper "params" .Params "article_blocks" .Params.article_blocks)) }}
 
 {{ end }}
