@@ -1,4 +1,6 @@
 {{ define "main" }}
+  {{ $pages := .Pages }}
+  {{ $paginator := .Paginate $pages.ByDate 10 }}
   <header class="pt-6 pb-4 position-relative">
     <div class="container wvu-z-index-content">
       <h1 class="config-extra-bold display-3 text-wvu-blue"><span class="wvu-b-font-adjust">{{ .Title }}</span></h1>
@@ -6,9 +8,12 @@
   </header>
   <div class="py-6">
     <div class="container">
-      {{ range .Pages }}
+      {{ range $paginator.Pages }}
         <h2><a href="{{ .Page.RelPermalink }}">{{ .Params.title }}</a></h2>
       {{ end }}
+      <div class="mt-5">
+        {{ partial "pagination.html" . }}
+      </div>
     </div>
   </div>
 {{ end }}

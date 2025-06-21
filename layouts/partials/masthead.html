@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="align-self-center col-24 col-lg">        
-          <div class="d-flex position-relative my-4 align-items-center justify-content-center justify-content-lg-start text-decoration-none text-white" href="/">
+          <a href="/" class="d-flex position-relative my-4 align-items-center justify-content-center justify-content-lg-start text-decoration-none text-white" href="/">
             <span class="visually-hidden">West Virginia University </span>
             <img class="me-4" src="https://static.wvu.edu/global/images/logos/wvu/flying-wv--1.0.0.svg" height="70px" width="65px" />
             <div class="border-start border-1 border-white py-1 ps-4">
@@ -12,7 +12,7 @@
               {{ end }}
               <span class="mt-n2 helvetica-neue-bold fs-4 lh-1">{{ range .title }}<span class="d-block">{{ . }}</span>{{ end }}</span>
             </div>
-          </div>      
+          </a>      
         </div>
         {{ if or .buttons.button_1.text .buttons.button_2.text .buttons.button_3.text }}
           {{ with .buttons }}

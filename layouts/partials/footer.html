@@ -10,7 +10,7 @@
         
         <div class="row small">
           <div class="col-6 me-auto">
-            <div class="mb-5">
+            <div class="mb-4">
               <h2 class="helvetica-neue-bold h4">
                 {{ range $title }}
                   <span class="d-block">{{ . }}</span>
@@ -33,22 +33,26 @@
                     {{ end }}
                   </span>
                 </p>
-                <p class="d-flex mb-2">
-                  <span class="d-block" style="width: 20px;">
-                    <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
-                  </span>
-                  <span class="d-block">
-                    <a class="text-decoration-none" href="tel:{{ .phone | urlize }}">{{ .phone }}</a>
-                  </span>
-                </p>
-                <p class="d-flex">
-                  <span class="d-block" style="width: 20px;">
-                    <span class="fa-solid fa-envelope text-light" aria-hidden="true"></span>
-                  </span>
-                  <span class="d-block">
-                    <a class="text-decoration-none" href="mailto:{{ .email }}">{{ .email }}</a>
-                  </span>
-                </p>
+                {{ with .phone }}
+                  <p class="d-flex mb-2">
+                    <span class="d-block" style="width: 20px;">
+                      <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
+                    </span>
+                    <span class="d-block">
+                      <a class="text-decoration-none" href="tel:{{ . | urlize }}">{{ . }}</a>
+                    </span>
+                  </p>
+                {{ end }}
+                {{ with .email }}
+                  <p class="d-flex">
+                    <span class="d-block" style="width: 20px;">
+                      <span class="fa-solid fa-envelope text-wvu-gold" aria-hidden="true"></span>
+                    </span>
+                    <span class="d-block">
+                      <a class="text-decoration-none" href="mailto:{{ . }}">{{ . }}</a>
+                    </span>
+                  </p>
+                {{ end }}
               </address>
             {{ end }}
             <ul class="list-inline mb-0">

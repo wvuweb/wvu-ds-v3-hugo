@@ -10,7 +10,10 @@
   
   <div class="py-6">
     <div class="container">
-      {{ range sort (where .Site.RegularPages "Section" .Section) ".Params.publishDate" "desc" }}
+      {{ $pages := where .Site.RegularPages "Section" .Section }}
+      {{ $pages = sort $pages ".Params.publishDats" "desc" }}
+      {{ $paginator := .Paginate $pages.ByDate 10 }}
+      {{ range $paginator.Pages }}
         {{ $authors := slice }}
         {{ if .Params.authors }}
           {{ $authors = .Params.authors }}
@@ -72,6 +75,10 @@
           </div>
         </div>
       {{ end }}
+
+      <div class="mt-5">
+        {{ partial "pagination.html" . }}
+      </div>
     </div>
   </div>
 {{ end }}
