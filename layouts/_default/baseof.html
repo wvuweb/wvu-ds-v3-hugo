@@ -45,5 +45,13 @@
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
+  {{- with resources.Get "js/parvus/parvus.min.js" }}
+    <script src="{{ .RelPermalink }}"></script>
+  {{- end }}
+
+  {{- with resources.Get "js/parvus-gallery--custom.js" }}
+    <script src="{{ .RelPermalink }}"></script>
+  {{- end }}
+
 </body>
 </html>
