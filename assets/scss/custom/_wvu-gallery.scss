@@ -350,30 +350,30 @@
 // NOTE: Some custom styles for this layout
 // ------------------------------------------
 
-$parvus-photo-gallery-height: 200px;
+// $parvus-photo-gallery-height: 200px;
 
 .parvus {
   --parvus-overlay-color: #{$wvu-neutral--warm-gray-light};
 }
 
 .parvus-gallery__item {
-  max-height: $parvus-photo-gallery-height;
-  overflow: hidden;
+  // max-height: $parvus-photo-gallery-height;
+  // overflow: hidden;
 
-  @media print {
-    max-height: none;
-  } //mq
+  // @media print {
+  //   max-height: none;
+  // } //mq
 
 } //.parvus-gallery__item
 
 .parvus-gallery__thumbnail {
-  height: $parvus-photo-gallery-height;
-  object-fit: cover;
-  width: 100%;
+  // height: $parvus-photo-gallery-height;
+  // object-fit: cover;
+  // width: 100%;
 
-  @supports (aspect-ratio: 4 / 3) {
-    aspect-ratio: 4 / 3;
-    width: auto;
-    height: auto;
-  } // @supports
+  // @supports (aspect-ratio: 4 / 3) {
+  //   aspect-ratio: 4 / 3;
+  //   width: auto;
+  //   height: auto;
+  // } // @supports
 } //.parvus-gallery__thumbnail
