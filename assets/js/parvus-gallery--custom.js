@@ -8,5 +8,6 @@
 /* global Parvus */
 
 const prvs = new Parvus({
-  selector: '.js-parvus-lightbox'
+  selector: '.js-parvus-lightbox',
+  lightboxIndicatorIcon: null
 });
