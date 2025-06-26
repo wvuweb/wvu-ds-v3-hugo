@@ -19,13 +19,19 @@
             <div class="col-24 col-lg d-flex flex-column">
               <div class="px-0 flex-grow-1 d-flex align-content-center justify-content-center justify-content-lg-end my-3">
                 {{ with .button_1 }}
-                  <a href="{{ .url }}" class="mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-gold">{{ .text }}</a>
+                  {{ if .text }}
+                    <a href="{{ .url }}" class="mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-gold">{{ .text }}</a>
+                  {{ end }}
                 {{ end }}
                 {{ with .button_2 }}
-                  <a href="{{ .url }}" class="ms-2 mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-accent--sunset">{{ .text }}</a>
+                  {{ if .text }}
+                    <a href="{{ .url }}" class="ms-2 mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-accent--sunset">{{ .text }}</a>
+                  {{ end }}    
                 {{ end }}
                 {{ with .button_3 }}
-                  <a href="{{ .url }}" class="ms-2 mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-accent--blue-light">{{ .text }}</a>
+                  {{ if .text }}
+                    <a href="{{ .url }}" class="ms-2 mb-4 mb-lg-0 align-self-center btn mb-1 btn-outline-wvu-accent--blue-light">{{ .text }}</a>
+                  {{ end }}
                 {{ end }}
               </div>
             </div>
