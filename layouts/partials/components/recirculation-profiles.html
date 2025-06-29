@@ -7,11 +7,11 @@
 
       {{ with $pages.Prev . }}
         <div class="col-12 col-xxl-6 me-auto px-0">
-          <div class="bg-wvu-neutral--warm-gray-medium-subtle position-relative">
+          <div class="h-100 bg-wvu-neutral--warm-gray-medium-subtle position-relative">
             <div class="d-flex align-items-center justify-content-start w-100 h-100 position-absolute">
               <span class="fa-solid fa-circle-chevron-left text-dark fs-3 ms-3"></span>
             </div>
-            <div class="row gx-0">
+            <div class="row gx-0 h-100">
               <div class="col-14 ms-auto">
                 <div class="p-4">
                   <div class="p-2">
@@ -40,8 +40,8 @@
 
       {{ with $pages.Next . }}
         <div class="col-12 col-xxl-6 ms-auto px-0">
-          <div class="bg-wvu-neutral--warm-gray-medium-subtle position-relative">
-            <div class="row gx-0">
+          <div class="h-100 bg-wvu-neutral--warm-gray-medium-subtle position-relative">
+            <div class="row gx-0 h-100">
               
               {{ with .Params.profile_image }}
                 <div class="col-8">
@@ -51,7 +51,7 @@
                 </div>
               {{ end }}
               
-              <div class="col-14 me-auto">
+              <div class="col-14 me-auto position-relative">
                 <div class="p-4">
                   <div class="p-2">
                   <h3><a class="h4 text-decoration-none config-bold stretched-link lh-1 d-block" href="{{ .RelPermalink }}">{{ .Params.name }}</a></h3>
