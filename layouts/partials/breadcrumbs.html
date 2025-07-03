@@ -18,7 +18,7 @@
   {{ $color = .topper.settings.styles.color_palette }}
 {{ end }}
 
-<div class="d-flex position-relative wvu-z-index-breadcrumbs {{ $audienceOverride }} {{ $toneOverride }} audience-{{ $audience }} tone-{{ $tone }} bg-{{ $color }}" style="height: 0px;">
+<section aria-label="Breadcrumbs" class="d-flex position-relative wvu-z-index-breadcrumbs {{ $audienceOverride }} {{ $toneOverride }} audience-{{ $audience }} tone-{{ $tone }} bg-{{ $color }}" style="height: 0px;">
   <div class="position-absolute mt-3 w-100 text-start" style="top: 0px;">
     <div class="container">
       <ul class="list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1 wvu-b-breadcrumbs">
@@ -37,4 +37,4 @@
       </ul>
     </div>
   </div>
-</div>
+</section>
