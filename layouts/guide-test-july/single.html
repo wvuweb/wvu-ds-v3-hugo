@@ -21,7 +21,7 @@
     {{ end }}
   {{ end }}
 
-  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "blocks" $blocks)` }}
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "blocks" .Params.content_blocks)` }}
   {{ partial "bookshop_partial" (slice "page-guide-test-july" (dict "topper" .Params.topper "blocks" $blocks)) }}
   
 {{ end }}
