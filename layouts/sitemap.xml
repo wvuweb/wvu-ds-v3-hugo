@@ -1,7 +1,7 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  {{ $sitePages := where .Site.RegularPages "Params.properties.exclude_from_search_engines" "ne" true }}
+  {{ $sitePages := where .Site.Pages "Params.properties.exclude_from_search_engines" "ne" true }}
   {{ $sitePages = where $sitePages "Section" "ne" "live-editor-previews" }}
   {{ range $sitePages }}
     {{- if .Permalink -}}
