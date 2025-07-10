@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-  {{ $blocks := .Params.content_blocks }}
+  {{ $blocks := slice }}
 
   {{ if not site.Params.env_bookshop_live }}
     {{ $sitewideComponents := slice }}
@@ -19,6 +19,8 @@
         {{ $blocks = $blocks | append . }}
       {{ end }}
     {{ end }}
+  {{ else }}
+    {{ $blocks = .Params.content_blocks }}
   {{ end }}
 
   {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "blocks" .Params.content_blocks)` }}
