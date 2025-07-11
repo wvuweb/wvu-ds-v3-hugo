@@ -1,0 +1,11 @@
+Sitemap: {{ "sitemap.xml" | absLangURL }}
+
+User-agent: *
+
+Disallow: 404.html
+Disallow: /404/
+
+{{ range where .Site.Pages "Params.properties.exclude_from_search_engines" "ne" true }}
+Disallow: {{ .RelPermalink }}
+{{ end }}
+
