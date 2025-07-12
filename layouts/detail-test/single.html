@@ -2,8 +2,8 @@
   {{ $mainCols := "col-md-16 col-lg-18 col-xl-12 col-xxl-11" }}
   {{ $sidebarCols := "col-md-8 col-lg-6" }}
 
-  {{ if or .hide_section_menu (not .sidebar_blocks) }}
-    {{ if not .sidebar_blocks }}
+  {{ if or .Params.hide_section_menu (not .Params.detail_sidebar_blocks) }}
+    {{ if not .Params.detail_sidebar_blocks }}
       {{ $mainCols = "col-24 col-xl-14 ms-xl-5 me-xl-auto" }}
     {{ else }}
       {{ $mainCols = "col-md-16 col-xl-15 mx-xxl-auto" }}
