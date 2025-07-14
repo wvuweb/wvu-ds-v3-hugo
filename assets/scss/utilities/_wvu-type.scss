@@ -303,3 +303,13 @@
     height: 100% !important;
   }
 }
+
+.wvu-author-list {
+  .wvu-author {
+    &:not(:last-child) {
+      &::after {
+        content: ', ';
+      }
+    }
+  }
+}
