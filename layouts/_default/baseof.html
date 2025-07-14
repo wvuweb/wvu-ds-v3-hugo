@@ -32,7 +32,7 @@
     {{ end }}
   {{ end }}
 
-  <main id="wvu-main-content" {{ if and .Params.properties .Params.properties.include_in_search }}data-pagefind-body{{ end }}>
+  <main id="wvu-main-content" {{ if and .Params.properties .Params.properties.include_in_search_results }}data-pagefind-body{{ end }}>
     {{ block "main" . }}{{ end }}
   </main>
 
