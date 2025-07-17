@@ -1,0 +1,12 @@
+.pagefind-ui {
+  position: absolute;
+  z-index: 99999999;
+}
+
+.pagefind-ui__results-area {
+  background-color: white !important;
+}
+
+.pagefind-ui__message {
+  padding: calc($spacer * 3) !important;
+}

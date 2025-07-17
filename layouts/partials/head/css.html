@@ -4,3 +4,5 @@
 {{ $scss := resources.Get "scss/site.scss" }}
 {{ $styles := $scss | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
