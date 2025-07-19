@@ -21,51 +21,55 @@
               {{ end }}
             </div>
             {{ range .contact_info_blocks }}
-              <address class="mb-4">
-                <p class="d-flex mb-2">
-                  <span class="d-block" style="width: 20px;">
-                    <span class="fa-solid fa-location-dot text-wvu-gold" aria-hidden="true"></span>
-                  </span>
-                  <span class="d-block">
-                  <strong>{{ .address_heading }}</strong>
-                    {{ range .address }}
-                      <br> {{ . }}
-                    {{ end }}
-                  </span>
-                </p>
-                {{ with .phone }}
+              {{ if or .address .address_heading }}
+                <address class="mb-2">
                   <p class="d-flex mb-2">
                     <span class="d-block" style="width: 20px;">
-                      <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
+                      <span class="fa-solid fa-location-dot text-wvu-gold" aria-hidden="true"></span>
                     </span>
                     <span class="d-block">
-                      <a class="text-decoration-none" href="tel:{{ . | urlize }}">{{ . }}</a>
+                    <strong>{{ .address_heading }}</strong>
+                      {{ range .address }}
+                        <br> {{ . }}
+                      {{ end }}
                     </span>
                   </p>
-                {{ end }}
-                {{ with .email }}
-                  <p class="d-flex">
-                    <span class="d-block" style="width: 20px;">
-                      <span class="fa-solid fa-envelope text-wvu-gold" aria-hidden="true"></span>
-                    </span>
-                    <span class="d-block">
-                      <a class="text-decoration-none" href="mailto:{{ . }}">{{ . }}</a>
-                    </span>
-                  </p>
-                {{ end }}
-              </address>
-            {{ end }}
-            <ul class="list-inline mb-0">
-              {{ range $socialMediaAccounts }}
-                {{ $class := .platform | urlize }}
-                <li class="list-inline-item">
-                  <a class="bg-wvu-gold border border-2 border-wvu-blue text-wvu-blue mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3" href="{{ .url }}">
-                    <span class="fab fa-{{ $class }} position-absolute" aria-hidden="true"></span>
-                    <span class="visually-hidden">{{ .platform }}</span>
-                  </a>
-                </li>          
+                </address>
               {{ end }}
-            </ul>
+              {{ with .phone }}
+                <p class="d-flex mb-2">
+                  <span class="d-block" style="width: 20px;">
+                    <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
+                  </span>
+                  <span class="d-block">
+                    <a class="text-decoration-none" href="tel:{{ . | urlize }}">{{ . }}</a>
+                  </span>
+                </p>
+              {{ end }}
+              {{ with .email }}
+                <p class="d-flex">
+                  <span class="d-block" style="width: 20px;">
+                    <span class="fa-solid fa-envelope text-wvu-gold" aria-hidden="true"></span>
+                  </span>
+                  <span class="d-block">
+                    <a class="text-decoration-none" href="mailto:{{ . }}">{{ . }}</a>
+                  </span>
+                </p>
+              {{ end }}
+            {{ end }}
+            {{ if $socialMediaAccounts }}
+              <ul class="list-inline mb-0">
+                {{ range $socialMediaAccounts }}
+                  {{ $class := .platform | urlize }}
+                  <li class="list-inline-item">
+                    <a class="bg-wvu-gold border border-2 border-wvu-blue text-wvu-blue mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3" href="{{ .url }}">
+                      <span class="fab fa-{{ $class }} position-absolute" aria-hidden="true"></span>
+                      <span class="visually-hidden">{{ .platform }}</span>
+                    </a>
+                  </li>          
+                {{ end }}
+              </ul>
+            {{ end }}
           </div>
           <div class="col-md-6 col-xl-4 mb-4 mb-md-0">
             <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold mb-3">Site Menu</h2>
