@@ -6,24 +6,27 @@
     {{ partial "bookshop" (slice "design-system/topper/default" (dict "topper" .Params.topper "title" .Params.title)) }}
   {{ end }}
 
-  {{ $authorData := site.Data.people.authors }}
+  {{ $hideThumbnails := .Params.settings.config.hide_thumbnails }}
+  {{ $hideAuthor := .Params.settings.config.hide_author }}
+
+  {{ $authorData := slice }}
+  {{ $authorData = where site.RegularPages "Section" "people" }}
+  {{ $authorData = where $authorData ".Params.type" "eq" "author" }}
   
-  <div class="py-6">
+  <div class="py-6 audience-general tone-default bg-option-1 wvu-b-subtle">
     <div class="container">
       {{ $pages := where .Site.RegularPages "Section" .Section }}
       {{ $pages = sort $pages ".Params.publishDats" "desc" }}
       {{ $paginator := .Paginate $pages.ByDate 10 }}
       {{ range $paginator.Pages }}
-        {{ $authors := slice }}
-        {{ if .Params.authors }}
-          {{ $authors = .Params.authors }}
-        {{ end }}
         {{ $authorList := slice }}
-        {{ range $authorData }}
-          {{ $author := . }}
-          {{ range $authors }}
-            {{ if eq .author $author.id }}
-              {{ $authorList = $authorList | append $author }}
+        {{ if .Params.authors }}
+          {{ range .Params.authors }}
+            {{ $author := . }}
+            {{ range $authorData }}
+              {{ if eq .Params.uuid $author }}
+                {{ $authorList = $authorList | append . }}
+              {{ end }}
             {{ end }}
           {{ end }}
         {{ end }}
@@ -33,38 +36,42 @@
               <div class="mb-5" itemscope="" itemtype="http://schema.org/BlogPosting">
                 <div class="row">
     
-                  <div class="wvu-article__thumb col-md-6">
-                    <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
-                      {{ partial "bookshop" (slice "design-system/generic/img" (dict "src" .Params.image "width" 960 "height" 640 "alt" .Params.alt_text )) }}
-                    </a>
-                  </div>
+                  {{ if not $hideThumbnails }}
+                    <div class="wvu-article__thumb col-md-6">
+                      <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+                        {{ partial "bookshop" (slice "design-system/generic/img" (dict "src" .Params.image "width" 960 "height" 640 "alt" .Params.alt_text )) }}
+                      </a>
+                    </div>
+                  {{ end }}
     
-                  <div class="col-md-18 mt-3 mt-md-0">
+                  <div class="col-md mt-3 mt-md-0">
                     <h2 class="wvu-article__headline" itemprop="headline"><a class="newsletter-link text-decoration-none oliviar-black text-wvu-blue" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     
-                    {{ if or (not .Params.config.hide_author) ( .Params.publish_date ) }}
+                    {{ if or (not $hideAuthor) ( .Params.publishDate ) }}
                       <p class="small d-block">
-                        {{ if not .Params.config.hide_author }}
+                        {{ if not $hideAuthor }}
                           {{ range $authorList }}
                             <span class="wvu-article__author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                               <span itemprop="name">
-                                {{ .name }}
+                                {{ .Params.name }}
                               </span>
                             </span>
                           {{ end }}
                         {{ end }}
     
-                        {{ if and (not .Params.config.hide_author) ( .Params.publish_date ) }} | {{ end }}
+                        {{ if and (not .Params.settings.config.hide_author) .Params.authors .Params.publishDate }} | {{ end }}
     
-                        {{ if .Params.publish_date }}
-                          <time class="wvu-article__date-published" datetime="{{ .Params.publish_date }}">{{ .Params.publish_date | time.Format "Monday, January 2, 2006" }}</time>
+                        {{ if .Params.publishDate }}
+                          <time class="wvu-article__date-published" datetime="{{ .Params.publishDate }}">{{ .Params.publishDate | time.Format "Monday, January 2, 2006" }}</time>
                         {{ end }}
                       </p>
                     {{ end }}
     
-                    <div class="wvu-article__body" itemprop="articleBody">
-                      <p class="wvu-article__teaser">{{ .Params.description }}</p>
-                    </div>
+                    {{ with .Params.teaser }}
+                      <div class="wvu-article__body" itemprop="articleBody">
+                        <p class="wvu-article__teaser">{{ . }}</p>
+                      </div>
+                    {{ end }}
     
                     <p><a class="wvu-article__read-more" href="{{ .RelPermalink }}">Read More<span class="visually-hidden">: {{ .Title }}</span></a></p>
                   </div>
