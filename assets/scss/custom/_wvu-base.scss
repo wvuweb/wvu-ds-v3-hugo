@@ -68,6 +68,24 @@ img {
   a + .lead, button + .lead, ol + .lead, ul + .lead, div + .lead, p + .lead, pre + .lead, table + .lead, blockquote + .lead, fieldset + .lead, h1 .lead, h2 .lead, h3 .lead, h4 .lead, h5 .lead, h6 .lead { margin-top: $spacer * 3;}
 }
 
+.wvu-backpage-main {
+  
+  h2 {
+    &:not(.wvu-b-label) {
+      font-size: 3rem;
+    }
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+}
+
 h1,
 h2,
 h3,
