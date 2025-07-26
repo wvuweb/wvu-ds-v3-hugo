@@ -13,7 +13,7 @@
   {{ $authorData = where site.RegularPages "Section" "people" }}
   {{ $authorData = where $authorData ".Params.type" "eq" "author" }}
   
-  <div class="py-6 audience-general tone-default bg-option-1 wvu-b-subtle">
+  <div class="py-6 audience-general tone-default bg-option-1 wvu-b-subtle" data-pagefind-ignore="all">
     <div class="container">
       {{ $pages := where .Site.RegularPages "Section" .Section }}
       {{ $pages = sort $pages ".Params.publishDats" "desc" }}
