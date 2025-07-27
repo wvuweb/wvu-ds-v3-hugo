@@ -21,7 +21,7 @@
               {{ end }}
             </div>
             {{ range .contact_info_blocks }}
-              {{ if or .address .address_heading }}
+              {{ if or .address_lines .address_heading }}
                 <address class="mb-2">
                   <p class="d-flex mb-2">
                     <span class="d-block" style="width: 20px;">
@@ -29,7 +29,7 @@
                     </span>
                     <span class="d-block">
                     <strong>{{ .address_heading }}</strong>
-                      {{ range .address }}
+                      {{ range .address_lines }}
                         <br> {{ . }}
                       {{ end }}
                     </span>
