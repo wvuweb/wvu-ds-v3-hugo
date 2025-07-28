@@ -69,7 +69,6 @@ img {
 }
 
 .wvu-backpage-main {
-  
   h2 {
     &:not(.wvu-b-label) {
       font-size: 3rem;
@@ -83,6 +82,16 @@ img {
   }
   h5 {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: $wvu-bp-md) {
+  .wvu-backpage-main {
+    h2 {
+      &:not(.wvu-b-label) {
+        font-size: 2.25rem;
+      }
+    }
   }
 }
 
