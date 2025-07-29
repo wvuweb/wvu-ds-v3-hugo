@@ -2,10 +2,8 @@
 
   {{ $related := slice }}
 
-  {{- if not site.Params.env_bookshop_live -}}
-    {{ $articles := where site.RegularPages "Section" "articles" }}
-    {{ $related := $articles.Related . }}
-  {{- end -}}
+  {{ $articles := where site.RegularPages "Section" "articles" }}
+  {{ $related := $articles.Related . }}
 
   {{ partial "bookshop_bindings" `(dict "topper" .Params.article_topper "params" .Params "article_blocks" .Params.article_blocks)` }}
   {{ partial "bookshop_partial" (slice "page-article" (dict "topper" .Params.article_topper "params" .Params "article_blocks" .Params.article_blocks "related" $related)) }}
