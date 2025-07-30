@@ -4,9 +4,26 @@
 }
 
 .pagefind-ui__results-area {
-  background-color: white !important;
+  &.svelte-e9gkc3 {
+    background-color: white !important;
+    margin-top: 0 !important;
+  }
 }
 
 .pagefind-ui__message {
-  padding: calc($spacer * 3) !important;
+  &.svelte-e9gkc3 {
+    padding: 1rem !important;
+  }
+}
+
+.pagefind-ui__result-image.svelte-j9e30.svelte-j9e30 {
+  border-radius: 0 !important;
+}
+
+.pagefind-ui__result-inner.svelte-j9e30 {
+  margin-right: 2rem !important;
+}
+
+.pagefind-ui__result-thumb.svelte-j9e30.svelte-j9e30 {
+  margin-left: 2rem !important;
 }
