@@ -105,9 +105,17 @@ $background-color: #134982;
   }
 }
 
-.wvu-site-nav__sub-toggle[aria-expanded="true"] svg,
-.wvu-site-nav__sub-sub-toggle[aria-expanded="true"] svg {
-  rotate: -180deg;
+@media (max-width: $wvu-bp-nav) {
+  .wvu-site-nav__sub-toggle[aria-expanded="true"] svg,
+  .wvu-site-nav__sub-sub-toggle[aria-expanded="true"] svg {
+    rotate: -180deg;
+  }
+}
+
+@media (min-width: $wvu-bp-nav) {
+  .wvu-site-nav__sub-sub-toggle {
+    cursor: disabled;
+  }
 }
 
 // site-nav-hover.css:
@@ -242,8 +250,10 @@ $background-color: #134982;
   }
 }
 
-.wvu-site-nav__sub-toggle {
-  transition: ease-in-out, border-color .15s; // NOTE: Match Bootstrap transition on `.nav-link` on mobile
+@media (max-width: $wvu-bp-nav) {
+  .wvu-site-nav__sub-toggle {
+    transition: ease-in-out, border-color .15s; // NOTE: Match Bootstrap transition on `.nav-link` on mobile
+  }
 }
 
 .wvu-site-nav__items a:hover + .wvu-site-nav__sub-toggle,

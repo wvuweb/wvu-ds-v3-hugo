@@ -60,10 +60,9 @@
             {{ if $socialMediaAccounts }}
               <ul class="list-inline mb-0">
                 {{ range $socialMediaAccounts }}
-                  {{ $class := .platform | urlize }}
                   <li class="list-inline-item">
                     <a class="bg-wvu-gold border border-2 border-wvu-blue text-wvu-blue mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3" href="{{ .url }}">
-                      <span class="fab fa-{{ $class }} position-absolute" aria-hidden="true"></span>
+                      <span class="fab fa-{{ .icon }} position-absolute" aria-hidden="true"></span>
                       <span class="visually-hidden">{{ .platform }}</span>
                     </a>
                   </li>          
@@ -153,8 +152,7 @@
         <div class="row small">
           <div class="col-md-8 mx-auto text-center align-items-center">
             <div class="d-inline-flex mb-4">
-              <img class="me-3" src="https://static.wvu.edu/global/images/logos/wvu/flying-wv-r-small--1.0.0.svg" height="60px" width="56px" alt="Flying WV" />
-              <span class="text-wvu-gold config-extra-bold-italic h1 mt-1 d-block h1">Let’s Go!</span>
+              <img class="me-3" src="https://static.wvu.edu/global/images/logos/let-s-go_gold--1.0.0.svg" height="54px" width="250px" alt="Let's go! wordmark" />
             </div>
             <h2 class="visually-hidden">West Virginia University</h2>
             <p class="mb-1">© {{ now.Year }}
