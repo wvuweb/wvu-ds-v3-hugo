@@ -12,7 +12,7 @@
   {{ end }}
   {{ partial "head.html" . }}
 </head>
-<body class="audience-{{ .Site.Params.audience }} bg-wvu-neutral--off-white" {{ if and .Params.properties .Params.properties.include_in_search_results }}data-pagefind-body{{ end }}>
+<body class="audience-{{ .Site.Params.audience }} bg-wvu-neutral--off-white">
   {{- if eq hugo.Environment "production" }}
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WPD5W8R"
@@ -48,7 +48,7 @@
     {{ end }}
   {{ end }}
 
-  <main id="wvu-main-content">
+  <main id="wvu-main-content" data-pagefind-body>
     {{ block "main" . }}{{ end }}
   </main>
 
