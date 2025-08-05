@@ -1,4 +1,5 @@
 {{ $pages := .CurrentSection.Pages.ByParam "last_name" }}
+{{ $pages = where $pages ".Params.build.render" "ne" "never" }}
 {{ $pages = where $pages ".Params.type" .Params.type }}
 
 <section class="bg-wvu-neutral--warm-gray-medium">
