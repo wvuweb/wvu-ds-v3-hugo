@@ -2,13 +2,13 @@
 {{ $pages = where $pages ".Params.build.render" "ne" "never" }}
 {{ $pages = where $pages ".Params.type" .Params.type }}
 
-<section class="bg-wvu-neutral--warm-gray-medium">
+<section class="bg-wvu-seneca-gray">
   <div class="container-fluid mx-0">
     <div class="row justify-content-between">
 
       {{ with $pages.Prev . }}
         <div class="col-12 col-xxl-6 me-auto px-0">
-          <div class="h-100 bg-wvu-neutral--warm-gray-medium-subtle position-relative">
+          <div class="h-100 bg-wvu-seneca-gray-subtle position-relative">
             <div class="d-flex align-items-center justify-content-start w-100 h-100 position-absolute">
               <span class="fa-solid fa-circle-chevron-left text-dark fs-3 ms-3"></span>
             </div>
@@ -41,7 +41,7 @@
 
       {{ with $pages.Next . }}
         <div class="col-12 col-xxl-6 ms-auto px-0">
-          <div class="h-100 bg-wvu-neutral--warm-gray-medium-subtle position-relative">
+          <div class="h-100 bg-wvu-seneca-gray-subtle position-relative">
             <div class="row gx-0 h-100">
               
               {{ with .Params.profile_image }}

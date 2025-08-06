@@ -2,7 +2,7 @@
 <ul class="nav flex-column border-top border-4 border-wvu-gold">
   {{ range page.CurrentSection.Pages }}
     {{ if not .Params.properties.exclude_from_navigation }}
-      <li class="nav-item"><a class="nav-link {{ if eq . $currentPage }}active{{ end }} py-3 text-dark border-bottom border-1 border-black-50 d-flex justify-content-between align-items-center" href="{{ .RelPermalink }}"><span>{{ .Name }}</span> <span class="fa-solid fa-chevron-right text-wvu-neutral--warm-gray-light"></span></a></li>
+      <li class="nav-item"><a class="nav-link {{ if eq . $currentPage }}active{{ end }} py-3 text-dark border-bottom border-1 border-black-50 d-flex justify-content-between align-items-center" href="{{ .RelPermalink }}"><span>{{ .Name }}</span> <span class="fa-solid fa-chevron-right text-wvu-coopers-gray"></span></a></li>
     {{ end }}
   {{ end }}
 </ul>

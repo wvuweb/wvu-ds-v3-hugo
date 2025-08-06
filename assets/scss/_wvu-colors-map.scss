@@ -6,22 +6,22 @@ $wvu-gold: #EAAA00;
 // Accent
 
 $wvu-accent--old-gold: #7F6310;
-$wvu-accent--blue-dark: #181f23;
-$wvu-accent--blue: #0062A3;
-$wvu-accent--blue-light: #9DDAE6;
-$wvu-accent--green: #6A724F;
-$wvu-accent--red: #8d4638;
-$wvu-accent--yellow: #F7DD63;
-$wvu-accent--sunset: #F58672;
+$wvu-coal: #181f23;
+$wvu-safety-blue: #0062A3;
+$wvu-star-city-blue: #9DDAE6;
+$wvu-hemlock: #6A724F;
+$wvu-woodburn: #8d4638;
+$wvu-canary: #F7DD63;
+$wvu-sunset: #F58672;
 
 // Neutral
 
-$wvu-neutral--off-white: #F7F7F7;
-$wvu-neutral--cream: #F2E6C2;
-$wvu-neutral--tan: #B3A169;
-$wvu-neutral--warm-gray-light: #BEB7B3;
-$wvu-neutral--warm-gray-medium: #988E8B;
-$wvu-neutral--warm-gray-dark: #554741;
+$wvu-not-quite-white: #F7F7F7;
+$wvu-wild-flour: #F2E6C2;
+$wvu-buckskin: #B3A169;
+$wvu-coopers-gray: #BEB7B3;
+$wvu-seneca-gray: #988E8B;
+$wvu-rattler-gray: #554741;
 
 // Social Media
 
@@ -46,77 +46,77 @@ $custom-colors: (
   "wvu-blue": $wvu-blue,
   "wvu-gold": $wvu-gold,
   "wvu-accent--old-gold": $wvu-accent--old-gold,
-  "wvu-accent--blue-dark": $wvu-accent--blue-dark,
-  "wvu-accent--blue": $wvu-accent--blue,
-  "wvu-accent--blue-light": $wvu-accent--blue-light,
-  "wvu-accent--green": $wvu-accent--green,
-  "wvu-accent--red": $wvu-accent--red,
-  "wvu-accent--yellow": $wvu-accent--yellow,
-  "wvu-accent--sunset": $wvu-accent--sunset,
-  "wvu-neutral--off-white": $wvu-neutral--off-white,
-  "wvu-neutral--cream": $wvu-neutral--cream,
-  "wvu-neutral--tan": $wvu-neutral--tan,
-  "wvu-neutral--warm-gray-light": $wvu-neutral--warm-gray-light,
-  "wvu-neutral--warm-gray-medium": $wvu-neutral--warm-gray-medium,
-  "wvu-neutral--warm-gray-dark": $wvu-neutral--warm-gray-dark
+  "wvu-coal": $wvu-coal,
+  "wvu-safety-blue": $wvu-safety-blue,
+  "wvu-star-city-blue": $wvu-star-city-blue,
+  "wvu-hemlock": $wvu-hemlock,
+  "wvu-woodburn": $wvu-woodburn,
+  "wvu-canary": $wvu-canary,
+  "wvu-sunset": $wvu-sunset,
+  "wvu-not-quite-white": $wvu-not-quite-white,
+  "wvu-wild-flour": $wvu-wild-flour,
+  "wvu-buckskin": $wvu-buckskin,
+  "wvu-coopers-gray": $wvu-coopers-gray,
+  "wvu-seneca-gray": $wvu-seneca-gray,
+  "wvu-rattler-gray": $wvu-rattler-gray
 );
 
 $custom-colors-bg-subtle: (
   "wvu-blue-subtle": $wvu-blue-bg-subtle,
   "wvu-gold-subtle": $wvu-gold-bg-subtle,
   "wvu-accent--old-gold-subtle": $wvu-accent--old-gold-bg-subtle,
-  "wvu-accent--blue-dark-subtle": $wvu-accent--blue-dark-bg-subtle,
-  "wvu-accent--blue-subtle": $wvu-accent--blue-bg-subtle,
-  "wvu-accent--blue-light-subtle": $wvu-accent--blue-light-bg-subtle,
-  "wvu-accent--yellow-subtle": $wvu-accent--yellow-bg-subtle,
-  "wvu-accent--sunset-subtle": $wvu-accent--sunset-bg-subtle,
-  "wvu-neutral--off-white-subtle": $wvu-neutral--off-white-bg-subtle,
-  "wvu-neutral--cream-subtle": $wvu-neutral--cream-bg-subtle,
-  "wvu-neutral--tan-subtle": $wvu-neutral--tan-bg-subtle,
-  "wvu-neutral--warm-gray-light-subtle": $wvu-neutral--warm-gray-light-bg-subtle,
-  "wvu-neutral--warm-gray-medium-subtle": $wvu-neutral--warm-gray-medium-bg-subtle,
-  "wvu-neutral--warm-gray-dark-subtle": $wvu-neutral--warm-gray-dark-bg-subtle
+  "wvu-coal-subtle": $wvu-coal-bg-subtle,
+  "wvu-safety-blue-subtle": $wvu-safety-blue-bg-subtle,
+  "wvu-star-city-blue-subtle": $wvu-star-city-blue-bg-subtle,
+  "wvu-canary-subtle": $wvu-canary-bg-subtle,
+  "wvu-sunset-subtle": $wvu-sunset-bg-subtle,
+  "wvu-not-quite-white-subtle": $wvu-not-quite-white-bg-subtle,
+  "wvu-wild-flour-subtle": $wvu-wild-flour-bg-subtle,
+  "wvu-buckskin-subtle": $wvu-buckskin-bg-subtle,
+  "wvu-coopers-gray-subtle": $wvu-coopers-gray-bg-subtle,
+  "wvu-seneca-gray-subtle": $wvu-seneca-gray-bg-subtle,
+  "wvu-rattler-gray-subtle": $wvu-rattler-gray-bg-subtle
 );
 
 $custom-colors-bg-subtle-dark: (
   "wvu-blue-subtle-dark": $wvu-blue-bg-subtle-dark,
   "wvu-gold-subtle-dark": $wvu-gold-bg-subtle-dark,
   "wvu-accent--old-gold-subtle-dark": $wvu-accent--old-gold-bg-subtle-dark,
-  "wvu-accent--blue-dark-subtle-dark": $wvu-accent--blue-dark-bg-subtle-dark,
-  "wvu-accent--blue-subtle-dark": $wvu-accent--blue-bg-subtle-dark,
-  "wvu-accent--blue-light-subtle-dark": $wvu-accent--blue-light-bg-subtle-dark,
-  "wvu-accent--yellow-subtle-dark": $wvu-accent--yellow-bg-subtle-dark,
-  "wvu-accent--sunset-subtle-dark": $wvu-accent--sunset-bg-subtle-dark,
-  "wvu-neutral--off-white-subtle-dark": $wvu-neutral--off-white-bg-subtle-dark,
-  "wvu-neutral--cream-subtle-dark": $wvu-neutral--cream-bg-subtle-dark,
-  "wvu-neutral--tan-subtle-dark": $wvu-neutral--tan-bg-subtle-dark,
-  "wvu-neutral--warm-gray-light-subtle-dark": $wvu-neutral--warm-gray-light-bg-subtle-dark,
-  "wvu-neutral--warm-gray-medium-subtle-dark": $wvu-neutral--warm-gray-medium-bg-subtle-dark,
-  "wvu-neutral--warm-gray-dark-subtle-dark": $wvu-neutral--warm-gray-dark-bg-subtle-dark
+  "wvu-coal-subtle-dark": $wvu-coal-bg-subtle-dark,
+  "wvu-safety-blue-subtle-dark": $wvu-safety-blue-bg-subtle-dark,
+  "wvu-star-city-blue-subtle-dark": $wvu-star-city-blue-bg-subtle-dark,
+  "wvu-canary-subtle-dark": $wvu-canary-bg-subtle-dark,
+  "wvu-sunset-subtle-dark": $wvu-sunset-bg-subtle-dark,
+  "wvu-not-quite-white-subtle-dark": $wvu-not-quite-white-bg-subtle-dark,
+  "wvu-wild-flour-subtle-dark": $wvu-wild-flour-bg-subtle-dark,
+  "wvu-buckskin-subtle-dark": $wvu-buckskin-bg-subtle-dark,
+  "wvu-coopers-gray-subtle-dark": $wvu-coopers-gray-bg-subtle-dark,
+  "wvu-seneca-gray-subtle-dark": $wvu-seneca-gray-bg-subtle-dark,
+  "wvu-rattler-gray-subtle-dark": $wvu-rattler-gray-bg-subtle-dark
 );
 
 $dark-theme-colors: (
   "dark": $dark,
   "wvu-blue": $wvu-blue,
   "wvu-accent--old-gold": $wvu-accent--old-gold,
-  "wvu-neutral--warm-gray-dark": $wvu-neutral--warm-gray-dark,
-  "wvu-accent--blue-dark": $wvu-accent--blue-dark,
-  "wvu-accent--blue": $wvu-accent--blue,
-  "wvu-accent--green": $wvu-accent--green,
-  "wvu-accent--red": $wvu-accent--red
+  "wvu-rattler-gray": $wvu-rattler-gray,
+  "wvu-coal": $wvu-coal,
+  "wvu-safety-blue": $wvu-safety-blue,
+  "wvu-hemlock": $wvu-hemlock,
+  "wvu-woodburn": $wvu-woodburn
 );
 
 $light-theme-colors: (
   "white": #FFF,
   "wvu-gold": $wvu-gold,
-  "wvu-neutral--tan": $wvu-neutral--tan,
-  "wvu-neutral--off-white": $wvu-neutral--off-white,
-  "wvu-neutral--warm-gray-light": $wvu-neutral--warm-gray-light,
-  "wvu-neutral--warm-gray-medium": $wvu-neutral--warm-gray-medium,
-  "wvu-neutral--cream": $wvu-neutral--cream,
-  "wvu-accent--sunset": $wvu-accent--sunset,
-  "wvu-accent--blue-light": $wvu-accent--blue-light,
-  "wvu-accent--yellow": $wvu-accent--yellow
+  "wvu-buckskin": $wvu-buckskin,
+  "wvu-not-quite-white": $wvu-not-quite-white,
+  "wvu-coopers-gray": $wvu-coopers-gray,
+  "wvu-seneca-gray": $wvu-seneca-gray,
+  "wvu-wild-flour": $wvu-wild-flour,
+  "wvu-sunset": $wvu-sunset,
+  "wvu-star-city-blue": $wvu-star-city-blue,
+  "wvu-canary": $wvu-canary
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
