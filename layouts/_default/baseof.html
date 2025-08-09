@@ -22,6 +22,7 @@
 
   <a class="visually-hidden-focusable" href="#wvu-main-content" data-pagefind-ignore>Skip to main content</a>
 
+  {{ partial "components/wvu-emergency-alert" . }}
   {{ partial "alert-banner" . }}
 
   <header class="bg-wvu-blue" data-pagefind-ignore="all">
@@ -60,6 +61,101 @@
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
+  <script>
+    /* global fetch */
+    const wvuEmergencyAlert = (() => {
+      'use strict';
+
+      // Variables:
+      const getEmergencyEl = document.querySelector('#js-emergency-alert');
+      const getEmergencyEvents = getEmergencyEl.querySelector('#js-emergency-alert__events');
+      const getEmergencyDomain = getEmergencyEl.querySelector('#js-emergency-alert-domain');
+      const disableAlert = getEmergencyEl.dataset.disableEmergencyAlert || 'false';
+      const emergencyAlertUrl = getEmergencyEl.dataset.emergencyAlertJsonFeed || 'https://emergency.wvu.edu/emergency.json';
+      if (!emergencyAlertUrl) return;
+
+      // Attempt to get boolean values from Custom Site Data:
+      const isTrue = (value) => {
+        if (typeof (value) === 'string') {
+          value = value.trim().toLowerCase();
+        }
+        switch (value) {
+          case true:
+          case 'true':
+          case 1:
+          case '1':
+          case 'on':
+          case 'On':
+          case 'yes':
+          case 'Yes':
+            return true;
+          default:
+            return false;
+        }
+      };
+
+      // Fetch the data:
+      const fetchData = async (apiUrl) => {
+        try {
+          const response = await fetch(apiUrl);
+          if (!response.ok) {
+            throw new Error(`❌ WVU Emergency Alert Network response was not OK: ${response.status}`);
+          }
+          return await response.json();
+        } catch (error) {
+          console.error(`There was an error fetching the WVU Emergency Alert: ${error.message}`);
+        }
+      };
+
+      // Get root domain from API endpoint URL:
+      // Returns an array with two items:
+      // [URL for display, URL for href]
+      const getDomain = (url) => {
+        const makeUrl = new URL(url);
+        const parts = [];
+        parts.push(makeUrl.host, makeUrl.origin); // 0: no https, 1: full root domain
+        return parts;
+      };
+
+      // Changes URL of "For more information" link to match API endpoint root URL:
+      const renderMoreInfoLink = (url = emergencyAlertUrl) => {
+        const rootUrl = getDomain(url);
+        getEmergencyDomain.innerText = rootUrl[0];
+        getEmergencyDomain.href = rootUrl[1];
+      };
+
+      // Render the HTML:
+      const renderAlert = (events) => {
+        getEmergencyEvents.innerHTML = events.map((item) => {
+          const { event } = item;
+          const html = `
+            <div class="event mt-3">
+              <h3 class="h5 mb-1">
+                ${event.title}
+              </h3>
+              <p class="small">
+                <time datetime="${event.updated_at}">${event.updated_at_formatted}</time>
+              </p>
+              ${event.body}
+            </div>
+          `;
+          return html;
+        }).join('');
+        renderMoreInfoLink();
+        getEmergencyEl.classList.remove('d-none');
+      };
+
+      const init = async () => {
+        if (isTrue(disableAlert)) return; // Don't show alert if it's disabled via Site Data.
+        const apiResponse = await fetchData(emergencyAlertUrl);
+        if (!apiResponse.emergency.status) return; // Stop here if there's not an emergency.
+        renderAlert(apiResponse.emergency.events);
+      };
+
+      init();
+    })();
+  </script>
+
   {{- with resources.Get "js/parvus/parvus.min.js" }}
     <script src="{{ .RelPermalink }}"></script>
   {{- end }}
