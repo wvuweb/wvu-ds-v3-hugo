@@ -63,9 +63,9 @@
   }
 }
 
-.wvu-container-box-skewed-wvu-accent--sunset {
+.wvu-container-box-skewed-wvu-sunset {
   &:before {
-    background-color: $wvu-accent--sunset $global-important;
+    background-color: $wvu-sunset $global-important;
   }
 }
 
@@ -81,9 +81,9 @@
   }
 }
 
-.wvu-container-box-skewed-wvu-accent--blue {
+.wvu-container-box-skewed-wvu-safety-blue {
   &:before {
-    background-color: $wvu-accent--blue $global-important;
+    background-color: $wvu-safety-blue $global-important;
   }
 }
 
@@ -144,7 +144,7 @@
     z-index: $wvu-z-index-container-content $global-important;
   }
   &:before {
-    background-color: $wvu-accent--sunset;
+    background-color: $wvu-sunset;
     mask-position: center $global-important;
     -webkit-mask-position: center $global-important;
     mask-repeat: no-repeat $global-important;

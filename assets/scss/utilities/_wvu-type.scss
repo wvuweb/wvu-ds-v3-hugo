@@ -190,8 +190,8 @@
 
 .wvu-text-echo-shadow {
   @include wvu-text-echo-shadow();
-  &.wvu-text-echo-shadow-wvu-accent--blue-light {
-    text-shadow: -5px 5px $wvu-accent--blue-light $global-important;
+  &.wvu-text-echo-shadow-wvu-star-city-blue {
+    text-shadow: -5px 5px $wvu-star-city-blue $global-important;
   }
 }
 

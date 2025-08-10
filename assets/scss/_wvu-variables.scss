@@ -99,80 +99,80 @@ $dark:          $gray-900;
 $wvu-blue: #002855;
 $wvu-gold: #EAAA00;
 
-$wvu-accent--old-gold: #7F6310;
-$wvu-neutral--off-white: #F7F7F7;
-$wvu-neutral--cream: #F2E6C2;
-$wvu-neutral--tan: #B3A169;
-$wvu-neutral--warm-gray-light: #BEB7B3;
-$wvu-neutral--warm-gray-medium: #988E8B;
-$wvu-neutral--warm-gray-dark: #554741;
-$wvu-accent--blue-dark: #1C2B39;
-$wvu-accent--blue: #0062A3;
-$wvu-accent--blue-light: #9DDAE6;
-$wvu-accent--yellow: #FFE539;
-$wvu-accent--sunset: #F3674F;
+$wvu-old-gold: #7F6310;
+$wvu-not-quite-white: #F7F7F7;
+$wvu-wild-flour: #F2E6C2;
+$wvu-buckskin: #B3A169;
+$wvu-coopers-gray: #BEB7B3;
+$wvu-seneca-gray: #988E8B;
+$wvu-rattler-gray: #554741;
+$wvu-coal: #1C2B39;
+$wvu-safety-blue: #0062A3;
+$wvu-star-city-blue: #9DDAE6;
+$wvu-canary: #FFE539;
+$wvu-sunset: #F3674F;
 
 $wvu-blue-rgb: rgba(0, 40, 85, 1);
 $wvu-gold-rgb: rgba(234, 170, 0, 1);
 
-$wvu-accent--old-gold-rgb: rgba(127, 99, 16, 1);
-$wvu-neutral--off-white-rgb: rgba(247, 247, 247, 1);
-$wvu-neutral--cream-rgb: rgba(242, 230, 194, 1);
-$wvu-neutral--tan-rgb: rgba(179, 161, 105, 1);
-$wvu-neutral--warm-gray-light-rgb: rgba(190,183,179, 1);
-$wvu-neutral--warm-gray-medium-rgb: rgba(152, 142, 139, 1);
-$wvu-neutral--warm-gray-dark-rgb: rgba(85, 71, 65, 1);
-$wvu-accent--blue-dark-rgb: rgba(28, 43, 57, 1);
-$wvu-accent--blue-rgb: rgba(0, 98, 163, 1);
-$wvu-accent--blue-light-rgb: rgba(157, 218, 230, 1);
-$wvu-accent--yellow-rgb: rgba(255, 229, 57, 1);
-$wvu-accent--sunset-rgb: rgba(245, 134, 114, 1);
+$wvu-old-gold-rgb: rgba(127, 99, 16, 1);
+$wvu-not-quite-white-rgb: rgba(247, 247, 247, 1);
+$wvu-wild-flour-rgb: rgba(242, 230, 194, 1);
+$wvu-buckskin-rgb: rgba(179, 161, 105, 1);
+$wvu-coopers-gray-rgb: rgba(190,183,179, 1);
+$wvu-seneca-gray-rgb: rgba(152, 142, 139, 1);
+$wvu-rattler-gray-rgb: rgba(85, 71, 65, 1);
+$wvu-coal-rgb: rgba(28, 43, 57, 1);
+$wvu-safety-blue-rgb: rgba(0, 98, 163, 1);
+$wvu-star-city-blue-rgb: rgba(157, 218, 230, 1);
+$wvu-canary-rgb: rgba(255, 229, 57, 1);
+$wvu-sunset-rgb: rgba(245, 134, 114, 1);
 
 $wvu-blue-bg-subtle: tint-color($wvu-blue, 10%);
 $wvu-gold-bg-subtle: tint-color($wvu-gold, 10%);
 
-$wvu-accent--old-gold-bg-subtle: tint-color($wvu-accent--old-gold, 10%);
-$wvu-neutral--off-white-bg-subtle: tint-color($wvu-neutral--off-white, 10%);
-$wvu-neutral--cream-bg-subtle: tint-color($wvu-neutral--cream, 10%);
-$wvu-neutral--tan-bg-subtle: tint-color($wvu-neutral--tan, 10%);
-$wvu-neutral--warm-gray-light-bg-subtle: tint-color($wvu-neutral--warm-gray-light, 10%);
-$wvu-neutral--warm-gray-medium-bg-subtle: tint-color($wvu-neutral--warm-gray-medium, 10%);
-$wvu-neutral--warm-gray-dark-bg-subtle: tint-color($wvu-neutral--warm-gray-dark, 10%);
-$wvu-accent--blue-dark-bg-subtle: tint-color($wvu-accent--blue-dark, 10%);
-$wvu-accent--blue-bg-subtle: tint-color($wvu-accent--blue, 10%);
-$wvu-accent--blue-light-bg-subtle: tint-color($wvu-accent--blue-light, 10%);
-$wvu-accent--yellow-bg-subtle: tint-color($wvu-accent--yellow, 10%);
-$wvu-accent--sunset-bg-subtle: tint-color($wvu-accent--sunset, 10%);
+$wvu-old-gold-bg-subtle: tint-color($wvu-old-gold, 10%);
+$wvu-not-quite-white-bg-subtle: tint-color($wvu-not-quite-white, 10%);
+$wvu-wild-flour-bg-subtle: tint-color($wvu-wild-flour, 10%);
+$wvu-buckskin-bg-subtle: tint-color($wvu-buckskin, 10%);
+$wvu-coopers-gray-bg-subtle: tint-color($wvu-coopers-gray, 10%);
+$wvu-seneca-gray-bg-subtle: tint-color($wvu-seneca-gray, 10%);
+$wvu-rattler-gray-bg-subtle: tint-color($wvu-rattler-gray, 10%);
+$wvu-coal-bg-subtle: tint-color($wvu-coal, 10%);
+$wvu-safety-blue-bg-subtle: tint-color($wvu-safety-blue, 10%);
+$wvu-star-city-blue-bg-subtle: tint-color($wvu-star-city-blue, 10%);
+$wvu-canary-bg-subtle: tint-color($wvu-canary, 10%);
+$wvu-sunset-bg-subtle: tint-color($wvu-sunset, 10%);
 
 $wvu-blue-bg-subtle-dark: shade-color($wvu-blue, 10%);
 $wvu-gold-bg-subtle-dark: shade-color($wvu-gold, 10%);
 
-$wvu-accent--old-gold-bg-subtle-dark: shade-color($wvu-accent--old-gold, 10%);
-$wvu-neutral--off-white-bg-subtle-dark: shade-color($wvu-neutral--off-white, 10%);
-$wvu-neutral--cream-bg-subtle-dark: shade-color($wvu-neutral--cream, 10%);
-$wvu-neutral--tan-bg-subtle-dark: shade-color($wvu-neutral--tan, 10%);
-$wvu-neutral--warm-gray-light-bg-subtle-dark: shade-color($wvu-neutral--warm-gray-light, 10%);
-$wvu-neutral--warm-gray-medium-bg-subtle-dark: shade-color($wvu-neutral--warm-gray-medium, 10%);
-$wvu-neutral--warm-gray-dark-bg-subtle-dark: shade-color($wvu-neutral--warm-gray-dark, 10%);
-$wvu-accent--blue-dark-bg-subtle-dark: shade-color($wvu-accent--blue-dark, 10%);
-$wvu-accent--blue-bg-subtle-dark: shade-color($wvu-accent--blue, 10%);
-$wvu-accent--blue-light-bg-subtle-dark: shade-color($wvu-accent--blue-light, 10%);
-$wvu-accent--yellow-bg-subtle-dark: shade-color($wvu-accent--yellow, 10%);
-$wvu-accent--sunset-bg-subtle-dark: shade-color($wvu-accent--sunset, 10%);
+$wvu-old-gold-bg-subtle-dark: shade-color($wvu-old-gold, 10%);
+$wvu-not-quite-white-bg-subtle-dark: shade-color($wvu-not-quite-white, 10%);
+$wvu-wild-flour-bg-subtle-dark: shade-color($wvu-wild-flour, 10%);
+$wvu-buckskin-bg-subtle-dark: shade-color($wvu-buckskin, 10%);
+$wvu-coopers-gray-bg-subtle-dark: shade-color($wvu-coopers-gray, 10%);
+$wvu-seneca-gray-bg-subtle-dark: shade-color($wvu-seneca-gray, 10%);
+$wvu-rattler-gray-bg-subtle-dark: shade-color($wvu-rattler-gray, 10%);
+$wvu-coal-bg-subtle-dark: shade-color($wvu-coal, 10%);
+$wvu-safety-blue-bg-subtle-dark: shade-color($wvu-safety-blue, 10%);
+$wvu-star-city-blue-bg-subtle-dark: shade-color($wvu-star-city-blue, 10%);
+$wvu-canary-bg-subtle-dark: shade-color($wvu-canary, 10%);
+$wvu-sunset-bg-subtle-dark: shade-color($wvu-sunset, 10%);
 
 // Gradients
-$wvu-gradient-wvu-gold-accent-yellow-accent-sunset: linear-gradient(300deg, $wvu-gold, transparent), linear-gradient(200deg, $wvu-accent--yellow, transparent), linear-gradient(100deg, $wvu-accent--sunset, transparent);
-$wvu-gradient-wvu-blue-accent-blue-accent-blue-light: linear-gradient(300deg, $wvu-blue, transparent), linear-gradient(200deg, $wvu-accent--blue, transparent), linear-gradient(100deg, $wvu-accent--blue-light, transparent);
-$wvu-gradient-accent-blue-accent-light-blue-accent-sunset: linear-gradient(300deg, $wvu-accent--blue, transparent), linear-gradient(200deg, $wvu-accent--blue-light, transparent), linear-gradient(100deg, $wvu-accent--sunset, transparent);
-$wvu-gradient-accent-blue-light-accent-blue-accent-sunset: linear-gradient(300deg, $wvu-accent--blue-light, transparent), linear-gradient(200deg,$wvu-accent--blue, transparent), linear-gradient(100deg, $wvu-accent--sunset, transparent);
+$wvu-gradient-wvu-gold-accent-yellow-accent-sunset: linear-gradient(300deg, $wvu-gold, transparent), linear-gradient(200deg, $wvu-canary, transparent), linear-gradient(100deg, $wvu-sunset, transparent);
+$wvu-gradient-wvu-blue-accent-blue-accent-blue-light: linear-gradient(300deg, $wvu-blue, transparent), linear-gradient(200deg, $wvu-safety-blue, transparent), linear-gradient(100deg, $wvu-star-city-blue, transparent);
+$wvu-gradient-accent-blue-accent-light-blue-accent-sunset: linear-gradient(300deg, $wvu-safety-blue, transparent), linear-gradient(200deg, $wvu-star-city-blue, transparent), linear-gradient(100deg, $wvu-sunset, transparent);
+$wvu-gradient-accent-blue-light-accent-blue-accent-sunset: linear-gradient(300deg, $wvu-star-city-blue, transparent), linear-gradient(200deg,$wvu-safety-blue, transparent), linear-gradient(100deg, $wvu-sunset, transparent);
 
 
 // Old Colors
 // Neutral
-$wvu-neutral--white: $wvu-neutral--off-white;
+$wvu-neutral--white: $wvu-not-quite-white;
 $wvu-neutral--black: #2C2A29;
-$wvu-neutral--dark-gray: $wvu-accent--blue-dark;
-$wvu-neutral--light-gray: $wvu-neutral--warm-gray-light;
+$wvu-neutral--dark-gray: $wvu-coal;
+$wvu-neutral--light-gray: $wvu-coopers-gray;
 $wvu-neutral--dark-brown: #6E6259;
 $wvu-neutral--brown: #7C736A;
 $wvu-neutral--light-brown: #BFB8AF;
@@ -180,84 +180,98 @@ $wvu-neutral--light-brown: #BFB8AF;
 // Accent
 $wvu-accent--light-blue: #9BD3DD;
 $wvu-accent--brown: #4B3D2A;
-$wvu-accent--mustard: $wvu-accent--old-gold;
+$wvu-accent--mustard: $wvu-old-gold;
 $wvu-accent--orange: #ED8B00;
 $wvu-accent--dark-green: #0D5257;
-$wvu-accent--green: #7c8b61;
+$wvu-hemlock: #7c8b61;
 $wvu-accent--light-green: #9ABEAA;
-$wvu-accent--red: #8d4638;
+$wvu-woodburn: #8d4638;
 $wvu-accent--burnt-orange: #CD4C08;
 
 // Gradients
 
 $gradient--sunset--yellow--wvu-gold: (
   "background": $wvu-gold,
-  "color-ll": $wvu-accent--sunset,
-  "color-ur": $wvu-accent--yellow,
+  "color-ll": $wvu-sunset,
+  "color-ur": $wvu-canary,
   "color-lr": $wvu-gold
 );
 
-$gradient--sunset--blue-light--accent-blue: (
-  "background": $wvu-accent--sunset,
-  "color-ll": $wvu-accent--sunset,
-  "color-ur": $wvu-accent--blue-light,
-  "color-lr": $wvu-accent--blue
-);
-
-$gradient--wvu-blue--blue-light--accent-blue: (
-  "background": $wvu-accent--blue,
-  "color-ll": $wvu-blue,
-  "color-ur": $wvu-accent--blue-light,
-  "color-lr": $wvu-accent--blue
-);
-
-$gradient--wvu-blue--sunset--blue-light: (
-  "background": $wvu-blue,
-  "color-ll": $wvu-blue,
-  "color-ur": $wvu-accent--sunset,
-  "color-lr": $wvu-accent--blue-light
-);
-
-$gradient--old-gold--cream--wvu-gold: (
-  "background": $wvu-accent--old-gold,
-  "color-ll": $wvu-accent--old-gold,
-  "color-ur": $wvu-neutral--cream,
-  "color-lr": $wvu-gold
-);
-
-$gradient--warm-gray-dark--cream--wvu-gold: (
-  "background": $wvu-neutral--warm-gray-dark,
-  "color-ll": $wvu-neutral--warm-gray-dark,
-  "color-ur": $wvu-neutral--cream,
-  "color-lr": $wvu-gold
-);
-
-$gradient--warm-gray-dark--wvu-gold--yellow: (
-  "background": $wvu-neutral--warm-gray-dark,
-  "color-ll": $wvu-neutral--warm-gray-dark,
+$gradient--canary--gold--gold: (
+  "background": $wvu-wild-flour,
+  "color-ll": $wvu-canary,
   "color-ur": $wvu-gold,
-  "color-lr": $wvu-accent--yellow
+  "color-lr": $wvu-gold
 );
 
-$gradient--warm-gray-dark--yellow--warm-gray-dark: (
-  "background": $wvu-neutral--warm-gray-dark,
-  "color-ll": $wvu-neutral--warm-gray-dark,
-  "color-ur": $wvu-accent--yellow,
-  "color-lr": $wvu-neutral--warm-gray-dark
+$gradient--canary--star-city-blue--gold: (
+  "background": $wvu-wild-flour,
+  "color-ll": $wvu-canary,
+  "color-ur": $wvu-star-city-blue,
+  "color-lr": $wvu-gold
 );
 
-$gradient--blue-dark--warm-gray-dark--blue-dark: (
-  "background": $wvu-accent--blue-dark,
-  "color-ll": $wvu-accent--blue-dark,
-  "color-ur": $wvu-neutral--warm-gray-dark,
-  "color-lr": $wvu-accent--blue-dark
+$gradient--old-gold--hemlock--hemlock: (
+  "background": $wvu-canary,
+  "color-ll": $wvu-old-gold,
+  "color-ur": $wvu-hemlock,
+  "color-lr": $wvu-hemlock
 );
 
-$gradient--blue-dark--old-gold--blue-dark: (
-  "background": $wvu-accent--blue-dark,
-  "color-ll": $wvu-accent--blue-dark,
-  "color-ur": $wvu-accent--old-gold,
-  "color-lr": $wvu-accent--blue-dark
+$gradient--buckskin--wild-flour--wild-flour: (
+  "background": $wvu-canary,
+  "color-ll": $wvu-buckskin,
+  "color-ur": $wvu-wild-flour,
+  "color-lr": $wvu-wild-flour
+);
+
+$gradient--buckskin--canary--wild-flour: (
+  "background": $wvu-wild-flour,
+  "color-ll": $wvu-buckskin,
+  "color-ur": $wvu-canary,
+  "color-lr": $wvu-wild-flour
+);
+
+$gradient--blue--woodburn--woodburn: (
+  "background": $wvu-safety-blue,
+  "color-ll": $wvu-blue,
+  "color-ur": $wvu-woodburn,
+  "color-lr": $wvu-woodburn
+);
+
+$gradient--old-gold--woodburn--woodburn: (
+  "background": $wvu-safety-blue,
+  "color-ll": $wvu-old-gold,
+  "color-ur": $wvu-woodburn,
+  "color-lr": $wvu-woodburn
+);
+
+$gradient--safety-blue--blue--blue: (
+  "background": $wvu-safety-blue,
+  "color-ll": $wvu-safety-blue,
+  "color-ur": $wvu-blue,
+  "color-lr": $wvu-blue
+);
+
+$gradient--hemlock--blue--woodburn: (
+  "background": $wvu-woodburn,
+  "color-ll": $wvu-hemlock,
+  "color-ur": $wvu-blue,
+  "color-lr": $wvu-woodburn
+);
+
+$gradient--coal--rattler-gray--rattler-gray: (
+  "background": $wvu-woodburn,
+  "color-ll": $wvu-coal,
+  "color-ur": $wvu-rattler-gray,
+  "color-lr": $wvu-rattler-gray
+);
+
+$gradient--sunset--star-city-blue--star-city-blue: (
+  "background": $wvu-sunset,
+  "color-ll": $wvu-sunset,
+  "color-ur": $wvu-star-city-blue,
+  "color-lr": $wvu-star-city-blue
 );
 
 // Breadcrumbs
