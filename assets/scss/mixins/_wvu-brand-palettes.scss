@@ -9,10 +9,19 @@ $wvu-b-breadcrumbs-text-color: null;
         .wvu-b-#{$property} {
           @if $property == "border" {
             border: $value $global-important;
+            .wvu-b-border {
+              border: none !important;
+            }
           } @else if $property == "shadow" and $value == true {
             @include wvu-shadow-hard-filter();
+            .wvu-b-shadow {
+              filter: none !important;
+            }
           } @else if $property == "pattern" and $value != "" {
             @include wvu-bg-pattern($value);
+            .wvu-b-pattern {
+              @include wvu-bg-pattern('null');
+            }
           }
         }
       }
@@ -150,7 +159,7 @@ $wvu-b-breadcrumbs-text-color: null;
       background-color: $color $global-important;
       $wvu-b-bg-color: $color !global;
       $wvu-b-breadcrumbs-bg-color: $color !global;
-      @if $color == $wvu-coal or $color == $wvu-safety-blue or $color == $wvu-accent--old-gold or $color == $wvu-rattler-gray {
+      @if $color == $wvu-coal or $color == $wvu-safety-blue or $color == $wvu-old-gold or $color == $wvu-rattler-gray {
         &.wvu-b-subtle, .wvu-b-subtle {
           background-color: shade($wvu-b-bg-color, 7%) !important;
         }
@@ -228,6 +237,23 @@ $wvu-b-breadcrumbs-text-color: null;
       @each $option, $colors in $color-palette {
         .bg-option-#{$option}, &.bg-option-#{$option} {
           @include wvu-color-palette($colors);
+          .is-loud {
+            .wvu-b-border, .wvu-b-shadow {
+              &:not(.wvu-b-accent-bg) {
+                background-color: $wvu-not-quite-white $global-important;
+                color: $wvu-blue $global-important;
+              }
+              .wvu-b-subtle, &.wvu-b-subtle {
+                background-color: tint($wvu-not-quite-white, 50%) !important;
+                .wvu-b-subtle {
+                  background-color: $wvu-b-bg-color $global-important;
+                }
+              }
+              .wvu-b-accent-text {
+                color: $wvu-blue $global-important;
+              }
+            }
+          }
         }
       }
     }

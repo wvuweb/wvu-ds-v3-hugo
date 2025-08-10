@@ -74,6 +74,19 @@
     right: 0;
     z-index: $wvu-z-index-pattern;
   }
+  @if $pattern-type == 'null' {
+    mask-image: none $global-important;
+    -webkit-mask-image: none $global-important;
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-size: 1000px 500px $global-important;
+    -webkit-mask-size: 1000px 500px $global-important;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: $wvu-z-index-pattern;
+  }
 }
 
 // Usage example:
