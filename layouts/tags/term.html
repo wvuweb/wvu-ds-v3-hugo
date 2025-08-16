@@ -1,0 +1,52 @@
+{{ define "main" }}
+  <header class="pt-6 pb-4 position-relative" data-pagefind-ignore="all">
+    <div class="container wvu-z-index-content">
+      <h1 class="config-extra-bold display-3 text-wvu-blue"><span class="wvu-b-font-adjust">{{ .Title }}</span></h1>
+    </div>
+  </header>
+  {{ $pages := .Pages }}
+  {{ $paginator := .Paginate $pages.ByDate 10 }}
+  <div class="py-6 audience-general tone-default bg-option-1 wvu-b-subtle" data-pagefind-ignore="all">
+    <div class="container">
+      {{ range $paginator.Pages }}
+
+        <div class="row">
+          <div class="col-xl-16 mb-5">
+            <div class="row">
+              
+              <div class="col-24">
+                <h2><a class="text-decoration-none" href="{{ .Page.RelPermalink }}">{{ .Params.title }}</a></h2>
+
+                {{ if or .Params.authors .Params.publishDate }}
+                  <p class="small d-block">
+                    {{ with .Params.authors }}
+                      {{ range . }}
+                        <span class="wvu-article__author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                          <span itemprop="name">
+                            {{ .name }}
+                          </span>
+                        </span>
+                      {{ end }}
+                    {{ end }}
+
+                    {{ if and .Params.authors .Params.publishDate }} | {{ end }}
+
+                    {{ with .Params.publishDate }}
+                      <time datetime="{{ . }}">{{ . | time.Format "Monday, January 2, 2006" }}</time>
+                    {{ end }}
+                  </p>
+                {{ end }}
+
+                <p>{{ .Params.teaser }}</p>
+                <a href="{{ .Page.RelPermalink }}">Read Article<span class="visually-hidden">: {{ .Params.title }}</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+      <div class="mt-5">
+        {{ partial "pagination.html" . }}
+      </div>
+    </div>
+  </div>
+{{ end }}
