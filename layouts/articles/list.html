@@ -16,8 +16,7 @@
   <div class="py-6 audience-general tone-default bg-option-1 wvu-b-subtle" data-pagefind-ignore="all">
     <div class="container">
       {{ $pages := where .Site.RegularPages "Section" .Section }}
-      {{ $pages = sort $pages ".Params.publishDats" "desc" }}
-      {{ $paginator := .Paginate $pages.ByDate 10 }}
+      {{ $paginator := .Paginate $pages.ByPublishDate.Reverse 10 }}
       {{ range $paginator.Pages }}
         {{ $authorList := slice }}
         {{ if .Params.authors }}
