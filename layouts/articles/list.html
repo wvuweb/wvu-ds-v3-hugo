@@ -44,7 +44,7 @@
                   {{ end }}
     
                   <div class="col-md mt-3 mt-md-0">
-                    <h2 class="wvu-article__headline" itemprop="headline"><a class="newsletter-link text-decoration-none oliviar-black text-wvu-blue" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                    <h2 class="wvu-article__headline" itemprop="headline"><a class="newsletter-link text-decoration-none text-wvu-blue" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     
                     {{ if or (not $hideAuthor) ( .Params.publishDate ) }}
                       <p class="small d-block">

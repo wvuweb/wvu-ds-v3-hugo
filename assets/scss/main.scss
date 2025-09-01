@@ -60,7 +60,6 @@
 // scss-docs-end import-stack
 
 // WVU Components
-@import 'mixins/wvu-bar';
 @import 'mixins/wvu-bg-blend-mode';
 @import 'mixins/wvu-bg-pattern';
 @import 'mixins/wvu-bg-tint';
@@ -75,9 +74,7 @@
 @import 'mixins/wvu-slash';
 @import 'mixins/wvu-tint-shade';
 @import 'mixins/wvu-type';
-@import 'mixins/wvu-vibes';
 @import 'utilities/wvu-active-nav-link';
-@import 'utilities/wvu-bar';
 @import 'utilities/wvu-bg';
 @import 'utilities/wvu-bg-colors';
 @import 'utilities/wvu-bg-dark-fade';

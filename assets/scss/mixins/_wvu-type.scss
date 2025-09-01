@@ -17,7 +17,7 @@
 
 @mixin helvetica-neue($is-important: $global-important) {
   font-family: $helvetica-neue $is-important;
-  font-stretch: normal $is-important;
+  font-weight: 400 $is-important;
   font-style: normal $is-important;
 }
 
@@ -28,7 +28,8 @@
 
 @mixin helvetica-neue-bold($is-important: $global-important) {
   font-family: $helvetica-neue-bold $is-important;
-  font-weight: bold $is-important;
+  font-weight: 700 $is-important;
+  font-style: normal $is-important;
 }
 
 // Example usage:
@@ -50,6 +51,7 @@
 
 @mixin helvetica-neue-italic($is-important: $global-important) {
   font-family: $helvetica-neue-italic $is-important;
+  font-weight: 400 $is-important;
   font-style: italic $is-important;
 }
 
@@ -60,8 +62,8 @@
 
 @mixin helvetica-neue-bold-italic($is-important: $global-important) {
   font-family: $helvetica-neue-bold-italic $is-important;
+  font-weight: 700 $is-important;
   font-style: italic $is-important;
-  font-weight: bold $is-important;
 }
 
 // Example usage:
@@ -73,123 +75,6 @@
   font-family: $helvetica-neue-light $is-important;
   font-weight: normal $is-important;
   -webkit-font-smoothing: antialiased $is-important;
-}
-
-// Example usage:
-// .helvetica-neue-light {
-//   @include helvetica-neue-light();
-// }
-
-@mixin iowan-old-style($is-important: $global-important) {
-  font-family: $iowan-old-style $is-important;
-  font-weight: normal $is-important;
-  line-height: $wvu-traditional-audience-line-height $is-important;
-  -webkit-font-smoothing: antialiased $is-important;
-  &.display-1, &.display-2, &.display-3, &.display-4 {
-    line-height: 1em $is-important;
-  }
-}
-
-// Example usage:
-// .iowan-old-style {
-//   @include iowan-old-style();
-// }
-
-@mixin iowan-old-style-italic($is-important: $global-important) {
-  font-family: $iowan-old-style-italic $is-important;
-  font-stretch: normal $is-important;
-  font-style: italic $is-important;
-  font-weight: normal $is-important;
-  line-height: $wvu-traditional-audience-line-height $is-important;
-  -webkit-font-smoothing: antialiased $is-important;
-  &.display-1, &.display-2, &.display-3, &.display-4 {
-    line-height: 1em $is-important;
-  }
-}
-
-// Example usage:
-// .iowan-old-style-italic {
-//   @include iowan-old-style-italic();
-// }
-
-@mixin iowan-old-style-black($is-important: $global-important) {
-  font-family: $iowan-old-style-black $is-important;
-  font-style: normal $is-important;
-  font-weight: normal $is-important;
-  line-height: $wvu-traditional-audience-line-height $is-important;
-  -webkit-font-smoothing: antialiased $is-important;
-  &.display-1, &.display-2, &.display-3, &.display-4 {
-    line-height: 1em $is-important;
-  }
-}
-
-// Example usage:
-// .iowan-old-style-black {
-//   @include iowan-old-style-black();
-// }
-
-@mixin iowan-old-style-black-italic($is-important: $global-important) {
-  font-family: $iowan-old-style-black-italic $is-important;
-  font-style: italic $is-important;
-  font-weight: normal $is-important;
-  line-height: $wvu-traditional-audience-line-height $is-important;
-  -webkit-font-smoothing: antialiased $is-important;
-  &.display-1, &.display-2, &.display-3, &.display-4 {
-    line-height: 1em $is-important;
-  }
-}
-
-// Example usage:
-// .oliviar-black {
-//   @include iowan-old-style-black();
-// }
-
-@mixin oliviar-black($is-important: $global-important) {
-  font-family: $oliviar-black $is-important;
-  font-style: normal $is-important;
-  font-stretch: normal $is-important;
-  line-height: $wvu-traditional-audience-line-height $is-important;
-  -webkit-font-smoothing: antialiased $is-important;
-  &.display-1, &.display-2, &.display-3, &.display-4 {
-    line-height: 1em $is-important;
-  }
-  em {
-    font-family: $oliviar-black-italic $is-important;
-  }
-}
-
-@mixin oliviar-black-italic($is-important: $global-important) {
-  font-family: $oliviar-black-italic $is-important;
-  font-style: italic $is-important;
-  font-stretch: normal $is-important;
-  font-display: swap $is-important;
-  &.display-1, &.display-2, &.display-3, &.display-4 {
-    line-height: 1em $is-important;
-  }
-  em {
-    font-family: $oliviar-black $is-important;
-  }
-}
-
-@mixin oliviar-thin($is-important: $global-important) {
-  font-family: $oliviar-thin $is-important;
-  font-style: normal $is-important;
-  font-stretch: normal $is-important;
-  font-display: swap $is-important;
-  &.display-1, &.display-2, &.display-3, &.display-4 {
-    line-height: 1em $is-important;
-  }
-  em {
-    font-family: $oliviar-thin $is-important;
-  }
-}
-
-@mixin rustica($is-important: $global-important) {
-  font-family: $rustica $is-important;
-	font-style: italic $is-important;
-	font-stretch: normal $is-important;
-	font-weight: 900 $is-important;
-  font-display: swap $is-important;
 }
 
 // Example usage:
@@ -294,60 +179,6 @@
 // .wvu-text-letter-spacing {
 //   @include wvu-text-letter-spacing();
 // }
-
-@mixin wvu-text-gradient() {
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-// @mixin wvu-text-outline($is-important: $global-important) {
-//   color: transparent $is-important;
-//   -webkit-text-stroke-width: 2px $is-important;
-//   -webkit-text-stroke-color: $dark $is-important;
-//   padding: 1rem $is-important;
-//   margin: -1rem $is-important;
-//   &.wvu-text-gradient {
-//     display: inline-block $is-important;
-//     -webkit-text-stroke-width: 4px $is-important;
-//     -webkit-text-stroke-color: transparent $is-important;
-//     -webkit-text-fill-color: rgba(255, 255, 255, 1) $is-important;
-//     background-clip: text $is-important;
-//     mix-blend-mode: darken $is-important;
-//     &.text-dark {
-//       -webkit-text-fill-color: rgba(0, 0, 0, 1) $is-important;
-//       mix-blend-mode: lighten $is-important;
-//     }
-//     &.text-wvu-coal {
-//       -webkit-text-fill-color: $wvu-coal $is-important;
-//     }
-//   }
-//   &.text-wvu-gold {
-//     -webkit-text-stroke-color: $wvu-gold $is-important;
-//   }
-//   &.text-white {
-//     -webkit-text-stroke-color: $white $is-important;
-//   }
-// }
-
-@mixin wvu-text-outline {
-  position: relative;
-  display: inline-block;
-  &::after {
-    color: rgba(0,0,0, 0.0) $global-important;
-    content: attr(data-text);
-    position: absolute;
-    top: -3px;
-    left: 5px;
-    color: white;
-    // -webkit-text-stroke-width: 1px $global-important;
-    // -webkit-text-stroke-color: $dark $global-important;
-    // -webkit-text-fill-color: transparent $global-important;
-    // text-shadow: none $global-important;
-    text-shadow: 1px 1px 2px blue;
-    // mix-blend-mode: overlay;
-  }
-}
 
 @mixin config($slant, $width, $weight, $is-important: $global-important) {
   font-family: $config $is-important;

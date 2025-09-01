@@ -3,20 +3,15 @@
 
 // Helvetica Neue
 $helvetica-neue-fallback: 'Helvetica Neue', Helvetica, 'Helvetica LT Std', 'Helvetica CY', Arial, 'Lucida Grande', sans-serif !default;
-$helvetica-neue: 'NeueHelvetica55Roman', $helvetica-neue-fallback !default;
+$helvetica-neue: "helvetica-neue-lt-pro", $helvetica-neue-fallback !default;
 $wvu-shout-fallback: 'Arial Narrow', Impact, Charcoal, 'Arial Black', $helvetica-neue-fallback !default;
 
 // Webfonts from Monotype.com
 $helvetica-neue-light: 'NeueHelvetica45Light', $helvetica-neue-fallback !default;
-$helvetica-neue-bold: 'NeueHelvetica75Bold', $helvetica-neue-fallback !default;
-$helvetica-neue-italic: 'NeueHelvetica56Italic', $helvetica-neue-fallback !default;
-$helvetica-neue-bold-italic: 'NeueHelvetica76BoldItalic', $helvetica-neue-fallback !default;
+$helvetica-neue-bold: "helvetica-neue-lt-pro", $helvetica-neue-fallback !default;
+$helvetica-neue-italic: "helvetica-neue-lt-pro", $helvetica-neue-fallback !default;
+$helvetica-neue-bold-italic: "helvetica-neue-lt-pro", $helvetica-neue-fallback !default;
 $helvetica-neue-condensed-black: 'NeueHelvetica97CondensedBlack', $wvu-shout-fallback !default;
-
-// Oliviar Black
-$oliviar-black: 'OliviarSansBlack', $wvu-shout-fallback !default;
-$oliviar-black-italic: 'OliviarSansBlackItalic', $wvu-shout-fallback !default;
-$oliviar-thin: 'OliviarSansThin', $wvu-shout-fallback !default;
 
 // Antonia
 $antonia-fallback: Antonia, 'Times New Roman', Times, Georgia, serif !default;
@@ -25,21 +20,8 @@ $antonia: 'antonia-variable', $antonia-fallback !default;
 // Config Variable
 $config: "config-variable", $wvu-shout-fallback, sans-serif;
 
-// IvyEpic
-$ivyepic: 'ivyepic', $wvu-shout-fallback, sans-serif;
-
-// Rustica
-$rustica: 'Rustica', $wvu-shout-fallback !default;
-
-// Iowan
-$iowan-fallback: Iowan, 'Times New Roman', Times, Georgia, serif !default;
-$iowan-old-style: 'IowanOldStyleBTRoman', $iowan-fallback !default;
-$iowan-old-style-italic: 'IowanOldStyleBTItalic', $iowan-fallback !default;
-$iowan-old-style-black: 'IowanOldStyleBTBlack', $iowan-fallback !default;
-$iowan-old-style-black-italic: 'IowanOldStyleBTBlackItalic', $iowan-fallback !default;
-
 // Shout
-$wvu-shout-font-family: $helvetica-neue-condensed-black !default;
+$wvu-shout-font-family: $config !default;
 
 // Font size
 $wvu-font-size-base: 1rem !default;
@@ -52,8 +34,8 @@ $wvu-shout-line-height: 0.80487em !default;
 $wvu-traditional-audience-line-height: 1.16666666667em !default;
 
 // Audiences
-$wvu-traditional-audience: $iowan-old-style !default;
-$narrow-audience: $iowan-old-style-italic !default;
+// $wvu-traditional-audience: $iowan-old-style !default;
+// $narrow-audience: $iowan-old-style-italic !default;
 
 // Tracking
 $wvu-letter-spacing-width: 1px !default;
@@ -324,11 +306,6 @@ $wvu-texture: "/textures/halftone-grunge-dark.svg";
 // Make !important configurable
 $global-important: !important !default; // Set to `null` to remove !important from all CSS property values, except where explicitly defined otherwise in mixin @includes.
 
-// WVU Elements
-$wvu-bar-color: $wvu-gold !default;
-$wvu-bar-position: 'top' !default;
-$wvu-bar-width: 15rem !default;
-
 // Z-index for vignetting. slash, grid
 $wvu-z-index-content: 100 !default;
 $wvu-z-index-breadcrumbs: 990 !default;
@@ -470,22 +447,6 @@ $aspect-ratios: (
 
 $grid-columns: 24 !default;
 
-$audience-general-typography: (
-  "label": $helvetica-neue-condensed-black,
-  "super-heading": $iowan-old-style-black,
-  "display-heading": $helvetica-neue-condensed-black,
-  "subheading": $helvetica-neue-light,
-  "body": $helvetica-neue
-);
-
-$audience-prospective-students-typography: (
-  "label": $helvetica-neue-condensed-black,
-  "super-heading": $oliviar-black,
-  "display-heading": $rustica,
-  "subheading": $helvetica-neue-light,
-  "body": $helvetica-neue
-);
-
 $audiences: (
   "general",
   "alumni",
@@ -494,11 +455,6 @@ $audiences: (
   "prospective_students",
   "faculty_staff",
   "leaders_partners"
-);
-
-$audiences-typography: (
-  "general": $audience-general-typography,
-  "prospective_students": $audience-prospective-students-typography
 );
 
 $tones-typography: (
