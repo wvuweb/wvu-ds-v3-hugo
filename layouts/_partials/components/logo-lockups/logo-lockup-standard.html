@@ -1,0 +1,12 @@
+<a href="/" class="d-flex position-relative my-4 align-items-center justify-content-center justify-content-lg-start text-decoration-none text-white" href="/">
+  <span class="visually-hidden">{{ if .super_heading }}{{ .super_heading }}{{ else }}West Virginia University{{ end }}</span>
+  <img class="me-4" src="https://static.wvu.edu/global/images/logos/wvu/flying-wv-r-small--1.0.0.svg" height="70px" width="65px" alt="Flying WV" />
+  <div class="border-start border-1 border-white py-1 ps-4">
+    {{ if .super_heading }}
+      <span class="d-block mb-2 small">{{ .super_heading }}</span>
+    {{ else }}
+      <span class="d-block mb-2 small">West Virginia University</span>
+    {{ end }}
+    <span class="mt-n2 helvetica-neue-bold fs-4 lh-1 helvetica-neue-bold">{{ if .lockup_lines }}{{ range .lockup_lines }}<span class="d-block">{{ . }}</span>{{ end }}{{ else }}{{ site.Title }}{{ end }}</span>
+  </div>
+</a>
