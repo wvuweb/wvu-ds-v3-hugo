@@ -162,21 +162,41 @@ $wvu-b-breadcrumbs-text-color: null;
       @if $color == $wvu-coal or $color == $wvu-safety-blue or $color == $wvu-old-gold or $color == $wvu-rattler-gray {
         &.wvu-b-subtle, .wvu-b-subtle {
           background-color: shade($wvu-b-bg-color, 7%) !important;
+          .wvu-b-subtle {
+            &.btn {
+              color: white !important;
+            }
+          }
         }
       } @else if $color == $wvu-blue {
         &.wvu-b-subtle, .wvu-b-subtle {
           background-color: shade($wvu-b-bg-color, 20%) !important;
+          .wvu-b-subtle {
+            background-color: $wvu-b-bg-color $global-important;
+            &.btn {
+              color: white !important;
+            }
+          }
         }
       } @else if $color == $wvu-not-quite-white {
         &.wvu-b-subtle, .wvu-b-subtle {
           background-color: tint($wvu-b-bg-color, 50%) !important;
           .wvu-b-subtle {
             background-color: $wvu-b-bg-color $global-important;
+            &.btn {
+            color: $wvu-coal !important;
+          }
           }
         }
       } @else {
         &.wvu-b-subtle, .wvu-b-subtle {
           background-color: tint($wvu-b-bg-color, 20%) !important;
+          .wvu-b-subtle {
+            background-color: $wvu-b-bg-color $global-important;
+            &.btn {
+            color: $wvu-coal !important;
+          }
+          }
         }
       }
     } @else if $element == "accent-bg" or $element == "pattern" {
