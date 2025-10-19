@@ -184,8 +184,8 @@ $wvu-b-breadcrumbs-text-color: null;
           .wvu-b-subtle {
             background-color: $wvu-b-bg-color $global-important;
             &.btn {
-            color: $wvu-coal !important;
-          }
+              color: $wvu-coal !important;
+            }
           }
         }
       } @else {
@@ -194,8 +194,8 @@ $wvu-b-breadcrumbs-text-color: null;
           .wvu-b-subtle {
             background-color: $wvu-b-bg-color $global-important;
             &.btn {
-            color: $wvu-coal !important;
-          }
+              color: $wvu-coal !important;
+            }
           }
         }
       }
@@ -215,7 +215,9 @@ $wvu-b-breadcrumbs-text-color: null;
       color: $color $global-important;
       $wvu-b-breadcrumbs-text-color: $color !global;
       .wvu-b-text, .wvu-b-text a:link, .wvu-b-text a:visited {
-        color: $color $global-important;
+        :not(.btn), &:not(.btn >) {
+          color: $color $global-important;
+        }
       }
     } @else if $element == "gradient" and $color != "" {
       &.wvu-b-gradient, .wvu-b-gradient {

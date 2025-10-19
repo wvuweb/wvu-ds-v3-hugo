@@ -1,0 +1,46 @@
+{{ $label := "" }}
+{{ $labelUrl := "" }}
+{{ $menu := . }}
+{{ $backgroundColor := "" }}
+{{ $labelColor := "" }}
+{{ $items := slice }}
+
+{{ range site.Data.menus }}
+  {{ if eq .uuid $menu }}
+    {{ $label = .label }}
+    {{ $labelUrl = .label_url }}
+    {{ $items = .menu_items }}
+    {{ if .horizontal_subnav_color_palette }}
+      {{ $backgroundColor = .horizontal_subnav_color_palette }}
+    {{ end }}
+    {{ if .label_c }}
+      {{ $labelColor = .label_c }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<section class="{{ $backgroundColor }}">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      {{ if $label }}
+        {{ if $labelUrl }}
+          <a class="navbar-brand config-extra-bold text-uppercase text-decoration-none" href="{{ $labelUrl }}">{{ $label }}</a>
+        {{ else }}
+          <span class="navbar-brand config-extra-bold text-uppercase text-decoration-none">{{ $label }}</span>
+        {{ end }}
+      {{ end }}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 antonia-heavy small">
+          {{ range $items }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ .url }}">{{ .text }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>

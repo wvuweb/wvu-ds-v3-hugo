@@ -1,0 +1,15 @@
+<div class="text-center">
+  <div class="row">
+    <div class="col-xl-16 col-xxl-12 mx-xl-auto">
+      <div class="mb-4">
+        <h2 class="wvu-b-display-heading wvu-b-accent-text wvu-b-text-shadow display-4"><span class="wvu-b-font-adjust">{{ .heading }}</span></h2>
+        {{ with .subheading }}
+          <p class="lead">{{ . }}</p>
+        {{ end }}
+      </div>
+      {{ range .ctas }}
+        <a class="btn {{ if .button_c }}btn-{{ .button_c }}{{ else }}wvu-b-btn{{ end }} mb-1" href="{{ .url }}">{{ .text }}{{ with .icon }} <span class="fa-regular fa-{{ . }}"></span>{{ end }}</a>
+      {{ end }}
+    </div>
+  </div>
+</div>

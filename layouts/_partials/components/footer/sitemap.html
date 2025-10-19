@@ -1,0 +1,13 @@
+{{ $siteMenu := site.Data.settings.settings.primary_navigation.nav_links }}
+
+<div class="col-md-6 col-xl-4 mb-4 mb-md-0">
+  <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold mb-3">Site Menu</h2>
+  <ul class="list-unstyled mb-0 lh-sm">
+    {{ range $siteMenu }}
+      {{ $rel_link := .link | relURL }}
+      <li class="mb-3">
+        <a class="text-decoration-none" href="{{ .link }}">{{ .text }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</div>

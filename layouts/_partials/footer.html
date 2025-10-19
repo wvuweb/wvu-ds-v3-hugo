@@ -1,7 +1,17 @@
-{{ $title := site.Data.settings.settings.masthead.title }}
+{{ $title := site.Title }}
 {{ $parentOrg := site.Data.settings.settings.masthead.parent_org }}
 {{ $socialMediaAccounts := site.Data.settings.settings.social_media_accounts }}
 {{ $siteMenu := site.Data.settings.settings.primary_navigation.nav_links }}
+
+{{ with site.Data.settings.settings.default_content_blocks }}
+  {{ $partialName := "" }}
+  {{ range . }}
+    <section class="audience-{{ .settings.styles.audience }} tone-{{ .settings.styles.tone }} wvu-b-text xsection-component {{ .settings.layout.padding }} position-relative bg-{{ .settings.styles.color_palette }} {{ if .settings.styles.bg_subtle }}wvu-b-subtle{{ end }}" data-pagefind-ignore="all">
+      {{ $partialName = replace ._bookshop_name "design-system/default-content/" "components/default-content/" }}
+      {{ partial $partialName . }}
+    </section>
+  {{ end }}
+{{ end }}
 
 {{ with site.Data.settings.settings.footer }}
   <footer data-pagefind-ignore="all">
@@ -12,12 +22,10 @@
           <div class="col-md-6 me-auto mb-5">
             <div class="mb-4">
               <h2 class="helvetica-neue-bold h4">
-                {{ range $title }}
-                  <span class="d-block">{{ . }}</span>
-                {{ end }}
+                <span class="d-block">{{ $title }}</span>
               </h2>
-              {{ with $parentOrg }}
-                <p class="antonia-italic fs-5">{{ .title }}</p>
+              {{ if $parentOrg }}
+                <p class="antonia-italic fs-5">{{ $parentOrg }}</p>
               {{ end }}
             </div>
             {{ range .contact_info_blocks }}
@@ -70,58 +78,13 @@
               </ul>
             {{ end }}
           </div>
-          <div class="col-md-6 col-xl-4 mb-4 mb-md-0">
-            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold mb-3">Site Menu</h2>
-            <ul class="list-unstyled mb-0 lh-sm">
-              {{ range $siteMenu }}
-                {{ $rel_link := .link | relURL }}
-                <li class="mb-3">
-                  <a class="text-decoration-none" href="{{ .link }}">{{ .text }}</a>
-                </li>
-              {{ end }}
-            </ul>
-          </div>
-          <div class="col-md-6 col-xl-4 mb-4 mb-md-0">
-            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold mb-3">{{ .quicklinks_heading }}</h2>
-            <ul class="list-unstyled lh-sm">
-              {{ range .quicklinks }}
-                <li class="mb-3">
-                  <a class="text-decoration-none" href="{{ .url }}">{{ .text }}</a>
-                </li>
-              {{ end }}
-            </ul>
-          </div>
-          <div class="col-md-6 col-xl-4">
-            <h2 class="h6 wvu-text-letter-spacing-lg wvu-b-label text-uppercase text-wvu-gold mb-3">University Resources</h2>
-            <ul class="list-unstyled mb-0 lh-sm">
-              <li class="mb-3">
-                <a class="text-decoration-none" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a>
-              </li>
-              <li class="mb-3">
-                <a class="text-decoration-none" href="https://campusmap.wvu.edu">Campus Map</a>
-              </li>
-              <li class="mb-3">
-                <a class="text-decoration-none" href="https://careers.wvu.edu/career-opportunities">WVU Careers</a>
-              </li>
-              <li class="mb-3">
-                <a class="text-decoration-none" href="https://directory.wvu.edu">WVU Directory</a>
-              </li>
-              <li class="mb-3">
-                <a class="text-decoration-none" href="https://give.wvu.edu/">Give</a>
-              </li>
-              <li class="mb-3">
-                <a class="text-decoration-none" href="https://wvu.joinhandshake.com/login">Handshake</a>
-              </li>
-              <li class="mb-3">
-                <a class="text-decoration-none" href="https://alert.wvu.edu/">WVU Safety Notification System</a>
-              </li>
-              <li class="mb-3">
-                <a class="text-decoration-none" href="https://wvutoday.wvu.edu">WVU Today</a>
-              </li>
-              <li class="mb-3">
-                <a class="text-decoration-none" href="https://portal.wvu.edu">WVU Portal</a>
-              </li>
-          </div>
+          {{ with .footer_blocks }}
+            {{ $partialName := "" }}
+            {{ range . }}
+              {{ $partialName = replace ._bookshop_name "design-system/footer/" "components/footer/" }}
+              {{ partial $partialName . }}
+            {{ end }}
+          {{ end }}
         </div>
         {{ if .postscript.show }}
           {{ with .postscript }}

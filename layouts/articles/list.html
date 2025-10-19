@@ -38,7 +38,7 @@
                   {{ if not $hideThumbnails }}
                     <div class="wvu-article__thumb col-md-6">
                       <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
-                        {{ partial "bookshop" (slice "design-system/generic/img" (dict "src" .Params.image "width" 960 "height" 640 "alt" .Params.alt_text )) }}
+                        {{ partial "bookshop" (slice "design-system/generic/img" (dict "src" .Params.article_image "width" 960 "height" 640 "alt" .Params.article_image_alt_text )) }}
                       </a>
                     </div>
                   {{ end }}

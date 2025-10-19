@@ -35,6 +35,10 @@
     {{ partial "horizontal-subnav" . }}
   {{ end }}
 
+  {{ with .Params.horizontal_subnav }}
+    {{ partial "horizontal-subnav-v2" . }}
+  {{ end }}
+
   {{ $topper := page.Params.topper }}
 
   {{ with page.Params.article_topper }}
@@ -57,7 +61,7 @@
     {{ partial "default-content" . }}
   {{ end }}
 
-  {{ partial "footer.html" . }}
+  {{ partial "footer" . }}
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
