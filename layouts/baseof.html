@@ -31,10 +31,6 @@
 
   {{ $secondaryNav := slice }}
 
-  {{ with .Params.secondary_nav }}
-    {{ partial "horizontal-subnav" . }}
-  {{ end }}
-
   {{ with .Params.horizontal_subnav }}
     {{ partial "horizontal-subnav-v2" . }}
   {{ end }}
