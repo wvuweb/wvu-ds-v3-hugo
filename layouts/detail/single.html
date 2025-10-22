@@ -1,6 +1,17 @@
 {{ define "main" }}
 
-  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks "subnav" .Params.vertical_subnav)` }}
-  {{ partial "bookshop_partial" (slice "page-detail" (dict "topper" .Params.topper "title" .Params.title "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks "subnav" .Params.vertical_subnav)) }}
+  {{ $label := "Section Menu" }}
+  {{ $menu := .Params.vertical_subnav }}
+  {{ $items := slice }}
+
+  {{ range site.Data.menus }}
+    {{ if eq .uuid $menu }}
+      {{ $label = .label }}
+      {{ $items = .menu_items }}
+    {{ end }}
+  {{ end }}
+
+  {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks)` }}
+  {{ partial "bookshop_partial" (slice "page-detail" (dict "topper" .Params.topper "title" .Params.title "detail_blocks" .Params.detail_blocks "sidebar_blocks" .Params.detail_sidebar_blocks "subnav_label" $label "subnav_items" $items )) }}
 
 {{ end }}
