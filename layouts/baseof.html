@@ -35,6 +35,10 @@
     {{ partial "horizontal-subnav-v2" . }}
   {{ end }}
 
+  {{ if not .IsHome }}
+    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" .Params.topper) }}
+  {{ end }}
+
   {{ $topper := page.Params.topper }}
 
   {{ with page.Params.article_topper }}

@@ -9,13 +9,20 @@
   {{ $audience = .topper.settings.styles.audience }}
 {{ end }}
 
-{{ if and .topper .topper.settings.styles .topper.settings.styles.tone }}
-  {{ $toneOverride = "override-tone-styles-site" }}
-  {{ $tone = .topper.settings.styles.tone}}
-{{ end }}
-
 {{ if and .topper .topper.settings.styles .topper.settings.styles.color_palette }}
   {{ $color = .topper.settings.styles.color_palette }}
+{{ end }}
+
+{{ if and .topper .topper.settings.styles .topper.settings.styles.tone }}
+  {{ $tone = .topper.settings.styles.tone }}
+  {{ $toneOverride = "override-tone-styles-site" }}
+  {{ if eq $tone "lets-go"}}
+    {{ if or (eq $color "option-2") (eq $color "option-4") (eq $color "option-8") }}
+      {{ $tone = "transparent bg-dark" }}
+    {{ else }}
+      {{ $tone = "transparent" }}
+    {{ end }}
+  {{ end }}
 {{ end }}
 
 <section aria-label="Breadcrumbs" class="d-flex position-relative wvu-z-index-breadcrumbs {{ $audienceOverride }} {{ $toneOverride }} audience-{{ $audience }} tone-{{ $tone }} bg-{{ $color }}" style="height: 0px;">
