@@ -113,7 +113,7 @@ ol.wvu-ol-big-numbers {
       position: absolute $global-important;
       top: 0 $global-important;
       width: 0 $global-important;
-      @include wvu-shout();
+      @include antonia-italic();
     }
   }
 }
@@ -145,7 +145,7 @@ ol.wvu-ol-small-numbers {
       position: absolute $global-important;
       top: 0 $global-important;
       width: 0 $global-important;
-      @include wvu-shout();
+      @include antonia-italic();
     }
   }
 }
