@@ -6,6 +6,5 @@ body {
   &::after {
     counter-increment: is_count;
     content: counter(is_count);
-    color: $wvu-gold;
   }
 }
