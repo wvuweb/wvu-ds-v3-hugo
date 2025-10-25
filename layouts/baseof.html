@@ -35,7 +35,7 @@
     {{ partial "horizontal-subnav-v2" . }}
   {{ end }}
 
-  {{ if and (not .IsHome) (not site.Params.env_bookshop_live) }}
+  {{ if not .IsHome }}
     {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" .Params.topper) }}
   {{ end }}
 
@@ -57,9 +57,7 @@
     {{ block "main" . }}{{ end }}
   </main>
 
-  {{ if not page.Params.is_default_content }}
-    {{ partial "default-content" . }}
-  {{ end }}
+  {{ partial "bookshop_partial" (slice "default-content" (dict "blocks" site.Data.default_content.default_content.default_content_blocks)) }}
 
   {{ partial "footer" . }}
   
