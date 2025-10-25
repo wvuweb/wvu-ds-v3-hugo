@@ -86,20 +86,18 @@
             {{ end }}
           {{ end }}
         </div>
-        {{ if .postscript.show }}
+        {{ if or .postscript.label .f_postscript_links }}
           {{ with .postscript }}
-            <div class="d-flex border-top border-bottom border-1 border-wvu-star-city-blue mt-5 py-4">
-              {{ with .text }}
-                <h2 class="d-inline-block h5 antonia mb-0 me-3">{{ . }}</h2>
+            <div class="d-xl-flex border-top border-bottom border-1 border-wvu-star-city-blue mt-5 py-4 justify-content-center">
+              {{ with .label }}
+                <h2 class="d-lg-inline-block h5 antonia-regular mb-3 mb-lg-0 me-3">{{ . }}</h2>
               {{ end }}
-              {{ with .items }}
+              {{ with .f_postscript_links }}
                 <ul class="list-inline d-inline-block mb-0">
                   {{ range . }}                  
                     <li class="list-inline-item">
                       {{ if .url }}
-                        {{ with .label }}<strong>{{ . }}</strong>{{ end }} <a href="{{ .url }}">{{ .text }}</a></li>
-                      {{ else }}
-                        {{ with .label }}<strong>{{ . }}</strong>{{ end }} {{ .text }}</a>
+                        <a class="text-decoration-none config-extra-bold" href="{{ .url }}">{{ .text }}</a></li>
                       {{ end }}
                     </li>
                   {{ end }}
