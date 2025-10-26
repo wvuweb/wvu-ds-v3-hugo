@@ -3,6 +3,7 @@
 {{ $audience := "" }}
 {{ $tone := "" }}
 {{ $color := "" }}
+{{ $textColor := "" }}
 
 {{ if and .topper .topper.settings.styles .topper.settings.styles.audience }}
   {{ $audienceOverride = "override-audience-styles-site" }}
@@ -10,7 +11,12 @@
 {{ end }}
 
 {{ if and .topper .topper.settings.styles .topper.settings.styles.color_palette }}
-  {{ $color = .topper.settings.styles.color_palette }}
+  {{ if .topper.background_image }}
+    {{ $color = "transparent" }}
+    {{ $textColor = "text-white" }}
+  {{ else }}
+    {{ $color = .topper.settings.styles.color_palette }}
+  {{ end }}
 {{ end }}
 
 {{ if and .topper .topper.settings.styles .topper.settings.styles.tone }}
@@ -28,7 +34,7 @@
 <section aria-label="Breadcrumbs" class="d-flex position-relative wvu-z-index-breadcrumbs {{ $audienceOverride }} {{ $toneOverride }} audience-{{ $audience }} tone-{{ $tone }} bg-{{ $color }}" style="height: 0px;">
   <div class="position-absolute mt-3 w-100 text-start" style="top: 0px;">
     <div class="container">
-      <ul class="list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1 wvu-b-breadcrumbs">
+      <ul class="list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1 wvu-b-breadcrumbs {{ $textColor }}">
         {{ $breadcrumb := split (replaceRE `\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}` "" (trim .rel_permalink "/" )) "/" }}
         {{ $crumb_link := "/" }}
         {{ $rel_permalink := .rel_permalink }}
@@ -36,7 +42,7 @@
         {{ range $breadcrumb }}
           {{ $crumb_link = print $crumb_link . "/" }}
           {{ if ne $rel_permalink $crumb_link }}
-            <li class="list-inline-item me-0"><a class="" href="{{ $crumb_link }}" style="color: inherit;">{{ title (replace . "-" " ") }}</a></li> / 
+            <li class="list-inline-item me-0"><a class="{{ $textColor }}" href="{{ $crumb_link }}" style="color: inherit;">{{ title (replace . "-" " ") }}</a></li> / 
           {{ else }}
             <li class="list-inline-item active me-0">{{ title (replace . "-" " ") }}</li>
           {{ end }}
