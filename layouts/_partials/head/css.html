@@ -5,3 +5,9 @@
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+
+{{ with site.Data.settings.extras.custom_css }}
+<style>
+  {{ . }}
+</style>
+{{ end }}
