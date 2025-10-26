@@ -6,8 +6,8 @@
 
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 
-{{ with site.Data.settings.extras.custom_css }}
+{{ with site.Data.settings.settings.extras.custom_css }}
 <style>
-  {{ . }}
+{{ . | safeCSS }}
 </style>
 {{ end }}
