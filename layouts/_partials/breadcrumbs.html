@@ -17,6 +17,9 @@
   {{ else }}
     {{ $color = .topper.settings.styles.color_palette }}
   {{ end }}
+{{ else if eq .schema "photo_essay" }}
+  {{ $color = "transparent" }}
+  {{ $textColor = "text-white" }}
 {{ end }}
 
 {{ if and .topper .topper.settings.styles .topper.settings.styles.tone }}
@@ -47,6 +50,7 @@
             <li class="list-inline-item active me-0">{{ title (replace . "-" " ") }}</li>
           {{ end }}
         {{ end }}
+        <span class="text-white">{{ .schema }}</span>
       </ul>
     </div>
   </div>

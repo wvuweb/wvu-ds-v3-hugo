@@ -36,7 +36,7 @@
   {{ end }}
 
   {{ if not .IsHome }}
-    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" .Params.topper) }}
+    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" .Params.topper "schema" .Params._schema) }}
   {{ end }}
 
   {{ $topper := page.Params.topper }}
