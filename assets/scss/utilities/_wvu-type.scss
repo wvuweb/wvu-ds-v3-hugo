@@ -282,6 +282,16 @@
   }
 }
 
+@media screen and (min-width: 1780px) {
+  .wvu-text-xxl-vertical {
+    position: absolute !important;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    rotate: 180deg !important;
+    height: 100% !important;
+  }
+}
+
 .wvu-author-list {
   .wvu-author {
     &:not(:last-child) {
