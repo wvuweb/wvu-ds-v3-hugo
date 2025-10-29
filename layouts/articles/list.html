@@ -48,18 +48,6 @@
     
                     {{ if or (not $hideAuthor) ( .Params.publishDate ) }}
                       <p class="small d-block">
-                        {{ if not $hideAuthor }}
-                          {{ range $authorList }}
-                            <span class="wvu-article__author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                              <span itemprop="name">
-                                {{ .Params.name }}
-                              </span>
-                            </span>
-                          {{ end }}
-                        {{ end }}
-    
-                        {{ if and (not .Params.settings.config.hide_author) .Params.authors .Params.publishDate }} | {{ end }}
-    
                         {{ if .Params.publishDate }}
                           <time class="wvu-article__date-published" datetime="{{ .Params.publishDate }}">{{ .Params.publishDate | time.Format "Monday, January 2, 2006" }}</time>
                         {{ end }}
