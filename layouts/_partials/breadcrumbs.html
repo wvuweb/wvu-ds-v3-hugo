@@ -4,26 +4,33 @@
 {{ $tone := "" }}
 {{ $color := "" }}
 {{ $textColor := "" }}
+{{ $topper := .topper }}
 
-{{ if and .topper .topper.settings.styles .topper.settings.styles.audience }}
-  {{ $audienceOverride = "override-audience-styles-site" }}
-  {{ $audience = .topper.settings.styles.audience }}
+{{ if .article_topper }}
+  {{ $topper = .article_topper }}
+{{ else if .student_profile_topper }}
+  {{ $topper = .student_profile_topper }}
 {{ end }}
 
-{{ if and .topper .topper.settings.styles .topper.settings.styles.color_palette }}
-  {{ if .topper.background_image }}
+{{ if and $topper $topper.settings.styles $topper.settings.styles.audience }}
+  {{ $audienceOverride = "override-audience-styles-site" }}
+  {{ $audience = $topper.settings.styles.audience }}
+{{ end }}
+
+{{ if and $topper $topper.settings.styles $topper.settings.styles.color_palette }}
+  {{ if $topper.background_image }}
     {{ $color = "transparent" }}
     {{ $textColor = "text-white" }}
   {{ else }}
-    {{ $color = .topper.settings.styles.color_palette }}
+    {{ $color = $topper.settings.styles.color_palette }}
   {{ end }}
 {{ else if eq .schema "photo_essay" }}
   {{ $color = "transparent" }}
   {{ $textColor = "text-white" }}
 {{ end }}
 
-{{ if and .topper .topper.settings.styles .topper.settings.styles.tone }}
-  {{ $tone = .topper.settings.styles.tone }}
+{{ if and $topper $topper.settings.styles $topper.settings.styles.tone }}
+  {{ $tone = $topper.settings.styles.tone }}
   {{ $toneOverride = "override-tone-styles-site" }}
   {{ if eq $tone "lets-go"}}
     {{ if or (eq $color "option-2") (eq $color "option-4") (eq $color "option-8") }}

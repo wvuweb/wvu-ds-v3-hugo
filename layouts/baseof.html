@@ -35,8 +35,28 @@
     {{ partial "horizontal-subnav-v2" . }}
   {{ end }}
 
+  {{ $topper := "" }}
+
+  {{ if .Params.topper }}
+    {{ $topper = .Params.topper }}
+  {{ else if .Params.student_profile_topper }}
+    {{ $topper = .Params.student_profile_topper }}
+  {{ else if .Params.article_topper }}
+    {{ $topper = .Params.article_topper }}
+  {{ else if .Params.organization_topper }}
+    {{ $topper = .Params.organization_topper }}
+  {{ else if .Params.place_topper }}
+    {{ $topper = .Params.place_topper }}
+  {{ else if .Params.faculty_profile_topper }}
+    {{ $topper = .Params.faculty_profile_topper }}
+  {{ else if .Params.author_profile_topper }}
+    {{ $topper = .Params.author_profile_topper }}
+  {{ else if .Params.alumni_profile_topper }}
+    {{ $topper = .Params.alumni_profile_topper }}
+  {{ end }}
+  
   {{ if not .IsHome }}
-    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" .Params.topper "schema" .Params._schema) }}
+    {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" $topper "schema" .Params._schema) }}
   {{ end }}
 
   {{ $topper := page.Params.topper }}
