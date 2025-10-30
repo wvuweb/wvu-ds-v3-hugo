@@ -85,6 +85,15 @@ img {
   }
 }
 
+.wvu-breadcrumb-slash {
+  &:before {
+    content: ' ';
+  }
+  &:after {
+    content: ' ';
+  }
+}
+
 @media (max-width: $wvu-bp-md) {
   .wvu-backpage-main {
     h2 {

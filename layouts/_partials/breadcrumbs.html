@@ -48,11 +48,11 @@
         {{ $breadcrumb := split (replaceRE `\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}` "" (trim .rel_permalink "/" )) "/" }}
         {{ $crumb_link := "/" }}
         {{ $rel_permalink := .rel_permalink }}
-        <li class="list-inline-item me-0"><a class="" href="/">Home</a></li> / 
+        <li class="list-inline-item me-0"><a class="" href="/">Home</a></li><span class="wvu-breadcrumb-slash">/</span>
         {{ range $breadcrumb }}
           {{ $crumb_link = print $crumb_link . "/" }}
           {{ if ne $rel_permalink $crumb_link }}
-            <li class="list-inline-item me-0"><a class="{{ $textColor }}" href="{{ $crumb_link }}" style="color: inherit;">{{ title (replace . "-" " ") }}</a></li> / 
+            <li class="list-inline-item me-0"><a class="{{ $textColor }}" href="{{ $crumb_link }}" style="color: inherit;">{{ title (replace . "-" " ") }}</a></li><span class="wvu-breadcrumb-slash">/</span>
           {{ else }}
             <li class="list-inline-item active me-0">{{ title (replace . "-" " ") }}</li>
           {{ end }}
