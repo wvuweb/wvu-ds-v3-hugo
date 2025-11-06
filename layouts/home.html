@@ -1,7 +1,35 @@
-
 {{ define "main" }}
 
+  {{ $blocks := slice }}
+  {{ $block := "" }}
+  {{ $sitewideComponents := slice }}
+  {{ $sitewideComponent := "" }}
+
+  {{ range .Params.content_blocks }}
+    {{ if .is_sitewide }}
+      {{ $sitewideSection := .sitewide_section }}
+      {{ $sitewideComponents = site.Data.sitewide_components.sitewide_components.sitewide_components }}
+      {{ range $sitewideComponents }}
+        {{ if eq .uuid $sitewideSection }}
+          {{ $blocks = $blocks | append .sw_component }}
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{ $blocks = $blocks | append . }}
+    {{ end }}
+  {{ end }}
+
   {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "blocks" .Params.content_blocks)` }}
-  {{ partial "bookshop_partial" (slice "page-guide" (dict "topper" .Params.topper "title" .Params.title "blocks" .Params.content_blocks)) }}
+  {{ partial "bookshop_partial" (slice "page-guide" (dict "topper" .Params.topper "title" .Params.title "blocks" $blocks)) }}
+
+  {{ if and site.Params.env_bookshop_live site.Data.default_content.default_content.default_content_blocks }}
+    <div class="py-6 py-xxl-7">
+      <div class="container">
+        <div class="alert alert-info">
+          Default content will not show in the live editor.
+        </div>
+      </div>
+    </div>
+  {{ end }}
   
 {{ end }}
