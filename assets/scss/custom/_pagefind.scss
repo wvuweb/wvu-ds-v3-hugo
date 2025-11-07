@@ -28,3 +28,8 @@
 .pagefind-ui__result-thumb.svelte-j9e30.svelte-j9e30 {
   margin-left: 2rem !important;
 }
+
+.z-index-pagefind {
+  position: relative !important;
+  z-index: 999999 !important;
+}
