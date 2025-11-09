@@ -223,6 +223,12 @@ $wvu-b-breadcrumbs-text-color: null;
       }
     } @else if $element == "text" {
       color: $color $global-important;
+      &.wvu-b-subtle, .wvu-b-subtle {
+        color: $color $global-important;
+        .wvu-b-subtle {
+          color: $color $global-important;
+        }
+      }
       $wvu-b-breadcrumbs-text-color: $color !global;
       .wvu-b-text, .wvu-b-text a:link, .wvu-b-text a:visited {
         :not(.btn), &:not(.btn >) {
