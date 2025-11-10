@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+  {{ with .Params.intro }}
+    <div class="py-6">
+      <div class="container">
+        {{ .intro_text | markdownify }}
+      </div>
+    </div>
+  {{ end }}
+
+{{ end }}
