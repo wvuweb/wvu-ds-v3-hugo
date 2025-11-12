@@ -1,7 +1,6 @@
-.btn {
-  text-decoration: none $global-important;
-  &::after {
-    content: ' ';
+* > .btn {
+  &:not(:first-child) {
+    margin-left: 5px;
   }
 }
 
