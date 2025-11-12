@@ -1,5 +1,8 @@
 .btn {
   text-decoration: none $global-important;
+  &::after {
+    content: ' ';
+  }
 }
 
 @each $text-color, $text-value in $theme-colors {
