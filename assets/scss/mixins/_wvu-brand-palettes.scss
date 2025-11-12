@@ -311,6 +311,11 @@ $wvu-b-breadcrumbs-text-color: null;
               .wvu-b-accent-text {
                 color: $wvu-blue $global-important;
               }
+              .wvu-b-btn {
+                &:not(.btn) {
+                  color: inherit $global-important;
+                }
+              }
             }
           }
         }
