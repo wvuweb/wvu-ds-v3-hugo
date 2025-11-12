@@ -1,0 +1,55 @@
+{{ $audienceOverride := "" }}
+{{ $toneOverride := "" }}
+{{ $audience := "" }}
+{{ $tone := "" }}
+{{ $color := "" }}
+{{ $textColor := "" }}
+{{ $topper := .topper }}
+
+{{ if .article_topper }}
+  {{ $topper = .article_topper }}
+{{ else if .student_profile_topper }}
+  {{ $topper = .student_profile_topper }}
+{{ end }}
+
+{{ if and $topper $topper.settings.styles $topper.settings.styles.audience }}
+  {{ $audienceOverride = "override-audience-styles-site" }}
+  {{ $audience = $topper.settings.styles.audience }}
+{{ end }}
+
+{{ if and $topper $topper.settings.styles $topper.settings.styles.color_palette }}
+  {{ if $topper.background_image }}
+    {{ $color = "transparent" }}
+    {{ $textColor = "text-white" }}
+  {{ else }}
+    {{ $color = $topper.settings.styles.color_palette }}
+  {{ end }}
+{{ else if eq .schema "photo_essay" }}
+  {{ $color = "transparent" }}
+  {{ $textColor = "text-white" }}
+{{ end }}
+
+{{ if and $topper $topper.settings.styles $topper.settings.styles.tone }}
+  {{ $tone = $topper.settings.styles.tone }}
+  {{ $toneOverride = "override-tone-styles-site" }}
+  {{ if eq $tone "lets-go"}}
+    {{ if or (eq $color "option-2") (eq $color "option-4") (eq $color "option-8") }}
+      {{ $tone = "transparent bg-dark" }}
+    {{ else }}
+      {{ $tone = "transparent" }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<section aria-label="Breadcrumbs" class="d-flex position-relative wvu-z-index-breadcrumbs {{ $audienceOverride }} {{ $toneOverride }} audience-{{ $audience }} tone-{{ $tone }} bg-{{ $color }}" style="height: 0px;">
+  <div class="position-absolute mt-3 w-100 text-start" style="top: 0px;">
+    <div class="container">
+      <ul class="list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1 wvu-b-breadcrumbs {{ $textColor }}">
+        <li class="list-inline-item me-0"><a class="" href="/">Home</a></li><span class="wvu-breadcrumb-slash">/</span>
+        {{ range .Ancestors.Reverse }}
+          <li class="list-inline-item me-0"><a class="{{ $textColor }}" href="{{ .RelPermalink }}" style="color: inherit;">{{ .LinkTitle }}</a></li><span class="wvu-breadcrumb-slash">/</span>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</section>

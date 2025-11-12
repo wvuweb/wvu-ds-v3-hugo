@@ -159,10 +159,20 @@ $wvu-b-breadcrumbs-text-color: null;
       background-color: $color $global-important;
       $wvu-b-bg-color: $color !global;
       $wvu-b-breadcrumbs-bg-color: $color !global;
-      @if $color == $color == $wvu-safety-blue or $color == $wvu-old-gold or $color == $wvu-rattler-gray {
+      @if $color == $color == $wvu-gold or $color == $wvu-star-city-blue or $color == $wvu-canary or $color == $wvu-sunset or $color == $wvu-coopers-gray or $color == $wvu-seneca-gray or $color == $wvu-wild-flour or $color == $wvu-buckskin {
         &.wvu-b-subtle, .wvu-b-subtle {
-          background-color: shade($wvu-b-bg-color, 7%) !important;
+          background-color: tint($wvu-b-bg-color, 20%) !important;
           .wvu-b-subtle {
+            &.btn {
+              color: white !important;
+            }
+          }
+        }
+      } @else if $color == $wvu-gold {
+        &.wvu-b-subtle, .wvu-b-subtle {
+          background-color: tint($wvu-b-bg-color, 7%) !important;
+          .wvu-b-subtle {
+            background-color: $wvu-b-bg-color $global-important;
             &.btn {
               color: white !important;
             }
@@ -200,7 +210,7 @@ $wvu-b-breadcrumbs-text-color: null;
         }
       } @else {
         &.wvu-b-subtle, .wvu-b-subtle {
-          background-color: tint($wvu-b-bg-color, 20%) !important;
+          background-color: shade($wvu-b-bg-color, 7%) !important;
           .wvu-b-subtle {
             background-color: $wvu-b-bg-color $global-important;
             &.btn {
