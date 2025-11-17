@@ -1,0 +1,52 @@
+<section class="sticky-top bg-wvu-star-city-blue">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> On This Page
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          {{ with .Params.degree_plan }}
+            <li class="nav-item">
+              <a class="nav-link" href="#degree-plan">Degree Plan</a>
+            </li>
+          {{ end }}
+          {{ with .Params.the_wvu_difference }}
+            <li class="nav-item">
+              <a class="nav-link" href="#highlights">Highlights</a>
+            </li>
+          {{ end }}
+          {{ with .Params.learn_by_doing }}
+            <li class="nav-item">
+              <a class="nav-link" href="#learn-by-doing">Learn by Doing</a>
+            </li>
+          {{ end }}
+          {{ with .Params.careers_and_outcomes }}
+            <li class="nav-item">
+              <a class="nav-link" href="#careers-and-outcomes">Careers and Outcomes</a>
+            </li>
+          {{ end }}
+          {{ with .Params.meet_your_community }}
+            <li class="nav-item">
+              <a class="nav-link" href="#community">Community</a>
+            </li>
+          {{ end }}
+          {{ with .Params.places_and_spaces }}
+            <li class="nav-item">
+              <a class="nav-link" href="#places_and_spaces">Places and Spaces</a>
+            </li>
+          {{ end }}
+          <li class="nav-item">
+            <a class="nav-link" href="#admissions">Admissions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tuition_and_aid">Tuition and Aid</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#next-steps">Next Steps</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+<div id="degree-plan" class="py-6 audience-prospective_students tone-lets-go bg-option-1">
+  <div class="container mb-6 mb-xxl-7">
+    <h2 class="text-center config-extra-bold display-5 mb-6 wvu-b-display-heading">Your Degree Plan</h2>
+    <div class="row gx-xl-6">
+      <div class="col-xl-9 mb-5 mb-xl-0">
+        <div class="lead">
+          {{ .degree_plan_intro_text | markdownify }}
+        </div>
+      </div>
+      <div class="col-xl-15">
+        <ul class="nav nav-underline mb-4" id="tabs" role="tablist">
+          {{ with .coursework }}
+            <li class="nav-item">
+              <a class="nav-link text-dark active" data-bs-toggle="tab" href="#coursework-tab-pane">Coursework</a>
+            </li>
+          {{ end }}
+          {{ with .popular_courses }}
+            <li class="nav-item">
+              <a class="nav-link text-dark" data-bs-toggle="tab" href="#popular-courses-tab-pane">Popular Courses</a>
+            </li>
+          {{ end }}
+          {{ with .enhance_your_degree }}
+            <li class="nav-item">
+              <a class="nav-link text-dark" data-bs-toggle="tab" href="#enhance-your-degree-tab-pane">Enhance Your Degree</a>
+            </li>
+          {{ end }}
+          {{ with .plan_of_study }}
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="{{ . }}">Plan of Study <span class="fa-regular fa-arrow-up-right-from-square"></span></a>
+            </li>
+          {{ end }}
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          {{ with .coursework }}
+            <div class="tab-pane fade show active wvu-backpage-main fs-5" id="coursework-tab-pane" role="tabpanel" aria-labelledby="coursework-tab" tabindex="0">
+              {{ . | markdownify }}
+            </div>
+          {{ end }}
+          {{ with .popular_courses }}
+            <div class="tab-pane fade" id="popular-courses-tab-pane" role="tabpanel" aria-labelledby="popular-courses-tab" tabindex="0">
+              <p class="fs-4 my-4 antonia-italic">Tailor this major to your interests by taking one of these courses as you pursue your degree:</p>
+              <div class="row gx-lg-4">
+                {{ $course := "" }}
+                {{ $courseData := site.Data.program_data.courses }}
+                {{ range . }}
+                  {{ $course = . }}
+                  {{ range $courseData }}
+                    {{ if eq $course .uuid }}
+                      {{ $course = . }}
+                      {{ break }}
+                    {{ end }}
+                  {{ end }}
+                  <div class="col-lg-12 mb-4">
+                    <div class="wvu-b-shadow wvu-b-border bg-wvu-not-quite-white p-4 p-xl-5 h-100">
+                      <h3>{{ $course.title }}</h3>
+                      <p>{{ $course.course_code }}</p>
+                      <p>{{ $course.course_description }}</p>
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+          {{ with .enhance_your_degree }}
+            <div class="tab-pane fade" id="enhance-your-degree-tab-pane" role="tabpanel" aria-labelledby="enhance-your-degree-tab" tabindex="0">
+              <p class="fs-4 my-4 antonia-italic">Take advantage of special options related to this major:</p>
+              {{ $degreeEnhancement := "" }}
+              {{ $degreeEnhancementData := site.Data.program_data.degree_enhancements }}
+              <div class="row gx-lg-4">
+                {{ range . }}
+                  {{ $degreeEnhancement = . }}
+                  {{ range $degreeEnhancementData }}
+                    {{ if eq $degreeEnhancement .uuid }}
+                      {{ $degreeEnhancement = . }}
+                      {{ break }}
+                    {{ end }}
+                  {{ end }}
+                  
+                  <div class="col-lg-12 mb-4">
+                    <div class="wvu-b-shadow wvu-b-border bg-wvu-not-quite-white p-4 p-xl-5 h-100">
+                      <h3>{{ $degreeEnhancement.title }}</h3>
+                      <p>{{ $degreeEnhancement.degree_enhancement_text | markdownify }}</p>
+                      {{ with $degreeEnhancement.ctas }}
+                        <div>
+                          {{ range . }}
+                            <a class="btn wvu-b-btn mb-1" href="{{ .url }}">{{ .text }}</a>
+                          {{ end }}
+                        </div>
+                      {{ end }}
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

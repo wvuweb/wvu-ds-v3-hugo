@@ -24,7 +24,7 @@
   {{ else }}
     {{ $color = $topper.settings.styles.color_palette }}
   {{ end }}
-{{ else if eq .schema "photo_essay" }}
+{{ else if or (eq .schema "photo_essay") (eq .schema "undergraduate_program") }}
   {{ $color = "transparent" }}
   {{ $textColor = "text-white" }}
 {{ end }}

@@ -1,0 +1,49 @@
+{{ $title := page.Params.title }}
+{{ $college := page.Params.college }}
+{{ $src := .background_image }}
+{{- if not site.Params.env_bookshop_live -}}
+  {{ $image := "" }}
+  {{/*  Get the image, either from its remote or local source  */}}
+  {{ if hasPrefix $src "http"}}
+    {{ $image = resources.GetRemote $src }}
+  {{ else }}
+    {{ $image = resources.Get $src }}
+  {{ end }}
+
+  {{/* Resize images and add them to a variable  */}}
+  {{ if and $image (ne $image.MediaType.SubType "svg") }}
+    {{ if eq .imageProcess "fit" }}
+      {{ $src = ($image.Fit (printf "%dx%d webp" 1920 1080)).RelPermalink }}
+    {{ else }}
+      {{ $src = ($image.Fill (printf "%dx%d webp" 1920 1080)).RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{- end -}}
+<div class="audience-prospective_students tone-lets-go bg-option-2 position-relative">
+  <div class="wvu-bg-img">
+    {{ if .background_image }}
+      <img class="object-fit-cover h-100 w-100 position-relative" src="{{ $src }}" alt="{{ .background_image_alt }}" />
+      <div class="position-absolute wvu-bg-tint w-100 h-100" style="opacity: 0.8"></div>
+    {{ end }}
+  </div>
+  <div class="container wvu-z-index-content">
+    <div class="row">
+      <div class="col-xxl-12 mx-xxl-auto">
+        <div class="py-7">
+          <div class="container">
+            <p class="h6 wvu-b-label">{{ $college }}</p>
+            <h2 class="display-4 mt-5 wvu-b-display-heading">{{ $title }}</h2>
+            {{ with .intro_lead }}
+              <div class="lead mt-5">
+                {{ . | markdownify }}
+              </div>
+            {{ end }}
+            <div class="mt-5">
+              {{ .intro_text | markdownify }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

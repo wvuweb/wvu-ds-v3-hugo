@@ -305,7 +305,15 @@
 }
 
 @mixin antonia-italic($is-important: $global-important) {
-  @include antonia(italic, 300, $is-important);
+  @include antonia(26.5714, 300, $is-important);
+  font-style: italic $is-important;
+  em {
+    font-style: normal $is-important;
+  }
+}
+
+@mixin antonia-light-italic($is-important: $global-important) {
+  @include antonia(26.5714, 100, $is-important);
   font-style: italic $is-important;
   em {
     font-style: normal $is-important;
@@ -313,7 +321,7 @@
 }
 
 @mixin antonia-bold-italic($is-important: $global-important) {
-  @include antonia(italic, 700, $is-important);
+  @include antonia(26.5714, 700, $is-important);
   font-style: italic $is-important;
   em {
     font-style: normal $is-important;

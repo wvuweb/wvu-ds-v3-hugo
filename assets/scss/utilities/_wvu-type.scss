@@ -137,6 +137,10 @@
   @include antonia-italic();
 }
 
+.antonia-light-italic {
+  @include antonia-light-italic();
+}
+
 .antonia-heavy {
   @include antonia-heavy();
 }
