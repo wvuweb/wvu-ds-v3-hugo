@@ -19,7 +19,7 @@
     {{ end }}
   {{ end }}
 {{- end -}}
-<div class="audience-prospective_students tone-lets-go bg-option-2 position-relative">
+<section class="audience-prospective_students tone-lets-go bg-option-2 wvu-bg-coal position-relative">
   <div class="wvu-bg-img">
     {{ if .background_image }}
       <img class="object-fit-cover h-100 w-100 position-relative" src="{{ $src }}" alt="{{ .background_image_alt }}" />
@@ -38,8 +38,47 @@
                 {{ . | markdownify }}
               </div>
             {{ end }}
+
+            <div class="mx-xl-n6 mt-5 border border-5 border-white">
+              <div class="ratio ratio-16x9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/rYdjowG7v9M?si=rj85U3i0pBWfFopI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+
             <div class="mt-5">
               {{ .intro_text | markdownify }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="bg-wvu-coal text-white pt-5 pb-6">
+  <div class="container mt-n6 position-relative">
+    <h2 class="wvu-b-label h6 mb-4 visually-hidden">Top Stories</h2>
+    <div class="row">
+      <div class="col-xl-18 mx-xl-auto">
+        <div class="row">
+          <div class="col-xl-8">
+            <div class="p-4 p-xl-5 bg-wvu-coal-subtle">
+              <h2>Headline</h2>
+              <p>Teaser.</p>
+              <a class="text-decoration-none" href="">Read Story <span class="fa-solid fa-arrow-right"></span></a>
+            </div>
+          </div>
+          <div class="col-xl-8">
+            <div class="p-4 p-xl-5 bg-wvu-coal-subtle">
+              <h2>Headline</h2>
+              <p>Teaser.</p>
+              <a class="text-decoration-none" href="">Read Story <span class="fa-solid fa-arrow-right"></span></a>
+            </div>
+          </div>
+          <div class="col-xl-8">
+            <div class="p-4 p-xl-5 bg-wvu-coal-subtle">
+              <h2>Headline</h2>
+              <p>Teaser.</p>
+              <a class="text-decoration-none" href="">Read Story <span class="fa-solid fa-arrow-right"></span></a>
             </div>
           </div>
         </div>
