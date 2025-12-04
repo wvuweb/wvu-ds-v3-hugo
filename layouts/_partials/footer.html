@@ -29,41 +29,43 @@
               {{ end }}
             </div>
             {{ range .contact_info_blocks }}
-              {{ if or .address_lines .address_heading }}
-                <address class="mb-2">
+              <div class="mb-4">
+                {{ if or .address_lines .address_heading }}
+                  <address class="mb-2">
+                    <p class="d-flex mb-2">
+                      <span class="d-block" style="width: 20px;">
+                        <span class="fa-solid fa-location-dot text-wvu-gold" aria-hidden="true"></span>
+                      </span>
+                      <span class="d-block">
+                      <strong>{{ .address_heading }}</strong>
+                        {{ range .address_lines }}
+                          <br> {{ . }}
+                        {{ end }}
+                      </span>
+                    </p>
+                  </address>
+                {{ end }}
+                {{ with .phone }}
                   <p class="d-flex mb-2">
                     <span class="d-block" style="width: 20px;">
-                      <span class="fa-solid fa-location-dot text-wvu-gold" aria-hidden="true"></span>
+                      <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
                     </span>
                     <span class="d-block">
-                    <strong>{{ .address_heading }}</strong>
-                      {{ range .address_lines }}
-                        <br> {{ . }}
-                      {{ end }}
+                      <a class="text-decoration-none" href="tel:{{ . | urlize }}">{{ . }}</a>
                     </span>
                   </p>
-                </address>
-              {{ end }}
-              {{ with .phone }}
-                <p class="d-flex mb-2">
-                  <span class="d-block" style="width: 20px;">
-                    <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
-                  </span>
-                  <span class="d-block">
-                    <a class="text-decoration-none" href="tel:{{ . | urlize }}">{{ . }}</a>
-                  </span>
-                </p>
-              {{ end }}
-              {{ with .email }}
-                <p class="d-flex">
-                  <span class="d-block" style="width: 20px;">
-                    <span class="fa-solid fa-envelope text-wvu-gold" aria-hidden="true"></span>
-                  </span>
-                  <span class="d-block">
-                    <a class="text-decoration-none" href="mailto:{{ . }}">{{ . }}</a>
-                  </span>
-                </p>
-              {{ end }}
+                {{ end }}
+                {{ with .email }}
+                  <p class="d-flex">
+                    <span class="d-block" style="width: 20px;">
+                      <span class="fa-solid fa-envelope text-wvu-gold" aria-hidden="true"></span>
+                    </span>
+                    <span class="d-block">
+                      <a class="text-decoration-none" href="mailto:{{ . }}">{{ . }}</a>
+                    </span>
+                  </p>
+                {{ end }}
+              </div>
             {{ end }}
             {{ if $socialMediaAccounts }}
               <ul class="list-inline mb-0">
