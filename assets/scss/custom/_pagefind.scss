@@ -33,3 +33,12 @@
   position: relative !important;
   z-index: 999999 !important;
 }
+
+#program-search {
+  .pagefind-ui {
+    position: relative !important;
+  }
+  .pagefind-ui__form {
+    background-color: white !important;
+  }
+}
