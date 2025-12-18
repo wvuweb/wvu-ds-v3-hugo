@@ -45,6 +45,7 @@
   <div class="position-absolute mt-3 w-100 text-start" style="top: 0px;">
     <div class="container">
       <ul class="list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1 wvu-b-breadcrumbs {{ $textColor }}">
+        {{ $title := "" }}
         {{ $breadcrumb := split (replaceRE `\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}` "" (trim .rel_permalink "/" )) "/" }}
         {{ $crumb_link := "/" }}
         {{ $rel_permalink := .rel_permalink }}
@@ -52,9 +53,12 @@
         {{ range $breadcrumb }}
           {{ $crumb_link = print $crumb_link . "/" }}
           {{ if ne $rel_permalink $crumb_link }}
-            <li class="list-inline-item me-0"><a class="{{ $textColor }}" href="{{ $crumb_link }}" style="color: inherit;">{{ title (replace . "-" " ") }}</a></li><span class="wvu-breadcrumb-slash">/</span>
+            {{ with page.GetPage $crumb_link }}
+              {{ $title = .Title }}
+            {{ end }}
+            <li class="list-inline-item me-0"><a class="{{ $textColor }}" href="{{ $crumb_link }}" style="color: inherit;">{{ $title }}</a></li><span class="wvu-breadcrumb-slash">/</span>
           {{ else }}
-            <li class="list-inline-item active me-0">{{ title (replace . "-" " ") }}</li>
+            <li class="list-inline-item active me-0">{{ page.Params.title }}</li>
           {{ end }}
         {{ end }}
       </ul>

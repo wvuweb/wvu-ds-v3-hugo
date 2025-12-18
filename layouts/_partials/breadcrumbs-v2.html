@@ -45,10 +45,10 @@
   <div class="position-absolute mt-3 w-100 text-start" style="top: 0px;">
     <div class="container">
       <ul class="list-inline d-inline-block small mt-2 rounded-2 px-2 py-1 mx-n2 my-n1 wvu-b-breadcrumbs {{ $textColor }}">
-        <li class="list-inline-item me-0"><a class="" href="/">Home</a></li><span class="wvu-breadcrumb-slash">/</span>
-        {{ range .Ancestors.Reverse }}
-          <li class="list-inline-item me-0"><a class="{{ $textColor }}" href="{{ .RelPermalink }}" style="color: inherit;">{{ .LinkTitle }}</a></li><span class="wvu-breadcrumb-slash">/</span>
+        {{ range page.Ancestors.Reverse }}
+          <li class="list-inline-item me-0"><a class="{{ $textColor }}" href="{{ .RelPermalink }}" style="color: inherit;">{{ .Title }}</a></li><span class="wvu-breadcrumb-slash">/</span>
         {{ end }}
+        <li class="list-inline-item me-0">{{ page.Params.title }}</li>
       </ul>
     </div>
   </div>
