@@ -39,6 +39,39 @@
     position: relative !important;
   }
   .pagefind-ui__form {
-    background-color: white !important;
+    background-color: transparent !important;
+  }
+  .pagefind-ui__drawer.svelte-e9gkc3 {
+    margin-top: 4rem;
+  }
+  .pagefind-ui__results-area.svelte-e9gkc3 {
+    background-color: transparent !important;
+  }
+  .pagefind-ui__filter-panel.svelte-1v2r7ls {
+    &:nth-child(5) {
+      display: none;
+    }
+  }
+  .pagefind-ui__filter-block.svelte-1v2r7ls {
+    &:nth-child(6) {
+      display: none;
+    }
+  }
+  .pagefind-ui__filter-value.svelte-1v2r7ls {
+    position: relative;
+    padding-left: 24px;
+  }
+  .pagefind-ui__filter-checkbox.svelte-1v2r7ls {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    top: 1px;
+    left: 0;
+  }
+  .pagefind-ui__result-excerpt {
+    display: none;
+  }
+  .pagefind-ui__result-tag {
+    font-size: 1rem;
   }
 }
