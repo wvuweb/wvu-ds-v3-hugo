@@ -1,5 +1,7 @@
 {{ $mastheadLayout := "standard"}}
-{{ partial "masthead.html" ( dict "layout" $mastheadLayout ) . }}
-{{ if not site.Data.settings.settings.primary_navigation.hide_primary_nav }}
+{{ if not page.Params._hide_masthead }}
+  {{ partial "masthead.html" ( dict "layout" $mastheadLayout ) . }}
+{{ end }}
+{{ if and (not site.Data.settings.settings.primary_navigation.hide_primary_nav) (not page.Params._hide_primary_nav) }}
   {{ partial "primary-nav.html" . }}
 {{ end }}

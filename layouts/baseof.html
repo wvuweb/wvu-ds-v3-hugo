@@ -55,7 +55,7 @@
     {{ $topper = .Params.alumni_profile_topper }}
   {{ end }}
   
-  {{ if not .IsHome }}
+  {{ if and (not .IsHome) (not .Params._hide_breadcrumbs) }}
     {{ partial "breadcrumbs" (dict "rel_permalink" .RelPermalink "topper" $topper "schema" .Params._schema) }}
   {{ end }}
 

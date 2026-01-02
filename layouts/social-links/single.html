@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+  <div class="audience-general tone-lets-go bg-option-2 position-relative py-6">
+    <div class="wvu-bg-img">
+      <div class="wvu-b-pattern wvu-b-pattern-color h-100 w-100 position-absolute" style="opacity: .2"></div>
+      <div class="wvu-b-gradient d-flex w-100 h-100 justify-content-between position-absolute"></div>
+    </div>
+    <div class="container position-relative wvu-z-index-content">
+      <div class="row">
+        <div class="col-lg-12 col-xl-10 mx-lg-auto text-center">
+          <div class="d-flex flex-column align-items-center">
+            {{ with .Params.social_links_thumbnail_image }}
+              <div class="mb-4" style="width: 150px; height: 150px;">
+                <img class="rounded-circle" src="https://placehold.co/960" />
+              </div>
+            {{ end }}
+            <h1>{{ .Params.title }}</h1>
+            {{ with .Params.subheading }}
+              <p class="lead mb-0">{{ . }}</p>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "blocks" .Params.social_links_blocks)` }}
+        {{ partial "bookshop_partial" (slice "page-social-links" (dict "title" .Params.title "blocks" .Params.social_links_blocks)) }}
+      </div>
+    </div>
+  </div>
+  
+{{ end }}
