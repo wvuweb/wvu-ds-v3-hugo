@@ -1,4 +1,21 @@
 {{ define "main" }}
+  {{ $src := .Params.social_links_thumbnail_image }}
+  {{ $alt := .Params.social_links_thumbnail_image_alt }}
+
+  {{- if not site.Params.env_bookshop_live -}}
+    {{ $image := "" }}
+    {{/*  Get the image, either from its remote or local source  */}}
+    {{ if hasPrefix $src "http"}}
+      {{ $image = resources.GetRemote $src }}
+    {{ else }}
+      {{ $image = resources.Get $src }}
+    {{ end }}
+
+    {{/* Resize images and add them to a variable  */}}
+    {{ if and $image (ne $image.MediaType.SubType "svg") }}
+      {{ $src = ($image.Fill (printf "%dx%d webp" 960 960)).RelPermalink }}
+    {{ end }}
+  {{- end -}}
 
   <div class="audience-general tone-lets-go bg-option-2 position-relative py-6">
     <div class="wvu-bg-img">
@@ -9,9 +26,9 @@
       <div class="row">
         <div class="col-lg-12 col-xl-10 mx-lg-auto text-center">
           <div class="d-flex flex-column align-items-center">
-            {{ with .Params.social_links_thumbnail_image }}
+            {{ with $src }}
               <div class="mb-4" style="width: 150px; height: 150px;">
-                <img class="rounded-circle" src="https://placehold.co/960" />
+                <img class="rounded-circle" src="{{ . }}" alt="{{ $alt }}" />
               </div>
             {{ end }}
             <h1>{{ .Params.title }}</h1>
@@ -22,8 +39,8 @@
         </div>
       </div>
       <div class="mt-5">
-        {{ partial "bookshop_bindings" `(dict "topper" .Params.topper "title" .Params.title "blocks" .Params.social_links_blocks)` }}
-        {{ partial "bookshop_partial" (slice "page-social-links" (dict "title" .Params.title "blocks" .Params.social_links_blocks)) }}
+        {{ partial "bookshop_bindings" `(dict "blocks" .Params.social_links_blocks)` }}
+        {{ partial "bookshop_partial" (slice "page-social-links" (dict "blocks" .Params.social_links_blocks)) }}
       </div>
     </div>
   </div>
