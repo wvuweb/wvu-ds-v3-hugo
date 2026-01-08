@@ -284,7 +284,7 @@ $background-color: #134982;
 
   // NOTE: Decrease right padding for <a> tags that have dropdowns. `:has` = "previous sibling" in this rule.
   .wvu-site-nav__menu-item-has-children > .nav-link:has(+ .wvu-site-nav__sub-toggle) {
-    padding-inline-end: 0 !important;
+    padding-inline-end: .5rem !important;
   }
 
   // NOTE: Make the dropdown arrow have the same background color as the link on hover
