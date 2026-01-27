@@ -27,7 +27,7 @@
       {{ range site.Data.settings.settings.primary_navigation.nav_links }}
         {{ $rel_link := .link | relURL }}
         <li class="{{ $open_class }} {{ if .sub_nav_links }}{{ $has_children_class }}{{ end }} {{ $li_class }}">
-          <a class="{{ $link_class }} {{ if eq $current_page $rel_link }}{{ $active_class }}{{ end }}" {{ if eq $current_page $rel_link }}aria-current="page"{{ end }} href="{{ .link }}">{{ .text }}{{ if .sub_nav_links }} <span class="fa-solid fa-chevron-down d-none d-lg-inline small"></span>{{ end }}</a>
+          <a class="{{ $link_class }} {{ if eq $current_page $rel_link }}{{ $active_class }}{{ end }}" {{ if eq $current_page $rel_link }}aria-current="page"{{ end }} href="{{ .link }}">{{ .text }}</a>
 
           {{ if .sub_nav_links }}
             <ul class="{{ $sub_ul_class }}">
