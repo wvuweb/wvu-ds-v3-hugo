@@ -1,4 +1,4 @@
 {{ define "main" }}
-  {{ partial "bookshop_bindings" `(dict "title" .Params.title "subheading" .Params.subheading "image" .Params.social_links_thumbnail_image "alt" .Params.social_links_thumbnail_image_alt "blocks" .Params.social_links_blocks)` }}
-  {{ partial "bookshop_partial" (slice "page-social-links" (dict "title" .Params.title "subheading" .Params.subheading "image" .Params.social_links_thumbnail_image "alt" .Params.social_links_thumbnail_image_alt "blocks" .Params.social_links_blocks)) }}  
+  {{ partial "bookshop_bindings" `(dict "title" .Params.title "subheading" .Params.subheading "social_media_accounts" .Params.social_media_accounts "image" .Params.social_links_thumbnail_image "alt" .Params.social_links_thumbnail_image_alt "blocks" .Params.social_links_blocks)` }}
+  {{ partial "bookshop_partial" (slice "page-social-links" (dict "title" .Params.title "subheading" .Params.subheading "social_media_accounts" .Params.social_media_accounts "image" .Params.social_links_thumbnail_image "alt" .Params.social_links_thumbnail_image_alt "blocks" .Params.social_links_blocks)) }}  
 {{ end }}
