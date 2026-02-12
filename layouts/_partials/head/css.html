@@ -4,7 +4,9 @@
 {{ $styles := $scss | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
+{{- if .Site.Params.pagefind_enabled }}
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+{{- end }}
 
 {{ with site.Data.settings.settings.extras.custom_css }}
 <style>
