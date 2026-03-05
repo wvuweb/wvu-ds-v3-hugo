@@ -288,6 +288,9 @@
   em {
     font-style: italic $is-important;
   }
+  strong {
+    font-variation-settings: "opsz" 6.5714, "wght" 700 $is-important;
+  }
 }
 
 @mixin antonia-light($is-important: $global-important) {
@@ -295,12 +298,18 @@
   em {
     font-style: italic $is-important;
   }
+  strong {
+    font-variation-settings: "opsz" 26.5714, "wght" 700 $is-important;
+  }
 }
 
 @mixin antonia-bold($is-important: $global-important) {
   @include antonia(48, 725, $is-important);
   em {
     font-style: italic $is-important;
+  }
+  strong {
+    font-variation-settings: "opsz" 6.5714, "wght" 410 $is-important;
   }
 }
 
@@ -310,6 +319,9 @@
   em {
     font-style: normal $is-important;
   }
+  strong {
+    font-variation-settings: "opsz" 26.5714, "wght" 700 $is-important;
+  }
 }
 
 @mixin antonia-light-italic($is-important: $global-important) {
@@ -317,6 +329,9 @@
   font-style: italic $is-important;
   em {
     font-style: normal $is-important;
+  }
+  strong {
+    font-variation-settings: "opsz" 26.5714, "wght" 700 $is-important;
   }
 }
 
@@ -326,12 +341,18 @@
   em {
     font-style: normal $is-important;
   }
+  strong {
+    font-variation-settings: "opsz" 26.5714, "wght" 300 $is-important;
+  }
 }
 
 @mixin antonia-heavy($is-important: $global-important) {
   @include antonia(26.5714, 825, $is-important);
   em {
     font-style: italic $is-important;
+  }
+  strong {
+    font-variation-settings: "opsz" 26.5714, "wght" 410 $is-important;
   }
 }
 
@@ -341,12 +362,18 @@
   em {
     font-style: normal $is-important;
   }
+  strong {
+    font-variation-settings: "opsz" 8, "wght" 410 $is-important;
+  }
 }
 
 @mixin antonia-black($is-important: $global-important) {
   @include antonia(48, 900, $is-important);
   em {
     font-style: italic $is-important;
+  }
+  strong {
+    font-variation-settings: "opsz" 48, "wght" 410 $is-important;
   }
 }
 
@@ -355,6 +382,9 @@
   font-style: italic $is-important;
   em {
     font-style: normal $is-important;
+  }
+  strong {
+    font-variation-settings: "opsz" 48, "wght" 410 $is-important;
   }
 }
 
