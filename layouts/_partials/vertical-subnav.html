@@ -9,7 +9,9 @@
   {{ end }}
 {{ end }}
 
-<h2 class="wvu-b-label h6 mb-4">{{ $label }}</h2>
+{{ if $label }}
+  <h2 class="wvu-b-label h6 mb-4">{{ $label }}</h2>
+{{ end }}
 
 <ul class="nav flex-column border-top border-4 border-wvu-gold">
   {{ range $items }}
