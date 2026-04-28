@@ -2,7 +2,7 @@
 // Basic Bootstrap table
 //
 
-#wvu-main-content table {
+.wvu-backpage-main table {
   // Reset needed for nesting tables
   --#{$prefix}table-color-type: initial;
   --#{$prefix}table-bg-type: initial;
