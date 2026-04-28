@@ -58,7 +58,11 @@
             {{ end }}
             <li class="list-inline-item me-0"><a class="{{ $textColor }}" href="{{ $crumb_link }}" style="color: inherit;">{{ $title }}</a></li><span class="wvu-breadcrumb-slash">/</span>
           {{ else }}
-            <li class="list-inline-item active me-0">{{ page.Params.title }}</li>
+            {{ if page.Params.title }}
+              <li class="list-inline-item active me-0">{{ page.Params.title }}</li>
+            {{ else if page.Params.name }}
+              <li class="list-inline-item active me-0">{{ page.Params.name }}</li>
+            {{ end }}
           {{ end }}
         {{ end }}
       </ul>
