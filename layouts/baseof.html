@@ -66,7 +66,7 @@
   {{ end }}
 
   {{ if not .IsHome }}
-    {{ if and (not $topper._bookshop_name) (ne .Kind "term") (ne .Params.type "staff") }}
+    {{ if and (not $topper._bookshop_name) (ne .Kind "term") (ne .Params.type "staff") (ne .Params.type "faculty-profile") }}
       <section aria-labelledby="heading-label">
         <h1 id="heading-label" class="visually-hidden">{{ .Params.title }}</h1>
       </section>
