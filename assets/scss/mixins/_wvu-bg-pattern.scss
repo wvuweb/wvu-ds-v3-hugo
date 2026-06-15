@@ -3,36 +3,6 @@
 // Adds a WVU-branded background pattern to an element (weave, grid, topo map, etc.)
 
 @mixin wvu-bg-pattern($pattern-type, $is-important: $global-important) {
-  @if $pattern-type == 'grid' {
-    mask-image: url($wvu-grid-pattern);
-    -webkit-mask-image: url($wvu-grid-pattern);
-    mask-position: center;
-    -webkit-mask-position: center;
-    mask-size: cover $global-important;
-    -webkit-mask-size: cover $global-important;
-    bottom: 0;
-    content: '';
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: $wvu-z-index-pattern;
-  }
-  @if $pattern-type == 'grid-zoomed' {
-    mask-image: url($wvu-grid-pattern-zoomed);
-    -webkit-mask-image: url($wvu-grid-pattern-zoomed);
-    mask-position: center;
-    -webkit-mask-position: center;
-    mask-size: cover $global-important;
-    -webkit-mask-size: cover $global-important;
-    bottom: 0;
-    content: '';
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: $wvu-z-index-pattern;
-  }
   @if $pattern-type == 'topo-dark' {
     mask-image: url($wvu-topo-map-black);
     -webkit-mask-image: url($wvu-topo-map-black);

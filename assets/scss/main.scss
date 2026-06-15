@@ -63,7 +63,6 @@
 @import 'mixins/wvu-bg-blend-mode';
 @import 'mixins/wvu-bg-pattern';
 @import 'mixins/wvu-bg-tint';
-@import 'mixins/wvu-bg-vignetting';
 @import 'mixins/wvu-brand-palettes';
 @import 'mixins/wvu-co-branding';
 @import 'mixins/wvu-elements';
@@ -95,7 +94,6 @@
 @import 'utilities/wvu-co-branding';
 @import 'utilities/wvu-counter';
 @import 'utilities/wvu-fg-img';
-@import 'utilities/wvu-gradient';
 @import 'utilities/wvu-highlight';
 @import 'utilities/wvu-hr';
 @import 'utilities/wvu-lists';
@@ -117,14 +115,10 @@
 // @import '4-custom/wvu-nav';
 
 @import 'custom/btn';
-@import 'custom/hosted-fonts';
-@import 'custom/mercury-textarea';
-@import 'custom/multi-collapse';
 @import 'custom/nav';
 @import 'custom/pagefind';
 @import 'custom/prettyprint';
 @import 'custom/text';
-@import 'custom/wireframes';
 @import 'custom/wvu-base';
 @import 'custom/wvu-breadcrumbs';
 @import 'custom/wvu-calendar-widget';
