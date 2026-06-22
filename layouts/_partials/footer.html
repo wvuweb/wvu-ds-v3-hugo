@@ -51,7 +51,17 @@
                       <span class="fa-solid fa-phone text-wvu-gold" aria-hidden="true"></span>
                     </span>
                     <span class="d-block">
-                      <a class="text-decoration-none" href="tel:{{ . | urlize }}">{{ . }}</a>
+                      <strong>Phone:</strong> <a class="text-decoration-none" href="tel:{{ . | urlize }}">{{ . }}</a>
+                    </span>
+                  </p>
+                {{ end }}
+                {{ with .fax }}
+                  <p class="d-flex mb-2">
+                    <span class="d-block" style="width: 20px;">
+                      <span class="fa-solid fa-fax text-wvu-gold" aria-hidden="true"></span>
+                    </span>
+                    <span class="d-block">
+                      <strong>Fax:</strong> <a class="text-decoration-none" href="tel:{{ . | urlize }}">{{ . }}</a>
                     </span>
                   </p>
                 {{ end }}
@@ -61,7 +71,7 @@
                       <span class="fa-solid fa-envelope text-wvu-gold" aria-hidden="true"></span>
                     </span>
                     <span class="d-block">
-                      <a class="text-decoration-none" href="mailto:{{ . }}">{{ . }}</a>
+                      <strong>Email:</strong> <a class="text-decoration-none" href="mailto:{{ . }}">{{ . }}</a>
                     </span>
                   </p>
                 {{ end }}
