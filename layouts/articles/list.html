@@ -37,15 +37,25 @@
     
                   {{ if not $hideThumbnails }}
                     <div class="wvu-article__thumb col-md-6">
-                      <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
-                        {{ partial "bookshop" (slice "design-system/generic/img" (dict "src" .Params.article_image "width" 960 "height" 640 "alt" .Params.article_image_alt_text )) }}
-                      </a>
+                      {{ if .alternate_url }}
+                        <a href="{{ .alternate_url }}" aria-hidden="true" tabindex="-1">
+                          {{ partial "bookshop" (slice "design-system/generic/img" (dict "src" .Params.article_image "width" 960 "height" 640 "alt" .Params.article_image_alt_text )) }}
+                        </a>
+                      {{ else }}
+                        <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+                          {{ partial "bookshop" (slice "design-system/generic/img" (dict "src" .Params.article_image "width" 960 "height" 640 "alt" .Params.article_image_alt_text )) }}
+                        </a>
+                      {{ end }}
                     </div>
                   {{ end }}
     
                   <div class="col-md mt-3 mt-md-0">
-                    <h2 class="wvu-article__headline" itemprop="headline"><a class="newsletter-link text-decoration-none text-wvu-blue" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    
+                    {{ if .alternate_url }}
+                        <h2 class="wvu-article__headline" itemprop="headline"><a class="newsletter-link text-decoration-none text-wvu-blue" href="{{ .alternate_url }}">{{ .Title }}</a></h2>
+                    {{ else }}
+                      <h2 class="wvu-article__headline" itemprop="headline"><a class="newsletter-link text-decoration-none text-wvu-blue" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                    {{ end }}
+                    
                     {{ if or (not $hideAuthor) ( .Params.publishDate ) }}
                       <p class="small d-block">
                         {{ if .Params.publishDate }}
@@ -59,8 +69,12 @@
                         <p class="wvu-article__teaser">{{ . }}</p>
                       </div>
                     {{ end }}
-    
-                    <p><a class="wvu-article__read-more" href="{{ .RelPermalink }}">Read More<span class="visually-hidden">: {{ .Title }}</span></a></p>
+
+                    {{ if .alternate_url }}
+                      <p><a class="wvu-article__read-more" href="{{ .alternate_url }}">Read More<span class="visually-hidden">: {{ .Title }}</span></a></p>
+                    {{ else }}
+                      <p><a class="wvu-article__read-more" href="{{ .RelPermalink }}">Read More<span class="visually-hidden">: {{ .Title }}</span></a></p>
+                    {{ end }}
                   </div>
     
                 </div>
