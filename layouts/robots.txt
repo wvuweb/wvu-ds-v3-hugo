@@ -10,6 +10,12 @@ Disallow: /404/
 Disallow: {{ .RelPermalink }}
 {{- end -}}
 {{- else -}}
+User-agent: SiteimproveBot
+Allow: /
+
+User-agent: SiteimproveBot-Crawler
+Allow: /
+
 User-agent: *
 Disallow: /
 {{- end -}}
