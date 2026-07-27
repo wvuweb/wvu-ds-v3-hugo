@@ -1,4 +1,4 @@
-{{ if eq hugo.Environment "production" }}
+{{- if eq hugo.Environment "production" -}}
 Sitemap: {{ "sitemap.xml" | absLangURL }}
 
 User-agent: *
@@ -8,8 +8,8 @@ Disallow: /404/
 
 {{ range where .Site.Pages "Params.properties.exclude_from_search_engines" "eq" true }}
 Disallow: {{ .RelPermalink }}
-{{ end }}
-{{ else }}
+{{- end -}}
+{{- else -}}
 User-agent: *
 Disallow: /
-{{ end }}
+{{- end -}}
