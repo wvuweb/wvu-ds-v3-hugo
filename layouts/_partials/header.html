@@ -3,5 +3,9 @@
   {{ partial "masthead.html" ( dict "layout" $mastheadLayout ) . }}
 {{ end }}
 {{ if and (not site.Data.settings.settings.primary_navigation.hide_primary_nav) (not page.Params._hide_primary_nav) }}
-  {{ partial "primary-nav.html" . }}
+  {{ if site.Data.settings.settings.primary_navigation.mega_nav_links }}
+    {{ partial "mega-nav.html" . }}
+  {{ else }}
+    {{ partial "primary-nav.html" . }}
+  {{ end }}
 {{ end }}

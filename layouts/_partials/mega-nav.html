@@ -1,0 +1,107 @@
+<!-- WVU Nav v4 -->
+<nav aria-label="Main navigation" id="nav-primary" class="position-relative wvu-site-nav navbar navbar-expand-xxl p-0 navbar-dark w-100 bg-black" style="--bs-bg-opacity: .15; z-index: 9999 !important;">
+  <div class="container position-relative">
+    <button aria-controls="wvu-site-nav__items" aria-expanded="false" type="button" class="wvu-site-nav__toggle js-wvu-site-nav-toggle border-0 bg-transparent text-white position-relative ps-0 pe-3 d-flex d-xxl-none align-items-center">
+      <span aria-hidden="true" class="wvu-hamburger js-wvu-hamburger">
+        <span class="wvu-hamburger__line wvu-hamburger__line--top js-wvu-hamburger__line--top"></span>
+        <span class="wvu-hamburger__line wvu-hamburger__line--middle"></span>
+        <span class="wvu-hamburger__line wvu-hamburger__line--bottom js-wvu-hamburger__line--bottom"></span>
+      </span>
+      <span class="js-wvu-site-nav-toggle-text">Open Menu</span>
+    </button>
+
+    {{ $ul_class := "wvu-site-nav__items js-wvu-site-nav-items position-static list-unstyled d-xxl-flex align-items-xxl-center flex-xxl-wrap mb-0" }}
+    {{ $ul_id := "wvu-site-nav__items" }}
+    {{ $li_class := "d-xxl-flex" }}
+    {{ $link_class := "nav-link text-white px-3 py-3 fw-normal flex-grow-1" }}
+    {{ $max_depth := "" }}
+    {{ $active_class := "wvu-site-nav__link--active" }}
+    {{ $open_class := "open" }}
+    {{ $has_children_class := "wvu-site-nav__menu-item-has-children position-xxl-up-relative d-xxl-flex" }}
+    {{ $sub_ul_class := "wvu-site-nav__sub-menu position-xxl-absolute start-0 list-unstyled ms-0 wvu-site-nav__sub-menu small bg-wvu-blue ms-xxl-0--level-1 row gx-0 gx-xxl-4 w-100 px-3 pb-4 px-xxl-4 pt-xxl-4 pb-xxl-4" }}
+    {{ $include_link_ids := true }}
+    {{ $current_page := .RelPermalink }}
+
+    <ul class="wvu-site-nav__items js-wvu-site-nav-items position-static list-unstyled d-xxl-flex align-items-xxl-center flex-xxl-wrap mb-0">
+
+      {{ range site.Data.settings.settings.primary_navigation.mega_nav_links }}
+        {{ $rel_link := .link | relURL }}
+        <li class="{{ $open_class }} {{ if .sub_nav_groups }}{{ $has_children_class }}{{ end }} {{ $li_class }}">
+          <a class="{{ $link_class }} {{ if eq $current_page $rel_link }}{{ $active_class }}{{ end }}" {{ if eq $current_page $rel_link }}aria-current="page"{{ end }} href="{{ .link }}">{{ .text }}</a>
+
+          {{ if .sub_nav_groups }}
+            <ul class="{{ $sub_ul_class }}">
+              {{ range .sub_nav_groups }}
+                <div class="col-xxl mb-xxl-4">
+                  {{ if .heading }}
+                    <div class="wvu-b-label mb-xxl-3 text-wvu-gold pt-4">{{ .heading }}</div>
+                  {{ end }}
+                  {{ if .sub_nav_links }}
+                    {{ range .sub_nav_links }}
+                      <li>
+                        <a class="fs-6 d-block text-decoration-none py-2" href="{{ .link }}">{{ .text }}</a>
+                      </li>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </li>
+      {{ end }}
+
+    </ul>
+    <button class="bg-transparent border-0 text-white py-2 px-2 py-xxl-0 px-xxl-0" type="button" data-bs-toggle="collapse" data-bs-target="#wvuNavSearchCollapse" aria-expanded="false" aria-controls="wvuNavSearchCollapse">
+      <span aria-hidden="true" class="fa-solid fa-magnifying-glass"></span>
+      <span class="visually-hidden">Toggle Search</span>
+    </button>
+  </div> <!-- /.container -->
+</nav>
+
+<section aria-label="nav-quicklinks" class="collapse multi-collapse" id="wvuNavSearchCollapse">
+  <div class="bg-light py-5 w-100 text-white bg-wvu-coal wvu-bg-vignetting--20">
+    <div class="container wvu-z-index-content">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-7">
+          <div class="row">
+            <div class="col-md-24">
+              <form class="form-inline w-100" action="https://search.wvu.edu/search" method="get" role="search" aria-label="Site Search">
+                <label class="visually-hidden" id="search-label" for="q">
+                  <span class="visually-hidden">Search</span>
+                </label>
+                <input id="sort" name="sort" type="hidden" value="date:D:L:d1">
+                <input id="output" name="output" type="hidden" value="xml_no_dtd">
+                <input id="ie" name="ie" type="hidden" value="UTF-8">
+                <input id="oe" name="oe" type="hidden" value="UTF-8">
+                <input id="proxystylesheet" name="proxystylesheet" type="hidden" value="default_frontend">
+                <input id="client" name="client" type="hidden" value="default_frontend">
+                <div class="input-group shadow-sm w-100">
+                  <input id="q" class="form-control p-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-primary px-3 px-xxl-4" name="btnG" type="submit">
+                    <span class="h5 mb-0">
+                      <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span>
+                    </span>
+                    <span class="visually-hidden">Search</span>
+                  </button>
+                </div>
+                <div class="row pt-1">
+                  <fieldset class="col-24">
+                    <legend class="visually-hidden">Would you like to search this site specifically, or all WVU websites?</legend>
+                    <div class="d-inline-block pe-2">
+                      <input id="form-search__sitesearch" type="radio" name="as_sitesearch" value="{{ .Site.BaseURL }}" checked="">
+                      <label class="d-inline-block" for="form-search__sitesearch">Search this site</label>
+                    </div>
+                    <div class="d-inline-block">
+                      <input id="form-search__wvusearch" type="radio" name="as_sitesearch" value="wvu.edu">
+                      <label class="d-inline-block" for="form-search__wvusearch">Search WVU</label>
+                    </div>
+                  </fieldset>
+                </div>
+              </form>
+            </div>
+          </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
