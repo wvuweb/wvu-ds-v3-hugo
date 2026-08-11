@@ -335,26 +335,3 @@ $background-color: #134982;
     width: 25px;
   }
 }
-
-@media screen and (max-width: 1399px) {
-  .position-xxl-up-relative {
-    position: relative;
-  }
-}
-@media (min-width: 1400px) {
-  .navbar-expand-xxl {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-  }
-}
-@media screen and (max-width: 1399px) {
-  .position-xxl-up-relative {
-    position: relative;
-  }
-}
-@media (min-width: 1400px) {
-  .navbar-expand-xxl {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-  }
-}
