@@ -2,6 +2,17 @@
 
 {{ $scss := resources.Get "scss/site.scss" }}
 {{ $styles := $scss | toCSS | minify | fingerprint }}
+
+{{ if site.Data.settings.settings.primary_navigation.mega_nav_links }}
+  {{ $navMaxWidth := "991px" }}
+  {{ $sassTemplate := resources.Get "scss/site.scss" }}
+  {{ $vars := dict }}
+  {{ $navMaxWidth = "1399px" }}
+  {{ $vars := merge $vars (dict "navMaxWidth" $navMaxWidth) }}
+  {{ $cssProcessed := $sassTemplate | resources.ExecuteAsTemplate "scss/site.css" $vars }}
+  {{ $styles = $cssProcessed | toCSS | minify | fingerprint }}
+{{ end }}
+
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 {{- if .Site.Params.pagefind_enabled }}
