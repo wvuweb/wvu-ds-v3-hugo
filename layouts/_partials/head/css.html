@@ -8,7 +8,7 @@
   {{ $sassTemplate := resources.Get "scss/site.scss" }}
   {{ $vars := dict }}
   {{ $navMaxWidth = "1399px" }}
-  {{ $vars := merge $vars (dict "navMaxWidth" $navMaxWidth) }}
+  {{ $vars = merge $vars (dict "navMaxWidth" $navMaxWidth) }}
   {{ $cssProcessed := $sassTemplate | resources.ExecuteAsTemplate "scss/site.css" $vars }}
   {{ $styles = $cssProcessed | toCSS | minify | fingerprint }}
 {{ end }}
