@@ -1,8 +1,11 @@
 <link rel="stylesheet" href="https://use.typekit.net/yys7vri.css">
 
+{{/* Overrides the wvu-ds-v3-hugo partial to pass settings into Sass via hugo:vars */}}
+{{ $hasMegaNav := "false" }}
+{{ with site.Data.settings.settings.primary_navigation }}{{ with .mega_nav_links }}{{ $hasMegaNav = "true" }}{{ end }}{{ end }}
+{{ $vars := dict "wvu-has-mega-nav" $hasMegaNav }}
 {{ $scss := resources.Get "scss/site.scss" }}
-{{ $styles := $scss | toCSS | minify | fingerprint }}
-
+{{ $styles := $scss | toCSS (dict "vars" $vars) | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 {{- if .Site.Params.pagefind_enabled }}

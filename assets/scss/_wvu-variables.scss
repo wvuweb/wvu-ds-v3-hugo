@@ -332,7 +332,10 @@ $wvu-bp-xl: 1200px !default;
 $wvu-bp-xxl: 1400px !default;
 $wvu-bp-xxxl: 1600px !default;
 
-$wvu-bp-nav: $wvu-bp-lg !default;
+// Set from data/settings/settings.yml (primary_navigation.mega_nav_links) in layouts/_partials/head/css.html
+@import 'hugo:vars';
+$wvu-has-mega-nav: "true" !default;
+$wvu-bp-nav: if($wvu-has-mega-nav == "true", $wvu-bp-xxl, $wvu-bp-lg) !default;
 $wvu-bp-nav-max-width: ($wvu-bp-nav - 1) !default;
 
 $wvu-breakpoints: (

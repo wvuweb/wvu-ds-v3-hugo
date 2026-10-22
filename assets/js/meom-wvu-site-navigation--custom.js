@@ -5,8 +5,11 @@
 // https://github.com/MEOM/navigation
 
 import { Navigation } from 'js/meom/index.esm.min.js';
+import * as params from '@params';
 
 const meomNavigation = (() => {
+  // Set from data/settings/settings.yml (primary_navigation.mega_nav_links) in layouts/_partials/head/js.html
+  const bp = params.hasMegaNav ? 'xxl' : 'lg';
   const navElement = document.querySelector('.js-wvu-site-nav-items');
   const navToggle = document.querySelector('.js-wvu-site-nav-toggle');
   const navToggleText = navToggle.querySelector('.js-wvu-site-nav-toggle-text');
@@ -23,8 +26,8 @@ const meomNavigation = (() => {
     subNavClass: '.wvu-site-nav__sub-menu',
     subNavAnchors: '.js-wvu-site-nav-items > .wvu-site-nav__menu-item-has-children > a',
     subSubNavAnchors: '.js-wvu-site-nav-items .wvu-site-nav__sub-menu > .wvu-site-nav__menu-item-has-children > a',
-    subToggleButtonClasses: 'wvu-site-nav__sub-toggle ms-auto p-1 p-lg-0 text-muted',
-    subSubToggleButtonClasses: 'wvu-site-nav__sub-sub-toggle p-1 p-lg-0 ms-lg-auto me-lg-2 text-muted',
+    subToggleButtonClasses: `wvu-site-nav__sub-toggle ms-auto p-1 p-${bp}-0 text-muted`,
+    subSubToggleButtonClasses: `wvu-site-nav__sub-sub-toggle p-1 p-${bp}-0 ms-${bp}-auto me-${bp}-2 text-muted`,
     visuallyHiddenClass: 'visually-hidden',
     onOpenNav: () => {
       navToggleText.innerText = 'Close Menu';

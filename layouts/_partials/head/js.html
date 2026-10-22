@@ -11,8 +11,12 @@
   {{- end }}
 {{- end }}
 
+{{- /* Overrides the wvu-ds-v3-hugo partial to pass settings into the nav script via @params */}}
 {{- with resources.Get "js/meom-wvu-site-navigation--custom.js" }}
-  {{- with . | js.Build }}
+  {{- $hasMegaNav := false }}
+  {{- with site.Data.settings.settings.primary_navigation }}{{ with .mega_nav_links }}{{ $hasMegaNav = true }}{{ end }}{{ end }}
+  {{- $params := dict "hasMegaNav" $hasMegaNav }}
+  {{- with . | js.Build (dict "params" $params) }}
     <script src="{{ .RelPermalink }}" type="module"></script>
   {{- end }}
 {{- end }}
